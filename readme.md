@@ -4,7 +4,13 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 git : https://github.com/VisualAcademy/articleapp
 
 
-
+# Nuget패키지 설치
+  Microsoft.EntityFrameworkCore
+  Microsoft.EntityFrameworkCore.SqlServer
+  Microsoft.EntityFrameworkCore.Tools
+  System.Configuration.ConfigurationManager
+  System.Data.SqlClient  (참조 : https://ddochea.tistory.com/189)
+  Microsoft.EntityFrameworkCore.InMemory is the EF Core
 
 
 
