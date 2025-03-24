@@ -12,7 +12,14 @@ git : https://github.com/VisualAcademy/articleapp
   System.Data.SqlClient  (참조 : https://ddochea.tistory.com/189)
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
 
-
+  Dapper
+  Serilog
+  Serilog.Extensions.Logging
+  Serilog.Sinks.File
+  -------------------------
+  controller - ctor(ILogger<HomeController> logger)
+  _logger.LogInformation("로그문구.....");
+  -------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------------
 # ArticleApp 리포지토리

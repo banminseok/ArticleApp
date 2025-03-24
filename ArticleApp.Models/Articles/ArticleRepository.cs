@@ -52,9 +52,18 @@ namespace ArticleApp.Models
         //수정
         public async Task<Article> EditArticleAsync(Article model)
         {
-            _context.Entry(model).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return model;
+            try
+            {
+                _context.Entry(model).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return model;
+                //return (await _context.SaveChangesAsync() > 0 ? true : false);
+            }
+            catch (Exception e)
+            {
+                //_logger?.LogError($"Error ({nameof(EditArticleAsync)}):{e.Message}");
+                throw;
+            }
         }
 
         //상세
