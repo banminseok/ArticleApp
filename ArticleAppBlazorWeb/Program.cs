@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using ArticleAppBlazorWeb.Components;
 using ArticleAppBlazorWeb.Components.Account;
 using ArticleAppBlazorWeb.Data;
+using ArticleApp.Models;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,14 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+// ArticleAppDbContext.cs Inject: New DbContext Add
+builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+// IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
+builder.Services.AddSingleton<IArticleRepository, ArticleRepository>();
 
 var app = builder.Build();
 
