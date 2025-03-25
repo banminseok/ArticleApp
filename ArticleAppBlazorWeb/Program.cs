@@ -43,7 +43,7 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
-builder.Services.AddSingleton<IArticleRepository, ArticleRepository>();
+builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 
 var app = builder.Build();
 
