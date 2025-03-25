@@ -65,6 +65,9 @@
     </div>
 </div>
 @code {
+    [Inject]
+    private ILogger<Create> Logger { get; set; }
+
     private List<Article> articles;
 
     /// <summary>
@@ -73,6 +76,8 @@
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
+        Logger.LogInformation("※※※ [1]Index 시작");
+
         articles = await ArticleRepository.GetArticlesAsync();
     }
 }

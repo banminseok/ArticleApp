@@ -6,6 +6,8 @@ using ArticleAppBlazorWeb.Components.Account;
 using ArticleAppBlazorWeb.Data;
 using ArticleApp.Models;
 using System.Configuration;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +47,22 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 
+#region Serilog
+//// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
+//// ILoggerFactory loggerFactory
+Log.Logger = new LoggerConfiguration()
+    //.MinimumLevel.Debug()
+    //.WriteTo.File(Path.Combine(app.Environment.ContentRootPath, "DnsLogs.txt"), rollingInterval: RollingInterval.Day)
+    //.WriteTo.File("DnsLogs.txt", rollingInterval: RollingInterval.Day)
+    //.ReadFrom.Configuration(builder.Configuration)
+    .ReadFrom.Configuration(builder.Configuration)  
+    .CreateLogger();
+Log.Information("※※※[!] Application started.");
+// Serilog를 DI 컨테이너에 추가
+//builder.Host.UseSerilog();
+builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,6 +76,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 
