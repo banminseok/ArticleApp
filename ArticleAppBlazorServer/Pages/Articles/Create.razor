@@ -1,7 +1,55 @@
 ﻿@page "/Articles/Create"
+@using Microsoft.Extensions.Logging
+
+@inject IArticleRepository ArticleRepository
+@inject NavigationManager NavigationManager
+
 
 <h3>Create</h3>
-
+<div class="row">
+    <div class="col-md-12">
+        <EditForm Model="Model" method="post" FormName="createForm" OnValidSubmit="btnSubmit_Click" >
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary class="text-danger" role="alert"></ValidationSummary>
+            <div class="form-group">
+                <label for="txtTitle">Title</label>
+                <InputText id="txtTitle" class="form-control" @bind-Value="Model.Title"
+                           placeholder="Enter Title"  />
+                <ValidationMessage For="() => Model.Title" class="text-danger"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label for="txtContent">Content</label>
+                <InputTextArea id="txtContent" class="form-control" @bind-Value="Model.Content"
+                           placeholder="Enter Content" />
+                <ValidationMessage For="() => Model.Content" class="text-danger"></ValidationMessage>
+            </div>
+            <div class="form-group mt-1">
+                <button type="submit" class="btn btn-primary" id="createFormSubmit">Submit</button>
+                <a href="/Articles" class="btn btn-secondary">List</a>
+            </div>
+        </EditForm>
+    </div>
+</div>
 @code {
+    [Inject]
+    private ILogger<Create> Logger { get; set; }
 
+    private string? errorMessage;
+
+    [SupplyParameterFromForm]
+    public Article Model { get; set; } = new Article();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation("※※※[1]Create 폼 시작");
+    }
+
+    protected async Task btnSubmit_Click()
+    {
+        Logger.LogInformation("※※※[2]Create Submit");
+
+        await ArticleRepository.AddArticleAsync(Model);
+        //리스트 페이지로 이동
+        NavigationManager.NavigateTo("/Articles");
+    }
 }

@@ -28,8 +28,8 @@ namespace ArticleApp.Models
         /// <summary>
         /// 내용
         /// </summary>
-        //[Required(ErrorMessage = "내용을 입력하세요.")]
-        //public string Content { get; set; }
+        [Required(ErrorMessage = "내용을 입력하세요.")]
+        public string Content { get; set; }
 
         /// <summary>
         /// 공지글로 올리기

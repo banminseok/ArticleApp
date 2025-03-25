@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[Articles]
 	[Title] NVarChar(255) Not Null,					-- 제목
 	
 	-- TODO: Columns Add Region
-	--[Content] NVarChar(Max) Null,					-- 내용 => TODO: Not Null
+	[Content] NVarChar(Max) Null,					-- 내용 => TODO: Not Null
 
 
 
