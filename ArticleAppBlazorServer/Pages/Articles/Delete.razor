@@ -1,8 +1,75 @@
 ﻿@page "/Articles/Delete/{Id:int}"
 
+@inject ILogger<Delete> Logger
+@inject IArticleRepository ArticleRepository
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
 <h3>Delete</h3>
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group row">
+            <label for="id" class="col-sm-2 col-form-label">ID: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" id="id" value="@Model.Id" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" value="@Model.Title" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 col-form-label">Content: </label>
+            <hr />
+            <div class="col-sm-10">
+                @((MarkupString)content)
+            </div>
+        </div>
+        <div class="form-group">
+            <a href="/Articles/Delete/@Model.Id" class="btn btn-danger" @onclick="btnDelete_Click">Delete</a>
+            <a href="/Articles/Details/@Model.Id" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</div>
+
 @code {
+
+
     [Parameter]
     public int Id { get; set; }
+
+    private Article Model { get; set; } = new Article();
+
+    private string content = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation($"※※※[1] Delete Id= {Id}");
+
+        Model = await ArticleRepository.GetArticleByIdAsync(Id);
+
+        content = Dul.HtmlUtility.EncodeWithTabAndSpace(Model.Content);           // \n, \t, 공백 문자를 HTML 태그로 변환
+    }
+    protected async void btnDelete_Click()
+    {
+        Logger.LogInformation("※※※[1]Delete 처리");
+        //window.confirm() 함수를 사용하여 사용자에게 삭제 여부를 물어봄`
+        bool isDelete = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure to delete?");
+        if (isDelete)
+        {
+            await ArticleRepository.DeleteArticleAsync(Id);
+            //목록 페이지로 이동
+            Logger.LogInformation("※※※[1]Delete 완료");
+            NavigationManager.NavigateTo("/Articles");    
+        }
+        else
+        {
+            //window.alert() 함수를 사용하여 사용자에게 취소 처리를 알림
+            Logger.LogInformation("※※※[1]Delete 취소");
+            await JSRuntime.InvokeVoidAsync("alert", "Canceled");
+        }
+    }
 }
