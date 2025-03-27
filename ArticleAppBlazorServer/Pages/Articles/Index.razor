@@ -53,7 +53,7 @@
                                     @article.Title
                                 </a>
                             </td>
-                            <td></td>
+                            <td>@article.Created.ToShortTimeString()</td>
                             <td>
                                 <a href="/Articles/Details/@article.Id" class="btn btn-light">Details</a>
                                 <a href="/Articles/Edit/@article.Id" class="btn btn-light">Edit</a>
@@ -97,10 +97,19 @@
         //articles = await ArticleRepository.GetArticlesAsync();
 
         //[2] 페이징 처리
-        PagingResult<Article> pagingData = await ArticleRepository.GetAllAsync(pager.PageIndex, pager.PageSize);
-        pager.RecordCount = pagingData.TotalRecords; // 전체 레코드 수
-        Logger.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
-        articles = pagingData.Records.ToList(); // 현재 페이지의 레코드
+        try
+        {
+            PagingResult<Article> pagingData = await ArticleRepository.GetAllAsync(pager.PageIndex, pager.PageSize);
+            pager.RecordCount = pagingData.TotalRecords; // 전체 레코드 수
+            Logger.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+            articles = pagingData.Records.ToList(); // 현재 페이지의 레코드
+
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "index 오류");
+        }
+       
     }
 
     //pager버튼 클릭 콜백 함수

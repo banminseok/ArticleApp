@@ -10,13 +10,13 @@ CREATE TABLE [dbo].[Articles]
 
 
 
-	--[IsPinned] Bit Null Default(0),				-- 공지글로 올리기 
+	[IsPinned] Bit Null Default(0),				-- 공지글로 올리기 
 
 
 	-- AuditableBase.cs 참조
-	--[CreatedBy] NVarChar(255) Null,			-- 등록자(Creator)
-	--[Created] DateTime Default(GetDate()),	-- 생성일
-	--[ModifiedBy] NVarChar(255) Null,		-- 수정자(LastModifiedBy)
-	--[Modified] DateTime Null,				-- 수정일(LastModified)
+	[CreatedBy] NVarChar(255) Null,			-- 등록자(Creator)
+	[Created] DateTime Default(GetDate()),	-- 생성일
+	[ModifiedBy] NVarChar(255) Null,		-- 수정자(LastModifiedBy)
+	[Modified] DateTime Null,				-- 수정일(LastModified)
 )
 Go

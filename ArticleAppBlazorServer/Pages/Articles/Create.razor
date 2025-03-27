@@ -14,13 +14,13 @@
             <div class="form-group">
                 <label for="txtTitle">Title</label>
                 <InputText id="txtTitle" class="form-control" @bind-Value="Model.Title"
-                           placeholder="Enter Title"  />
+                placeholder="Enter Title"  />
                 <ValidationMessage For="() => Model.Title" class="text-danger"></ValidationMessage>
             </div>
             <div class="form-group">
                 <label for="txtContent">Content</label>
                 <InputTextArea id="txtContent" class="form-control" @bind-Value="Model.Content"
-                           placeholder="Enter Content" />
+                placeholder="Enter Content" />
                 <ValidationMessage For="() => Model.Content" class="text-danger"></ValidationMessage>
             </div>
             <div class="form-group mt-1">
@@ -47,8 +47,15 @@
     protected async Task btnSubmit_Click()
     {
         Logger.LogInformation("※※※[2]Create Submit");
-
-        await ArticleRepository.AddArticleAsync(Model);
+        try
+        {
+            await ArticleRepository.AddArticleAsync(Model);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            Logger.LogError(ex, "Create 오류");
+        }    
         //리스트 페이지로 이동
         NavigationManager.NavigateTo("/Articles");
     }

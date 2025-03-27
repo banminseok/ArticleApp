@@ -64,5 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
+    <None Include="..\ArticleAppBlazorServer\Pages\Articles\Component.razor">
+      <Link>Component.razor</Link>
+    </None>
   </ItemGroup>
 </Project>

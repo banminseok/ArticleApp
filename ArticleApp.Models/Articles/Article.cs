@@ -34,6 +34,11 @@ namespace ArticleApp.Models
         /// <summary>
         /// 공지글로 올리기
         /// </summary>
-        //public bool IsPinned { get; set; } = false;
+        public bool IsPinned { get; set; } = false;
+
+        public string? CreatedBy { get; set; } 
+        public DateTime Created { get; set; } = DateTime.Now;
+        public string? ModifiedBy { get; set; }
+        public DateTime? Modified { get; set; }
     }
 }
