@@ -1,5 +1,39 @@
-﻿<h3>ArticlePager</h3>
+﻿@using Dul.Web
+<h3>ArticlePager</h3>
 
+<div class="d-flex">
+
+    <ul class="pagination pagination-sm mx-auto">
+    </ul>
+    <Input type="button" value="1페이지" @onclick="@( ()=> PagerButtonClicked(1))"/>
+    <Input type="button" value="2페이지" @onclick="@( ()=> PagerButtonClicked(2))"/>
+    <Input type="button" value="3페이지" @onclick="@( ()=> PagerButtonClicked(3))"/>
+    <Input type="button" value="4페이지" @onclick="@( ()=> PagerButtonClicked(4))"/>
+</div>
 @code {
+    //부모로 부터 모든 페이저 관련된 정보가 담김 PagerBase 개체 받음
+    [Parameter]
+    public PagerBase Model { get; set; }
 
+    //Parameter 가 넘어오면 자동으로  Pager.PageCount 계산
+    protected override Task OnParametersSetAsync()
+    {
+        Model.PageCount = Convert.ToInt32( System.Math.Ceiling(Model.RecordCount / (double)Model.PageSize) );
+        return base.OnParametersSetAsync();
+    }
+
+    //부모의 콜백 함수 PageIndexChanged 호출
+    [Parameter]
+    public EventCallback<int> PageIndexChangedComponent { get; set; }
+
+    //Pager 버튼 클릭할때 현재 클릭한 페이지 번호를 부모에게 전달
+    private void PagerButtonClicked(int pageNumber)
+    {
+        Model.PageIndex = pageNumber-1;
+        Model.PageNumber = pageNumber;
+        Model.PageCount = Convert.ToInt32(System.Math.Ceiling(Model.RecordCount / (double)Model.PageSize));
+        //Model.PagerButtonCount = 5;
+        //부모의 콜백 함수 호출
+        PageIndexChangedComponent.InvokeAsync(Model.PageIndex);  //PageIndex 를 부모로 전송
+    }
 }
