@@ -50,6 +50,6 @@
 
         Model = await ArticleRepository.GetArticleByIdAsync(Id);
 
-        content = Dul.HtmlUtility.EncodeWithTabAndSpace(Model.Content);           // \n, \t, 공백 문자를 HTML 태그로 변환
+        content = Dul.HtmlUtility.EncodeWithTabAndSpace(Model?.Content);           // \n, \t, 공백 문자를 HTML 태그로 변환
     }
 }

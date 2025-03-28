@@ -6,7 +6,7 @@
 @using ArticleAppBlazorServer.Pages.Articles.Components;
 
 @inject IArticleRepository ArticleRepository;
-
+@inject NavigationManager NavigationManager;
 
 <h3>Index</h3>
 
@@ -48,7 +48,7 @@
                     {
                         <tr>
                             <td>@article.Id</td>
-                            <td>
+                            <td @onclick="@(()=>btnTitle_Click(article.Id))">
                                 <a href="/Articles/Details/@article.Id">
                                     @article.Title
                                 </a>
@@ -109,7 +109,7 @@
         {
             Logger.LogError(ex, "index 오류");
         }
-       
+
     }
 
     //pager버튼 클릭 콜백 함수
@@ -124,5 +124,15 @@
         articles = pagingData.Records.ToList(); // 현재 페이지의 레코드
 
         StateHasChanged(); //현재 페이지를 다시 그림
+    }
+
+    /// <summary>
+    ///  제목의 td 클릭시 상세 페이지로 이동
+    /// </summary>
+    /// <param name="id"></param>
+    private void btnTitle_Click(int id)
+    {
+        Logger.LogInformation($"※※※ [4] btnTitle_Click 호출 id={id}");
+        NavigationManager.NavigateTo($"/Articles/Details/{id}");
     }
 }
