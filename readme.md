@@ -1,7 +1,8 @@
 #    
 
 https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
-git : https://github.com/VisualAcademy/articleapp
+git :	01 https://github.com/VisualAcademy/articleapp
+		02 https://github.com/VisualAcademy/NoticeApp.DevLec
 
 
 # Nuget패키지 설치
