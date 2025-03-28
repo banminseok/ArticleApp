@@ -52,5 +52,7 @@ namespace ArticleApp.Models
         //[!] ArticleApp 솔루션 관련 모든 테이블에 대한 참조 
         public DbSet<Article> Articles { get; set; }
 
+        public DbSet<Notice> Notices { get; set; }
+
     }
 }
