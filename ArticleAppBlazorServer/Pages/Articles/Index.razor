@@ -2,6 +2,7 @@
 @page "/Articles/Index"
 
 @using ArticleAppBlazorServer.Pages.Articles.Components
+@using BmsPager
 
 <h3>Index</h3>
 
@@ -61,8 +62,8 @@
         }
     </div>
     <div class="col-md-12">
-        @* <DulPagerComponent Model="pager" PageIndexChanged="PageIndexChanged"></DulPagerComponent> *@
-        <ArticlePager Model="pager" PageIndexChangedComponent="PageIndexChangedIndex"></ArticlePager>
+        <BmsPagerComponent Model="pager" PageIndexChanged="PageIndexChangedIndex"></BmsPagerComponent>
+        @* <ArticlePager Model="pager" PageIndexChangedComponent="PageIndexChangedIndex"></ArticlePager> *@
     </div>
 </div>
 

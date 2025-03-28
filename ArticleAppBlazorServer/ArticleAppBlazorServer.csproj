@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArticleApp.Models\ArticleApp.Models.csproj" />
+    <ProjectReference Include="..\BmsPager\BmsPager.csproj" />
   </ItemGroup>
 
 </Project>

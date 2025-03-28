@@ -1,7 +1,9 @@
 ﻿using ArticleApp.Models;
+using BmsPager;
 using Dul.Domain.Common;
 using Dul.Web;
 using Microsoft.AspNetCore.Components;
+
 
 namespace ArticleAppBlazorServer.Pages.Articles
 {
@@ -19,7 +21,7 @@ namespace ArticleAppBlazorServer.Pages.Articles
         private List<Article> articles;
 
         // 페이저 객체 생성
-        private PagerBase pager = new PagerBase()
+        private BmsPagerBase pager = new BmsPagerBase()
         {
             PageNumber = 1,
             PageIndex = 0,
