@@ -1,11 +1,9 @@
 ﻿@page "/Articles/Create"
 @using Microsoft.Extensions.Logging
 
-@inject IArticleRepository ArticleRepository
-@inject NavigationManager NavigationManager
-
 
 <h3>Create</h3>
+
 <div class="row">
     <div class="col-md-12">
         <EditForm Model="Model" method="post" FormName="createForm" OnValidSubmit="btnSubmit_Click" >
@@ -30,33 +28,4 @@
         </EditForm>
     </div>
 </div>
-@code {
-    [Inject]
-    private ILogger<Create> Logger { get; set; }
 
-    private string? errorMessage;
-
-    [SupplyParameterFromForm]
-    public Article Model { get; set; } = new Article();
-
-    protected override async Task OnInitializedAsync()
-    {
-        Logger.LogInformation("※※※[1]Create 폼 시작");
-    }
-
-    protected async Task btnSubmit_Click()
-    {
-        Logger.LogInformation("※※※[2]Create Submit");
-        try
-        {
-            await ArticleRepository.AddArticleAsync(Model);
-        }
-        catch (Exception ex)
-        {
-            errorMessage = ex.Message;
-            Logger.LogError(ex, "Create 오류");
-        }    
-        //리스트 페이지로 이동
-        NavigationManager.NavigateTo("/Articles");
-    }
-}
