@@ -12,16 +12,9 @@
 <div class="row mb-2">
     <div class="col-md-12">
         <a href="/Articles/Create" class="btn btn-primary">Create</a>
-        <AuthorizeView>
-            <Authorized>
-            </Authorized>
-            <NotAuthorized>
-                <a href="/Articles/Manage" class="btn btn-primary">Manage</a>
-            </NotAuthorized>
-        </AuthorizeView>
-        <AuthorizeView Roles="Administrators, Managers">
-            <a href="/Articles/Manage" class="btn btn-primary">Manage</a>
-        </AuthorizeView>
+        <input type="button" value="Create(Modal)" class="btn btn-primary"
+        data-toggle="modal" data-target="#articleEditDialog" @onclick="btnCreate_Click" />
+
     </div>
 </div>
 
@@ -42,6 +35,7 @@
                         <th>IsPinned</th>
                         <th>&nbsp;</th>
                         <th>&nbsp;</th>
+                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -66,7 +60,11 @@
                                 <input type="button" value="공지글로 올리기" @onclick="@(()=>PinnedBy(article))" />
                             </td>
                             <td>
-                                <input type="button" value="Delete" class="btn btn-danger" 
+                                <input type="button" value="Edit" class="btn btn-light" 
+                                data-toggle="modal" data-target="#articleEditDialog" @onclick="@(()=>EditBy(article))" />
+                            </td>
+                            <td>
+                                <input type="button" value="Delete" class="btn btn-danger"
                                 data-toggle="modal" data-target="#articleDeleteDialog" @onclick="@(()=>DeleteBy(article))" />
                             </td>
                         </tr>
@@ -80,7 +78,11 @@
         <ArticlePager Model="pager" PageIndexChangedComponent="PageIndexChangedIndex"></ArticlePager>
     </div>
     <ArticleDeleteDialog OnClickParam="btnDelete_Click"></ArticleDeleteDialog>
-
+    <ArticleEditorForm Model="selectArticle" SaveOrUpdate="parentSaveOrUpdate">
+        <EditorFormTitle>
+            @((MarkupString)editorFormTitle)
+        </EditorFormTitle>
+    </ArticleEditorForm>
     @if (isShow)
     {
         <div class="modal fade show d-block" tabindex="-1" role="dialog">
@@ -108,6 +110,8 @@
     [Inject]
     private ILogger<Create> Logger { get; set; }
 
+    private string editorFormTitle = ""; //페이지 타이틀
+
     private bool isShow = false;    // 모달 창 표시 여부
     private Article selectArticle = new Article(); // 선택한 항목 (관리)
     private List<Article> articles;
@@ -120,6 +124,37 @@
             PageSize = 3,
             PagerButtonCount = 5
         };
+    /// <summary>
+    /// 새로만들기 창 띄우기
+    /// </summary>
+    private void btnCreate_Click()
+    {
+        editorFormTitle = "<h5>새로 만들기</h5>";
+        selectArticle = new Article();
+        Logger.LogInformation($"※※※ [1] 새로만들기 시작 ,모달창은 부트스트랩(data-toggle='modal' data-target='#articleEditDialog')으로 띄움");
+    }
+    /// <summary>
+    /// editForm에서 저장 또는 수정 후 부모 컴포넌트 새로고침
+    /// </summary>
+    private async void parentSaveOrUpdate()
+    {
+        PagingResult<Article> pagingData = await ArticleRepository.GetAllAsync(pager.PageIndex, pager.PageSize);
+        pager.RecordCount = pagingData.TotalRecords; // 전체 레코드 수
+        Logger.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+        articles = pagingData.Records.ToList(); // 현재 페이지의 레코드
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// 수정
+    /// </summary>
+    /// <param name="article"></param>
+    private void EditBy(Article article)
+    {
+        editorFormTitle = "<h5>수정하기</h5>"; 
+        selectArticle = article;
+        Logger.LogInformation($"※※※ [1] 수정하기 : {selectArticle.Id}, 모달창은 부트스트랩(data-toggle='modal' data-target='#articleEditDialog')으로 띄움");
+    }
 
     /// <summary>
     /// 삭제  
