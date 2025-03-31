@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleAppBlazorServer", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BmsPager", "BmsPager\BmsPager.csproj", "{4536C114-92D4-4736-B42F-19B118D1F89A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoticeApp.Apis", "NoticeApp.Apis\NoticeApp.Apis.csproj", "{655116F0-9506-4C6D-A974-59D4BB152D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{4536C114-92D4-4736-B42F-19B118D1F89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4536C114-92D4-4736-B42F-19B118D1F89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4536C114-92D4-4736-B42F-19B118D1F89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655116F0-9506-4C6D-A974-59D4BB152D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655116F0-9506-4C6D-A974-59D4BB152D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655116F0-9506-4C6D-A974-59D4BB152D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655116F0-9506-4C6D-A974-59D4BB152D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

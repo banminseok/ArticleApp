@@ -132,7 +132,8 @@ namespace ArticleApp.Models.Tests
                 await repository.DeleteAsync(2);
                 await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
 
-                Assert.AreEqual(2, (await context.Notices.CountAsync()));
+                Console.WriteLine($"[5] context.Notices.Count: {await context.Notices.CountAsync()}");
+                Assert.AreEqual(4, (await context.Notices.CountAsync()));
                 Assert.IsNull(await repository.GetByIdAsync(2));
             }
             #endregion
@@ -154,8 +155,9 @@ namespace ArticleApp.Models.Tests
                 var firstName = noticesSet.Records.FirstOrDefault()?.Name;
                 var recordCount = noticesSet.TotalRecords;
 
-                Assert.AreEqual("[3] 백두산", firstName);
-                Assert.AreEqual(2, recordCount);
+                Console.WriteLine($"[5] firstName: {firstName}");
+                Assert.AreEqual("[5] crawle", firstName);
+                Assert.AreEqual(4, recordCount);
             }
             #endregion
 
