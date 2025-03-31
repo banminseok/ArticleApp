@@ -95,8 +95,7 @@ namespace ArticleApp.Models.Tests
                 Assert.AreEqual("[2] 홍길동", model.Name);
             }
             #endregion
-            return;
-
+            
             #region [4] EditAsync() Method Test
             //[4] EditAsync() Method Test
             using (var context = new ArticleAppDbContext(options))
