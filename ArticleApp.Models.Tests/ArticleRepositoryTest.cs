@@ -33,7 +33,7 @@ namespace ArticleApp.Models.Tests
                 // Repository 클래스 생성
                 var repository = new ArticleRepository(context);
                 //var model = new Article { Title = "[1] 게시판 시작", Created = DateTime.Now };
-                var model = new Article { Title = "[1] 게시판 시작" };
+                var model = new Article { Title = "[1] 게시판 시작", Content="Article 컨텐츠 내용", Created = DateTime.Now };
                 await repository.AddArticleAsync(model);
                 await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
             }
@@ -59,10 +59,10 @@ namespace ArticleApp.Models.Tests
                     // using (var transaction = context.Database.BeginTransaction()) { transaction.Commit(); }
 
                     var repository = new ArticleRepository(context);
-                    var model = new Article { Title = "[2] 게시판 가동" };
+                    var model = new Article { Title = "[2] 게시판 가동", Content = "Article 컨텐츠 내용" };
                     await context.Articles.AddAsync(model);
                     await context.SaveChangesAsync(); //[1]
-                    await context.Articles.AddAsync(new Article { Title = "[3] 게시판 중지" });
+                    await context.Articles.AddAsync(new Article { Title = "[3] 게시판 중지", Content = "Article 컨텐츠 내용" });
                     await context.SaveChangesAsync(); //[2]
                 }
                 catch (Exception e)

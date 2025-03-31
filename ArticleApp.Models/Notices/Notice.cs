@@ -50,7 +50,7 @@ namespace ArticleApp.Models
         /// 등록자(Creator)
         /// </summary>
         //[MaxLength(255)]
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// 등록일(PostDate)
@@ -62,7 +62,7 @@ namespace ArticleApp.Models
         /// 수정자: LastModifiedBy, ModifiedBy
         /// </summary>
         [MaxLength(255)]
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
 
         /// <summary>
         /// 수정일: LastModified, Modified
