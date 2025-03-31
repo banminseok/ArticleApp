@@ -36,10 +36,19 @@ namespace ArticleApp.Models
         //[6][2] 출력
         public async Task<List<Notice>> GetAllAsync()
         {
-            var models= await _context.Notices
-                //.Include(m => m.NoticesComments)
-                .ToListAsync();
-            return models;
+            try
+            {
+                return await _context.Notices
+                        //.Include(m => m.NoticesComments)
+                        .OrderByDescending(m => m.Id)
+                        .ToListAsync();
+            }
+            catch (Exception e)
+            {
+
+                _logger.LogError($"Error ({nameof(GetAllAsync)}):{e.Message}");
+            }
+            return null;
 
         }
 

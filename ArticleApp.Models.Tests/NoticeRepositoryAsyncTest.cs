@@ -50,8 +50,6 @@ namespace ArticleApp.Models.Tests
             }
             #endregion
 
-            return;
-
             #region [2] GetAllAsync() Method Test
             //[2] GetAllAsync() Method Test
             using (var context = new ArticleAppDbContext(options))
@@ -65,7 +63,11 @@ namespace ArticleApp.Models.Tests
                 //[B] Act
                 await repository.AddAsync(model); // Id: 2
                 await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
-                await repository.AddAsync(new Notice { Name = "[3] 백두산", Title = "공지사항입니다." }); // Id: 3
+                await repository.AddAsync(new Notice { Name = "[3] 백두산", Title = "공지사항입니다.", Content = "내용입니다." }); // Id: 3
+                await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
+                await repository.AddAsync(new Notice { Name = "[4] turtle", Title = "바다거북.", Content = "a turtle 명사." }); // Id: 4
+                await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
+                await repository.AddAsync(new Notice { Name = "[5] crawle", Title = "(업드려서)기어가다.", Content = "동사, 명사 a crawle." }); // Id: 5
                 await context.SaveChangesAsync(); // 메모리 DB 사용 시 필요
             }
             using (var context = new ArticleAppDbContext(options))
@@ -73,10 +75,12 @@ namespace ArticleApp.Models.Tests
                 //[C] Assert
                 var repository = new NoticeRepositoryAsync(context, factory);
                 var models = await repository.GetAllAsync();
-                Assert.AreEqual(3, models.Count()); // TotalRecords: 3
+                Assert.AreEqual(5, models.Count()); // TotalRecords: 5
+                Console.WriteLine($"[2] models.Count: {models.Count()}");
             }
             #endregion
 
+ 
             #region [3] GetByIdAsync() Method Test
             //[3] GetByIdAsync() Method Test
             using (var context = new ArticleAppDbContext(options))
@@ -91,6 +95,7 @@ namespace ArticleApp.Models.Tests
                 Assert.AreEqual("[2] 홍길동", model.Name);
             }
             #endregion
+            return;
 
             #region [4] EditAsync() Method Test
             //[4] EditAsync() Method Test
