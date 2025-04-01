@@ -39,7 +39,7 @@ namespace ArticleAppBlazorServer.Pages.Notices
         /// <returns></returns>
         private async Task DisplayData()
         {
-            await Task.Delay(3000);
+            await Task.Delay(1000);
             try
             {
                 var resultsSet = await NoticeRepositoryAsyncReference.GetAllAsync(pager.PageIndex, pager.PageSize);
