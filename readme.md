@@ -12,6 +12,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
   System.Configuration.ConfigurationManager
   System.Data.SqlClient  (ÂüÁ¶ : https://ddochea.tistory.com/189)
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
+  MatBlazor 
 
   Dapper
   Serilog

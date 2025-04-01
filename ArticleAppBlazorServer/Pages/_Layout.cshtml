@@ -10,7 +10,8 @@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
-    <link href="ArticleAppBlazorServer.styles.css" rel="stylesheet" />
+    <link href="ArticleAppBlazorServer.styles.css" rel="stylesheet" />    
+    <link href="_content/MatBlazor/dist/matBlazor.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
@@ -30,7 +31,7 @@
     <script src="_framework/blazor.server.js"></script>
     <script src="~/lib/jquery.js"></script>
     <script src="~/lib/dist/js/bootstrap.js"></script>
-
+    <script src="_content/MatBlazor/dist/matBlazor.js"></script>
     <script>
         // 넘어온 ID를 갖는 모달 창 닫기
         function closeModal(modalId) {

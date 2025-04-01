@@ -121,6 +121,7 @@ namespace ArticleApp.Models
                     .Skip(pageIndex * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
+                _logger.LogInformation($"pageIndex:{pageIndex}, pageSize:{pageSize} , totalRecords : {totalRecords}, skip: {(pageIndex * pageSize)} ");
 
                 return new PagingResult<Notice>(models, totalRecords);
                 

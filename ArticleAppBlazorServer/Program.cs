@@ -23,6 +23,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
+#region 공지사항(NoticeApp) 관련 의존성(종속성) 주입 관련 코드만 따로 모아서 관리 
 // ArticleAppDbContext.cs Inject: New DbContext Add
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
 {
@@ -30,6 +31,8 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>
 });
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
+builder.Services.AddTransient<INoticeRepositoryAsync, NoticeRepositoryAsync>();
+#endregion
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
