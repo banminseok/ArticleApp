@@ -76,6 +76,8 @@
                                 <td>
                                     <input type="button" name="btnEdit" value="Edit(Modal)" class="btn btn-primary"
                                            @onclick="(()=>EditBy(m))" />
+                                    <input type="button" name="btnDelete" value="Delete(Modal)" class="btn btn-primary"
+                                           @onclick="(()=>DeleteBy(m))" />
                                 </td>
                             </tr>
                         }
@@ -99,5 +101,9 @@
 >
     <EditorFormTitle>@EditorFormTitle</EditorFormTitle>
 </ArticleAppBlazorServer.Pages.Notices.Components.EditorForm>
+<ArticleAppBlazorServer.Pages.Notices.Components.DeleteDialog
+    @ref="DeleteDialogReference"
+    OnClick="DeleteClick">
+</ArticleAppBlazorServer.Pages.Notices.Components.DeleteDialog>
 
 

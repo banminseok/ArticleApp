@@ -19,6 +19,7 @@ namespace ArticleAppBlazorServer.Pages.Notices
         public NavigationManager NavigationManagerReference { get; set; }
 
         public ArticleAppBlazorServer.Pages.Notices.Components.EditorForm EditFormReference { get; set; }
+        public ArticleAppBlazorServer.Pages.Notices.Components.DeleteDialog DeleteDialogReference { get; set; }
 
         protected List<Notice> models;
         protected Notice model = new Notice();
@@ -101,6 +102,14 @@ namespace ArticleAppBlazorServer.Pages.Notices
             this.model = model;
             EditFormReference.Show();
         }
+        protected void DeleteBy(Notice model)
+        {
+            LoggerReference.LogInformation($"DeleteBy: {model.Id}");
+            //삭제 처리 다이얼 로그
+            this.model = model;
+            DeleteDialogReference.Show();
+
+        }
 
         /// <summary>
         /// EditorForm에서 CreateCallback 이벤트가 발생하면 호출되는 메서드
@@ -111,5 +120,16 @@ namespace ArticleAppBlazorServer.Pages.Notices
             await DisplayData();
             StateHasChanged();
         }
+        /// <summary>
+        /// DeleteDialog에서 DeleteCallback 이벤트가 발생하면 호출되는 메서드
+        /// </summary>
+        protected async void DeleteClick()
+        {
+            await NoticeRepositoryAsyncReference.DeleteAsync(this.model.Id);
+            DeleteDialogReference.Hide();
+            this.model = new Notice();
+            await DisplayData();
+        }
+
     }
 }
