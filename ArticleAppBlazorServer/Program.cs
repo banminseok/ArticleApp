@@ -28,7 +28,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+}, ServiceLifetime.Transient);
+
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<INoticeRepositoryAsync, NoticeRepositoryAsync>();

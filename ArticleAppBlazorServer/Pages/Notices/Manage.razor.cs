@@ -18,6 +18,9 @@ namespace ArticleAppBlazorServer.Pages.Notices
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
 
+        [Parameter]
+        public int ParentId { get; set; } = 0;
+
         public ArticleAppBlazorServer.Pages.Notices.Components.EditorForm EditFormReference { get; set; }
         public ArticleAppBlazorServer.Pages.Notices.Components.DeleteDialog DeleteDialogReference { get; set; }
 
@@ -26,6 +29,11 @@ namespace ArticleAppBlazorServer.Pages.Notices
 
         //입력폼 제목
         public string EditorFormTitle { get; set; } = "Create";
+
+        /// <summary>
+        /// 공지사항으로 올리기 폼을 띄울건지 여부 
+        /// </summary>
+        public bool IsInlineDialogShow { get; set; } = false;
 
         // 페이저 객체 생성
         private BmsPagerBase pager = new BmsPagerBase()
@@ -48,13 +56,23 @@ namespace ArticleAppBlazorServer.Pages.Notices
         /// <returns></returns>
         private async Task DisplayData()
         {
-            await Task.Delay(1000);
+            
             try
             {
-                var resultsSet = await NoticeRepositoryAsyncReference.GetAllAsync(pager.PageIndex, pager.PageSize);
-                pager.RecordCount = resultsSet.TotalRecords;
-                LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
-                models = resultsSet.Records.ToList();
+                if (ParentId == 0)
+                {
+                    await Task.Delay(500);
+                    var resultsSet = await NoticeRepositoryAsyncReference.GetAllAsync(pager.PageIndex, pager.PageSize);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();                    
+                }
+                else
+                {
+                    var resultsSet = await NoticeRepositoryAsyncReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
                 StateHasChanged(); //현재 페이지를 다시 그림
             }
             catch (Exception e)
@@ -109,6 +127,25 @@ namespace ArticleAppBlazorServer.Pages.Notices
             this.model = model;
             DeleteDialogReference.Show();
 
+        }
+
+        protected void ToggleBy(Notice modal)
+        {
+            this.model = modal; 
+            IsInlineDialogShow = true;
+        }
+        protected void ToggleClose()
+        {
+            IsInlineDialogShow = false;
+            this.model = new Notice();
+        }
+        protected async void ToggleClick()
+        {
+            this.model.IsPinned = !this.model.IsPinned;
+            await NoticeRepositoryAsyncReference.EditAsync(this.model);
+            IsInlineDialogShow = false;
+            this.model = new Notice();
+            await DisplayData();
         }
 
         /// <summary>
