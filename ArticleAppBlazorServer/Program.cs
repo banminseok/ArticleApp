@@ -28,7 +28,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-}, ServiceLifetime.Transient);
+}, ServiceLifetime.Transient); // 서비스 수명주기: Transient로 중복 호출시 사용..
 
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();

@@ -46,7 +46,7 @@ namespace ArticleAppBlazorServer.Pages.Notices
                 pager.RecordCount = resultsSet.TotalRecords;
                 LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
                 models = resultsSet.Records.ToList();
-                StateHasChanged(); //현재 페이지를 다시 그림
+                
             }
             catch (Exception e)
             {
@@ -60,7 +60,17 @@ namespace ArticleAppBlazorServer.Pages.Notices
         /// <returns></returns>
         private async Task SearchData()
         {
-
+            try
+            {
+                var resultsSet = await NoticeRepositoryAsyncReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                pager.RecordCount = resultsSet.TotalRecords;
+                LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+                models = resultsSet.Records.ToList();
+            }
+            catch (Exception e)
+            {
+                LoggerReference.LogInformation($"※※※Error ({nameof(SearchData)}):{e.Message}");
+            }
         }
 
         protected void NameClick(int id)
@@ -78,7 +88,28 @@ namespace ArticleAppBlazorServer.Pages.Notices
         {
             pager.PageIndex = pageIndex;
             pager.PageNumber = pageIndex + 1;
-            await DisplayData();
+            if (this.searchQuery == "")
+            {
+                await DisplayData();
+            }
+            else
+            {
+                await SearchData();
+            }
+            
+
+            StateHasChanged(); //현재 페이지를 다시 그림
+        }
+
+        private string searchQuery = "";
+
+        protected async void Search(string query)
+        {
+            this.searchQuery = query;
+
+            await SearchData();
+
+            StateHasChanged();
         }
     }
 }
