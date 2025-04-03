@@ -16,5 +16,6 @@ namespace ArticleApp.Models
         Task<Tuple<int, int>> GetStatus(int parentId);
         Task<bool> DeleteAllByParentId(int parentId);
         Task<SortedList<int, double>> GetMonthlyCreateCountAsync();
+        Task<SortedList<int, double>> GetMonthlyCreateCountGroupByAsync();
     }
 }

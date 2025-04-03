@@ -73,7 +73,6 @@ namespace ArticleAppBlazorServer.Pages.Notices
                     models = resultsSet.Records.ToList();
                 }
                 LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
-                StateHasChanged(); //현재 페이지를 다시 그림
             }
             catch (Exception e)
             {
@@ -87,7 +86,26 @@ namespace ArticleAppBlazorServer.Pages.Notices
         /// <returns></returns>
         private async Task SearchData()
         {
-
+            try
+            {
+                if (ParentId == 0)
+                {
+                    var resultsSet = await NoticeRepositoryAsyncReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                else
+                {
+                    var resultsSet = await NoticeRepositoryAsyncReference.SearchAllByParentIdAsync(pager.PageIndex, pager.PageSize, this.searchQuery, this.ParentId);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+            }
+            catch (Exception e)
+            {
+                LoggerReference.LogInformation($"※※※Error ({nameof(SearchData)}):{e.Message}");
+            }
         }
 
         protected void NameClick(int id)
@@ -105,7 +123,17 @@ namespace ArticleAppBlazorServer.Pages.Notices
         {
             pager.PageIndex = pageIndex;
             pager.PageNumber = pageIndex + 1;
-            await DisplayData();
+            if (this.searchQuery == "")
+            {
+                await DisplayData();
+            }
+            else
+            {
+                await SearchData();
+            }
+
+
+            StateHasChanged(); //현재 페이지를 다시 그림
         }
 
         protected void ShowEditorForm()
@@ -166,6 +194,17 @@ namespace ArticleAppBlazorServer.Pages.Notices
             DeleteDialogReference.Hide();
             this.model = new Notice();
             await DisplayData();
+        }
+
+        private string searchQuery = "";
+
+        protected async void Search(string query)
+        {
+            this.searchQuery = query;
+
+            await SearchData();
+
+            StateHasChanged();
         }
 
     }

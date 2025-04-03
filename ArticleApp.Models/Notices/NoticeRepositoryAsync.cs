@@ -270,5 +270,32 @@ namespace ArticleApp.Models
 
             return await Task.FromResult(createCounts);
         }
+
+        public async Task<SortedList<int, double>> GetMonthlyCreateCountGroupByAsync()
+        {
+            SortedList<int, double> createCounts = new SortedList<int, double>();
+            var current = DateTime.Now;
+            var twelveMonthsAgo = DateTime.Now.AddMonths(-12);
+            var monthlyCounts = await _context.Notices
+                .Where(m=> m.Created != null && m.Created >= twelveMonthsAgo && m.Created <= current)
+                .GroupBy(m => new { m.Created.Value.Year, m.Created.Value.Month })
+                .Select(group => new
+                {
+                    Year = group.Key.Year,
+                    Month = group.Key.Month,
+                    Count = group.Count()
+                }).ToListAsync();
+            // 1월부터 12월까지 0.0으로 초기화  {3, 3.0},
+            for (int i = 1; i <= 12; i++)
+            {
+                createCounts[i] = 0.0;
+            }
+            // 1월부터 12월까지 0.0으로 초기화  {3, 3.0},
+            for (int i = 1; i <= 12; i++)
+            {
+                createCounts[i] = monthlyCounts.FirstOrDefault(x => x.Month == i).Count;
+            }
+            return await Task.FromResult(createCounts);
+        }
     }
 }
