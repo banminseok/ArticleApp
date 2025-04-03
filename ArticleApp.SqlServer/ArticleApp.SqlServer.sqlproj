@@ -62,6 +62,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Articles.sql" />
     <Build Include="dbo\Tables\Notices.sql" />
+    <Build Include="dbo\Tables\Uploads.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />

@@ -34,6 +34,7 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<INoticeRepositoryAsync, NoticeRepositoryAsync>();
+builder.Services.AddTransient<IUploadRepository, UploadRepository>();
 #endregion
 
 #region Serilog

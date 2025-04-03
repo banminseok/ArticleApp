@@ -3,6 +3,8 @@
 https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 git :	01 https://github.com/VisualAcademy/articleapp
 		02 https://github.com/VisualAcademy/NoticeApp.DevLec
+		03 https://github.com/VisualAcademy/UploadApp
+
 
 
 # Nuget패키지 설치
@@ -13,6 +15,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
   System.Data.SqlClient  (참조 : https://ddochea.tistory.com/189)
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
   MatBlazor 
+  Charts.Blazor
 
   Dapper
   Serilog
@@ -22,6 +25,11 @@ git :	01 https://github.com/VisualAcademy/articleapp
   controller - ctor(ILogger<HomeController> logger)
   _logger.LogInformation("로그문구.....");
   -------------------------------------------------------------------------
+
+# UploadApp
+업로드 게시판인데, 대용량처리를 위해 mvc를 사용하고,
+
+
 
 # --------------------------------------------------------------------------------------------------------------------------------
 # ArticleApp 리포지토리

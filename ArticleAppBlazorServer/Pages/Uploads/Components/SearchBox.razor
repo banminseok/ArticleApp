@@ -1,0 +1,26 @@
+﻿﻿@*<div class="search">
+    <i class="oi oi-eye"></i>
+    <input placeholder="Search..."
+           @attributes="AdditionalAttributes" @bind="SearchQuery" @bind:event="oninput" />
+    <input type="button" value="Search" @onclick="Search" />
+</div>*@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>&nbsp;
+                </div>
+                <div class="col">
+                    <input class="form-control form-control-sm form-control-borderless" type="search" placeholder="Search topics or keywords"
+                           @attributes="AdditionalAttributes" @bind="SearchQuery" @bind:event="oninput">@* 
+                    •	@bind="SearchQuery": 입력 필드의 값을 SearchQuery 속성과 바인딩합니다. 사용자가 입력 필드에 값을 입력하면 SearchQuery 속성에 해당 값이 자동으로 설정됩니다. 반대로, SearchQuery 속성의 값이 변경되면 입력 필드의 값도 자동으로 업데이트됩니다.
+                    •	@bind:event="oninput": 기본적으로 @bind는 onchange 이벤트를 사용하여 값을 바인딩합니다. @bind:event="oninput"을 사용하면 oninput 이벤트를 사용하여 값을 바인딩합니다. 이는 사용자가 입력 필드에 값을 입력할 때마다 즉시 SearchQuery 속성이 업데이트됨을 의미합니다. *@
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-sm btn-success" type="submit" @onclick="Search">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
