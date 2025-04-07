@@ -16,6 +16,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
   MatBlazor 
   Charts.Blazor
+  BlazorInputFile
 
   Dapper
   Serilog
@@ -28,7 +29,12 @@ git :	01 https://github.com/VisualAcademy/articleapp
 
 # UploadApp
 업로드 게시판인데, 대용량처리를 위해 mvc를 사용하고,
-
+Network Services 에 대해 쓰기권한..
+  1. Network Services에 쓰기 권한 부여
+  2. IIS에서 Application Pool의 Identity를 Network Service로 변경
+  3. Network Service에 쓰기 권한 부여
+  4. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.dll
+  5. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.pdb
 
 
 # --------------------------------------------------------------------------------------------------------------------------------

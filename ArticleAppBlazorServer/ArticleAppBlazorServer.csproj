@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="ChartJs.Blazor" Version="1.1.0" />
     <PackageReference Include="Dul" Version="1.3.3" />
     <PackageReference Include="MatBlazor" Version="2.10.0" />
@@ -29,6 +30,12 @@
   <ItemGroup>
     <ProjectReference Include="..\ArticleApp.Models\ArticleApp.Models.csproj" />
     <ProjectReference Include="..\BmsPager\BmsPager.csproj" />
+    <ProjectReference Include="..\UploadApp.Shared\UploadApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
+    <Folder Include="wwwroot\Upload\" />
   </ItemGroup>
 
 </Project>

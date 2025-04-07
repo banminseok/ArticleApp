@@ -1,5 +1,9 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Services;
+using BlazorInputFile;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using UploadApp.Shared;
 
 namespace ArticleAppBlazorServer.Pages.Uploads.Components
 {
@@ -11,6 +15,12 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
         /// </summary>
         [Inject]
         public IUploadRepository UploadRepositoryReference { get; set; }
+
+        [Inject]
+        public IFileUploadService FileUploadService { get; set; }
+
+        [Inject]
+        public IFileStorageManager FileStorageManager { get; set; }
         #endregion
 
         #region Fields
@@ -77,6 +87,37 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
         /// </summary>
         protected async void CreateOrEditClick()
         {
+            #region 파일 업로드 관련 추가 코드 영역
+            if (selectedFiles != null && selectedFiles.Length > 0)
+            {
+                // 파일 업로드
+                var file = selectedFiles.FirstOrDefault();
+                var fileName = "";
+                int fileSize = 0;
+                if (file != null)
+                {
+                    //file.Name = $"{DateTime.Now.ToString("yyyyMMddhhmmss")}{file.Name}";
+                    fileName = file.Name;
+                    fileSize = Convert.ToInt32(file.Size);
+
+                    //[A] byte[] 형태
+                    var ms = new MemoryStream();
+                    await file.Data.CopyToAsync(ms);
+                    await FileStorageManager.UploadAsync(ms.ToArray(), file.Name, "", true);
+                    //[B] Stream 형태
+                    //string folderPath = Path.Combine(WebHostEnvironment.WebRootPath, "files");
+                    //
+                    //await FileStorageManager.UploadAsync(file.Data, file.Name, "", true);
+                    //await FileUploadService.UploadAsync(file);
+
+                    Model.FileName = fileName;
+                    Model.FileSize = fileSize;
+                }
+            }
+            #endregion
+     
+
+
             if (!int.TryParse(parentId, out int newParentId))
             {
                 newParentId = 0;
@@ -97,6 +138,15 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
             }
             //IsShow = false; // this.Hide()
         }
+
+        private IFileListEntry[] selectedFiles;
+        protected void HandleSelection(IFileListEntry[] files)
+        {
+            this.selectedFiles = files;
+        }
+
+        
+
         #endregion
     }
 }

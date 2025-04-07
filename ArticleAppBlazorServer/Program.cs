@@ -1,6 +1,8 @@
 using ArticleApp.Models;
 using ArticleAppBlazorServer.Areas.Identity;
 using ArticleAppBlazorServer.Data;
+using ArticleAppBlazorServer.Managers;
+using ArticleAppBlazorServer.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
@@ -8,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using UploadApp.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +39,10 @@ builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<INoticeRepositoryAsync, NoticeRepositoryAsync>();
 builder.Services.AddTransient<IUploadRepository, UploadRepository>();
 #endregion
+
+builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+builder.Services.AddTransient<IFileStorageManager, FileStorageManager>();  //Local File System
+//builder.Services.AddTransient<IFileStorageManager, BlobStoragedManager>();  //Azure Blob Storage
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
