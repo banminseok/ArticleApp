@@ -1,8 +1,12 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Managers;
+using BlazorUtils;
 using BmsPager;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
 using System.Threading.Tasks;
+using UploadApp.Shared;
 
 
 namespace ArticleAppBlazorServer.Pages.Uploads
@@ -17,6 +21,12 @@ namespace ArticleAppBlazorServer.Pages.Uploads
 
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
+
+        [Inject]
+        public IFileStorageManager FileStorageManagerReference { get; set; }
+
+        [Inject]
+        public IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
         public int ParentId { get; set; } = 0;
@@ -162,6 +172,30 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             this.model = modal; 
             IsInlineDialogShow = true;
         }
+        protected async void DownloadBy(Upload model)
+        {
+            if(!string.IsNullOrEmpty(model.FileName))
+            {
+                byte[] fileBytes = await FileStorageManagerReference.DownloadAsync(model.FileName, "");
+                if (fileBytes != null)
+                {
+                    // DownCount
+                    // model.DownloadCount++;
+                    //await UploadRepositoryReference.EditAsync(model);
+
+                    await FileUtil.SaveAs(JSRuntime, model.FileName, fileBytes);
+                }
+                else
+                {
+                    LoggerReference.LogInformation($"DownloadBy: {model.Id} - FileBytes is null");
+                }
+            }
+            else
+            {
+                LoggerReference.LogInformation($"DownloadBy: {model.Id} - FilePath is null");
+            }
+        }
+
         protected void ToggleClose()
         {
             IsInlineDialogShow = false;
@@ -190,6 +224,11 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         /// </summary>
         protected async void DeleteClick()
         {
+            if(!string.IsNullOrEmpty(this.model?.FileName))
+            {
+                // 첨부 파일 삭제 
+                await FileStorageManagerReference.DeleteAsync(this.model.FileName, "");
+            }
             await UploadRepositoryReference.DeleteAsync(this.model.Id);
             DeleteDialogReference.Hide();
             this.model = new Upload();

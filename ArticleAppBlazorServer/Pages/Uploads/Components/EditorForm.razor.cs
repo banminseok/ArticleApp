@@ -21,6 +21,9 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
 
         [Inject]
         public IFileStorageManager FileStorageManager { get; set; }
+
+        [Inject]
+        public IWebHostEnvironment WebHostEnvironment { get; set; }
         #endregion
 
         #region Fields
@@ -101,14 +104,14 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
                     fileSize = Convert.ToInt32(file.Size);
 
                     //[A] byte[] 형태
-                    var ms = new MemoryStream();
-                    await file.Data.CopyToAsync(ms);
-                    await FileStorageManager.UploadAsync(ms.ToArray(), file.Name, "", true);
+                    //var ms = new MemoryStream();
+                    //await file.Data.CopyToAsync(ms);
+                    //await FileStorageManager.UploadAsync(ms.ToArray(), file.Name, "", true);
                     //[B] Stream 형태
-                    //string folderPath = Path.Combine(WebHostEnvironment.WebRootPath, "files");
+                    string folderPath = Path.Combine(WebHostEnvironment.WebRootPath, "files");
                     //
-                    //await FileStorageManager.UploadAsync(file.Data, file.Name, "", true);
-                    //await FileUploadService.UploadAsync(file);
+                    await FileStorageManager.UploadAsync(file.Data, file.Name, "", true);
+                    //await FileUploadService.UploadAsync(file); 
 
                     Model.FileName = fileName;
                     Model.FileSize = fileSize;

@@ -2,9 +2,9 @@
 
 namespace ArticleAppBlazorServer.Managers
 {
-    public class BlobStoragedManager :IFileStorageManager
+    public class UploadAppBlobStoragedManager :IFileStorageManager
     {
-        public BlobStoragedManager()
+        public UploadAppBlobStoragedManager()
         {
             
         }

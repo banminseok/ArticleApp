@@ -2,26 +2,35 @@
 
 namespace ArticleAppBlazorServer.Managers
 {
-    public class FileStorageManager : IFileStorageManager
+    public class UploadAppFileStorageManager : IFileStorageManager
     {
         private readonly IWebHostEnvironment _environment;
         private readonly string _containerName;
         private readonly string _folderPath;
 
-        public FileStorageManager(IWebHostEnvironment environment)
+        public UploadAppFileStorageManager(IWebHostEnvironment environment)
         {
             this._environment = environment;
             _containerName = "files";
             _folderPath = Path.Combine(_environment.WebRootPath, _containerName);
         }
-        public Task<bool> DeleteAsync(string fileName, string folderPath)
+        public async Task<bool> DeleteAsync(string fileName, string folderPath)
         {
-            throw new NotImplementedException();
+            if(File.Exists(Path.Combine(_folderPath, folderPath, fileName)))
+            {
+                File.Delete(Path.Combine(_folderPath, folderPath, fileName));
+            }
+            return await Task.FromResult(true);
         }
 
-        public Task<byte[]> DownloadAsync(string fileName, string folderPath)
+        public async Task<byte[]> DownloadAsync(string fileName, string folderPath)
         {
-            throw new NotImplementedException();
+            if (File.Exists(Path.Combine(_folderPath, folderPath, fileName)))
+            {
+                byte[] fileBytes = await File.ReadAllBytesAsync(Path.Combine(_folderPath, folderPath, fileName));
+                return fileBytes;
+            }
+            return null;
         }
 
         public string GetFolderPath(string ownerType, string ownerId, string fileType)

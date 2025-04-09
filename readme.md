@@ -36,6 +36,10 @@ Network Services 에 대해 쓰기권한..
   4. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.dll
   5. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.pdb
 
+  Razor 클래스 라이브러리 생성
+  Razor Class Library
+  다운로드 스크립트 : function saveAsFile(filename, bytesBase64) { js
+
 
 # --------------------------------------------------------------------------------------------------------------------------------
 # ArticleApp 리포지토리

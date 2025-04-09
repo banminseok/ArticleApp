@@ -83,6 +83,8 @@
                                     @onclick="(()=>DeleteBy(m))" />
                                     <input type="button" name="btnToggle" value="Toggle with Modal" class="btn btn-primary" 
                                     @onclick="(() => ToggleBy(m))" />
+                                    @* 블레이저에서 오류가 있어, mvc 코드로 대체 (아래)<input type="button" name="btnDownload" value="Download" class="btn btn-primary" @onclick="(() => DownloadBy(m))" /> *@
+                                    <a href="/UploadDownload/FileDown/@m.Id" class="btn btn-primary">다운로드</a>
                                 </td>
                             </tr>
                         }

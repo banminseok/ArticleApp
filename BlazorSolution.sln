@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoticeApp.Apis", "NoticeApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadApp.Shared", "UploadApp.Shared\UploadApp.Shared.csproj", "{6E69DFC6-BC8B-4B4D-A083-472DE2224739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorUtils", "BlazorUtils\BlazorUtils.csproj", "{A152C1B6-801D-42DB-926D-0096ED3B3602}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{6E69DFC6-BC8B-4B4D-A083-472DE2224739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E69DFC6-BC8B-4B4D-A083-472DE2224739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E69DFC6-BC8B-4B4D-A083-472DE2224739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

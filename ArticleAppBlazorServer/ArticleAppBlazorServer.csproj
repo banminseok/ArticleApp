@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArticleApp.Models\ArticleApp.Models.csproj" />
+    <ProjectReference Include="..\BlazorUtils\BlazorUtils.csproj" />
     <ProjectReference Include="..\BmsPager\BmsPager.csproj" />
     <ProjectReference Include="..\UploadApp.Shared\UploadApp.Shared.csproj" />
   </ItemGroup>

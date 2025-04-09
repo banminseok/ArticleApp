@@ -21,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddControllersWithViews();  // MVC 컨트롤러 사용
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; }); // 개발자 모드에서 상세 오류 표시
@@ -41,7 +42,7 @@ builder.Services.AddTransient<IUploadRepository, UploadRepository>();
 #endregion
 
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
-builder.Services.AddTransient<IFileStorageManager, FileStorageManager>();  //Local File System
+builder.Services.AddTransient<IFileStorageManager, UploadAppFileStorageManager>();  //Local File System
 //builder.Services.AddTransient<IFileStorageManager, BlobStoragedManager>();  //Azure Blob Storage
 
 #region Serilog
@@ -84,6 +85,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapDefaultControllerRoute();  //MVC 컨트롤러 라우팅
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
