@@ -31,6 +31,10 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         [Parameter]
         public int ParentId { get; set; } = 0;
 
+        [Parameter]
+        [SupplyParameterFromQuery]
+        public string? ParentKey { get; set; } = "";
+
         public ArticleAppBlazorServer.Pages.Uploads.Components.EditorForm EditFormReference { get; set; }
         public ArticleAppBlazorServer.Pages.Uploads.Components.DeleteDialog DeleteDialogReference { get; set; }
 
@@ -69,20 +73,46 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             
             try
             {
+                if(ParentKey!="" && !string.IsNullOrEmpty(ParentKey))
+                {
+                    var resultsSet = await UploadRepositoryReference.GetAllByParentKeyAsync(pager.PageIndex, pager.PageSize, ParentKey);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                    LoggerReference.LogInformation($"※※※ ParentKey!=\"\"");
+
+                }
+                else if (ParentId != 0)
+                {
+                    var resultsSet = await UploadRepositoryReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                    LoggerReference.LogInformation($"※※※ ParentId != 0");
+
+                }
+                else
+                {
+                    var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                    LoggerReference.LogInformation($"※※※ else");
+
+                }
+                LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , ParentKey: {ParentKey} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+                StateHasChanged(); //현재 페이지를 다시 그림
+                /*
                 if (ParentId == 0)
                 {
                     await Task.Delay(500);
                     var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
                     pager.RecordCount = resultsSet.TotalRecords;
-                    models = resultsSet.Records.ToList();                    
+                    models = resultsSet.Records.ToList();
                 }
                 else
                 {
                     var resultsSet = await UploadRepositoryReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
-                }
-                LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
+                }*/
             }
             catch (Exception e)
             {
@@ -98,7 +128,25 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         {
             try
             {
-                if (ParentId == 0)
+                if (ParentKey != "" && !string.IsNullOrEmpty(ParentKey))
+                {
+                    var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                else if (ParentId != 0)
+                {
+                    var resultsSet = await UploadRepositoryReference.SearchAllByParentIdAsync(pager.PageIndex, pager.PageSize, this.searchQuery, this.ParentId);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                else
+                {
+                    var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                    pager.RecordCount = resultsSet.TotalRecords;
+                    models = resultsSet.Records.ToList();
+                }
+                /*    if (ParentId == 0)
                 {
                     var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
                     pager.RecordCount = resultsSet.TotalRecords;
@@ -109,7 +157,8 @@ namespace ArticleAppBlazorServer.Pages.Uploads
                     var resultsSet = await UploadRepositoryReference.SearchAllByParentIdAsync(pager.PageIndex, pager.PageSize, this.searchQuery, this.ParentId);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
-                }
+                }*/
+                StateHasChanged(); //현재 페이지를 다시 그림
                 LoggerReference.LogInformation($"※※※ [2] ParentId: {ParentId} , 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
             }
             catch (Exception e)
@@ -143,19 +192,21 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             }
 
 
-            StateHasChanged(); //현재 페이지를 다시 그림
         }
 
         protected void ShowEditorForm()
         {
             EditorFormTitle = "CREATE";
-            model = new Upload();
+            this.model = new Upload();
+            this.model.ParentKey = ParentKey; // 
             EditFormReference.Show();
         }
         protected void EditBy(Upload model)
         {
             EditorFormTitle = "EDIT";
+            this.model = new Upload();
             this.model = model;
+            this.model.ParentKey = ParentKey; // 
             EditFormReference.Show();
         }
         protected void DeleteBy(Upload model)

@@ -28,6 +28,14 @@
                 @((MarkupString)content)
             </div>
         </div>
+        <div class="form-group row">
+            <div class="col-sm-12">
+                @if (model.FileName != null)
+                {
+                    <img src="@(folderPath + "/" + model.FileName)" alt="Image" class="img-fluid" />                    
+                }
+            </div>
+        </div>
         <div class="form-group">
             <a href="/uploads/Edit/@model.Id" class="btn btn-primary">Edit</a>
             <a href="/uploads/Delete/@model.Id" class="btn btn-danger">Delete</a>

@@ -1,6 +1,8 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Services;
 using Microsoft.AspNetCore.Components;
 using System.Text.Json;
+using UploadApp.Shared;
 
 namespace ArticleAppBlazorServer.Pages.Uploads
 {
@@ -18,14 +20,19 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
 
+        [Inject]
+        public IFileStorageManager UploadAppFileStorageManager { get; set; }
+
         protected string content = "";
+        protected string folderPath = "";
 
         protected Upload model = new Upload();
 
         protected override async Task OnInitializedAsync()
         {
+            folderPath = UploadAppFileStorageManager.GetFolderPath("", Id.ToString(), "");
             model = await UploadRepositoryReference.GetByIdAsync(Id);
-            Logger.LogInformation($"※※※ model 불러오기 , {JsonSerializer.Serialize(model)}");
+            Logger.LogInformation($"※※※ id: ${Id}, model 불러오기 , {JsonSerializer.Serialize(model)}");
             content = Dul.HtmlUtility.EncodeWithTabAndSpace(model.Content);
         }
     }

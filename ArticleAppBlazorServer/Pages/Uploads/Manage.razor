@@ -1,5 +1,6 @@
 ﻿@page "/uploads/manage"
 @page "/uploads/manage/{ParentId:int}"
+@* @page "/uploads/manage/{ParentId:int}/{ParentKey}" *@
 
 <h3>Manage</h3>
 
@@ -65,16 +66,16 @@
                             <tr>
                                 <td>@m.Id</td>
                                 <td @onclick="@(()=>NameClick(m.Id))">
-                                    <a href="/Notices/Details/@m.Id">
+                                    <a href="/Uploads/Details/@m.Id">
                                         @m.Name
                                     </a>
                                 </td>
                                 <td>@m.Created?.ToShortTimeString()</td>
                                 <td>@((m.IsPinned==true) ? "공지":"")</td>
                                 <td>
-                                    <a href="/Notices/Details/@m.Id" class="btn btn-light">Details</a>
-                                    <a href="/Notices/Edit/@m.Id" class="btn btn-light">Edit</a>
-                                    <a href="/Notices/Delete/@m.Id" class="btn btn-light">Delete</a>
+                                    <a href="/Uploads/Details/@m.Id" class="btn btn-light">Details</a>
+                                    <a href="/Uploads/Edit/@m.Id" class="btn btn-light">Edit</a>
+                                    <a href="/Uploads/Delete/@m.Id" class="btn btn-light">Delete</a>
                                 </td>
                                 <td>
                                     <input type="button" name="btnEdit" value="Edit(Modal)" class="btn btn-primary"
@@ -106,6 +107,7 @@
 </div>
 
 <ArticleAppBlazorServer.Pages.Uploads.Components.EditorForm Model="model" @ref="EditFormReference"
+ParentKey="@ParentKey"
 CreateCallback="CreatOrEdit"
 EditCallback="CreatOrEdit"
 >

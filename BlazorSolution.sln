@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadApp.Shared", "UploadA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorUtils", "BlazorUtils\BlazorUtils.csproj", "{A152C1B6-801D-42DB-926D-0096ED3B3602}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorInputFile", "BlazorInputFile\BlazorInputFile.csproj", "{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,9 +69,16 @@ Global
 		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A152C1B6-801D-42DB-926D-0096ED3B3602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EE227C5-8657-4F2E-A93A-92E0F33850C1}

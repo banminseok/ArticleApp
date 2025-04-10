@@ -61,7 +61,7 @@
                             <tr>
                                 <td>@m.Id</td>
                                 <td @onclick="@(()=>NameClick(m.Id))">
-                                    <a href="/Notices/Details/@m.Id">
+                                    <a href="/Uploads/Details/@m.Id">
                                         @m.Name
                                     </a>
                                 </td>
@@ -69,9 +69,9 @@
                                 <td>@((m.IsPinned == true) ? "공지" : "")</td>
 
                                 <td>
-                                    <a href="/Notices/Details/@m.Id" class="btn btn-light">Details</a>
-                                    <a href="/Notices/Edit/@m.Id" class="btn btn-light">Edit</a>
-                                    <a href="/Notices/Delete/@m.Id" class="btn btn-light">Delete</a>
+                                    <a href="/Uploads/Details/@m.Id" class="btn btn-light">Details</a>
+                                    <a href="/Uploads/Edit/@m.Id" class="btn btn-light">Edit</a>
+                                    <a href="/Uploads/Delete/@m.Id" class="btn btn-light">Delete</a>
                                 </td>
                             </tr>
                         }

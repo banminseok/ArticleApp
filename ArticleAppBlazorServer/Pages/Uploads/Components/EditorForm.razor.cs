@@ -26,21 +26,29 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
         public IWebHostEnvironment WebHostEnvironment { get; set; }
         #endregion
 
-        #region Fields
+
         private string parentId = "0";
+        [Parameter]
+        public string ParentKey { get; set; } = "";
 
         protected int[] parentIds = { 1, 2, 3 };
 
-        //rivate bool isShow = false;
+        /// <summary>
+        /// 모달 다이얼로그를 표시할건지 여부 
+        /// </summary>
         public bool IsShow { get; set; } = false;
-        #endregion
 
-
-
+        /// <summary>
+        /// 폼 보이기 
+        /// </summary>
         public void Show()
         {
             IsShow = true;
         }
+
+        /// <summary>
+        /// 폼 닫기
+        /// </summary>
         public void Hide()
         {
             IsShow = false;
@@ -126,6 +134,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads.Components
                 newParentId = 0;
             }
             Model.ParentId = newParentId;
+            Model.ParentKey = ParentKey;
 
             if (Model.Id == 0)
             {

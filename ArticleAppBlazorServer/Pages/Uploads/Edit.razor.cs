@@ -1,5 +1,8 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Managers;
+using BlazorInputFile;
 using Microsoft.AspNetCore.Components;
+using UploadApp.Shared;
 
 namespace ArticleAppBlazorServer.Pages.Uploads
 {
@@ -17,6 +20,8 @@ namespace ArticleAppBlazorServer.Pages.Uploads
 
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
+        [Inject]
+        public IFileStorageManager UploadAppFileStorageManager { get; set; }
 
         protected Upload model = new Upload();
 
@@ -37,8 +42,37 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         {
             int.TryParse(ParentId, out int parentId);
             model.ParentId = parentId;
+            #region 파일 업로드 관련 추가 코드 영역
+            if (selectedFiles != null && selectedFiles.Length > 0)
+            {
+                // 파일 업로드
+                var file = selectedFiles.FirstOrDefault();
+                var fileName = "";
+                int fileSize = 0;
+                if (file != null)
+                {
+                    fileName = file.Name;
+                    fileSize = Convert.ToInt32(file.Size);
+
+                    // 첨부 파일 삭제 
+                    await UploadAppFileStorageManager.DeleteAsync(model.FileName, "");
+
+                    // 다시 업로드
+                    fileName = await UploadAppFileStorageManager.UploadAsync(file.Data, file.Name, "", true);
+
+                    model.FileName = fileName;
+                    model.FileSize = fileSize;
+                }
+            }
+            #endregion
             await UploadRepositoryReference.EditAsync(model);
             NavigationManagerReference.NavigateTo("/Uploads");
+        }
+
+        private IFileListEntry[] selectedFiles;
+        protected async void HandleSelection(IFileListEntry[] files)
+        {
+            this.selectedFiles = files;
         }
     }
 }

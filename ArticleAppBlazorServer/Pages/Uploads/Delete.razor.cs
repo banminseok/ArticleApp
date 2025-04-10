@@ -1,7 +1,9 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Managers;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
+using UploadApp.Shared;
 
 namespace ArticleAppBlazorServer.Pages.Uploads
 {
@@ -23,6 +25,9 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         [Inject]
         public IJSRuntime JSRuntime { get; set; }
 
+        [Inject]
+        public IFileStorageManager UploadAppFileStorageManager { get; set; }
+
         protected Upload model = new Upload();
 
         protected string content = "";
@@ -39,6 +44,14 @@ namespace ArticleAppBlazorServer.Pages.Uploads
 
             if (isDelete)
             {
+                // 파일 삭제
+                if(!string.IsNullOrEmpty(model.FileName))
+                {
+                    // 첨부 파일 삭제
+                    await UploadAppFileStorageManager.DeleteAsync(model.FileName,"");
+                }
+
+                // DB 삭제
                 await UploadRepositoryReference.DeleteAsync(Id); // 삭제
                 NavigationManagerReference.NavigateTo("/Uploads"); // 리스트 페이지로 이동
             }

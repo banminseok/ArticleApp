@@ -1,4 +1,6 @@
-﻿using UploadApp.Shared;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using UploadApp.Shared;
 
 namespace ArticleAppBlazorServer.Managers
 {
@@ -35,7 +37,7 @@ namespace ArticleAppBlazorServer.Managers
 
         public string GetFolderPath(string ownerType, string ownerId, string fileType)
         {
-            throw new NotImplementedException();
+            return Path.Combine("/",_containerName) ;
         }
 
         public string GetFolderPath(string ownerType, long ownerId, string fileType)
