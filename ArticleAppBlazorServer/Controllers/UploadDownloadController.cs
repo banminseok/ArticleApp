@@ -1,5 +1,7 @@
 ﻿using ArticleApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System.Drawing;
 using UploadApp.Shared;
 
@@ -54,7 +56,7 @@ namespace ArticleAppBlazorServer.Controllers
         /// <summary>
         /// 엑셀 파일 강제 다운로드 기능(/ExcelDown)
         /// </summary>
-        /*public async Task<IActionResult> ExcelDown()
+        public async Task<IActionResult> ExcelDown()
         {
             var results = await _repository.GetAllAsync(0, 100);
 
@@ -92,6 +94,6 @@ namespace ArticleAppBlazorServer.Controllers
 
             }
             return Redirect("/");
-        }*/
+        }
     }
 }

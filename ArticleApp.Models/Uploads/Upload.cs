@@ -42,12 +42,12 @@ namespace ArticleApp.Models
         /// <summary>
         /// 제목
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get; set; } = "";
 
         /// <summary>
         /// 내용
         /// </summary>
-        public string Content { get; set; }
+        public string Content { get; set; } = "";
 
         /// <summary>
         /// 상단 고정: 공지글로 올리기

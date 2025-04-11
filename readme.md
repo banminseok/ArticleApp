@@ -6,6 +6,30 @@ git :	01 https://github.com/VisualAcademy/articleapp
 		03 https://github.com/VisualAcademy/UploadApp
 
 
+@VisualAcademy
+안녕하세요. 박용준 강사입니다.
+2024년 Blazor 학습 순서는 다음 순서대로 학습하시면 됩니다. 
+ASP.NET Core 8.0에 들어서 프로젝트 템플릿이 대대적으로 변경되어, 우선 ASP.NET Core 8.0 Start를 먼저 보시고,
+1.1과 1.2 강좌는 함께 병행해서 보시면서, 이후로 파트 2와 파트 3로 이어지는 강좌를 보시면 됩니다. 
+현재는 이 순서대로 보시는게 제일 좋습니다. 이후로의 강좌는 따로 문의주세요. 감사합니다. 
+
+0. ASP.NET Core 8.0 Start
+https://www.youtube.com/playlist?list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg
+
+1.1. Blazor Server 7.0 Fundamentals
+
+https://www.youtube.com/playlist?list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS
+
+1.2. Blazor Part 1 기초
+https://www.youtube.com/playlist?list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v
+
+2. Blazor Part 2_Blazor 게시판 프로젝트
+https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
+
+3. Blazor Part 3: 회사 홈페이지 만들기
+https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
+
+
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
@@ -17,6 +41,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
   MatBlazor 
   Charts.Blazor
   BlazorInputFile
+  # EPPlus 8(유료) => EPPlus 7 엑셀업로드 다운로드 
 
   Dapper
   Serilog

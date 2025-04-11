@@ -14,13 +14,16 @@
             <NotAuthorized>
                 <a href="/uploads/Index" class="btn btn-primary">List</a>
                 <input type="button" name="btnCreate" value="Create(Modal)" class="btn btn-primary"
-                @onclick="ShowEditorForm" />
+                       @onclick="ShowEditorForm" />
                 <a href="/uploads/Report" class="btn btn-primary">Report</a>
             </NotAuthorized>
         </AuthorizeView>
         <AuthorizeView Roles="Administrators, Managers">
             <a href="/uploads/Index" class="btn btn-primary">List</a>
         </AuthorizeView>
+        <input type="button" class="btn btn-primary" value="Excel Export" @onclick="DownloadExcel" />@* 코드 비하인드 *@
+        <a href="/UploadDownload/ExcelDown" class="btn btn-primary">Excel Export</a>@* MVC *@
+
     </div>
 </div>
 
@@ -71,7 +74,7 @@
                                     </a>
                                 </td>
                                 <td>@m.Created?.ToShortTimeString()</td>
-                                <td>@((m.IsPinned==true) ? "공지":"")</td>
+                                <td>@((m.IsPinned == true) ? "공지" : "")</td>
                                 <td>
                                     <a href="/Uploads/Details/@m.Id" class="btn btn-light">Details</a>
                                     <a href="/Uploads/Edit/@m.Id" class="btn btn-light">Edit</a>
@@ -79,11 +82,11 @@
                                 </td>
                                 <td>
                                     <input type="button" name="btnEdit" value="Edit(Modal)" class="btn btn-primary"
-                                    @onclick="(()=>EditBy(m))" />
+                                           @onclick="(()=>EditBy(m))" />
                                     <input type="button" name="btnDelete" value="Delete(Modal)" class="btn btn-primary"
-                                    @onclick="(()=>DeleteBy(m))" />
-                                    <input type="button" name="btnToggle" value="Toggle with Modal" class="btn btn-primary" 
-                                    @onclick="(() => ToggleBy(m))" />
+                                           @onclick="(()=>DeleteBy(m))" />
+                                    <input type="button" name="btnToggle" value="Toggle with Modal" class="btn btn-primary"
+                                           @onclick="(() => ToggleBy(m))" />
                                     @* 블레이저에서 오류가 있어, mvc 코드로 대체 (아래)<input type="button" name="btnDownload" value="Download" class="btn btn-primary" @onclick="(() => DownloadBy(m))" /> *@
                                     <a href="/UploadDownload/FileDown/@m.Id" class="btn btn-primary">다운로드</a>
                                 </td>
@@ -107,14 +110,13 @@
 </div>
 
 <ArticleAppBlazorServer.Pages.Uploads.Components.EditorForm Model="model" @ref="EditFormReference"
-ParentKey="@ParentKey"
-CreateCallback="CreatOrEdit"
-EditCallback="CreatOrEdit"
->
+                                                            ParentKey="@ParentKey"
+                                                            CreateCallback="CreatOrEdit"
+                                                            EditCallback="CreatOrEdit">
     <EditorFormTitle>@EditorFormTitle</EditorFormTitle>
 </ArticleAppBlazorServer.Pages.Uploads.Components.EditorForm>
 <ArticleAppBlazorServer.Pages.Uploads.Components.DeleteDialog @ref="DeleteDialogReference"
-OnClick="DeleteClick">
+                                                              OnClick="DeleteClick">
 </ArticleAppBlazorServer.Pages.Uploads.Components.DeleteDialog>
 
 @if (IsInlineDialogShow)
