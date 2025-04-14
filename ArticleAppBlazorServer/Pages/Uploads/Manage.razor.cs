@@ -352,5 +352,45 @@ namespace ArticleAppBlazorServer.Pages.Uploads
                 FileUtil.SaveAs(JSRuntime, $"{DateTime.Now.ToString("yyyyMMddhhmmss")}_Uploads.xlsx", package.GetAsByteArray());
             }
         }
+
+        #region Sorting
+        private string sortOrder = "";
+
+        protected async void SortByName()
+        {
+            if (sortOrder == "")
+            {
+                sortOrder = "Name";
+            }
+            else if (sortOrder == "Name")
+            {
+                sortOrder = "NameDesc";
+            }
+            else
+            {
+                sortOrder = "";
+            }
+
+            await DisplayData();
+        }
+
+        protected async void SortByTitle()
+        {
+            if (sortOrder == "")
+            {
+                sortOrder = "Title";
+            }
+            else if (sortOrder == "Title")
+            {
+                sortOrder = "TitleDesc";
+            }
+            else
+            {
+                sortOrder = "";
+            }
+
+            await DisplayData();
+        }
+        #endregion
     }
 }

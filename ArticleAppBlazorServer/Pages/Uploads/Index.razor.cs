@@ -23,7 +23,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         {
             PageNumber = 1,
             PageIndex = 0,
-            PageSize = 3,
+            PageSize = 10,
             PagerButtonCount = 5
         };
 
@@ -39,14 +39,17 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         /// <returns></returns>
         private async Task DisplayData()
         {
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             try
             {
-                var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
-                pager.RecordCount = resultsSet.TotalRecords;
+                //var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
+                //pager.RecordCount = resultsSet.TotalRecords;
+                var resultsSet = await UploadRepositoryReference.GetArticles<int>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, 0);
+                pager.RecordCount = resultsSet.TotalCount;
                 LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
-                models = resultsSet.Records.ToList();
+                models = resultsSet.Items.ToList();
                 
+                StateHasChanged();
             }
             catch (Exception e)
             {
@@ -88,16 +91,16 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         {
             pager.PageIndex = pageIndex;
             pager.PageNumber = pageIndex + 1;
-            if (this.searchQuery == "")
+            /*if (this.searchQuery == "")
             {
                 await DisplayData();
             }
             else
             {
                 await SearchData();
-            }
-            
+            }*/
 
+            await DisplayData();
             StateHasChanged(); //현재 페이지를 다시 그림
         }
 
@@ -105,11 +108,52 @@ namespace ArticleAppBlazorServer.Pages.Uploads
 
         protected async void Search(string query)
         {
+            pager.PageIndex = 0;
+
             this.searchQuery = query;
 
-            await SearchData();
+            await DisplayData();
 
             StateHasChanged();
         }
+        #region Sorting
+        private string sortOrder = "";
+
+        protected async void SortByName()
+        {
+            if (sortOrder == "")
+            {
+                sortOrder = "Name";
+            }
+            else if (sortOrder == "Name")
+            {
+                sortOrder = "NameDesc";
+            }
+            else
+            {
+                sortOrder = "";
+            }
+
+            await DisplayData();
+        }
+
+        protected async void SortByTitle()
+        {
+            if (sortOrder == "")
+            {
+                sortOrder = "Title";
+            }
+            else if (sortOrder == "Title")
+            {
+                sortOrder = "TitleDesc";
+            }
+            else
+            {
+                sortOrder = "";
+            }
+
+            await DisplayData();
+        }
+        #endregion
     }
 }

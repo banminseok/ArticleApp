@@ -36,10 +36,10 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-light">
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
+                        <th>ID</th>
+                        <th @onclick="@(() => SortByName())" style="cursor: pointer;">Name <UploadApp.Pages.Uploads.Components.SortOrderArrow SortColumn="Name" SortOrder="@sortOrder"></UploadApp.Pages.Uploads.Components.SortOrderArrow></th>
+                        <th @onclick="@(() => SortByTitle())" style="cursor: pointer;">Title <UploadApp.Pages.Uploads.Components.SortOrderArrow SortColumn="Title" SortOrder="@sortOrder"></UploadApp.Pages.Uploads.Components.SortOrderArrow></th>
                         <th>Created</th>
-                        <th>IsPinned</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -65,6 +65,7 @@
                                         @m.Name
                                     </a>
                                 </td>
+                                <td>@m.Title</td>
                                 <td>@m.Created?.ToShortTimeString()</td>
                                 <td>@((m.IsPinned == true) ? "공지" : "")</td>
 
