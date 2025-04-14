@@ -1,0 +1,145 @@
+﻿@page "/Replys/manage"
+@page "/Replys/manage/{ParentId:int}"
+@* @page "/uploads/manage/{ParentId:int}/{ParentKey}" *@
+
+<h3>Manage</h3>
+
+
+<div class="row">
+    <div class="col-md-12 m-1">
+        <a href="/Replys/Create" class="btn btn-primary">Create(InLine)</a>
+        <AuthorizeView>
+            <Authorized>
+            </Authorized>
+            <NotAuthorized>
+                <a href="/Replys/Index" class="btn btn-primary">List</a>
+                <input type="button" name="btnCreate" value="Create(Modal)" class="btn btn-primary"
+                       @onclick="ShowEditorForm" />
+                <a href="/Replys/Report" class="btn btn-primary">Report</a>
+            </NotAuthorized>
+        </AuthorizeView>
+        <AuthorizeView Roles="Administrators, Managers">
+            <a href="/Replys/Index" class="btn btn-primary">List</a>
+        </AuthorizeView>
+        <input type="button" class="btn btn-primary" value="Excel Export" @onclick="DownloadExcel" />@* 코드 비하인드 *@
+        <a href="/UploadDownload/ExcelDown" class="btn btn-primary">Excel Export</a>@* MVC *@
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (models == null)
+        {
+            @* <p><em>Loading...</em></p> *@
+            <div class="m-2">
+                <p>
+                    <MatProgressBar Indeterminate="true"></MatProgressBar>
+                </p>
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Id</th>
+                        <th @onclick="@(() => SortByName())" style="cursor: pointer;">Name <UploadApp.Pages.Uploads.Components.SortOrderArrow SortColumn="Name" SortOrder="@sortOrder"></UploadApp.Pages.Uploads.Components.SortOrderArrow></th>
+                        <th @onclick="@(() => SortByTitle())" style="cursor: pointer;">Title <UploadApp.Pages.Uploads.Components.SortOrderArrow SortColumn="Title" SortOrder="@sortOrder"></UploadApp.Pages.Uploads.Components.SortOrderArrow></th>
+                        <th>Created</th>
+                        <th>IsPinned</th>
+                        <th>Action</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                @if (models.Count == 0)
+                {
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="text-center">
+                                <p>데이터가 없습니다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+                else
+                {
+                    <tbody>
+                        @foreach (var m in models)
+                        {
+                            <tr>
+                                <td>@m.Id</td>
+                                <td @onclick="@(()=>NameClick(m.Id))">
+                                    <a href="/Replys/Details/@m.Id">
+                                        @m.Name
+                                    </a>
+                                </td>
+                                <td>@m.Title</td>
+                                <td>@m.Created?.ToShortTimeString()</td>
+                                <td>@((m.IsPinned == true) ? "공지" : "")</td>
+                                <td>
+                                    <a href="/Replys/Details/@m.Id" class="btn btn-light">Details</a>
+                                    <a href="/Replys/Edit/@m.Id" class="btn btn-light">Edit</a>
+                                    <a href="/Replys/Delete/@m.Id" class="btn btn-light">Delete</a>
+                                </td>
+                                <td>
+                                    <input type="button" name="btnEdit" value="Edit(Modal)" class="btn btn-primary"
+                                           @onclick="(()=>EditBy(m))" />
+                                    <input type="button" name="btnDelete" value="Delete(Modal)" class="btn btn-primary"
+                                           @onclick="(()=>DeleteBy(m))" />
+                                    <input type="button" name="btnToggle" value="Toggle with Modal" class="btn btn-primary"
+                                           @onclick="(() => ToggleBy(m))" />
+                                    @* 블레이저에서 오류가 있어, mvc 코드로 대체 (아래)<input type="button" name="btnDownload" value="Download" class="btn btn-primary" @onclick="(() => DownloadBy(m))" /> *@
+                                    <a href="/UploadDownload/FileDown/@m.Id" class="btn btn-primary">다운로드</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                }
+            </table>
+        }
+    </div>
+    <div class="col-md-12">
+        @*<BmsPagerComponent Model="pager" PageIndexChanged="PageIndexChangedIndex"></BmsPagerComponent>*@
+        <BmsPager.BmsPagerComponent Model="pager" PageIndexChanged="PageIndexChangedA"></BmsPager.BmsPagerComponent>
+    </div>
+    <div class="col-md-12">
+        <ArticleAppBlazorServer.Pages.Replys.Components.SearchBox SearchQueryChanged="Search"
+                                                                   placeholder="Search Notices...">
+        </ArticleAppBlazorServer.Pages.Replys.Components.SearchBox>
+    </div>
+</div>
+
+<ArticleAppBlazorServer.Pages.Replys.Components.EditorForm Model="model" @ref="EditFormReference2"
+                                                            ParentKey="@ParentKey"
+                                                            CreateCallback="CreatOrEdit"
+                                                            EditCallback="CreatOrEdit">
+    <EditorFormTitle>@EditorFormTitle</EditorFormTitle>
+</ArticleAppBlazorServer.Pages.Replys.Components.EditorForm>
+<ArticleAppBlazorServer.Pages.Replys.Components.DeleteDialog @ref="DeleteDialogReference"
+                                                              OnClick="DeleteClick">
+</ArticleAppBlazorServer.Pages.Replys.Components.DeleteDialog>
+
+@if (IsInlineDialogShow)
+{
+    <div class="modal fade show d-block" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">공지글로 올리기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="ToggleClose">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>@(model.Id)번 글을 공지글로 설정할까요?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @onclick="ToggleClick">설정</button>
+                    <button type="button" class="btn btn-secondary" @onclick="ToggleClose">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

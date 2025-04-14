@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using UploadApp.Shared;
 
 
-namespace ArticleAppBlazorServer.Pages.Uploads
+namespace ArticleAppBlazorServer.Pages.Replys
 {
     public partial class Manage
     {
@@ -20,7 +20,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         public ILogger<Index> LoggerReference { get; set; }
 
         [Inject]
-        public IUploadRepository UploadRepositoryReference{ get; set; }
+        public IReplyRepository ReplyRepositoryReference { get; set; }
 
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
@@ -38,11 +38,11 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         [SupplyParameterFromQuery]
         public string? ParentKey { get; set; } = "";
 
-        public ArticleAppBlazorServer.Pages.Uploads.Components.EditorForm EditFormReference { get; set; }
-        public ArticleAppBlazorServer.Pages.Uploads.Components.DeleteDialog DeleteDialogReference { get; set; }
+        public ArticleAppBlazorServer.Pages.Replys.Components.EditorForm EditFormReference2 { get; set; }
+        public ArticleAppBlazorServer.Pages.Replys.Components.DeleteDialog DeleteDialogReference { get; set; }
 
-        protected List<Upload> models;
-        protected Upload model = new Upload();
+        protected List<Reply> models;
+        protected Reply model = new Reply();
 
         //입력폼 제목
         public string EditorFormTitle { get; set; } = "Create";
@@ -78,7 +78,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             {
                 if(ParentKey!="" && !string.IsNullOrEmpty(ParentKey))
                 {
-                    var resultsSet = await UploadRepositoryReference.GetAllByParentKeyAsync(pager.PageIndex, pager.PageSize, ParentKey);
+                    var resultsSet = await ReplyRepositoryReference.GetAllByParentKeyAsync(pager.PageIndex, pager.PageSize, ParentKey);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                     LoggerReference.LogInformation($"※※※ ParentKey!=\"\"");
@@ -86,7 +86,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
                 }
                 else if (ParentId != 0)
                 {
-                    var resultsSet = await UploadRepositoryReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
+                    var resultsSet = await ReplyRepositoryReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                     LoggerReference.LogInformation($"※※※ ParentId != 0");
@@ -94,7 +94,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
                 }
                 else
                 {
-                    var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
+                    var resultsSet = await ReplyRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                     LoggerReference.LogInformation($"※※※ else");
@@ -133,19 +133,19 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             {
                 if (ParentKey != "" && !string.IsNullOrEmpty(ParentKey))
                 {
-                    var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                    var resultsSet = await ReplyRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                 }
                 else if (ParentId != 0)
                 {
-                    var resultsSet = await UploadRepositoryReference.SearchAllByParentIdAsync(pager.PageIndex, pager.PageSize, this.searchQuery, this.ParentId);
+                    var resultsSet = await ReplyRepositoryReference.SearchAllByParentIdAsync(pager.PageIndex, pager.PageSize, this.searchQuery, this.ParentId);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                 }
                 else
                 {
-                    var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                    var resultsSet = await ReplyRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
                     pager.RecordCount = resultsSet.TotalRecords;
                     models = resultsSet.Records.ToList();
                 }
@@ -200,19 +200,19 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         protected void ShowEditorForm()
         {
             EditorFormTitle = "CREATE";
-            this.model = new Upload();
+            this.model = new Reply();
             this.model.ParentKey = ParentKey; // 
-            EditFormReference.Show();
+            EditFormReference2.Show();
         }
-        protected void EditBy(Upload model)
+        protected void EditBy(Reply model)
         {
             EditorFormTitle = "EDIT";
-            this.model = new Upload();
+            this.model = new Reply();
             this.model = model;
             this.model.ParentKey = ParentKey; // 
-            EditFormReference.Show();
+            EditFormReference2.Show();
         }
-        protected void DeleteBy(Upload model)
+        protected void DeleteBy(Reply model)
         {
             LoggerReference.LogInformation($"DeleteBy: {model.Id}");
             //삭제 처리 다이얼 로그
@@ -221,12 +221,12 @@ namespace ArticleAppBlazorServer.Pages.Uploads
 
         }
 
-        protected void ToggleBy(Upload modal)
+        protected void ToggleBy(Reply modal)
         {
             this.model = modal; 
             IsInlineDialogShow = true;
         }
-        protected async void DownloadBy(Upload model)
+        protected async void DownloadBy(Reply model)
         {
             if(!string.IsNullOrEmpty(model.FileName))
             {
@@ -253,14 +253,14 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         protected void ToggleClose()
         {
             IsInlineDialogShow = false;
-            this.model = new Upload();
+            this.model = new Reply();
         }
         protected async void ToggleClick()
         {
             this.model.IsPinned = !this.model.IsPinned;
-            await UploadRepositoryReference.EditAsync(this.model);
+            await ReplyRepositoryReference.EditAsync(this.model);
             IsInlineDialogShow = false;
-            this.model = new Upload();
+            this.model = new Reply();
             await DisplayData();
         }
 
@@ -269,7 +269,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         /// </summary>
         protected async void CreatOrEdit()
         {
-            EditFormReference.Hide();
+            EditFormReference2.Hide();
             await DisplayData();
             StateHasChanged();
         }
@@ -283,9 +283,9 @@ namespace ArticleAppBlazorServer.Pages.Uploads
                 // 첨부 파일 삭제 
                 await FileStorageManagerReference.DeleteAsync(this.model.FileName, "");
             }
-            await UploadRepositoryReference.DeleteAsync(this.model.Id);
+            await ReplyRepositoryReference.DeleteAsync(this.model.Id);
             DeleteDialogReference.Hide();
-            this.model = new Upload();
+            this.model = new Reply();
             await DisplayData();
         }
 

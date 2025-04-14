@@ -13,54 +13,72 @@ namespace ArticleApp.Models
     /// <summary>
     /// [6] Repository Class: ADO.NET or Dapper or Entity Framework Core
     /// </summary>
-    public class UploadRepository : IUploadRepository
+    public class ReplyRepository : IReplyRepository
     {
         private readonly ArticleAppDbContext _context;
         private readonly ILogger _logger;
 
-        public UploadRepository(ArticleAppDbContext context, ILoggerFactory loggerFactory)
+        public ReplyRepository(ArticleAppDbContext context, ILoggerFactory loggerFactory)
         {
             this._context = context;
-            this._logger = loggerFactory.CreateLogger(nameof(UploadRepository));
+            this._logger = loggerFactory.CreateLogger(nameof(ReplyRepository));
         }
-        //[6][1] 입력
-        public async Task<Upload> AddAsync(Upload model)
+
+        #region [6][1] 입력: AddAsync
+        //[6][1] 입력: AddAsync
+        public async Task<Reply> AddAsync(Reply model)
         {
+            #region Reply 기능 추가
+            // 현재테이블의 Ref의 Max값 가져오기
+            int maxRef = 1;
+            //int? max = _context.Replys.Max(m => m.Ref);
+            int? max = await _context.Replys.DefaultIfEmpty().MaxAsync(m => m == null ? 0 : m.Ref);
+            if (max.HasValue)
+            {
+                maxRef = (int)max + 1;
+            }
+
+            model.Ref = maxRef; // 참조 글(부모 글, 그룹 번호)
+            model.Step = 0; // 들여쓰기(처음 글을 0으로 초기화)
+            model.RefOrder = 0; // 참조(그룹) 순서
+            #endregion
+
             try
             {
-                _context.Uploads.Add(model);
+                _context.Replys.Add(model);
                 await _context.SaveChangesAsync();
             }
             catch (Exception e)
             {
-                _logger.LogError($"ERROR({nameof(AddAsync)}): {e.Message}");
+                _logger?.LogError($"ERROR({nameof(AddAsync)}): {e.Message}");
             }
 
             return model;
         }
+        #endregion
 
         //[6][2] 출력
-        public async Task<List<Upload>> GetAllAsync()
+        public async Task<List<Reply>> GetAllAsync()
         {
-            return await _context.Uploads.OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+            return await _context.Replys.OrderByDescending(m => m.Id)
+                //.Include(m => m.ReplysComments)
                 .ToListAsync();
         }
 
         //[6][3] 상세
-        public async Task<Upload> GetByIdAsync(int id)
+        public async Task<Reply> GetByIdAsync(int id)
         {
-            return await _context.Uploads
-                //.Include(m => m.UploadsComments)
+            return await _context.Replys
+                //.Include(m => m.ReplysComments)
                 .SingleOrDefaultAsync(m => m.Id == id);
         }
 
         //[6][4] 수정
-        public async Task<bool> EditAsync(Upload model)
+        public async Task<bool> EditAsync(Reply model)
         {
             try
             {
-                _context.Uploads.Attach(model);
+                _context.Replys.Attach(model);
                 _context.Entry(model).State = EntityState.Modified;
                 return (await _context.SaveChangesAsync() > 0 ? true : false);
             }
@@ -75,10 +93,10 @@ namespace ArticleApp.Models
         //[6][5] 삭제
         public async Task<bool> DeleteAsync(int id)
         {
-            //var model = await _context.Uploads.SingleOrDefaultAsync(m => m.Id == id);
+            //var model = await _context.Replys.SingleOrDefaultAsync(m => m.Id == id);
             try
             {
-                var model = await _context.Uploads.FindAsync(id);
+                var model = await _context.Replys.FindAsync(id);
                 _context.Remove(model);
                 return (await _context.SaveChangesAsync() > 0 ? true : false);
             }
@@ -91,39 +109,39 @@ namespace ArticleApp.Models
         }
 
         //[6][6] 페이징
-        public async Task<PagingResult<Upload>> GetAllAsync(int pageIndex, int pageSize)
+        public async Task<PagingResult<Reply>> GetAllAsync(int pageIndex, int pageSize)
         {
-            var totalRecords = await _context.Uploads.CountAsync();
-            var models = await _context.Uploads
+            var totalRecords = await _context.Replys.CountAsync();
+            var models = await _context.Replys
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
         // 부모
-        public async Task<PagingResult<Upload>> GetAllByParentIdAsync(int pageIndex, int pageSize, int parentId)
+        public async Task<PagingResult<Reply>> GetAllByParentIdAsync(int pageIndex, int pageSize, int parentId)
         {
-            var totalRecords = await _context.Uploads.Where(m => m.ParentId == parentId).CountAsync();
-            var models = await _context.Uploads
+            var totalRecords = await _context.Replys.Where(m => m.ParentId == parentId).CountAsync();
+            var models = await _context.Replys
                 .Where(m => m.ParentId == parentId)
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
         // 상태
         public async Task<Tuple<int, int>> GetStatus(int parentId)
         {
-            var totalRecords = await _context.Uploads.Where(m => m.ParentId == parentId).CountAsync();
-            var pinnedRecords = await _context.Uploads.Where(m => m.ParentId == parentId && m.IsPinned == true).CountAsync();
+            var totalRecords = await _context.Replys.Where(m => m.ParentId == parentId).CountAsync();
+            var pinnedRecords = await _context.Replys.Where(m => m.ParentId == parentId && m.IsPinned == true).CountAsync();
 
             return new Tuple<int, int>(pinnedRecords, totalRecords); // (2, 10)
         }
@@ -133,11 +151,11 @@ namespace ArticleApp.Models
         {
             try
             {
-                var models = await _context.Uploads.Where(m => m.ParentId == parentId).ToListAsync();
+                var models = await _context.Replys.Where(m => m.ParentId == parentId).ToListAsync();
 
                 foreach (var model in models)
                 {
-                    _context.Uploads.Remove(model);
+                    _context.Replys.Remove(model);
                 }
 
                 return (await _context.SaveChangesAsync() > 0 ? true : false);
@@ -152,36 +170,36 @@ namespace ArticleApp.Models
         }
 
         // 검색
-        public async Task<PagingResult<Upload>> SearchAllAsync(int pageIndex, int pageSize, string searchQuery)
+        public async Task<PagingResult<Reply>> SearchAllAsync(int pageIndex, int pageSize, string searchQuery)
         {
-            var totalRecords = await _context.Uploads
+            var totalRecords = await _context.Replys
                 .Where(m => m.Name.Contains(searchQuery) || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .CountAsync();
-            var models = await _context.Uploads
+            var models = await _context.Replys
                 .Where(m => m.Name.Contains(searchQuery) || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
-        public async Task<PagingResult<Upload>> SearchAllByParentIdAsync(int pageIndex, int pageSize, string searchQuery, int parentId)
+        public async Task<PagingResult<Reply>> SearchAllByParentIdAsync(int pageIndex, int pageSize, string searchQuery, int parentId)
         {
-            var totalRecords = await _context.Uploads.Where(m => m.ParentId == parentId)
+            var totalRecords = await _context.Replys.Where(m => m.ParentId == parentId)
                 .Where(m => EF.Functions.Like(m.Name, $"%{searchQuery}%") || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .CountAsync();
-            var models = await _context.Uploads.Where(m => m.ParentId == parentId)
+            var models = await _context.Replys.Where(m => m.ParentId == parentId)
                 .Where(m => m.Name.Contains(searchQuery) || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
         public async Task<SortedList<int, double>> GetMonthlyCreateCountAsync()
@@ -198,7 +216,7 @@ namespace ArticleApp.Models
             {
                 // 현재 달부터 12개월 전까지 반복
                 var current = DateTime.Now.AddMonths(-i);
-                var cnt = _context.Uploads.AsEnumerable().Where(
+                var cnt = _context.Replys.AsEnumerable().Where(
                     m => m.Created != null
                     &&
                     Convert.ToDateTime(m.Created).Month == current.Month
@@ -211,40 +229,40 @@ namespace ArticleApp.Models
             return await Task.FromResult(createCounts);
         }
 
-        public async Task<PagingResult<Upload>> GetAllByParentKeyAsync(int pageIndex, int pageSize, string parentKey)
+        public async Task<PagingResult<Reply>> GetAllByParentKeyAsync(int pageIndex, int pageSize, string parentKey)
         {
-            var totalRecords = await _context.Uploads.Where(m => m.ParentKey == parentKey).CountAsync();
-            var models = await _context.Uploads
+            var totalRecords = await _context.Replys.Where(m => m.ParentKey == parentKey).CountAsync();
+            var models = await _context.Replys
                 .Where(m => m.ParentKey == parentKey)
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
-        public async Task<PagingResult<Upload>> SearchAllByParentKeyAsync(int pageIndex, int pageSize, string searchQuery, string parentKey)
+        public async Task<PagingResult<Reply>> SearchAllByParentKeyAsync(int pageIndex, int pageSize, string searchQuery, string parentKey)
         {
-            var totalRecords = await _context.Uploads.Where(m => m.ParentKey == parentKey)
+            var totalRecords = await _context.Replys.Where(m => m.ParentKey == parentKey)
                 .Where(m => EF.Functions.Like(m.Name, $"%{searchQuery}%") || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .CountAsync();
-            var models = await _context.Uploads.Where(m => m.ParentKey == parentKey)
+            var models = await _context.Replys.Where(m => m.ParentKey == parentKey)
                 .Where(m => m.Name.Contains(searchQuery) || m.Title.Contains(searchQuery) || m.Title.Contains(searchQuery))
                 .OrderByDescending(m => m.Id)
-                //.Include(m => m.UploadsComments)
+                //.Include(m => m.ReplysComments)
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            return new PagingResult<Upload>(models, totalRecords);
+            return new PagingResult<Reply>(models, totalRecords);
         }
 
-        public async Task<ArticleSet<Upload, int>> GetArticles<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
+        public async Task<ArticleSet<Reply, int>> GetArticles<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
         {
-            //var items = from m in _context.Uploads select m; // 쿼리 구문(Query Syntax)
-            var items = _context.Uploads.Select(m => m); // 메서드 구문(Method Syntax)
+            //var items = from m in _context.Replys select m; // 쿼리 구문(Query Syntax)
+            var items = _context.Replys.Select(m => m); // 메서드 구문(Method Syntax)
 
             // ParentBy 
             if (parentIdentifier is int parentId && parentId != 0)
@@ -294,15 +312,53 @@ namespace ArticleApp.Models
                     items = items.OrderByDescending(m => m.Title);
                     break;
                 default:
-                    items = items.OrderByDescending(m => m.Id);
+                    items = items.OrderByDescending(m => m.Ref).ThenBy(m => m.RefOrder);
                     break;
             }
 
             // Paging
             items = items.Skip(pageIndex * pageSize).Take(pageSize);
 
-            return new ArticleSet<Upload, int>(await items.ToListAsync(), totalCount);
+            return new ArticleSet<Reply, int>(await items.ToListAsync(), totalCount);
         }
 
+        //[6][16] 답변
+        public async Task<Reply> AddAsync(Reply model, int parentRef, int parentStep, int parentOrder)
+        {
+            #region 답변 관련 기능 추가된 영역
+            // 비집고 들어갈 자리: 부모글 순서보다 큰 글이 있다면(기존 답변 글이 있다면) 해당 글의 순서를 모두 1씩 증가 
+            var replys = await _context.Replys.Where(m => m.Ref == parentRef && m.RefOrder > parentOrder).ToListAsync();
+            foreach (var item in replys)
+            {
+                item.RefOrder = item.RefOrder + 1;
+                try
+                {
+                    _context.Replys.Attach(item);
+                    _context.Entry(item).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception e)
+                {
+                    _logger?.LogError($"ERROR({nameof(AddAsync)}): {e.Message}");
+                }
+            }
+
+            model.Ref = parentRef; // 답변 글의 Ref(그룹)은 부모 글의 Ref를 그대로 저장 
+            model.Step = parentStep + 1; // 어떤 글의 답변 글이기에 들여쓰기 1 증가 
+            model.RefOrder = parentOrder + 1; // 부모글의 바로 다음번 순서로 보여지도록 설정 
+            #endregion
+
+            try
+            {
+                _context.Replys.Add(model);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                _logger?.LogError($"ERROR({nameof(AddAsync)}): {e.Message}");
+            }
+
+            return model;
+        }
     }
 }

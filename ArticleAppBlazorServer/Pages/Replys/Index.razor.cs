@@ -3,7 +3,7 @@ using BmsPager;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace ArticleAppBlazorServer.Pages.Uploads
+namespace ArticleAppBlazorServer.Pages.Replys
 {
     public partial class Index
     {
@@ -11,12 +11,12 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         public ILogger<Index> LoggerReference { get; set; }
 
         [Inject]
-        public IUploadRepository UploadRepositoryReference{ get; set; }
+        public IReplyRepository ReplyRepositoryReference { get; set; }
 
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
 
-        protected List<Upload> models;
+        protected List<Reply> models;
 
         // 페이저 객체 생성
         private BmsPagerBase pager = new BmsPagerBase()
@@ -44,7 +44,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
             {
                 //var resultsSet = await UploadRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
                 //pager.RecordCount = resultsSet.TotalRecords;
-                var resultsSet = await UploadRepositoryReference.GetArticles<int>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, 0);
+                var resultsSet = await ReplyRepositoryReference.GetArticles<int>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, 0);
                 pager.RecordCount = resultsSet.TotalCount;
                 LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
                 models = resultsSet.Items.ToList();
@@ -65,7 +65,7 @@ namespace ArticleAppBlazorServer.Pages.Uploads
         {
             try
             {
-                var resultsSet = await UploadRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
+                var resultsSet = await ReplyRepositoryReference.SearchAllAsync(pager.PageIndex, pager.PageSize, this.searchQuery);
                 pager.RecordCount = resultsSet.TotalRecords;
                 LoggerReference.LogInformation($"※※※ [2] 전체 레코드 수 {pager.RecordCount} , {pager.PageNumber}페이지");
                 models = resultsSet.Records.ToList();

@@ -58,6 +58,7 @@ namespace ArticleApp.Models
 
         public DbSet<Notice> Notices { get; set; }
         public DbSet<Upload> Uploads { get; set; }
+        public DbSet<Reply> Replys { get; set; }
 
     }
 }
