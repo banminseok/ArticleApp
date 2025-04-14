@@ -49,8 +49,11 @@ namespace ArticleApp.Models
             // Articles 테이블의 Created 열은 자동으로 GetDate() 제약 조건을 부여하기 
             modelBuilder.Entity<Notice>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<Upload>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Reply>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<Upload>().Property(m => m.Title).IsRequired().HasDefaultValue("");
+            modelBuilder.Entity<Reply>().Property(m => m.Title).IsRequired().HasDefaultValue("");
             modelBuilder.Entity<Upload>().Property(m => m.Content).IsRequired().HasDefaultValue("");
+            modelBuilder.Entity<Reply>().Property(m => m.Content).IsRequired().HasDefaultValue("");
         }
 
         //[!] ArticleApp 솔루션 관련 모든 테이블에 대한 참조 

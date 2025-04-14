@@ -2,6 +2,7 @@
 using ArticleAppBlazorServer.Managers;
 using BlazorUtils;
 using BmsPager;
+using Dul.Articles;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
@@ -78,25 +79,25 @@ namespace ArticleAppBlazorServer.Pages.Replys
             {
                 if(ParentKey!="" && !string.IsNullOrEmpty(ParentKey))
                 {
-                    var resultsSet = await ReplyRepositoryReference.GetAllByParentKeyAsync(pager.PageIndex, pager.PageSize, ParentKey);
-                    pager.RecordCount = resultsSet.TotalRecords;
-                    models = resultsSet.Records.ToList();
+                    var resultsSet = await ReplyRepositoryReference.GetArticles<string>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, ParentKey);
+                    pager.RecordCount = resultsSet.TotalCount;
+                    models = resultsSet.Items.ToList();
                     LoggerReference.LogInformation($"※※※ ParentKey!=\"\"");
 
                 }
                 else if (ParentId != 0)
                 {
-                    var resultsSet = await ReplyRepositoryReference.GetAllByParentIdAsync(pager.PageIndex, pager.PageSize, ParentId);
-                    pager.RecordCount = resultsSet.TotalRecords;
-                    models = resultsSet.Records.ToList();
+                    var resultsSet = await ReplyRepositoryReference.GetArticles<int>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, ParentId);
+                    pager.RecordCount = resultsSet.TotalCount;
+                    models = resultsSet.Items.ToList();
                     LoggerReference.LogInformation($"※※※ ParentId != 0");
 
                 }
                 else
                 {
-                    var resultsSet = await ReplyRepositoryReference.GetAllAsync(pager.PageIndex, pager.PageSize);
-                    pager.RecordCount = resultsSet.TotalRecords;
-                    models = resultsSet.Records.ToList();
+                    var resultsSet = await ReplyRepositoryReference.GetArticles<int>(pager.PageIndex, pager.PageSize, "", this.searchQuery, this.sortOrder, 0);
+                    pager.RecordCount = resultsSet.TotalCount;
+                    models = resultsSet.Items.ToList();
                     LoggerReference.LogInformation($"※※※ else");
 
                 }
@@ -185,14 +186,7 @@ namespace ArticleAppBlazorServer.Pages.Replys
         {
             pager.PageIndex = pageIndex;
             pager.PageNumber = pageIndex + 1;
-            if (this.searchQuery == "")
-            {
-                await DisplayData();
-            }
-            else
-            {
-                await SearchData();
-            }
+            await DisplayData();
 
 
         }

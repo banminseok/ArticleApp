@@ -68,9 +68,18 @@ namespace ArticleApp.Models
         //[6][3] 상세
         public async Task<Reply> GetByIdAsync(int id)
         {
-            return await _context.Replys
+            var model = await _context.Replys
                 //.Include(m => m.ReplysComments)
                 .SingleOrDefaultAsync(m => m.Id == id);
+            if ((model!=null))
+            {
+                model.ReadCount = model.ReadCount + 1;
+                _context.Replys.Attach(model);
+                _context.Entry(model).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+
+            return model;
         }
 
         //[6][4] 수정

@@ -75,6 +75,12 @@ namespace ArticleApp.Models
         /// </summary>
         public DateTime? Modified { get; set; }
 
+        /// <summary>
+        /// 조회수 : ReadCount
+        /// </summary>
+        [Display(Name = "조회수")]
+        public int ReadCount { get; set; }
+
         #region [2] 자료실 게시판 관련 주요 컬럼
         /// <summary>
         /// 파일명
