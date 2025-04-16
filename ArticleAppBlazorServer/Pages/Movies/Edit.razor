@@ -1,0 +1,107 @@
+﻿@page "/movies/edit"
+@using Microsoft.EntityFrameworkCore
+@using ArticleApp.Models
+@inject ArticleAppDbContext context
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h2>Movie</h2>
+<hr />
+@if (Movie is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="Movie" OnValidSubmit="UpdateMovie" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary role="alert"/>
+                <input type="hidden" name="Movie.Id" value="@Movie.Id" />
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <InputText id="title" @bind-Value="Movie.Title" class="form-control" />
+                    <ValidationMessage For="() => Movie.Title" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="releasedate" class="form-label">ReleaseDate:</label>
+                    <InputDate id="releasedate" @bind-Value="Movie.ReleaseDate" class="form-control" />
+                    <ValidationMessage For="() => Movie.ReleaseDate" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre:</label>
+                    <InputText id="genre" @bind-Value="Movie.Genre" class="form-control" />
+                    <ValidationMessage For="() => Movie.Genre" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price:</label>
+                    <InputNumber id="price" @bind-Value="Movie.Price" class="form-control" />
+                    <ValidationMessage For="() => Movie.Price" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/movies">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Movie? Movie { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //using var context = DbFactory;
+        Movie ??= await context.Movies.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (Movie is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task UpdateMovie()
+    {
+        //using var context = DbFactory;
+        //context.Attach(Movie!).State = EntityState.Modified;
+        //이 메서드는 model 객체를 DbContext에 연결합니다. 이 작업은 엔터티가 현재 컨텍스트에서 추적되도록 합니다.Attach 메서드는 엔터티의 상태를 Unchanged로 설정합니다. 즉, 엔터티가 데이터베이스에서 로드되었지만 변경되지 않았음을 나타냅니다.
+        context.Movies.Attach(Movie);
+        //이 줄은 model 객체의 상태를 Modified로 설정합니다. 이는 Entity Framework Core에 해당 엔터티가 변경되었음을 알리는 역할을 합니다. 이렇게 하면 SaveChangesAsync 메서드가 호출될 때, 해당 엔터티의 변경 사항이 데이터베이스에 반영됩니다.
+        context.Entry(Movie).State = EntityState.Modified;
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!MovieExists(Movie!.Id))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/movies");
+    }
+
+    private bool MovieExists(int id)
+    {
+        //using var context = DbFactory;
+        return context.Movies.Any(e => e.Id == id);
+    }
+}

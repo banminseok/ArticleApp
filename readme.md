@@ -31,6 +31,17 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 
 
+# 0. ASP.NET Core 8.0 Start
+- https://www.dul.me/docs/aspnet/core/start/?tabs=aspnetcore-8%2Cvisualstudio
+- https://learn.microsoft.com/ko-kr/shows/lets-learn-dotnet/lets-learn-dotnet-auth-and-identity?WT.mc_id=DT-MVP-35766
+- ASP.NET Core 8.0 Web API 맛보기 : https://www.youtube.com/watch?v=_M7rUwutFOc&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=22
+- GitHub: https://github.com/VisualAcademy
+- C# 11.0 원시 문자열 리터럴 : https://youtu.be/7l8S6Husiso
+- https://www.hawaso.com/
+- appsettings.json과 secrets.json 설명==> 우클릭 >사용자 암호관리 (*개발환경에서 만 적용가능*)
+- ASP.NET Core 6.0 LTS 버전의 4가지 프레임워크를 하나의 프로젝트에 포함하여 실행하기 >>> https://www.youtube.com/watch?v=zrLYE5NJd8U&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=27
+- @rendermode InteractiveServer (https://www.youtube.com/watch?v=ot5pG0P1nII&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=28)
+- 
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
