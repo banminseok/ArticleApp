@@ -41,7 +41,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - appsettings.json과 secrets.json 설명==> 우클릭 >사용자 암호관리 (*개발환경에서 만 적용가능*)
 - ASP.NET Core 6.0 LTS 버전의 4가지 프레임워크를 하나의 프로젝트에 포함하여 실행하기 >>> https://www.youtube.com/watch?v=zrLYE5NJd8U&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=27
 - @rendermode InteractiveServer (https://www.youtube.com/watch?v=ot5pG0P1nII&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=28)
-- 
+- global using globalusing.cs
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
