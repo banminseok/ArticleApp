@@ -24,6 +24,7 @@ namespace ArticleAppBlazorServer.Controllers
         public IActionResult Index()
         {
             ViewData["Url"] = "m.stmnet.co.kr";
+            ViewBag.Copyright = $"Copyright { DateTime.Now.Year} all right reserved";
             return View();
         }
         public IActionResult ConstructorInjectionDemo()

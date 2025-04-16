@@ -42,7 +42,22 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - ASP.NET Core 6.0 LTS 버전의 4가지 프레임워크를 하나의 프로젝트에 포함하여 실행하기 >>> https://www.youtube.com/watch?v=zrLYE5NJd8U&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=27
 - @rendermode InteractiveServer (https://www.youtube.com/watch?v=ot5pG0P1nII&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=28)
 - global using globalusing.cs
+- @inject IJSRuntime js
+- var variables = ViewBag.Variables as List<Variable>;
+- public AppSettingsDemoController(IConfiguration configuration)
 
+#1.1. Blazor Server 7.0 Fundamentals
+- 패키지관리자콘솔 > Add-Migration BuffetModelAdd,              update-database
+- 패키지관리자콘솔 > Add-Migration BuffetModelAdd -Context Hawaso.Models.Candidates.CandidateAppDbContext,
+  update-database -Context Hawaso.Models.Candidates.CandidateAppDbContext,
+- https://github.com/VisualAcademy/VisualAcademy/blob/4ba3026d773a00e143f1216419defea2cd41e59e/src/VisualAcademy/VisualAcademy/Models/Candidates/01_Candidate.cs
+- null!; (null 허용하지 않음)
+- Blazor Server 에서 직접 DBContext 사용시 주의사항....
+  //[a] MVC, RazorPages, Web API에서는 DbContext 사용 가능
+  //builder.Services.AddDbContext<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
+  //[b] Blazor Server에서는 DbContextFactory 사용 권장
+  builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
+ 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
   Microsoft.EntityFrameworkCore.SqlServer

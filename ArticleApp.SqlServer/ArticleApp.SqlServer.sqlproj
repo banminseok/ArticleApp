@@ -65,6 +65,7 @@
     <Build Include="dbo\Tables\Uploads.sql" />
     <Build Include="dbo\Tables\Replys.sql" />
     <Build Include="dbo\Tables\movies.sql" />
+    <Build Include="dbo\Tables\Candidates.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />

@@ -18,6 +18,17 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+//새로운 DbContext를 추가
+#region 새로운 DbContext 추가 - CandidateAppDbContext
+// 새로운 DbContext 추가 
+
+//[a] MVC, RazorPages, Web API에서는 DbContext 사용 가능
+//builder.Services.AddDbContext<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
+
+//[b] Blazor Server에서는 DbContextFactory 사용 권장
+builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
+# endregion
+
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -71,6 +82,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+
+    //개발환경에서 데이터가 없다면 데이터를 넣어라
+    //04_06_CandidatesSeedData_Candidates 테이블에 기본 데이터 입력
+    //https://www.youtube.com/watch?v=b7Ft2qRaEHU&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=17
+    CandidateSeedData(app);
+    
 }
 else
 {
@@ -89,8 +106,40 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapDefaultControllerRoute();  //MVC 컨트롤러 라우팅
+//app.MapDefaultControllerRoute();  //MVC 컨트롤러 라우팅
+app.MapControllerRoute(
+    name : "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+
+
+#region CandidateSeedData: Candidates 테이블에 기본 데이터 입력
+// Candidates 테이블에 기본 데이터 입력
+static void CandidateSeedData(WebApplication app)
+{
+    // https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/dependency-injection
+    // ?view=aspnetcore-6.0#resolve-a-service-at-app-start-up
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+
+        var candidateDbContext = services.GetRequiredService<CandidateAppDbContext>();
+
+        // Candidates 테이블에 데이터가 없을 때에만 데이터 입력
+        if (!candidateDbContext.Candidates.Any())
+        {
+            candidateDbContext.Candidates.Add(
+                new Candidate { FirstName = "길동", LastName = "홍", IsEnrollment = false });
+            candidateDbContext.Candidates.Add(
+                new Candidate { FirstName = "두산", LastName = "백", IsEnrollment = false });
+
+            candidateDbContext.SaveChanges();
+        }
+    }
+}
+#endregion
+
+

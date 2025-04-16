@@ -1,0 +1,108 @@
+﻿@page "/Candidates/{Page:int?}"
+@page "/Candidates/Index/{Page:int?}"
+@page "/Candidates/List/{Page:int?}"
+@using Microsoft.EntityFrameworkCore
+
+@inject IDbContextFactory<CandidateAppDbContext> _ContextFactory
+@inject IJSRuntime JSRuntime
+@inject ILogger<Index> LoggerReference
+
+<PageTitle>Candidate List</PageTitle>
+
+<h1>Candidate List</h1>
+
+<p>
+    <a href="/Candidates/Create">Create New</a>
+</p>
+
+@if (Candidates is null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    Is Enrollment
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Candidates)
+            {
+                <tr>
+                    <td>
+                        @m.FirstName
+                    </td>
+                    <td>
+                        @m.LastName
+                    </td>
+                    <td>
+                        <input class="check-box" type="checkbox" checked="@m.IsEnrollment" />
+                    </td>
+                    <td>
+                        <a href="/Candidates/Edit/@m.Id" class="btn btn-primary btn-sm">Edit</a> |
+                        <input type="button" class="btn btn-danger btn-sm" value="Delete"
+                               @onclick="() => DeleteBy(m)" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code{
+    // 현재 페이지에서 사용할 모델 또는 컬렉션
+    private Candidate[]? Candidates { get; set; }
+
+    /// <summary>
+    /// 페이지 번호: 현재 보여줄 페이지 번호: 1 페이지, 2 페이지, ...
+    /// </summary>s
+    [Parameter]
+    public int? Page { get; set; } // PageNumber
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DisplayData();
+    }
+
+    private async Task DisplayData()
+    {
+        // Blazor에서는 반드시 DbContext facotry 사용 권장(필수)
+        // https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/
+        //Candidates = await _Context.Candidates.ToArrayAsync();
+        using var context = _ContextFactory.CreateDbContext(); // DbContext 생성
+        Candidates = await context.Candidates.ToArrayAsync();
+    }
+
+    private async Task DeleteBy(Candidate model)
+    {
+        bool isDelete = await JSRuntime.InvokeAsync<bool>(
+                    "confirm", "Are you sure you want to delete this?");
+        if (isDelete)
+        {
+            try
+            {
+                using var context = _ContextFactory.CreateDbContext();
+                context.Candidates.Remove(model);
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                LoggerReference.LogInformation($"※※※Error ({nameof(DeleteBy)}):{e.Message}");
+            }
+
+            await DisplayData();
+        }
+    }
+}
