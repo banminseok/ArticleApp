@@ -47,6 +47,7 @@ builder.Services.AddTransient<IFileStorageManager, UploadAppFileStorageManager>(
 //builder.Services.AddTransient<IFileStorageManager, BlobStoragedManager>();  //Azure Blob Storage
 builder.Services.AddTransient<IReplyRepository, ReplyRepository>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>();
+builder.Services.AddSingleton<IInfoService, InfoService>();
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
