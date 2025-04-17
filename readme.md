@@ -57,7 +57,11 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   //builder.Services.AddDbContext<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
   //[b] Blazor Server에서는 DbContextFactory 사용 권장
   builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
- 
+  // mvc 페이지에 Blazor 컴포넌트를 2개 이상 사용하기 위해서는 DbContextFactory를 사용해야 한다.
+  // 하나의 Blazor 페이지에 DbContext를 2개 이상 사용하면, Blazor컴포넌트를 2개이상 사용하면  오류가 발생한다.
+- 
+
+
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
   Microsoft.EntityFrameworkCore.SqlServer

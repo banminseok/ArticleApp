@@ -3,6 +3,7 @@
 @page "/Candidates/List/{Page:int?}"
 @using Microsoft.EntityFrameworkCore
 
+@* @inject CandidateAppDbContext _Context *@
 @inject IDbContextFactory<CandidateAppDbContext> _ContextFactory
 @inject IJSRuntime JSRuntime
 @inject ILogger<Index> LoggerReference
