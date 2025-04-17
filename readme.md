@@ -59,8 +59,8 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
   // mvc 페이지에 Blazor 컴포넌트를 2개 이상 사용하기 위해서는 DbContextFactory를 사용해야 한다.
   // 하나의 Blazor 페이지에 DbContext를 2개 이상 사용하면, Blazor컴포넌트를 2개이상 사용하면  오류가 발생한다.
-- 
-
+- OnInValidSubmit  /// Form 유효성 검사 실패 시 처리
+  https://www.youtube.com/watch?v=yuoFU6VzCCk&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=49
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore

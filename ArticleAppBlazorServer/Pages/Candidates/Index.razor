@@ -5,6 +5,7 @@
 
 @* @inject CandidateAppDbContext _Context *@
 @inject IDbContextFactory<CandidateAppDbContext> _ContextFactory
+@inject NavigationManager Nav
 @inject IJSRuntime JSRuntime
 @inject ILogger<Index> LoggerReference
 
@@ -59,6 +60,30 @@ else
             }
         </tbody>
     </table>
+    <ul class="pagination">
+        <li class="page-item @((Page == 1) ? "disabled" : "")">
+            <a class="page-link" href="/Candidates/@(Page - 1)">Prev</a>
+        </li>
+        @{
+            int start = PageIndex / (int)5 * 5 + 1;
+            int end = (PageIndex / (int)5 + 1) * 5;
+        }
+        @for (int i = start; i <= end; i++)
+        {
+            var currentNumber = i;
+
+            if (i > PageCount)
+            {
+                break;
+            }
+            <li class="page-item @((i == Page) ? "active" : "")">
+                <a class="page-link" href="/Candidates/@(i)">@(i)</a>
+            </li>
+        }
+        <li class="page-item @((Page == PageCount) ? "disabled" : "")">
+            <a class="page-link" href="/Candidates/@(Page + 1)">Next</a>
+        </li>
+    </ul>
 }
 
 @code{
@@ -66,24 +91,69 @@ else
     private Candidate[]? Candidates { get; set; }
 
     /// <summary>
+    /// 페이지 사이즈: 한 페이지에 몇 개의 레코드를 보여줄건지 결정
+    /// </summary>
+    public int PageSize { get; set; } = 4;
+
+    /// <summary>
     /// 페이지 번호: 현재 보여줄 페이지 번호: 1 페이지, 2 페이지, ...
-    /// </summary>s
+    /// </summary>
     [Parameter]
     public int? Page { get; set; } // PageNumber
 
+    /// <summary>
+    /// 페이지 인덱스: 현재 보여줄 페이지 번호의 인덱스(PageNumber - 1)
+    /// </summary>
+    public int PageIndex { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    /// <summary>
+    /// 총 몇 개의 페이지가 만들어지는지: Math.Ceiling(총 레코드 수 / 10(한 페이지에서 보여줄))
+    /// </summary>
+    public int PageCount { get; set; }
+
+    /// <summary>
+    /// 레코드 카운트: 현재 테이블에 몇 개의 레코드가 있는지 지정
+    /// </summary>
+    public int RecordCount { get; set; }
+
+
+    protected override async Task OnParametersSetAsync()
     {
         await DisplayData();
     }
 
     private async Task DisplayData()
     {
+        if (Page is null or < 1)
+        {
+            //Page = 1;
+            Nav.NavigateTo("/Candidates/Index/1");
+            return;
+        }
+        PageIndex = Page.Value - 1;
+
+
         // Blazor에서는 반드시 DbContext facotry 사용 권장(필수)
         // https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/
         //Candidates = await _Context.Candidates.ToArrayAsync();
         using var context = _ContextFactory.CreateDbContext(); // DbContext 생성
-        Candidates = await context.Candidates.ToArrayAsync();
+
+        RecordCount = await context.Candidates.CountAsync();
+        PageCount = Convert.ToInt32(Math.Ceiling(RecordCount / (double)PageSize));
+        if (PageCount == 0)
+        {
+            PageCount = 1; // 데이터가 없으면 1 페이지로 초기화
+        }
+        if (Page > PageCount)
+        {
+            Nav.NavigateTo($"/Candidates/List/{PageCount}");
+            return;
+        }
+        Candidates = await context.Candidates
+            .OrderByDescending(it =>it.FirstName)
+            .Skip(PageIndex * PageSize)
+            .Take(PageSize)
+            .ToArrayAsync();
     }
 
     private async Task DeleteBy(Candidate model)
