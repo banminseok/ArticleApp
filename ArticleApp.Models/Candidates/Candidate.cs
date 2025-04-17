@@ -42,11 +42,11 @@ namespace ArticleApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Identity(1, 1)
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="이름을 입력하세요.")]
         [StringLength(50)]
         public string? FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "이름 (성)을 입력하세요.")]
         [StringLength(50)]
         public string? LastName { get; set; }
 
