@@ -1,5 +1,7 @@
 using ArticleApp.Models;
 using ArticleAppBlazorServer.Areas.Identity;
+using ArticleAppBlazorServer.Areas.Identity.Models;
+using ArticleAppBlazorServer.Areas.Identity.Services;
 using ArticleAppBlazorServer.Data;
 using ArticleAppBlazorServer.Managers;
 using ArticleAppBlazorServer.Services;
@@ -8,6 +10,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using UploadApp.Shared;
@@ -30,18 +33,23 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // 하나의 Blazor 페이지에 DbContext를 2개 이상 사용하면, Blazor컴포넌트를 2개이상 사용하면  오류가 발생한다.
 // // https://docs.microsoft.com/ko-kr/aspnet/core/blazor/data/ef-core?view=aspnetcore-6.0#use-a-dbcontext-factory
 //  https://www.youtube.com/watch?v=HTic5S5Z6iA&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=26
+// https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso/Components/Pages/VendorPages/Models/07_VendorRepositoryPermanentDelete.cs#L9
 builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
 # endregion
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
 builder.Services.AddControllersWithViews();  // MVC 컨트롤러 사용
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; }); // 개발자 모드에서 상세 오류 표시
-builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ApplicationUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 #region 공지사항(NoticeApp) 관련 의존성(종속성) 주입 관련 코드만 따로 모아서 관리 
@@ -63,6 +71,9 @@ builder.Services.AddTransient<IFileStorageManager, UploadAppFileStorageManager>(
 builder.Services.AddTransient<IReplyRepository, ReplyRepository>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>();
 builder.Services.AddSingleton<IInfoService, InfoService>();
+
+//종속성주입 추가
+builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 

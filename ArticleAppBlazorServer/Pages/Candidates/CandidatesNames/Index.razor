@@ -1,6 +1,6 @@
-﻿@page "/Candidates/{Page:int?}"
-@page "/Candidates/Index/{Page:int?}"
-@page "/Candidates/List/{Page:int?}"
+﻿@page "/Candidates/CandidatesNames/{Page:int?}"
+@page "/Candidates/CandidatesNames/Index/{Page:int?}"
+@page "/Candidates/CandidatesNames/List/{Page:int?}"
 @using Microsoft.EntityFrameworkCore
 
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
@@ -12,13 +12,12 @@
 @inject IJSRuntime JSRuntime
 @inject ILogger<Index> LoggerReference
 
-<PageTitle>Candidate List</PageTitle>
+<PageTitle>CandidateName List</PageTitle>
 
-<h1>Candidate List</h1>
+<h1>CandidateName List</h1>
 
 <p>
-    <a href="/Candidates/Create">Create New</a>
-    <a href="/Candidates/CandidatesNames">CandidatesNames</a>
+    <a href="/Candidates/CandidatesNames/Create">Create New</a>
 </p>
 
 @if (Candidates is null)
@@ -53,10 +52,10 @@ else
                         @m.LastName
                     </td>
                     <td>
-                        <input class="check-box" type="checkbox" checked="@m.IsEnrollment" />
+                        @m.MiddleName
                     </td>
                     <td>
-                        <a href="/Candidates/Edit/@m.Id" class="btn btn-primary btn-sm">Edit</a> |
+                        <a href="/Candidates/CandidatesNames/Edit/@m.Id" class="btn btn-primary btn-sm">Edit</a> |
                         <input type="button" class="btn btn-danger btn-sm" value="Delete"
                         @onclick="() => DeleteBy(m)" />
                     </td>
@@ -66,7 +65,7 @@ else
     </table>
     <ul class="pagination">
         <li class="page-item @((Page == 1) ? "disabled" : "")">
-            <a class="page-link" href="/Candidates/@(Page - 1)">Prev</a>
+            <a class="page-link" href="/Candidates/CandidatesNames/@(Page - 1)">Prev</a>
         </li>
         @{
             int start = PageIndex / (int)5 * 5 + 1;
@@ -81,18 +80,18 @@ else
                 break;
             }
             <li class="page-item @((i == Page) ? "active" : "")">
-                <a class="page-link" href="/Candidates/@(i)">@(i)</a>
+                <a class="page-link" href="/Candidates/CandidatesNames/@(i)">@(i)</a>
             </li>
         }
         <li class="page-item @((Page == PageCount) ? "disabled" : "")">
-            <a class="page-link" href="/Candidates/@(Page + 1)">Next</a>
+            <a class="page-link" href="/Candidates/CandidatesNames/@(Page + 1)">Next</a>
         </li>
     </ul>
 }
 
 @code{
     // 현재 페이지에서 사용할 모델 또는 컬렉션
-    private Candidate[]? Candidates { get; set; }
+    private CandidateName[]? Candidates { get; set; }
 
     /// <summary>
     /// 페이지 사이즈: 한 페이지에 몇 개의 레코드를 보여줄건지 결정
@@ -131,7 +130,7 @@ else
         if (Page is null or < 1)
         {
             //Page = 1;
-            Nav.NavigateTo("/Candidates/Index/1");
+            Nav.NavigateTo("/Candidates/CandidatesNames/Index/1");
             return;
         }
         PageIndex = Page.Value - 1;
@@ -150,11 +149,11 @@ else
         }
         if (Page > PageCount)
         {
-            Nav.NavigateTo($"/Candidates/List/{PageCount}");
+            Nav.NavigateTo($"/Candidates/CandidatesNames/List/{PageCount}");
             return;
         }
 
-        Candidates = await context.Candidates
+        Candidates = await context.CandidatesNames
             .OrderByDescending(it =>it.FirstName)
             .Skip(PageIndex * PageSize)
             .Take(PageSize)
@@ -177,7 +176,7 @@ else
         }
     }
 
-    private async Task DeleteBy(Candidate model)
+    private async Task DeleteBy(CandidateName model)
     {
         bool isDelete = await JSRuntime.InvokeAsync<bool>(
                     "confirm", "Are you sure you want to delete this?");
@@ -186,7 +185,7 @@ else
             try
             {
                 using var context = _ContextFactory.CreateDbContext();
-                context.Candidates.Remove(model);
+                context.CandidatesNames.Remove(model);
                 await context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException e)

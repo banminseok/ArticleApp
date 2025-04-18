@@ -1,0 +1,125 @@
+﻿@page "/Candidates/CandidatesNames/Create"
+
+
+@inject IDbContextFactory<CandidateAppDbContext> _ContextFactory
+@inject IJSRuntime JSRuntime
+@inject ILogger<Create> LoggerReference
+
+<PageTitle>CandidateName Create</PageTitle>
+
+<h3>Create</h3>
+<hr />
+@if (!String.IsNullOrEmpty(StatusMessage))
+{
+    var statusMessageClass = StatusMessage.StartsWith("Error") ? "danger" : "success";
+    <div class="alert alert-@statusMessageClass alert-dismissible fade show" role="alert">
+        @StatusMessage
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" @onclick="CloseAlert"></button>
+
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm 
+        Model="@Model" Busy="@Busy"
+        OnSubmitCallback="@OnSubmitCallback">
+        </ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm>
+    </div>
+</div>
+<div class="form-group">
+    <a href="/Candidates">Back to List</a>
+</div>
+
+@code {
+    public CandidateName? Model { get; set; }
+
+    //현재 상태 메시지
+    public string? StatusMessage { get; set; }
+
+    public bool Busy { get; set; }
+
+    protected override void OnInitialized()
+    {
+        //Model = new Candidate { FirstName = "YJ", LastName = "Park", IsEnrollment = true };
+        Model = new(); // new Candidate(); 초기화
+    }
+
+    protected async Task FormSubmit()
+    {
+        // 전송 버튼을 누르고 아직 저장 완료가 되지 않았으면 진행 종료: 중복 입력 방지
+        if (Busy)
+        {
+            return;
+        }
+        Busy = true;
+
+        try
+        {
+            if (Model is not null)
+            {
+                
+                using (var ctx = _ContextFactory.CreateDbContext())
+                {
+                    ctx.CandidatesNames.Add(Model);
+                    await ctx.SaveChangesAsync();
+                    LoggerReference.LogInformation($"※※※ ({nameof(FormSubmit)}):Candidate Create");
+
+                }
+                StatusMessage = "Success";
+            }
+
+        }
+        catch (Exception e)
+        {
+            StatusMessage = "Error";
+            LoggerReference.LogError($"※※※ Error ({nameof(FormSubmit)}):{e.Message}");
+        }
+        finally
+        {
+            Busy = false;
+        }
+    }
+
+
+    /// <summary>
+    /// OnInValidSubmit
+    /// 유효성 검사 실패 시 처리
+    /// Blazor의 OnInvalidSubmit 이벤트는 유효성 검사에 실패했을 때 호출되며, 이벤트 핸들러는 EditContext 객체를 매개변수로 받을 수 있습니다. 이 EditContext는 폼의 상태와 유효성 검사 정보를 포함합니다.
+    protected void HandleInvalidSubmit(EditContext editContext)
+    {
+        
+        var ValidationMessages = editContext.GetValidationMessages().ToList();
+        // 로그에 메시지 출력
+        foreach (var message in ValidationMessages)
+        {
+            LoggerReference.LogError($"Validation Error: {message}");
+        }
+        //LoggerReference.LogError($"※※※ Error1 Validation failed: {validationMessages.ToString()}");
+        //LoggerReference.LogError($"※※※ Error2 (editContext.GetValidationMessages(FirstName)) : {editContext.GetValidationMessages(new FieldIdentifier(Model, nameof(Model.FirstName))).ToString()}");
+        StatusMessage = "";
+    }
+    protected void HandleInvalidSubmit()
+    {
+        StatusMessage = "";
+    }
+    /// <summary>
+    /// Alert 창을 닫기 위한 메소드
+    /// </summary>
+    /// <param name="args"></param>
+    private void CloseAlert(MouseEventArgs args)
+    {
+        StatusMessage = null;
+    }
+
+    protected async Task OnSubmitCallback(bool isValid)
+    {
+        if (isValid)
+        {
+            await FormSubmit();
+        }
+        else
+        {
+            HandleInvalidSubmit();
+        }
+    }
+}

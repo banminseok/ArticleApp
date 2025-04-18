@@ -60,7 +60,59 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   // mvc 페이지에 Blazor 컴포넌트를 2개 이상 사용하기 위해서는 DbContextFactory를 사용해야 한다.
   // 하나의 Blazor 페이지에 DbContext를 2개 이상 사용하면, Blazor컴포넌트를 2개이상 사용하면  오류가 발생한다.
 - OnInValidSubmit  /// Form 유효성 검사 실패 시 처리
-  https://www.youtube.com/watch?v=yuoFU6VzCCk&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=49
+- AsNoTracking (읽기전용으로 성능향상 옵션) await ctx.Candidates.AsNoTracking().FirstOrDefaultAsync(it => it.Id == Id);
+- 17_01_Script-Migration 명령을 사용하여 데이터베이스 개체를 순수 SQL 스크립트로 뽑아내기
+  패키지관리자콘솔 > Script-Migration -Context Hawaso.Models.Candidates.CandidateAppDbContext
+- 17_03_자주 사용하는 공통 네임스페이스들을 _Imports 파일에 모아서 관리하기
+- 17_04_namespace 지시문을 사용하여 컴포넌트의 네임스페이스를 고정값으로 설정하기
+  namespace 설정하기 : @namespace AriticleApp.Pages.Candidates
+
+# DbContextFactory VS DbContext	
+Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.
+다음 링크의 제 강의 소스의 Memos 모듈의 소스가 이미 Repository에서 DbContext를 그대로 호출해서 사용합니다.
+https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso.Models/Memos/04_MemoRepository.cs#L21
+단, 최근에는 이왕이면 새롭게 만드는 Repository들은 DbContextFactory를 사용하려고 노력중입니다.
+DbContext와 Repository 중간에 DbContextFactory를 하나 더 두는 형태입니다. 
+https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso/Components/Pages/VendorPages/Models/07_VendorRepositoryPermanentDelete.cs#L9
+
+# Dapper와 DbContext
+-Dapper는 경량 ORM으로, DbContext와는 독립적으로 작동합니다.
+-Dapper는 데이터베이스 연결(IDbConnection)을 직접 사용하여 SQL 쿼리를 실행합니다.
+-따라서 Dapper를 사용할 때는 DbContext가 아닌 데이터베이스 연결 객체를 직접 관리해야 합니다.
+2. DbContextFactory와 Dapper의 사용
+DbContextFactory를 사용하여 DbContext를 생성한 후, Dapper와 함께 사용하려면 DbContext에서 데이터베이스 연결을 추출해야 합니다.
+using Dapper;
+using Microsoft.EntityFrameworkCore;
+
+public async Task<IEnumerable<Candidate>> GetCandidatesAsync(IDbContextFactory<CandidateAppDbContext> contextFactory)
+{
+    // [1] DbContext 생성
+    using var context = contextFactory.CreateDbContext();
+
+    // [2] DbConnection 가져오기
+    using var connection = context.Database.GetDbConnection();
+
+    // [3] DbConnection 열기
+    await connection.OpenAsync();
+
+    // [4] Dapper를 사용하여 SQL 쿼리 실행
+    var sql = "SELECT * FROM Candidates ORDER BY FirstName";
+    var candidates = await connection.QueryAsync<Candidate>(sql);
+
+    // [5] DbContext와 DbConnection은 using 블록이 끝나면 자동으로 Dispose() 호출
+    return candidates;
+}
+--------------
+using var context = _ContextFactory.CreateDbContext();
+using var transaction = await context.Database.BeginTransactionAsync();
+using var connection = context.Database.GetDbConnection();
+
+await connection.ExecuteAsync("INSERT INTO Candidates (FirstName, LastName) VALUES (@FirstName, @LastName)", new { FirstName = "John", LastName = "Doe" }, transaction.GetDbTransaction());
+
+await context.SaveChangesAsync();
+await transaction.CommitAsync();
+--------------------
+
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
