@@ -250,9 +250,9 @@ static void CandidateSeedData(WebApplication app)
         if (!candidateDbContext.Candidates.Any())
         {
             candidateDbContext.Candidates.Add(
-                new Candidate { FirstName = "길동", LastName = "홍", IsEnrollment = false });
+                new CandidatesIncome { FirstName = "길동", LastName = "홍", IsEnrollment = false });
             candidateDbContext.Candidates.Add(
-                new Candidate { FirstName = "두산", LastName = "백", IsEnrollment = false });
+                new CandidatesIncome { FirstName = "두산", LastName = "백", IsEnrollment = false });
 
             candidateDbContext.SaveChanges();
         }

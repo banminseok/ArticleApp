@@ -25,9 +25,10 @@ namespace ArticleApp.Models
         //15__04_04_DbContext에 Table 속성 추가 및 DbContext 등록 후 데이터베이스 업데이트
         //https://www.youtube.com/watch?v=sciU57zyqe0&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=15
         // DbSet of T 형태의 컬렉션 속성을 사용하여 모델(도메인)에 해당하는 테이블 생성
-        public DbSet<Candidate> Candidates { get; set; } = null!;
+        public DbSet<CandidatesIncome> Candidates { get; set; } = null!;
 
         public DbSet<CandidateName> CandidatesNames { get; set; } = null!;
+        public DbSet<CandidateIncome> CandidatesIncomes { get; set; } = null!;
 
         //public DbSet<CandidateIncome> CandidatesIncomes { get; set; } = null!;
 
