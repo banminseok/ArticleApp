@@ -15,56 +15,112 @@
 
 <h1>CandidateName List</h1>
 
-
-@if (Candidates is null)
+<div class="row">
+    <div id="pnlNames">
+        <span class="fw-bold">Have you ever used or been known by any other name(s)?&nbsp;&nbsp;</span>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Yes" name="optNames" id="namesYes"
+                   checked="@(blnNames == true)"
+                   @onchange="@(() => { blnNames = !blnNames; })" />
+            <label class="form-check-label" for="namesYes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="No" name="optNames" id="namesNo"
+                   checked="@(blnNames == false)"
+                   @onchange="@(() => { blnNames = !blnNames; })" />
+            <label class="form-check-label" for="namesNo">No</label>
+        </div>
+    </div>
+</div>
+@if (blnNames)
 {
-    <div>Loading...</div>
-}
-else
-{
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>
-                    FirstName
-                </th>
-                <th>
-                    LastName
-                </th>
-                <th>
-                    Middle Name
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var m in Candidates)
-            {
-                <tr>
-                    <td>
-                        @m.FirstName
-                    </td>
-                    <td>
-                        @m.LastName
-                    </td>
-                    <td>
-                        @m.MiddleName
-                    </td>
-                    <td>
-                        <a href="/Candidates/CandidatesNames/Edit/@m.Id" class="btn btn-primary btn-sm">Edit</a> |
-                        <input type="button" class="btn btn-danger btn-sm" value="Delete"
-                        @onclick="() => DeleteBy(m)" />
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>   
-}
+    <div class="row">
+        <div class="col-md-12">
+            If YES, list the additional name(s) below and specify dates of use for each name (include maiden name, aliases, nicknames, other name changes, legal or otherwise).
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm Model="@Model" Busy="@Busy"
+                                                                                           OnSubmitCallback="@OnSubmitCallback">
+            </ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm>
+        </div>
+    </div>
+
+
+
+    @if (Candidates is null)
+    {
+        <div>Loading...</div>
+    }
+    else if (Candidates.Length > 0)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                FirstName
+                            </th>
+                            <th>
+                                LastName
+                            </th>
+                            <th>
+                                Middle Name
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Candidates)
+                        {
+                            <tr>
+                                <td>
+                                    @m.FirstName
+                                </td>
+                                <td>
+                                    @m.LastName
+                                </td>
+                                <td>
+                                    @m.MiddleName
+                                </td>
+                                <td>
+                                    <a href="/Candidates/CandidatesNames/Edit/@m.Id" class="btn btn-primary btn-sm">Edit</a> |
+                                    <input type="button" class="btn btn-danger btn-sm" value="Delete"
+                                           @onclick="() => DeleteBy(m)" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    }
+}
 @code {
     // 부모 Component 또는 MVC, Razor Pages에서 넘어온 UserId 값을 받아 저장
     [Parameter]
     public string UserId { get; set; } = "945503cc-ed22-4914-b40b-661cdbc732ad";
+
+    // names에 대해서 관리하는지 여부
+    [Parameter]
+    public bool UseOtherNames
+    {
+        get
+        {
+            return blnNames;
+        }
+        set
+        {
+            blnNames = value;
+        }
+    }
+
+    private bool blnNames = true;
+
 
 
     // 현재 페이지에서 사용할 모델 또는 컬렉션
@@ -118,7 +174,8 @@ else
         //Candidates = await _Context.Candidates.ToArrayAsync();
         using var context = _ContextFactory.CreateDbContext(); // DbContext 생성
 
-        RecordCount = await context.CandidatesNames.CountAsync();
+        RecordCount = await context.CandidatesNames.Where(ui => ui.UserId == UserId).CountAsync();
+
         PageCount = Convert.ToInt32(Math.Ceiling(RecordCount / (double)PageSize));
         if (PageCount == 0)
         {
@@ -126,10 +183,9 @@ else
         }
 
         Candidates = await context.CandidatesNames
-            .OrderByDescending(it => it.FirstName)
-            .Skip(PageIndex * PageSize)
-            .Take(PageSize)
-            .ToArrayAsync();
+        .Where(ui => ui.UserId == UserId)
+        .OrderByDescending(it => it.Id)
+        .ToArrayAsync();
     }
 
 
@@ -147,7 +203,7 @@ else
             }
             catch (DbUpdateConcurrencyException e)
             {
-                
+
             }
 
             await DisplayData();
@@ -156,14 +212,6 @@ else
 }
 
 
-
-<div class="row">
-    <div class="col-md-4">
-        <ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm Model="@Model" Busy="@Busy"
-                                                                                       OnSubmitCallback="@OnSubmitCallback">
-        </ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Components.EditorForm>
-    </div>
-</div>
 
 @code {
     public CandidateName? Model { get; set; }
@@ -195,9 +243,10 @@ else
 
                 using (var ctx = _ContextFactory.CreateDbContext())
                 {
+                    Model.UserId = UserId;
                     ctx.CandidatesNames.Add(Model);
                     ctx.SaveChanges();
- 
+
                 }
                 StatusMessage = "Success";
 

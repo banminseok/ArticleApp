@@ -11,6 +11,16 @@
            render-mode="ServerPrerendered"
            />
 
+
+<hr/>
+
+
+<component type="typeof(ArticleAppBlazorServer.Pages.Candidates.CandidatesNames.Manage)"
+           render-mode="ServerPrerendered"
+           param-UseOtherNames="true"
+           param-UserId="@("a@a.com")"/>
+
+
 <div>
 
 component 는 라우팅 규칙을 따르지 않는다, 현재 라우팅 기반으로 만든 index, edit, create 페이지를 사용하지 않고
