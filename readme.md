@@ -66,6 +66,11 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - 17_03_자주 사용하는 공통 네임스페이스들을 _Imports 파일에 모아서 관리하기
 - 17_04_namespace 지시문을 사용하여 컴포넌트의 네임스페이스를 고정값으로 설정하기
   namespace 설정하기 : @namespace AriticleApp.Pages.Candidates
+- compoent테그 사용해서 mvc나 razor 페이지에 삽입할때, 주의사항
+    하단 레이아웃 페이지 blazor.server.js 포함 확인
+    상단<base href="~/" /> 포함확인
+- 
+
 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.

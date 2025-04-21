@@ -2,6 +2,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "CandidateComponent Test";
+    Layout = "_ComponentTest.cshtml";
 }
 <h3>ASP.NET Core MVC 또는 Razor Pages에서 Blazor Component 실행</h3>
 
@@ -13,4 +15,9 @@
 
 component 는 라우팅 규칙을 따르지 않는다, 현재 라우팅 기반으로 만든 index, edit, create 페이지를 사용하지 않고
 Manage에서 입력,출력,수정,삭제를 단일 컴포넌트에서 처리하도록 만들어야 한다.
+</div>
+<div>
+    주의사항
+    레이아웃 페이지 blazor.server.js 포함 확인
+    <base href="~/" /> 포함확인
 </div>

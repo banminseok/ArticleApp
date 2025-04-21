@@ -1,0 +1,38 @@
+﻿@page
+@using Microsoft.AspNetCore.Components
+@model ArticleAppBlazorServer.Pages.AuthenticationAuthorizationStudy.IndexModel
+@{
+    Layout = "~/Pages/Shared/_AuthenticationAuthorizationStudy.cshtml";
+}
+
+<h1>ASP.NET Core 인증과 권한 초간단 코드</h1>
+<div class="row">
+    <div class="col-md-4">
+        <a href="/AuthenticationAuthorizationStudy/Login">로그인</a>
+        <br />
+        <a href="/Login/User">로그인(User)</a>
+        <br />
+        <a href="/Login/Administrator">로그인(Administrator)</a>
+        <br />
+        <a href="/AuthenticationAuthorizationStudy/Info">정보</a>
+        <br />
+        <a href="/AuthenticationAuthorizationStudy/InfoDetails">정보(Details)</a>
+        <br />
+        <a href="/InfoJson">정보(JSON)</a>
+        <br />
+        <a href="/Logout">로그아웃</a>
+        <br />
+
+        <hr /><a href="/Landing">랜딩페이지</a>
+        <br />
+        <a href="/Greeting">환영페이지</a>
+        <br />
+        <a href="/Dashboard">관리페이지</a>
+        <br />
+        <a href="/api/AuthService">로그인 정보(JSON)</a>
+        <br />
+    </div>
+    <div class="col-md-8">
+        @Html.Raw(Model.LoginMessage)
+    </div>
+</div>

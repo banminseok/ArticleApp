@@ -1,0 +1,12 @@
+﻿@page
+@model ArticleAppBlazorServer.Pages.AuthenticationAuthorizationStudy.InfoModel
+@{
+}
+@{
+    ViewData["Title"] = "내 정보";
+}
+<h2>내 정보</h2>
+<ul>
+    <li><strong>아이디:</strong> @Model.UserName</li>
+    <li><strong>역할(Role):</strong> @Model.UserRole</li>
+</ul>
