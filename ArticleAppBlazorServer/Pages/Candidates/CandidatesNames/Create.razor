@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="form-group">
-    <a href="/Candidates">Back to List</a>
+    <a href="/Candidates/CandidatesNames">Back to List</a>
 </div>
 
 @code {
@@ -62,7 +62,7 @@
                 {
                     ctx.CandidatesNames.Add(Model);
                     await ctx.SaveChangesAsync();
-                    LoggerReference.LogInformation($"※※※ ({nameof(FormSubmit)}):Candidate Create");
+                    LoggerReference.LogInformation($"※※※ ({nameof(FormSubmit)}):CandidatesNames Create");
 
                 }
                 StatusMessage = "Success";

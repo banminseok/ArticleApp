@@ -36,7 +36,7 @@ else
                     LastName
                 </th>
                 <th>
-                    Is Enrollment
+                    Middle Name
                 </th>
                 <th></th>
             </tr>
@@ -141,7 +141,7 @@ else
         //Candidates = await _Context.Candidates.ToArrayAsync();
         using var context = _ContextFactory.CreateDbContext(); // DbContext 생성
 
-        RecordCount = await context.Candidates.CountAsync();
+        RecordCount = await context.CandidatesNames.CountAsync();
         PageCount = Convert.ToInt32(Math.Ceiling(RecordCount / (double)PageSize));
         if (PageCount == 0)
         {

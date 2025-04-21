@@ -44,7 +44,7 @@ else
     </div>
 }
 <div class="form-group">
-    <a href="/Candidates">Back to List</a>
+    <a href="/Candidates/CandidatesNames">Back to List</a>
 </div>
 
 @code {
@@ -116,7 +116,7 @@ else
 
     private async Task GotoIndexPage()
     {
-        var result = await ProtectedLocalStore.GetAsync<int>("Page");
+        var result = await ProtectedLocalStore.GetAsync<int>("PageCandidateName");
         var currentPage = result.Success ? result.Value : 1;
 
         Nav.NavigateTo($"/Candidates/CandidatesNames/{currentPage}");
