@@ -46,7 +46,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - var variables = ViewBag.Variables as List<Variable>;
 - public AppSettingsDemoController(IConfiguration configuration)
 
-#1.1. Blazor Server 7.0 Fundamentals
+# 1.1. Blazor Server 7.0 Fundamentals
 - 패키지관리자콘솔 > Add-Migration BuffetModelAdd,              update-database
 - 패키지관리자콘솔 > Add-Migration BuffetModelAdd -Context Hawaso.Models.Candidates.CandidateAppDbContext,
   update-database -Context Hawaso.Models.Candidates.CandidateAppDbContext,
@@ -69,7 +69,11 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - compoent테그 사용해서 mvc나 razor 페이지에 삽입할때, 주의사항
     하단 레이아웃 페이지 blazor.server.js 포함 확인
     상단<base href="~/" /> 포함확인
-- 
+- ASP.NET Core 레이아웃과 Blazor Server Layout을 하나로 통합해서 사용하기
+  https://www.youtube.com/watch?v=CEv0zt_MPbo&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=90
+
+# 1.2. Blazor Part 1 기초
+
 
 
 # DbContextFactory VS DbContext	
