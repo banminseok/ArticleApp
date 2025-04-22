@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace ArticleApp.Models
 {
-    public class CandidateAppDbContext : DbContext
+    public class IdeaAppDbContext : DbContext
     {
-        public CandidateAppDbContext() : base()
+        public IdeaAppDbContext() : base()
         {
             // Empty
             // 만약, Repository 클래스에 생성자 매개 변수 주입 방식 사용시 이 생성자 제거 
         }
 
-        public CandidateAppDbContext(DbContextOptions<CandidateAppDbContext> options)
+        public IdeaAppDbContext(DbContextOptions<IdeaAppDbContext> options)
             : base(options)
         {
             // Empty
@@ -25,12 +25,8 @@ namespace ArticleApp.Models
         //15__04_04_DbContext에 Table 속성 추가 및 DbContext 등록 후 데이터베이스 업데이트
         //https://www.youtube.com/watch?v=sciU57zyqe0&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=15
         // DbSet of T 형태의 컬렉션 속성을 사용하여 모델(도메인)에 해당하는 테이블 생성
-        public DbSet<Candidate> Candidates { get; set; } = null!;
+        public DbSet<Idea> Ideas { get; set; } = null!;
 
-        public DbSet<CandidateName> CandidatesNames { get; set; } = null!;
-        public DbSet<CandidateIncome> CandidatesIncomes { get; set; } = null!;
-
-        //public DbSet<CandidateIncome> CandidatesIncomes { get; set; } = null!;
 
         /// <summary>
         /// 모델(테이블)이 생성될때 처음 실행 되는 메서드/ 마이그레이션 할때.... 쓸일없겠다.

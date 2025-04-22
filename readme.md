@@ -5,7 +5,9 @@ git :	01 https://github.com/VisualAcademy/articleapp
 		02 https://github.com/VisualAcademy/NoticeApp.DevLec
 		03 https://github.com/VisualAcademy/UploadApp
 		04 https://github.com/VisualAcademy/ReplyApp
-
+        05 https://github.com/VisualAcademy/hawaso
+        06 https://github.com/VisualAcademy/DotNetNote
+        
 
 @VisualAcademy
 안녕하세요. 박용준 강사입니다.

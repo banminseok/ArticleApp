@@ -93,7 +93,7 @@ else
 
 @code{
     // 현재 페이지에서 사용할 모델 또는 컬렉션
-    private CandidatesIncome[]? Candidates { get; set; }
+    private Candidate[]? Candidates { get; set; }
 
     /// <summary>
     /// 페이지 사이즈: 한 페이지에 몇 개의 레코드를 보여줄건지 결정
@@ -178,7 +178,7 @@ else
         }
     }
 
-    private async Task DeleteBy(CandidatesIncome model)
+    private async Task DeleteBy(Candidate model)
     {
         bool isDelete = await JSRuntime.InvokeAsync<bool>(
                     "confirm", "Are you sure you want to delete this?");

@@ -59,7 +59,7 @@ namespace ArticleApp.Models
         public byte[]? ConcurrencyToken { get; set; }
     }
 
-    public class CandidatesIncome : CandidateBase
+    public class Candidate : CandidateBase
     {
         // Full Middle Name
         [StringLength(35)]

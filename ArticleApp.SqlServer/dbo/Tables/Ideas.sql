@@ -1,0 +1,4 @@
+﻿CREATE TABLE Ideas (
+    Id INT IDENTITY(1,1) PRIMARY KEY, -- 기본 키, 자동 증가
+    Note NVARCHAR(255) NOT NULL DEFAULT '',
+);

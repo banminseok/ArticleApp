@@ -63,6 +63,7 @@ namespace ArticleApp.Models
         public DbSet<Upload> Uploads { get; set; }
         public DbSet<Reply> Replys { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Idea> Ideas { get; set; }
 
     }
 }

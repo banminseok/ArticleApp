@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Routing.Matching;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.Security.Claims;
@@ -40,6 +41,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //  https://www.youtube.com/watch?v=HTic5S5Z6iA&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=26
 // https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso/Components/Pages/VendorPages/Models/07_VendorRepositoryPermanentDelete.cs#L9
 builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
+
 # endregion
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();
@@ -77,6 +79,17 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 }, ServiceLifetime.Transient); // 서비스 수명주기: Transient로 중복 호출시 사용..
+//builder.Services.AddDbContextFactory<ArticleAppDbContext>(options => options.UseSqlServer(connectionString),
+//    ServiceLifetime.Scoped  // 명시적 스코프 지정
+//builder.Services.AddDbContextFactory<IdeaAppDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContextFactory<IdeaAppDbContext>(options => options.UseSqlServer(connectionString));
+//builder.Services.AddScoped<IdeaAppDbContext>(provider =>
+//{
+//    var factory = provider.GetRequiredService<IDbContextFactory<IdeaAppDbContext>>();
+//    return factory.CreateDbContext();
+//}
+//);
+
 
 // IArticleRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
@@ -90,6 +103,7 @@ builder.Services.AddTransient<IFileStorageManager, UploadAppFileStorageManager>(
 builder.Services.AddTransient<IReplyRepository, ReplyRepository>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>();
 builder.Services.AddSingleton<IInfoService, InfoService>();
+builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 
 //종속성주입 추가
 builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
@@ -250,9 +264,9 @@ static void CandidateSeedData(WebApplication app)
         if (!candidateDbContext.Candidates.Any())
         {
             candidateDbContext.Candidates.Add(
-                new CandidatesIncome { FirstName = "길동", LastName = "홍", IsEnrollment = false });
+                new Candidate { FirstName = "길동", LastName = "홍", IsEnrollment = false });
             candidateDbContext.Candidates.Add(
-                new CandidatesIncome { FirstName = "두산", LastName = "백", IsEnrollment = false });
+                new Candidate { FirstName = "두산", LastName = "백", IsEnrollment = false });
 
             candidateDbContext.SaveChanges();
         }
