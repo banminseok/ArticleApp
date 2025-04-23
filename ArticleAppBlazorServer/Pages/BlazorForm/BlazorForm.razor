@@ -1,0 +1,36 @@
+﻿@page "/BlazorForm"
+@using System.ComponentModel.DataAnnotations
+
+<h3>BlazorForm</h3>
+
+<EditForm Model="@exampleModel" OnValidSubmit="btnSubmit_Click">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="txtName">Name</label>
+        <InputText id="txtName" class="form-control" @bind-Value="@exampleModel.Name" />
+        <ValidationMessage For="@(() => exampleModel.Name)" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+    
+    private ExampleModel exampleModel = new ExampleModel();
+
+    class ExampleModel
+    {
+        [Required(ErrorMessage ="이름은 필수 입니다.")]
+        [StringLength(10, ErrorMessage = "Name must be less than 10 characters")]
+        public string Name { get; set; }
+    }
+    protected override void OnInitialized()
+    {
+        exampleModel.Name = "김철수";
+    }
+    private void btnSubmit_Click()
+    {
+        // Handle the valid form submission
+        Console.WriteLine($"Name: {exampleModel.Name}");
+    }
+}
