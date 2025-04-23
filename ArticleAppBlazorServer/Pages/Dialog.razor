@@ -1,0 +1,29 @@
+﻿<div class="border border-1 border-danger mt-3 p-2">
+    <div>
+        <h1>@Title</h1>
+
+        @ChildContent
+    </div>
+    <div class="form-group">
+        <button @onclick="OnYes">Yes!</button>
+    </div>
+    <div class="form-group">
+        @message
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    private string message = "";
+
+    protected void OnYes()
+    {
+        message = "Write to the console in C#! 'Yes' button was selected.";
+    }
+}

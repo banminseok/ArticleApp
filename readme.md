@@ -75,7 +75,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   https://www.youtube.com/watch?v=CEv0zt_MPbo&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=90
 
 # 1.2. Blazor Part 1 ±‚√ 
-
+https://www.youtube.com/watch?v=ptxdEUjNLYE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=9
 
 
 # DbContextFactory VS DbContext	
