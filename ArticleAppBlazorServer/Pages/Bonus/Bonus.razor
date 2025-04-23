@@ -1,0 +1,54 @@
+﻿@page "/bonus"
+
+@inject IJSRuntime JS
+
+<h3>용돈 나누기</h3>
+
+<div class="budget">
+    @foreach (var item in budgetItems)
+    {
+        <div>
+            <span>@item.Name</span>
+            <span>@item.Amount.ToString("c0")</span>
+            @* <input type="range" name="" max="@totalBudget" step="1000" style="width:70%" @bind="@item.Amount" @bind:event="oninput" /> *@
+            <input type="range" name="" max="@(item.Amount+Remaining)" step="1000"  
+            @bind="@item.Amount" @bind:event="oninput" 
+            style="width:@(100*(item.Amount+Remaining)/totalBudget)%" />
+        </div>
+    }
+    <div>
+        <span>아빠 : </span>
+        <span>@Remaining.ToString("c0")</span>
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary" disabled="@(Remaining>0)" @onclick="btnSave_Click">완료</button>
+</div>
+@code {
+    // 총예산
+    private decimal totalBudget = 1_000_000;
+
+    // 남은 양
+    public decimal Remaining => totalBudget - budgetItems.Sum(b => b.Amount);
+    // 예산 항목
+    List<BudgetItem> budgetItems = new List<BudgetItem>
+    {
+        new BudgetItem { Name = "아내", Amount = 0 },
+        new BudgetItem { Name = "아들", Amount = 0 },
+        new BudgetItem { Name = "공주", Amount = 0 },
+    };
+
+    //완료 페시지 클릭
+    void btnSave_Click()
+    {
+        JS.InvokeAsync<object>("alert", "용돈 나누기 완료되었습니다.");
+    }
+
+    private class BudgetItem
+    {
+        public string Name { get; set; }
+        public decimal Amount { get; set; }
+    }
+
+
+}

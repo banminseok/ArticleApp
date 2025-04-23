@@ -75,7 +75,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   https://www.youtube.com/watch?v=CEv0zt_MPbo&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=90
 
 # 1.2. Blazor Part 1 기초
-https://www.youtube.com/watch?v=ptxdEUjNLYE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=9
+Remaining.ToString("c0") : double이나 decimal 값에 .ToString("c0")을 사용하면, 해당 값을 "통화" 형식(소수점 없이)으로 변환합니다. 
 
 
 # DbContextFactory VS DbContext	
