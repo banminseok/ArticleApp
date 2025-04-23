@@ -1,0 +1,27 @@
+﻿@page "/frmparent"
+@inject IJSRuntime JS
+
+<h3>FrmParent</h3>
+
+<div>
+    <button class="btn btn-primary" @onclick="ParentCall">부모에서 호출</button>
+</div>
+<hr/>
+
+<FrmChild FromParent="1234"
+          OnParentCall="ParentCall"
+          PageIndexChanged="PageIndexChanged"></FrmChild>
+
+@code {
+    protected void ParentCall()
+    {
+        JS.InvokeAsync<object>("alert", "ParentCall 호출됨");
+        Console.WriteLine("ParentCall");
+    }
+
+    protected void PageIndexChanged(int pageIndex)
+    {
+        JS.InvokeAsync<object>("alert", $"{pageIndex} 넘어옴");
+        Console.WriteLine($"PageIndexChanged: {pageIndex}");
+    }
+}
