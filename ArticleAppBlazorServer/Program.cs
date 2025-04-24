@@ -107,8 +107,7 @@ builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 
 //종속성주입 추가
 builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
-
-
+builder.Services.AddScoped<HttpClient>(); // MatBlazor 필수 문법
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
 //// ILoggerFactory loggerFactory

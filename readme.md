@@ -7,7 +7,10 @@ git :	01 https://github.com/VisualAcademy/articleapp
 		04 https://github.com/VisualAcademy/ReplyApp
         05 https://github.com/VisualAcademy/hawaso
         06 https://github.com/VisualAcademy/DotNetNote
-        
+        07 https://github.com/VisualAcademy/BlazorApp/blob/87af5801ff52da0a15bd7cf834565bfd3e85f64e/BlazorApp/Pages/Samples/SignaturePadDemo.razor#L4
+
+        21 https://github.com/AdrienTorris/awesome-blazor
+        22 https://github.com/SamProf/MatBlazor
 
 @VisualAcademy
 안녕하세요. 박용준 강사입니다.
@@ -82,7 +85,11 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
    Action : 자긱의 값을 부모에서 사용하도록, 자식에서 부모의 메서드를 호출하는 형태
    EventCallback<T>: 제네릭 타입을 사용하여, number, string형 정해서 자식에서 부모로 값을 전달하는 형태
 - @ref :템플릿 참조변수, 자식요소의 @ref를 사용하여 부모에서 자식의 메서드를 호출하는 형태
+- MatBlazor : https://www.matblazor.com/
+- 03 04 ChartJs Blaozr 컴포넌트를 사용하여 여러 종류의 차트를 빠르게 그리기 는 다시 공부하자..버전이 많이 다름..
 
+
+- 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.
 다음 링크의 제 강의 소스의 Memos 모듈의 소스가 이미 Repository에서 DbContext를 그대로 호출해서 사용합니다.

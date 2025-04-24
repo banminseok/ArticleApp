@@ -1,0 +1,72 @@
+﻿@page "/SignaturePadDemo"
+
+@inject IJSRuntime JSRuntime
+
+<h3>SignaturePadDemo</h3>
+<div>
+    https://github.com/szimek/signature_pad
+</div>
+<canvas width="300" height="200" id="theCanvas" style="border: 1px solid red;">
+</canvas>
+<hr />
+<input type="text" @bind="ImageData" id="txtSignature" />
+<hr />
+@ImageData
+<hr />
+<img src="@ImageDataSrc" />
+<hr />
+<input type="button" value="가져오기" onclick="@GetData" />
+<input type="button" value="지우기" onclick="@CleanData" />
+
+<HeadContent>
+    @* 레이아웃 header 영역으로 삽입 , 추천하지 않음 그냥 넣어라. *@
+    <script src="/js/blazorsignaturepad.js"></script>
+</HeadContent>
+
+@code {
+    private string ImageData = "test";
+
+    private static string ImageDataFromJavaScript = "";
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     //페이지 로드할때 자바스크립트 호출
+    //     //await JSRuntime.InvokeAsync<object>("BlazorSignaturePad", "theCanvas");        
+    // }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeAsync<object>("alert", "렌더 완료");
+            await JSRuntime.InvokeAsync<object>("BlazorSignaturePad", "theCanvas");
+        }
+    }
+
+    public async Task CleanData()
+    {
+        await JSRuntime.InvokeAsync<object>("BlazorSignaturePad", "theCanvas");
+    }
+
+    private string ImageDataSrc = "";
+    public void GetData()
+    {
+        // 자바스크립트에서 가져온 이미지 데이터
+        ImageDataSrc = SignaturePadDemo.GetImageSrc();
+        // StateHasChanged();
+    }
+
+    public static string GetImageSrc()
+    {
+        return ImageDataFromJavaScript;
+    }
+
+    /// <summary>
+    /// 자바스크립트에서 호출되는 메소드
+    /// </summary>
+    /// <param name="imageData"></param>
+    [JSInvokable]
+    public static void GetImageDataAsync(string imageData)
+    {
+        ImageDataFromJavaScript = imageData;
+    }
+}
