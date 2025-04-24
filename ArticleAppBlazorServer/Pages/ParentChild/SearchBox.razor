@@ -1,0 +1,64 @@
+﻿@using System.Timers
+@implements IDisposable
+
+<div class="search border border-1 border-danger p-2 mt-3">
+    <div>
+        <h3>SearchBox</h3>
+        <i class="oi oi-eye"></i>
+        <input placeholder="Search..."
+        @attributes="AdditionalAttributes" type="text" @bind="SearchQuery" @bind:event="oninput" />
+        <input type="button" value="검색" @onclick="Search" />
+    </div>
+    <hr/>
+    <div>
+        양방향 바인딩 : @SearchQuery
+    </div>
+</div>
+
+@code {
+    private Timer debounceTimer;
+
+    string searchQuery = string.Empty;
+    public string SearchQuery
+    {
+        get { return searchQuery; }
+        set
+        {
+            searchQuery = value;
+            debounceTimer.Stop(); // 타이머 정지
+            debounceTimer.Start(); // 타이머 시작
+        }
+    }
+
+    //부모에서 넘겨저온 속성을 다 받게 됨
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string,object> AdditionalAttributes { get; set; }
+
+    //자식 컴포넌트에서 발생한 정보를 부모 컴포넌트에 전달.
+    [Parameter]
+    public EventCallback<string> SearchQueryChanged { get; set; }
+
+    [Parameter]
+    public int Debounce { get; set; } = 3000;
+
+    protected override void OnInitialized()
+    {
+        debounceTimer = new Timer();
+        debounceTimer.Interval = Debounce;
+        debounceTimer.AutoReset = false;
+        debounceTimer.Elapsed += SearchHandler;
+    }
+    protected void Search()
+    {
+        SearchQueryChanged.InvokeAsync(SearchQuery);  //부모의 메서드에 검색어 전달
+    }
+    protected async void SearchHandler(object source, ElapsedEventArgs e)
+    {
+        await InvokeAsync(()=>SearchQueryChanged.InvokeAsync(SearchQuery));  //부모의 메서드에 검색어 전달
+    }
+
+    public void Dispose()
+    {
+        debounceTimer.Dispose();
+    }
+}

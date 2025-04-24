@@ -75,8 +75,13 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
   https://www.youtube.com/watch?v=CEv0zt_MPbo&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=90
 
 # 1.2. Blazor Part 1 기초
-Remaining.ToString("c0") : double이나 decimal 값에 .ToString("c0")을 사용하면, 해당 값을 "통화" 형식(소수점 없이)으로 변환합니다. 
-
+- Remaining.ToString("c0") : double이나 decimal 값에 .ToString("c0")을 사용하면, 해당 값을 "통화" 형식(소수점 없이)으로 변환합니다. 
+- Input 데코레이터와 Output 데코레이터
+ Input Parameter : 부모에서 자식으로 , 컴포넌트에게 속성을 사용하여 데이터 전달
+ Output Parameter : 자식에서 부모로, 
+   Action : 자긱의 값을 부모에서 사용하도록, 자식에서 부모의 메서드를 호출하는 형태
+   EventCallback<T>: 제네릭 타입을 사용하여, number, string형 정해서 자식에서 부모로 값을 전달하는 형태
+- @ref :템플릿 참조변수, 자식요소의 @ref를 사용하여 부모에서 자식의 메서드를 호출하는 형태
 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.

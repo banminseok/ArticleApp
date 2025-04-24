@@ -9,9 +9,14 @@
 <hr/>
 
 <FrmChild FromParent="1234"
-          OnParentCall="ParentCall"
-          PageIndexChanged="PageIndexChanged"></FrmChild>
-
+OnParentCall="ParentCall"
+PageIndexChanged="PageIndexChanged"></FrmChild>
+<hr />
+<SearchBox></SearchBox>
+<SearchBox placeholder="Search Query..." SearchQueryChanged="SearchQueryChanged"></SearchBox>
+<div class="alert">
+    <h3>Search Query : @searchQuery</h3>
+</div>
 @code {
     protected void ParentCall()
     {
@@ -23,5 +28,10 @@
     {
         JS.InvokeAsync<object>("alert", $"{pageIndex} 넘어옴");
         Console.WriteLine($"PageIndexChanged: {pageIndex}");
+    }
+    private string searchQuery = string.Empty;
+    private void SearchQueryChanged(string searchQuery)
+    {
+        this.searchQuery = searchQuery;
     }
 }
