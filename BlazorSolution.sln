@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C632CFEC-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationAuthorizationStudy", "AuthenticationAuthorizationStudy\AuthenticationAuthorizationStudy.csproj", "{686CF345-DB2A-5FDC-F3C5-7AEAA64613F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernBusiness", "ModernBusiness\ModernBusiness.csproj", "{A4F39135-45F7-49D1-ADED-48286793CC0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{686CF345-DB2A-5FDC-F3C5-7AEAA64613F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{686CF345-DB2A-5FDC-F3C5-7AEAA64613F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{686CF345-DB2A-5FDC-F3C5-7AEAA64613F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F39135-45F7-49D1-ADED-48286793CC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F39135-45F7-49D1-ADED-48286793CC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F39135-45F7-49D1-ADED-48286793CC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F39135-45F7-49D1-ADED-48286793CC0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
