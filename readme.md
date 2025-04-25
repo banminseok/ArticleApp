@@ -87,7 +87,8 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - @ref :ÅÛÇÃ¸´ ÂüÁ¶º¯¼ö, ÀÚ½Ä¿ä¼ÒÀÇ @ref¸¦ »ç¿ëÇÏ¿© ºÎ¸ð¿¡¼­ ÀÚ½ÄÀÇ ¸Þ¼­µå¸¦ È£ÃâÇÏ´Â ÇüÅÂ
 - MatBlazor : https://www.matblazor.com/
 - 03 04 ChartJs Blaozr ÄÄÆ÷³ÍÆ®¸¦ »ç¿ëÇÏ¿© ¿©·¯ Á¾·ùÀÇ Â÷Æ®¸¦ ºü¸£°Ô ±×¸®±â ´Â ´Ù½Ã °øºÎÇÏÀÚ..¹öÀüÀÌ ¸¹ÀÌ ´Ù¸§..
-
+- https://blazorise.com/docs
+- 
 
 - 
 # DbContextFactory VS DbContext	
@@ -148,6 +149,8 @@ await transaction.CommitAsync();
   Charts.Blazor
   BlazorInputFile
   # EPPlus 8(À¯·á) => EPPlus 7 ¿¢¼¿¾÷·Îµå ´Ù¿î·Îµå 
+  Blazorise.Bootstrap
+  Blazorise.Icons.FontAwesome
 
   Dapper
   Serilog
@@ -182,6 +185,11 @@ ASP.NET Core 6.0 + Bootstrap 5.0 ±â¹Ý ¼Ò½º´Â ArticleApp ¼Ö·ç¼ÇÀÇ VisualAcademy Ç
    ÀÌÈÄ·Î ¾÷µ¥ÀÌÆ®µÇ´Â ´ÙÀ½ °æ·ÎÀÇ °­ÀÇ ¸ÞÀÎ ¼Ò½º¿¡¼­ ÁøÇàµË´Ï´Ù.
    
    * https://github.com/VisualAcademy/VisualAcademy
+
+# Sample Text
+Blazorise supports several CSS frameworks, including Bootstrap (known for responsive design elements), Bulma (valued for simplicity and Flexbox base), Material (inspired by Google's Material Design), Ant Design (geared towards enterprise-level products and adapting React components' design principles), and Tailwind CSS (famous for its utility-first approach and versatility). These frameworks provide distinct styles and philosophies, offering developers a range of options to best suit their project's requirements.
+A Blazorise commercial license typically includes access to advanced components, priority support, options for dedicated consultations, frequent updates and bug fixes, a license for unrestricted commercial use, potential access to the source code, and opportunities for training and workshops. This package enhances functionality, offers better support, and provides operational security for commercial projects.
+
 
 # °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®
 

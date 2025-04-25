@@ -1,0 +1,42 @@
+﻿@page "/blazorise"
+@using global::Blazorise
+
+<h3>blazorise</h3>
+
+<Accordion>
+    <AccordionItem @bind-Visible="@accordionItem1Visible">
+        <AccordionHeader>
+            <Heading Size="HeadingSize.Is5">
+                <AccordionToggle>What is Blazorise?</AccordionToggle>
+            </Heading>
+        </AccordionHeader>
+        <AccordionBody>
+            Blazorise Contents 1
+        </AccordionBody>
+    </AccordionItem>
+    <AccordionItem @bind-Visible="@accordionItem2Visible">
+        <AccordionHeader>
+            <Heading Size="HeadingSize.Is5">
+                <AccordionToggle>What CSS  frameworks does Blazorise support?</AccordionToggle>
+            </Heading>
+        </AccordionHeader>
+        <AccordionBody>
+            Blazorise Contents 2
+        </AccordionBody>
+    </AccordionItem>
+    <AccordionItem @bind-Visible="@accordionItem3Visible">
+        <AccordionHeader>
+            <Heading Size="HeadingSize.Is5">
+                <AccordionToggle>What are the benefits of Blazorise commercial license?</AccordionToggle>
+            </Heading>
+        </AccordionHeader>
+        <AccordionBody>
+            Blazorise Contents 3
+        </AccordionBody>
+    </AccordionItem>
+</Accordion>
+@code {
+    bool accordionItem1Visible = true;
+    bool accordionItem2Visible = false;
+    bool accordionItem3Visible = false;
+}

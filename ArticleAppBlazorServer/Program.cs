@@ -19,6 +19,9 @@ using Serilog;
 using System.Security.Claims;
 using System.Text;
 using UploadApp.Shared;
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 
 var builder = WebApplication.CreateBuilder(args);
 // [1] Startup.ConfigureServices 영역 (구 startup.cs 파일)
@@ -108,6 +111,15 @@ builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 //종속성주입 추가
 builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
 builder.Services.AddScoped<HttpClient>(); // MatBlazor 필수 문법
+
+builder.Services
+    .AddBlazorise(options =>
+    {
+        options.Immediate = true;
+    })
+    .AddBootstrapProviders()
+    .AddFontAwesomeIcons();
+
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
 //// ILoggerFactory loggerFactory
