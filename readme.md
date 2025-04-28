@@ -151,7 +151,8 @@ await transaction.CommitAsync();
   System.Data.SqlClient  (참조 : https://ddochea.tistory.com/189)
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
   MatBlazor 
-  Charts.Blazor
+  Charts.Blazor  ==> 버전 1.0
+  ChartJs.Blazor.Fork  ==> 버전 2.0
   BlazorInputFile
   # EPPlus 8(유료) => EPPlus 7 엑셀업로드 다운로드 
   Blazorise.Bootstrap

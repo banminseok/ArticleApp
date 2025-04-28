@@ -1,5 +1,12 @@
 ﻿@page "/"
 @page "/Index"
+@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.Common.Axes
+@using ChartJs.Blazor.Common.Enums
+@using ChartJs.Blazor.LineChart
+@using ChartJs.Blazor.Util
+@using System.Drawing
+@using System.Collections.ObjectModel
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -128,7 +135,7 @@
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                    <Chart Config="_configMyAreaChart" @ref="myAreaChart"></Chart>
                 </div>
             </div>
         </div>
@@ -340,3 +347,104 @@
 
     </div>
 </div>
+
+@code{
+    private const int InitalCount = 7;
+    private LineConfig _configMyAreaChart;
+    Chart myAreaChart;
+
+    public static readonly Color ChartColorsRed = Color.FromArgb(255, 99, 132);
+    public static readonly Color ChartColorsOrange = Color.FromArgb(255, 159, 64);
+    public static readonly Color ChartColorsYellow = Color.FromArgb(255, 205, 86);
+    public static readonly Color ChartColorsGreen = Color.FromArgb(75, 192, 192);
+    public static readonly Color ChartColorsBlue = Color.FromArgb(54, 162, 235);
+    public static readonly Color ChartColorsPurple = Color.FromArgb(153, 102, 255);
+    public static readonly Color ChartColorsGrey = Color.FromArgb(201, 203, 207);
+    private static readonly Random _rng = new Random();
+
+    private static int RandomScalingFactorThreadUnsafe() => _rng.Next(-100, 100);
+    public static IEnumerable<int> RandomScalingFactor(int count)
+    {
+        int[] factors = new int[count];
+        lock (_rng)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                factors[i] = RandomScalingFactorThreadUnsafe();
+            }
+        }
+
+        return factors;
+    }
+    public static IReadOnlyList<string> Months { get; } = new ReadOnlyCollection<string>(new[]
+        {
+            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+        });
+    protected override void OnInitialized()
+    {
+        _configMyAreaChart = new LineConfig
+            {
+                Options = new LineOptions
+                {
+                    Responsive = true,
+                    MaintainAspectRatio = false, // 비율 유지 비활성화
+                    Title = new OptionsTitle
+                    {
+                        Display = true,
+                        Text = "ChartJs.Blazor Line Chart"
+                    },
+                    Tooltips = new Tooltips
+                    {
+                        Mode = InteractionMode.Nearest,
+                        Intersect = true
+                    },
+                    Hover = new Hover
+                    {
+                        Mode = InteractionMode.Nearest,
+                        Intersect = true
+                    },
+                    Scales = new Scales
+                    {
+                        XAxes = new List<CartesianAxis>
+                    {
+                        new CategoryAxis
+                        {
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Month"
+                            }
+                        }
+                    },
+                        YAxes = new List<CartesianAxis>
+                    {
+                        new LinearCartesianAxis
+                        {
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Value"
+                            }
+                        }
+                    }
+                    }
+                }
+            };
+
+        IDataset<int> dataset1 = new LineDataset<int>(RandomScalingFactor(InitalCount))
+            {
+                Label = "My first dataset",
+                BackgroundColor = ColorUtil.FromDrawingColor(ChartColorsRed),
+                BorderColor = ColorUtil.FromDrawingColor(ChartColorsRed),
+                Fill = FillingMode.Disabled
+            };
+        IDataset<int> dataset2 = new LineDataset<int>(RandomScalingFactor(InitalCount))
+            {
+                Label = "My second dataset",
+                BackgroundColor = ColorUtil.FromDrawingColor(ChartColorsBlue),
+                BorderColor = ColorUtil.FromDrawingColor(ChartColorsBlue),
+                Fill = FillingMode.Disabled
+            };
+        //_configMyAreaChart.Data.Labels.AddRange(Months.Take(InitalCount));
+        _configMyAreaChart.Data.Datasets.Add(dataset1);
+        _configMyAreaChart.Data.Datasets.Add(dataset2);
+    }
+}
