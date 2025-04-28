@@ -90,7 +90,12 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - https://blazorise.com/docs
 - https://startbootstrap.com/themes
 - 사이트 html 구성 : _Host.cshtml, _Layout.cshtml >> MainLayout.razor >>NavMenu.razor_
+- Morder_Admin : SBAdmin2 다운로드 한 관리자 페이지 (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
 - 
+- 
+
+
+
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.
 다음 링크의 제 강의 소스의 Memos 모듈의 소스가 이미 Repository에서 DbContext를 그대로 호출해서 사용합니다.
