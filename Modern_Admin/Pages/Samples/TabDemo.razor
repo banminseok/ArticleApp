@@ -1,0 +1,84 @@
+﻿@page "/Samples/tabdemo"
+
+<h3>TabDemo</h3>
+
+<ul class="nav nav-tabs" id="myTab" >
+    <li class="nav-item" @onclick="@(()=>TabClick(1))" >
+        <button class="nav-link @tab1Active" id="home-tab" >Home</button>
+    </li>
+    <li class="nav-item" @onclick="@(()=>TabClick(2))">
+        <button class="nav-link @tab2Active" id="profile-tab">Profile</button>
+    </li>
+    <li class="nav-item" @onclick="@(()=>TabClick(3))">
+        <button class="nav-link @tab3Active" id="contact-tab">Contact</button>
+    </li>
+    <li class="nav-item" @onclick="@(()=>TabClick(4))">
+        <button class="nav-link @tab4Active" id="disabled-tab" disabled>Disabled</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade @tabPane1Active" id="home-tab-pane">탭1...</div>
+    <div class="tab-pane fade @tabPane2Active" id="profile-tab-pane">탭2...</div>
+    <div class="tab-pane fade @tabPane3Active" id="contact-tab-pane">탭3...</div>
+    <div class="tab-pane fade @tabPane4Active" id="disabled-tab-pane">탭4...</div>
+</div>
+@code {
+    
+    string tab1Active = "";
+    string tab2Active = "active";
+    string tab3Active = "";
+    string tab4Active = "";
+
+    string tabPane1Active = "";
+    string tabPane2Active = "show active";
+    string tabPane3Active = "";
+    string tabPane4Active = "";
+
+    public void TabClick(int tabIndex)
+    {
+        if (tabIndex==1)
+        {
+            tab1Active = "active";
+            tab2Active = "";
+            tab3Active = "";
+            tab4Active = "";
+            tabPane1Active = "show active";
+            tabPane2Active = "";
+            tabPane3Active = "";
+            tabPane4Active = "";
+        }
+        else if (tabIndex == 2)
+        {
+            tab1Active = "";
+            tab2Active = "active";
+            tab3Active = "";
+            tab4Active = "";
+            tabPane1Active = "";
+            tabPane2Active = "show active";
+            tabPane3Active = "";
+            tabPane4Active = "";
+        }
+        else if (tabIndex == 3)
+        {
+            tab1Active = "";
+            tab2Active = "";
+            tab3Active = "active";
+            tab4Active = "";
+            tabPane1Active = "";
+            tabPane2Active = "";
+            tabPane3Active = "show active";
+            tabPane4Active = "";
+        }
+        else if (tabIndex == 4)
+        {
+            tab1Active = "";
+            tab2Active = "";
+            tab3Active = "";
+            tab4Active = "active";
+            tabPane1Active = "";
+            tabPane2Active = "";
+            tabPane3Active = "";
+            tabPane4Active = "show active";
+        }
+    }
+}
