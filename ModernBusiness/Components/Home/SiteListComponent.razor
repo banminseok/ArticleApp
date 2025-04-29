@@ -1,0 +1,31 @@
+﻿@using ArticleApp.Models
+
+
+<ul>
+    @foreach (var site in Sites)
+    {
+        <li><a href="@site.Url">@site.Title</a></li>
+    }
+</ul>
+
+@code {
+
+    private List<Site> sites;
+
+    public List<Site> Sites
+    {
+        get { return sites; }
+        set { sites = value; }
+    }
+
+    protected override void OnInitialized()
+    {
+        sites = new List<Site>()
+        {
+            new Site {Id=1, Title="Azure", Url="Azure.com", Description="Azure 서버"},
+            new Site {Id=2, Title="Blazor", Url="Blazor.com", Description="Blazor 언어"},
+            new Site {Id=3, Title="C#", Url="CShop.com", Description="CShop 내용"},
+            new Site {Id=4, Title="DotNet", Url="DotNet.com", Description="DotNet 내용"},
+        };
+    }
+}

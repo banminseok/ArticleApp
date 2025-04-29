@@ -91,7 +91,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - https://startbootstrap.com/themes
 - 사이트 html 구성 : _Host.cshtml, _Layout.cshtml >> MainLayout.razor >>NavMenu.razor_
 - Morder_Admin : SBAdmin2 다운로드 한 관리자 페이지 (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
-- 
+https://www.youtube.com/watch?v=Dw208ddYsQw&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=34  - 
 - 
 
 
