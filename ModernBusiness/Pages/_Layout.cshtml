@@ -92,5 +92,15 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script>
+        //카루셀 실행
+        window.RunCarousel = function () {
+            var carouselElement = document.querySelector('#carouselExampleCaptions');
+            var carousel = new bootstrap.Carousel(carouselElement, {
+                interval: 2000,
+                wrap: true
+            });
+        };
+    </script>
 </body>
 </html>
