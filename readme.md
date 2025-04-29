@@ -8,6 +8,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
         05 https://github.com/VisualAcademy/hawaso
         06 https://github.com/VisualAcademy/DotNetNote
         07 https://github.com/VisualAcademy/BlazorApp/blob/87af5801ff52da0a15bd7cf834565bfd3e85f64e/BlazorApp/Pages/Samples/SignaturePadDemo.razor#L4
+        08 https://github.com/VisualAcademy/videoappcore
 
         21 https://github.com/AdrienTorris/awesome-blazor
         22 https://github.com/SamProf/MatBlazor
@@ -91,7 +92,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - https://startbootstrap.com/themes
 - 사이트 html 구성 : _Host.cshtml, _Layout.cshtml >> MainLayout.razor >>NavMenu.razor_
 - Morder_Admin : SBAdmin2 다운로드 한 관리자 페이지 (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
-https://www.youtube.com/watch?v=Dw208ddYsQw&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=34  - 
+- DB연결문자열 : ;MultipleActiveResultSets=true 은 운영DB에서는 필수옵션
 - 
 
 

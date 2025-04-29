@@ -54,6 +54,8 @@ namespace ArticleApp.Models
             modelBuilder.Entity<Reply>().Property(m => m.Title).IsRequired().HasDefaultValue("");
             modelBuilder.Entity<Upload>().Property(m => m.Content).IsRequired().HasDefaultValue("");
             modelBuilder.Entity<Reply>().Property(m => m.Content).IsRequired().HasDefaultValue("");
+            //[!] Videos 테이블의 Created 열은 자동으로 GetDate() 제약 조건을 부여하기 
+            modelBuilder.Entity<Video>().Property(v => v.Created).HasDefaultValueSql("GetDate()");
         }
 
         //[!] ArticleApp 솔루션 관련 모든 테이블에 대한 참조 
@@ -65,5 +67,9 @@ namespace ArticleApp.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Idea> Ideas { get; set; }
 
+        /// <summary>
+        /// 비디오 앱
+        /// </summary>
+        public DbSet<Video> Videos { get; set; }
     }
 }
