@@ -94,7 +94,7 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 - Morder_Admin : SBAdmin2 다운로드 한 관리자 페이지 (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
 - DB연결문자열 : ;MultipleActiveResultSets=true 은 운영DB에서는 필수옵션
 - 
-
+https://www.youtube.com/watch?v=nPMFJ37RfSo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=43
 
 
 # DbContextFactory VS DbContext	

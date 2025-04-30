@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 namespace ArticleApp.Models
 {
     /// <summary>
-    /// [3][2] 인터페이스(비동기 방식): Videos 테이블에 대한 CRUD API 명세서 작성
+    /// [4][2][2] 리포지토리 클래스(비동기 방식): Micro ORM인 Dapper를 사용하여 CRUD 구현
     /// </summary>
     public class VideoRepositoryDapper : IVideoRepository
     {
-    {
-public Task<Video> AddVideoAsync(Video model)
+        public Task<Video> AddVideoAsync(Video model)
         {
             throw new NotImplementedException();
         }

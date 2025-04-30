@@ -1,0 +1,21 @@
+﻿@page "/Video/FrmDbContextTest"
+@inject ArticleAppDbContext DbContext
+
+<h3>FrmDbContextTest</h3>
+
+<ul>
+    @foreach (var video in videos)
+    {
+        <li>
+            @video.Id -  <a href="@video.Url" target="_blank">@video.Title</a>
+        </li>
+    }
+</ul>
+@code {
+    List<Video> videos = new List<Video>();
+
+    protected override void OnInitialized()
+    {
+        videos = DbContext.Videos.Take(1).ToList();
+    }
+}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ArticleApp.Models
 {
     /// <summary>
-    /// [3][2] 인터페이스(비동기 방식): Videos 테이블에 대한 CRUD API 명세서 작성
+    /// [4][3][2] 리포지토리 클래스(비동기 방식): Full ORM인 EF Core를 사용하여 CRUD 구현
     /// </summary>
     public class VideoRepositoryEfCore : IVideoRepository
     {
