@@ -36,6 +36,12 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 3. Blazor Part 3: 회사 홈페이지 만들기
 https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 
+Part 0 - ASP.NET Core 8.0 시작하기
+Part 1 - ASP.NET Core Razor Pages (현재 강좌) https://www.youtube.com/playlist?list=PLO56HZSjrPTDtR6uKaE7mThbGAUgzvTJe
+Part 2 - ASP.NET Core MVC https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
+Part 3 - ASP.NET Core DB Programming  https://www.youtube.com/watch?v=1F6X4kUz4po&list=PLO56HZSjrPTA6sKgzv5DBdmsXjB42P2wl
+Part 4 - ASP.NET Core Web APi       https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
+Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7EYA4fk&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk
 
 # 0. ASP.NET Core 8.0 Start
 - https://www.dul.me/docs/aspnet/core/start/?tabs=aspnetcore-8%2Cvisualstudio

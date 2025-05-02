@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,32 +10,43 @@ namespace ArticleApp.Models
     /// <summary>
     /// [4][3][2] 리포지토리 클래스(비동기 방식): Full ORM인 EF Core를 사용하여 CRUD 구현
     /// </summary>
-    public class VideoRepositoryEfCore : IVideoRepository
+    public class VideoRepositoryEfCoreAsync : IVideoRepository
     {
-        public Task<Video> AddVideoAsync(Video model)
+        private readonly ArticleAppDbContext _context;
+
+        public VideoRepositoryEfCoreAsync(ArticleAppDbContext context) => _context = context;
+
+        // 입력: Add
+        public async Task<Video> AddVideoAsync(Video model)
         {
-            throw new NotImplementedException();
+            _context.Videos.Add(model);
+            await _context.SaveChangesAsync();
+            return model;
         }
 
-        public Task<Video> GetVideoByIdAsync(int id)
+        // 출력: GetAll 
+        public async Task<List<Video>> GetVideosAsync() => await _context.Videos.ToListAsync();
+
+        // 상세보기: GetById
+        public async Task<Video> GetVideoByIdAsync(int id) => await _context.Videos.Where(v => v.Id == id).SingleOrDefaultAsync();
+
+        // 수정: Update, Edit
+        public async Task<Video> UpdateVideoAsync(Video model)
         {
-            throw new NotImplementedException();
+            _context.Entry(model).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return model;
         }
 
-        public Task<List<Video>> GetVideosAsync()
+        // 삭제: Delete, Remove
+        public async Task RemoveVideoAsync(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveVideoAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Video> UpdateVideoAsync(Video model)
-        {
-            throw new NotImplementedException();
+            var video = await _context.Videos.Where(v => v.Id == id).SingleOrDefaultAsync();
+            if (video != null)
+            {
+                _context.Videos.Remove(video);
+                await _context.SaveChangesAsync();
+            }
         }
     }
-
 }

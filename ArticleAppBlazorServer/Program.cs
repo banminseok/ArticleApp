@@ -108,6 +108,12 @@ builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>()
 builder.Services.AddSingleton<IInfoService, InfoService>();
 builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 
+// DI Container에 서비스 등록
+builder.Services.AddTransient<IVideoRepository, VideoRepositoryEfCoreAsync>();
+//builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryAdoNetAsync(connectionString));
+//builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryDapperAsync(connectionString));
+
+
 //종속성주입 추가
 builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
 builder.Services.AddScoped<HttpClient>(); // MatBlazor 필수 문법
