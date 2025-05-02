@@ -1,7 +1,56 @@
 ﻿@page "/Videos/Create"   
 
-<h3>Create</h3>
+@inject IVideoRepository repository // 비디오 데이터를 처리하는 비동기 리포지토리 주입.
+@inject NavigationManager navigationManager // 페이지 탐색을 위한 Blazor 네비게이션 매니저 주입.
+
+<h3>Create</h3> <!-- 페이지 제목 -->
+
+<form>
+    <!-- 입력 폼을 표시하는 첫 번째 행 -->
+    <div class="row">
+        <div class="col-md-8">
+            <!-- 제목 입력 -->
+            <div class="form-group">
+                <label for="Title" class="control-label">Title</label> <!-- 입력 필드에 대한 레이블 -->
+                <input type="text" @bind="@video.Title" class="form-control" /> <!-- Title 속성과 양방향 바인딩 -->
+            </div>
+            <!-- URL 입력 -->
+            <div class="form-group">
+                <label for="Url" class="control-label">URL</label>
+                <input type="text" @bind="@video.Url" class="form-control" /> <!-- Url 속성과 양방향 바인딩 -->
+            </div>
+            <!-- 이름 입력 -->
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+                <input type="text" @bind="@video.Name" class="form-control" /> <!-- Name 속성과 양방향 바인딩 -->
+            </div>
+            <!-- 회사 입력 -->
+            <div class="form-group">
+                <label for="Company" class="control-label">Company</label>
+                <input type="text" @bind="@video.Company" class="form-control" /> <!-- Company 속성과 양방향 바인딩 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 저장 버튼을 표시하는 두 번째 행 -->
+    <div class="row">
+        <div class="col-md-4">
+            <input type="button" id="btnSave" value="Save" @onclick="@btnSave_Click" class="btn btn-primary" />
+            <!-- Save 버튼 클릭 시 btnSave_Click 이벤트 핸들러 호출 -->
+        </div>
+    </div>
+</form>
 
 @code {
+    // Video 개체 생성
+    Video video = new Video();
 
+    // Save 버튼 클릭 시 호출되는 메서드
+    private async Task btnSave_Click()
+    {
+        // 비디오 개체를 리포지토리에 추가
+        await repository.AddVideoAsync(video);
+        // 비디오 목록 페이지로 탐색
+        navigationManager.NavigateTo("/Videos");
+    }
 }

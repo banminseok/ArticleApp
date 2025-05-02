@@ -1,8 +1,54 @@
 ﻿@page "/Videos/Details/{Id}"
+@inject IVideoRepository repository
 
 <h3>Details</h3>
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label>ID: </label>
+                @video.Id
+            </div>
+            <div class="form-group">
+                <label>Title: </label>
+                @video.Title
+            </div>
+            <div class="form-group">
+                <label>ID: </label>
+                @video.Url
+            </div>
+            <div class="form-group">
+                <label>Title: </label>
+                @video.Name
+            </div>
+            <div class="form-group">
+                <label>ID: </label>
+                @video.Created.ToShortTimeString()
+            </div>
+            <div class="form-group">
+                <a href="/Videos/Edit/@video.Id">Edit</a>
+                <a href="/Videos/Delete/@video.Id">Delete</a>
+                <a href="/Videos">List</a>
+            </div>
+        </div>
+    </div>
+</form>
 
 @code {
     [Parameter]
     public string Id { get; set; }
+
+    protected Video video = new Video();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // 비디오 ID를 정수로 변환
+        //int videoId = int.Parse(Id);
+        if (int.TryParse(Id, out int id))
+        {
+
+        }
+        // 비디오 ID에 해당하는 비디오 개체를 가져옴
+        video = await repository.GetVideoByIdAsync(id);
+    }
 }
