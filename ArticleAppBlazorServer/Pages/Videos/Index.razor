@@ -1,6 +1,8 @@
 ﻿@page "/Videos/Index"
 @page "/Videos"
 
+@using Dul.Web
+
 @inject IVideoRepository _repository
 
 <h3>Videos List</h3>
@@ -44,12 +46,45 @@ else
         </tbody>
     </table>
 }
+
+    <VideoPager Model="pager" PageIndexChanged="PageIndexChanged"></VideoPager>
+<div class="d-flex"> 
+    @pager.PageCount
+</div>
+
 @code {
+    private PagerBase pager = new PagerBase()
+    {
+        PageNumber=1,
+        PageIndex =0,
+        PageSize = 4,
+        PagerButtonCount = 5,
+    };
+
     List<Video> videos = new List<Video>();
 
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(200); // 3초 대기
-        videos = await _repository.GetVideosAsync();
+        pager.PageIndex = 0;
+        pager.PageNumber =1;
+
+        var pagingData = await _repository.GetVideosByPageAsync(pager.PageIndex, pager.PageSize);
+        pager.RecordCount = pagingData.TotalRecords;
+        videos = pagingData.Records.ToList();
+
+        StateHasChanged(); // 현재 컴포넌트 재로드
+    }
+
+    private async void PageIndexChanged(int pageIndex)
+    {
+        pager.PageIndex = pageIndex;
+        pager.PageNumber = (pageIndex + 1);
+
+        var pagingData = await _repository.GetVideosByPageAsync(pager.PageIndex, pager.PageSize);
+        pager.RecordCount = pagingData.TotalRecords;
+        videos = pagingData.Records.ToList();
+
+        StateHasChanged(); // 현재 컴포넌트 재로드
     }
 }

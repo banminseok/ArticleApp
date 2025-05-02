@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Dul.Domain.Common;
 using Microsoft.Data.SqlClient;
 
 namespace ArticleApp.Models
@@ -79,6 +80,16 @@ namespace ArticleApp.Models
             await _db.ExecuteAsync(query, new { id }, commandType: CommandType.Text);
 
             
+        }
+
+        public Task<List<Video>> GetAllPageAsync(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PagingResult<Video>> GetVideosByPageAsync(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
         }
     }
 }

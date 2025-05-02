@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Dul.Domain.Common;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -114,6 +115,11 @@ namespace ArticleApp.Models
             return videos;
         }
 
+        public Task<List<Video>> GetAllPageAsync(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
         // 삭제: 비동기 방식
         public async Task RemoveVideoAsync(int id)
         {
@@ -161,6 +167,11 @@ namespace ArticleApp.Models
             }
 
             return model;
+        }
+
+        public Task<PagingResult<Video>> GetVideosByPageAsync(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
         }
     }
 }

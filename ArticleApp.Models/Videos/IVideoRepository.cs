@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dul.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace ArticleApp.Models
         Task<Video> GetVideoByIdAsync(int id);         // 상세: GetById(int id);
         Task<Video> UpdateVideoAsync(Video model);     // 수정: T Update, Edit(T model);
         Task RemoveVideoAsync(int id);                  // 삭제: void Delete, Remove(int id);
+        Task<List<Video>> GetAllPageAsync(int pageIndex, int pageSize);            // 출력(페이징): List<T> GetAll();
+        Task<PagingResult<Video>> GetVideosByPageAsync(int pageIndex, int pageSize);            // 출력(페이징Result{items, totalRecordCount});
     }
 
     //ASP.NET & Core를 다루는 기술 13장에서 발췌

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dul.Domain.Common;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,27 @@ namespace ArticleApp.Models
                 _context.Videos.Remove(video);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        // 출력(페이징): GetAll
+        public async Task<List<Video>> GetAllPageAsync(int pageIndex, int pageSize = 5)
+        {
+            return await _context.Videos
+                .OrderBy(m=>m.Id)
+                .Skip(pageIndex*pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+
+        public async Task<PagingResult<Video>> GetVideosByPageAsync(int pageIndex, int pageSize)
+        {
+            var totalRecordCount = await _context.Videos.CountAsync();
+            var videos = await _context.Videos
+                .OrderBy(m => m.Id)
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            return new PagingResult<Video>(videos, totalRecordCount);
         }
     }
 }
