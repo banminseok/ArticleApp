@@ -4,24 +4,18 @@ using ArticleAppBlazorServer.Areas.Identity.Models;
 using ArticleAppBlazorServer.Areas.Identity.Services;
 using ArticleAppBlazorServer.Data;
 using ArticleAppBlazorServer.Managers;
-using ArticleAppBlazorServer.Services;
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Routing.Matching;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.Security.Claims;
 using System.Text;
 using UploadApp.Shared;
-using Blazorise;
-using Blazorise.Bootstrap;
-using Blazorise.Icons.FontAwesome;
 
 var builder = WebApplication.CreateBuilder(args);
 // [1] Startup.ConfigureServices 영역 (구 startup.cs 파일)
@@ -78,7 +72,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 #region 공지사항(NoticeApp) 관련 의존성(종속성) 주입 관련 코드만 따로 모아서 관리 
 // ArticleAppDbContext.cs Inject: New DbContext Add
-builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
+//builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
+builder.Services.AddDbContext<ArticleAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 }, ServiceLifetime.Transient); // 서비스 수명주기: Transient로 중복 호출시 사용..
@@ -115,7 +110,7 @@ builder.Services.AddTransient<IVideoRepository, VideoRepositoryEfCoreAsync>();
 
 
 //종속성주입 추가
-builder.Services.AddTransient<IEmailSender,EmailSender>(); // EmailSender.cs
+builder.Services.AddTransient<IEmailSender, EmailSender>(); // EmailSender.cs
 builder.Services.AddScoped<HttpClient>(); // MatBlazor 필수 문법
 
 builder.Services
@@ -155,7 +150,7 @@ if (app.Environment.IsDevelopment())
     //04_06_CandidatesSeedData_Candidates 테이블에 기본 데이터 입력
     //https://www.youtube.com/watch?v=b7Ft2qRaEHU&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=17
     CandidateSeedData(app);
-    
+
 }
 else
 {
@@ -257,7 +252,7 @@ app.MapGet("/banInfo", async context =>
 //app.MapControllers();
 app.MapDefaultControllerRoute();  //MVC 컨트롤러 라우팅
 app.MapControllerRoute(
-    name : "default",
+    name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
