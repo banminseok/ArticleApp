@@ -104,7 +104,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - if (int.TryParse(Id, out int id)) {}  : Id가 int형으로 변환이 가능하면, id에 넣어라
 - Model Class 만 있어서 EF가 테이블을 만들어 주지만, DB 테이블을 먼저 만들어 주는게 좋다. 약간 한국형 스타일.
 - 
-https://www.youtube.com/watch?v=tDGER_6qg4k&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=62
+https://www.youtube.com/watch?v=lj7YXTrBq-A&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=73
 
 
 # DbContextFactory VS DbContext	
