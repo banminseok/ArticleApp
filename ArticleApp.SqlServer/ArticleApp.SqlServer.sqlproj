@@ -69,6 +69,7 @@
     <Build Include="dbo\Tables\CandidatesIncomes.sql" />
     <Build Include="dbo\Tables\Ideas.sql" />
     <Build Include="dbo\Tables\Videos.sql" />
+    <Build Include="dbo\Tables\Machines.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />

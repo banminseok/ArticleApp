@@ -10,6 +10,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
         07 https://github.com/VisualAcademy/BlazorApp/blob/87af5801ff52da0a15bd7cf834565bfd3e85f64e/BlazorApp/Pages/Samples/SignaturePadDemo.razor#L4
         08 https://github.com/VisualAcademy/videoappcore
         09 https://github.com/VisualAcademy/ManufacturerApp
+        10 https://github.com/VisualAcademy/MachineApp
 
         21 https://github.com/AdrienTorris/awesome-blazor
         22 https://github.com/SamProf/MatBlazor
@@ -101,6 +102,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - Morder_Admin : SBAdmin2 다운로드 한 관리자 페이지 (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
 - DB연결문자열 : ;MultipleActiveResultSets=true 은 운영DB에서는 필수옵션
 - if (int.TryParse(Id, out int id)) {}  : Id가 int형으로 변환이 가능하면, id에 넣어라
+- Model Class 만 있어서 EF가 테이블을 만들어 주지만, DB 테이블을 먼저 만들어 주는게 좋다. 약간 한국형 스타일.
 - 
 https://www.youtube.com/watch?v=tDGER_6qg4k&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=62
 
