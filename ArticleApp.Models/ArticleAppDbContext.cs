@@ -57,6 +57,7 @@ namespace ArticleApp.Models
             //[!] Videos 테이블의 Created 열은 자동으로 GetDate() 제약 조건을 부여하기 
             modelBuilder.Entity<Video>().Property(v => v.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<Machine>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<MachineMedia>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
 
         }
 
@@ -75,5 +76,7 @@ namespace ArticleApp.Models
         public DbSet<Video> Videos { get; set; }
 
         public DbSet<Machine> Machines { get; set; }
+        public DbSet<Media> Medias { get; set; }
+        public DbSet<MachineMedia> MachinesMedias { get; set; }
     }
 }
