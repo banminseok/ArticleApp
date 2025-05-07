@@ -108,6 +108,8 @@ builder.Services.AddTransient<IVideoRepository, VideoRepositoryEfCoreAsync>();
 //builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryAdoNetAsync(connectionString));
 //builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryDapperAsync(connectionString));
 
+builder.Services.AddTransient<IMediaRepository, MediaRepository>();
+builder.Services.AddTransient<IMachineRepository, MachineRepository>();
 
 //종속성주입 추가
 builder.Services.AddTransient<IEmailSender, EmailSender>(); // EmailSender.cs
