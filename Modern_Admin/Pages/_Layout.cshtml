@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="~/assets/css/blazorreload.css" rel="stylesheet" />
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -42,7 +42,25 @@
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body id="page-top">
-
+    
+    <div id="components-reconnect-modal" class="va-reconnect-modal components-reconnect-hide">
+        <div class="show">
+            <p>
+                다시 접속 시도중...Attemting to reconnect to the server... 
+            </p>
+        </div>
+        <div class="failed">
+            <p>....</p>
+            <p>
+                <span onclick="location.reload()" class="btn-link">Reload failed</span>
+            </p>
+        </div>
+        <div class="rejected">
+            <p>....</p><p>
+                <span onclick="location.reload()" class="btn-link">Reload rejected</span>
+            </p>
+        </div>
+    </div>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -441,6 +459,8 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
+
 
     <script src="_framework/blazor.server.js"></script>
 
