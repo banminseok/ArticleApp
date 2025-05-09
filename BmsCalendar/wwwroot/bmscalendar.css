@@ -68,6 +68,10 @@
 
         /* Highlight the "current" day */
         .bmscalendar .days li .active {
+            border: 1px solid red;
+            padding: 5px;
+        }
+        .bmscalendar .days li .today {
             padding: 5px;
             background: #1abc9c;
             color: white !important

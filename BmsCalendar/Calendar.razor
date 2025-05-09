@@ -4,8 +4,8 @@
     <div class="month">
         <ul>
             <li class="prev" @onclick="PreMonth" style="cursor:pointer">&#10094;</li>
-            <li class="next" @onclick="NextMonth"style="cursor:pointer">&#10095;</li>
-            <li>@SelectedDate.ToString("yyyy년 MM월")</li>
+            <li class="next" @onclick="NextMonth" style="cursor:pointer">&#10095;</li>
+            <li style="cursor:pointer"  @onclick=@(()=>{this.SelectedDate=DateTime.Today;})>@SelectedDate.ToString("yyyy년 MM월")</li>
         </ul>
     </div>
 
@@ -31,7 +31,8 @@
         }
         @for (int i = 1; i <= LastDayOfMonth; i++)
         {
-            <li>@i</li>
+            var current = this.CurrentDay(i);
+            <li style="cursor:pointer" @onclick="()=>ChangeSelectedDate(current.ThisDay)"><span class="@current.Today @current.Item3">@i</span></li>
             count++;
         }
         @for (int i = 0; i < 38-count; i++)
@@ -39,6 +40,8 @@
             <li>&nbsp;</li>
         }
     </ul>
+@*     <hr />
+    @SelectedDate.ToShortDateString() *@
 </div>
 @code {
     /// <summary>
@@ -85,4 +88,23 @@
         SelectedDate = SelectedDate.AddMonths(1);
         this.SelectedDate = new DateTime(SelectedDate.Year, SelectedDate.Month, 1);
     }
+
+    protected (DateTime ThisDay, string Today, string Active) CurrentDay(int dayofMonth)
+    {
+        var thisDay = new DateTime(SelectedDate.Year, SelectedDate.Month, dayofMonth);
+        var today = (thisDay.Date == DateTime.Today.Date) ? "today" : null; 
+        var active = (thisDay.Date == SelectedDate.Date) ? "active" : null;
+        return (thisDay, today, active);
+    }
+
+    private void ChangeSelectedDate(DateTime newDate)
+    {
+        this.SelectedDate = newDate;
+
+        OnSelectedDateChanged.InvokeAsync(newDate); //반환값을  부모에게 전달합니다.
+    }
+
+    [Parameter]
+    public EventCallback<DateTime> OnSelectedDateChanged { get; set; }
+
 }

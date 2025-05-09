@@ -14,5 +14,15 @@ namespace ModernBusiness.Pages
         {
             await JsRuntime.InvokeAsync<object>("RunCarousel");
         }
+
+
+        public DateTime SelectDate { get; set; } = DateTime.Now;
+        /// <summary>
+        /// This method is called when the selected date changes.
+        /// </summary>
+        protected void OnSelectedDateChanged(DateTime selectedDate)
+        {
+            SelectDate = selectedDate;
+        }
     }
 }
