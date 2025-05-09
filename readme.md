@@ -104,6 +104,8 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - if (int.TryParse(Id, out int id)) {}  : Id가 int형으로 변환이 가능하면, id에 넣어라
 - Model Class 만 있어서 EF가 테이블을 만들어 주지만, DB 테이블을 먼저 만들어 주는게 좋다. 약간 한국형 스타일.
 - <link href="_content/BmsCalendar/bmscalendar.css"  : 컴포넌트에 있는 css를 사용하기 위해서는 _content/패키지명/패키지명.css를 사용해야 한다.
+- razor component 를 Balzor component로 변경하려면 _Imports.razor 를 추가해 준다. (기본 using문을 추가해 준다.))
+
 https://www.youtube.com/watch?v=lj7YXTrBq-A&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=73
 
 

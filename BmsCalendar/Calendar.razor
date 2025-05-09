@@ -1,39 +1,88 @@
-﻿<h3>Calendar</h3>
-<h4>달력을 만들어 봅시다</h4>
+﻿<div class="bmscalendar">
 
-<div class="month">
-    <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>August<br><span style="font-size:18px">2021</span></li>
+
+    <div class="month">
+        <ul>
+            <li class="prev" @onclick="PreMonth" style="cursor:pointer">&#10094;</li>
+            <li class="next" @onclick="NextMonth"style="cursor:pointer">&#10095;</li>
+            <li>@SelectedDate.ToString("yyyy년 MM월")</li>
+        </ul>
+    </div>
+
+    <ul class="weekdays">
+        <li>Su</li>
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+    </ul>
+
+    @{
+        int count = 1;
+
+    }
+    <ul class="days">
+        @for (int i = 0; i < StartDayOfWeek; i++)
+        {
+            <li>&nbsp;</li>
+            count++;
+        }
+        @for (int i = 1; i <= LastDayOfMonth; i++)
+        {
+            <li>@i</li>
+            count++;
+        }
+        @for (int i = 0; i < 38-count; i++)
+        {
+            <li>&nbsp;</li>
+        }
     </ul>
 </div>
-
-<ul class="weekdays">
-    <li>Mo</li>
-    <li>Tu</li>
-    <li>We</li>
-    <li>Th</li>
-    <li>Fr</li>
-    <li>Sa</li>
-    <li>Su</li>
-</ul>
-
-<ul class="days">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li><span class="active">10</span></li>
-    <li>11</li>
-    ...etc
-</ul>
-
 @code {
+    /// <summary>
+    /// 현재선택된 날짜(초기값은 오늘날짜)
+    /// </summary>
+    public DateTime SelectedDate { get; private set; } = DateTime.Today;
 
+    /// <summary>
+    /// 0부터 6까지의 숫자로 요일을 나타냅니다. 0은 일요일, 1은 월요일, ..., 6은 토요일입니다.
+    /// </summary>
+    public int StartDayOfWeek
+    {
+        get 
+        {
+            return (int)((new DateTime(SelectedDate.Year, SelectedDate.Month, 1)).DayOfWeek);
+        }
+    }
+
+    /// <summary>
+    /// 현재선택된 열의 일수
+    /// </summary>
+    public int LastDayOfMonth
+    {
+        get
+        {
+            return DateTime.DaysInMonth(SelectedDate.Year, SelectedDate.Month);
+        }
+    }
+
+    /// <summary>
+    /// 이전달 1일로 이동합니다.
+    /// </summary>
+    private void PreMonth()
+    {
+        SelectedDate = SelectedDate.AddMonths(-1);
+        this.SelectedDate = new DateTime(SelectedDate.Year, SelectedDate.Month, 1);
+    }
+
+    /// <summary>
+    /// 다음달 1일로 이동합니다.
+    /// </summary>
+    private void NextMonth()
+    {
+        SelectedDate = SelectedDate.AddMonths(1);
+        this.SelectedDate = new DateTime(SelectedDate.Year, SelectedDate.Month, 1);
+    }
 }
