@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArticleApp.Models\ArticleApp.Models.csproj" />
+    <ProjectReference Include="..\BmsCalendar\BmsCalendar.csproj" />
   </ItemGroup>
 
 </Project>

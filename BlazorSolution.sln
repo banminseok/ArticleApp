@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernBusiness", "ModernBus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modern_Admin", "Modern_Admin\Modern_Admin.csproj", "{AFAC676F-E065-4C4A-94E0-A5AFEB6B51D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BmsCalendar", "BmsCalendar\BmsCalendar.csproj", "{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,12 +95,18 @@ Global
 		{AFAC676F-E065-4C4A-94E0-A5AFEB6B51D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFAC676F-E065-4C4A-94E0-A5AFEB6B51D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFAC676F-E065-4C4A-94E0-A5AFEB6B51D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4536C114-92D4-4736-B42F-19B118D1F89A} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 		{75ADAF7D-911C-5F72-3FFE-A4B3EC85B1AD} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
+		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EE227C5-8657-4F2E-A93A-92E0F33850C1}
