@@ -106,7 +106,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - <link href="_content/BmsCalendar/bmscalendar.css"  : 컴포넌트에 있는 css를 사용하기 위해서는 _content/패키지명/패키지명.css를 사용해야 한다.
 - razor component 를 Balzor component로 변경하려면 _Imports.razor 를 추가해 준다. (기본 using문을 추가해 준다.))
 
-https://www.youtube.com/watch?v=lj7YXTrBq-A&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=73
+https://www.youtube.com/watch?v=zH1f8XSLMpE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=78
 
 
 # DbContextFactory VS DbContext	
