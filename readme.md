@@ -110,8 +110,9 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
    
 - @attribute : 속성으로 사용되는 @attribute는 Razor 컴포넌트에서 사용되는 속성을 정의하는 데 사용됩니다. @attribute [Authorize(Roles="Administrators")]
 
+ 
+# 3. Blazor Part 3: 회사 홈페이지 만들기
 - 
-https://www.youtube.com/watch?v=zH1f8XSLMpE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=78
 
 
 # DbContextFactory VS DbContext	
