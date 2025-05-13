@@ -117,7 +117,8 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 # 3. Blazor Part 3: 회사 홈페이지 만들기
 - //루트 페이지 로드하자마자 특정 url로 리다이렉트 
    app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
--
+- MVC는 사용자모드, Blazor는 관리자모드를 만들거다
+- 
 
 
 # DbContextFactory VS DbContext	

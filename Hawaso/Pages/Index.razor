@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManagerInjector
 
 <PageTitle>Index</PageTitle>
 
@@ -7,3 +8,12 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    //
+    protected override void OnInitialized()
+    {
+        // Index 페이지를 로드할 때 Home 페이지로 리다이렉트
+        NavigationManagerInjector.NavigateTo("/Home", true);        
+    }
+}
