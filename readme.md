@@ -11,9 +11,12 @@ git :	01 https://github.com/VisualAcademy/articleapp
         08 https://github.com/VisualAcademy/videoappcore
         09 https://github.com/VisualAcademy/ManufacturerApp
         10 https://github.com/VisualAcademy/MachineApp
+        11 https://github.com/VisualAcademy/MvcAndBlazor (MVC, Web API, Blazor, Razor Pages, ASP.NET Core Identity 전부적용)
+        11 https://github.com/VisualAcademy/hawaso
 
         21 https://github.com/AdrienTorris/awesome-blazor
         22 https://github.com/SamProf/MatBlazor
+        23 https://github.com/VisualAcademy/BlazorApp/blob/master/BlazorApp/Pages/CkEditorComponentTest.razor
 
 @VisualAcademy
 안녕하세요. 박용준 강사입니다.
@@ -112,7 +115,9 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 
  
 # 3. Blazor Part 3: 회사 홈페이지 만들기
-- 
+- //루트 페이지 로드하자마자 특정 url로 리다이렉트 
+   app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
+-
 
 
 # DbContextFactory VS DbContext	

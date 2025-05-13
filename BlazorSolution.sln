@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modern_Admin", "Modern_Admi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BmsCalendar", "BmsCalendar\BmsCalendar.csproj", "{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hawaso", "Hawaso\Hawaso.csproj", "{3483FD82-8B5A-47A7-B57C-B8B3FB492AEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8F6B9AC-EEDB-4CFE-B06F-05B0EA40234C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3483FD82-8B5A-47A7-B57C-B8B3FB492AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3483FD82-8B5A-47A7-B57C-B8B3FB492AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3483FD82-8B5A-47A7-B57C-B8B3FB492AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3483FD82-8B5A-47A7-B57C-B8B3FB492AEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

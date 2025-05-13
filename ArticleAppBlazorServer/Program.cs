@@ -262,9 +262,18 @@ app.MapDefaultControllerRoute();  //MVC 컨트롤러 라우팅
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages(); // Razor Pages 라우팅
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
+/*
+//루트 페이지 로드하자마자 특정 url로 리다이렉트 
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/ban");  //MVC 기본페이지로 이동
+    return Task.CompletedTask;
+});
+*/
 app.Run();
 
 
