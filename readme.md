@@ -176,6 +176,12 @@ await transaction.CommitAsync();
   Blazorise.Bootstrap
   Blazorise.Icons.FontAwesome
 
+  --Blazor 프로젝트에 Fluent UI 설정 추가  / https://fluentui-blazor.net
+  Microsoft.FluentUI.AspNetCore.Components
+  Microsoft.FluentUI.AspNetCore.Components.Icons
+  Microsoft.FluentUI.AspNetCore.Components.Emoji
+  Microsoft.FluentUI.AspNetCore.Components.DataGrid.EntityFrameworkAdapter
+
   Dapper
   Serilog
   Serilog.Extensions.Logging

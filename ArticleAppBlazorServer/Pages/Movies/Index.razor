@@ -16,22 +16,22 @@
 </p>
 
 <QuickGrid Class="table" Items="context.Movies" Pagination="state">
-    <PropertyColumn Property="movie => movie.Title" Sortable="true"/>
-    <PropertyColumn Property="movie => movie.ReleaseDate" Format="yyyy-mm-dd" Title="개봉일"/>
-    <PropertyColumn Property="movie => movie.Genre" />
-    <PropertyColumn Property="movie => movie.Price" />
+    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="movie => movie.Title" Sortable="true"/>
+    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="movie => movie.ReleaseDate" Format="yyyy-mm-dd" Title="개봉일" />
+    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="movie => movie.Genre" />
+    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="movie => movie.Price" />
 
-    <TemplateColumn Context="movie">
+    <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Context="movie">
         <a href="@($"movies/edit?id={movie.Id}")">Edit</a> |
         <a href="@($"movies/details?id={movie.Id}")">Details</a> |
         <a href="@($"movies/delete?id={movie.Id}")">Delete</a>
-    </TemplateColumn>
+    </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
 </QuickGrid>
 <Paginator State="state">
 
 </Paginator>
 @code {
-    PaginationState state = new PaginationState
+    Microsoft.AspNetCore.Components.QuickGrid.PaginationState state = new Microsoft.AspNetCore.Components.QuickGrid.PaginationState
         {
             ItemsPerPage = 5,
         };
