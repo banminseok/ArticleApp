@@ -75,3 +75,8 @@ a, .btn-link {
 button:disabled {
     opacity: 0.5;
 }
+
+/** Ck 에디터 높이지정*/
+.ck-editor__editable_inline {
+    min-height: 200px !important;
+}

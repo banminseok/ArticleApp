@@ -1,0 +1,24 @@
+﻿@page "/CkEditorComponentTest"
+
+<h3>CkEditorComponentTest</h3>
+<EditForm Model="@c">
+    <ArticleAppBlazorServer.Components.CkEditorComponent @bind-Value="@c.Content">
+    </ArticleAppBlazorServer.Components.CkEditorComponent>
+
+
+</EditForm>
+
+@c.Content
+<hr />
+@((MarkupString)c.Content)
+
+@code {
+
+    class EditorContent
+    {
+        public int Id { get; set; }
+        public string Content { get; set; }
+    }
+
+    EditorContent c = new EditorContent();
+}

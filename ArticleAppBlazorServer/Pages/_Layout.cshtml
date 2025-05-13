@@ -31,7 +31,7 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.server.js"></script>
+    
     <script src="~/lib/jquery.js"></script>
     <script src="~/lib/dist/js/bootstrap.js"></script>
     <script src="_content/MatBlazor/dist/matBlazor.js"></script>
@@ -53,6 +53,13 @@
 
     <link href="_content/Blazorise/blazorise.css?v=1.7.6.0" rel="stylesheet" />
     <link href="_content/Blazorise.Bootstrap5/blazorise.bootstrap5.css?v=1.7.6.0" rel="stylesheet" />
+
+    @*CKEditor 5 적용*@
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    <script src="~/js/CKEditorInterop.js"></script>
+
+
+    <script src="_framework/blazor.server.js"></script>
 
     <script>
         // 넘어온 ID를 갖는 모달 창 닫기

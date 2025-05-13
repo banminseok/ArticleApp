@@ -105,7 +105,12 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - Model Class 만 있어서 EF가 테이블을 만들어 주지만, DB 테이블을 먼저 만들어 주는게 좋다. 약간 한국형 스타일.
 - <link href="_content/BmsCalendar/bmscalendar.css"  : 컴포넌트에 있는 css를 사용하기 위해서는 _content/패키지명/패키지명.css를 사용해야 한다.
 - razor component 를 Balzor component로 변경하려면 _Imports.razor 를 추가해 준다. (기본 using문을 추가해 준다.))
+- ASP.NET Core Blazor의 JavaScript 함수에서 .NET 메서드 호출(강의에서 사용된 자바스크립트 인터롭에 대한 추가적인 설명은)
+   https://learn.microsoft.com/ko-kr/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript?view=aspnetcore-3.1&WT.mc_id=DT-MVP-35766
+   
+- 
 
+- 
 https://www.youtube.com/watch?v=zH1f8XSLMpE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=78
 
 
