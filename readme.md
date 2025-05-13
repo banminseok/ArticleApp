@@ -108,7 +108,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - ASP.NET Core Blazor의 JavaScript 함수에서 .NET 메서드 호출(강의에서 사용된 자바스크립트 인터롭에 대한 추가적인 설명은)
    https://learn.microsoft.com/ko-kr/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript?view=aspnetcore-3.1&WT.mc_id=DT-MVP-35766
    
-- 
+- @attribute : 속성으로 사용되는 @attribute는 Razor 컴포넌트에서 사용되는 속성을 정의하는 데 사용됩니다. @attribute [Authorize(Roles="Administrators")]
 
 - 
 https://www.youtube.com/watch?v=zH1f8XSLMpE&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=78
