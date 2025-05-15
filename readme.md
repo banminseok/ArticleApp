@@ -129,7 +129,11 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 # part 5 MVC 게시판 프로젝트
   - Urls : Post 방식으로 jquery , API 호출해서 가져오는 형태
   - 
-  https://www.youtube.com/watch?v=OE4UC_rk0-s&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=3
+  https://www.youtube.com/watch?v=7lC6sYRh1fg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=4
+
+
+
+
 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.

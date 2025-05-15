@@ -1,4 +1,4 @@
-﻿namespace DotNetNote.Models.Urls
+﻿namespace DotNetNote.Models
 {
     public class UrlRepository : IUrlRepository
     {
