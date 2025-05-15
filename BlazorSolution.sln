@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hawaso", "Hawaso\Hawaso.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WebMVC", "Test.WebMVC\Test.WebMVC.csproj", "{32077170-6F0E-4778-9450-6B908B461809}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNote", "DotNetNote\DotNetNote.csproj", "{4FAE23FA-D788-49C6-B678-96DEAC1AD286}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{32077170-6F0E-4778-9450-6B908B461809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32077170-6F0E-4778-9450-6B908B461809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32077170-6F0E-4778-9450-6B908B461809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FAE23FA-D788-49C6-B678-96DEAC1AD286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FAE23FA-D788-49C6-B678-96DEAC1AD286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FAE23FA-D788-49C6-B678-96DEAC1AD286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FAE23FA-D788-49C6-B678-96DEAC1AD286}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

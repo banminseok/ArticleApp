@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-DotNetNote-4c1b0d5b-5ec5-4cd9-afa9-dada72234d1f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,3 +1,4 @@
+using ArticleApp.Models;
 using Hawaso.Areas.Identity;
 using Hawaso.Data;
 using Microsoft.AspNetCore.Components;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,12 +19,18 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddDbContext<DotNetNoteContext>(options => options.UseSqlServer(connectionString));
+
+
 builder.Services.AddControllersWithViews();  //MVC
 builder.Services.AddRazorPages();
 
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+builder.Services.AddTransient<INoteRepository, NoteRepository>();
+builder.Services.AddTransient<INoteCommentRepository, NoteCommentRepository>();
 
 var app = builder.Build();
 

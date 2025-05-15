@@ -13,6 +13,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
         10 https://github.com/VisualAcademy/MachineApp
         11 https://github.com/VisualAcademy/MvcAndBlazor (MVC, Web API, Blazor, Razor Pages, ASP.NET Core Identity 전부적용)
         11 https://github.com/VisualAcademy/hawaso
+        
 
         21 https://github.com/AdrienTorris/awesome-blazor
         22 https://github.com/SamProf/MatBlazor
@@ -47,6 +48,9 @@ Part 2 - ASP.NET Core MVC https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56
 Part 3 - ASP.NET Core DB Programming  https://www.youtube.com/watch?v=1F6X4kUz4po&list=PLO56HZSjrPTA6sKgzv5DBdmsXjB42P2wl
 Part 4 - ASP.NET Core Web APi       https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
 Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7EYA4fk&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk
+12 https://www.youtube.com/playlist?list=PLO56HZSjrPTBblm3CbalLSf7Zv7IrwU7G
+
+
 
 # 0. ASP.NET Core 8.0 Start
 - https://www.dul.me/docs/aspnet/core/start/?tabs=aspnetcore-8%2Cvisualstudio
@@ -118,7 +122,10 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?v=CRYV7
 - //루트 페이지 로드하자마자 특정 url로 리다이렉트 
    app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
 - MVC는 사용자모드, Blazor는 관리자모드를 만들거다
-- 
+
+[!]MVC 게시판 프로젝트 듣고 다시 올게요
+https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=12
+
 
 
 # DbContextFactory VS DbContext	
