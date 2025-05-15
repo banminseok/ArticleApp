@@ -87,6 +87,7 @@
     <Build Include="dbo\Tables\Notes\Stored Procedures\DNN_WriteNote.sql" />
     <Build Include="dbo\Tables\Notes\Stored Procedures\NotesList.sql" />
     <Build Include="dbo\Tables\Notes\Stored Procedures\NotesSearchList.sql" />
+    <Build Include="dbo\Tables\Notes\Urls.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
@@ -95,5 +96,6 @@
     </None>
     <None Include="ArticleApp_1.SqlServer.publish.xml" />
     <None Include="ArticleApp_aspnet-Hawaso9000034.SqlServer.publish.xml" />
+    <None Include="DotNetNoteApp.SqlServer.publish.xml" />
   </ItemGroup>
 </Project>
