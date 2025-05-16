@@ -3,6 +3,7 @@ using DotNetNote.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,22 @@ builder.Services.AddSingleton<INoteCommentRepository>(sp =>
         sp.GetRequiredService<IMemoryCache>() // DI로 주입
     )
 );
+
+#region Serilog
+//// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
+//// ILoggerFactory loggerFactory
+Log.Logger = new LoggerConfiguration()
+    //.MinimumLevel.Debug()
+    //.WriteTo.File(Path.Combine(app.Environment.ContentRootPath, "DnsLogs.txt"), rollingInterval: RollingInterval.Day)
+    //.WriteTo.File("DnsLogs.txt", rollingInterval: RollingInterval.Day)
+    //.ReadFrom.Configuration(builder.Configuration)
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+Log.Information("※※※[!] DotnetNote Application started.");
+// Serilog를 DI 컨테이너에 추가
+//builder.Host.UseSerilog();
+builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
+#endregion
 
 var app = builder.Build();
 
