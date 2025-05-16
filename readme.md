@@ -128,8 +128,11 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 
 # part 5 MVC 게시판 프로젝트
   - Urls : Post 방식으로 jquery , API 호출해서 가져오는 형태
-  - 
-  https://www.youtube.com/watch?v=7lC6sYRh1fg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=4
+  - Taghelper 사용 : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
+  - 열거형 : BoardWriteFormType
+  - configuration : appsettings.json 객체 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
+  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=8
 
 
 
