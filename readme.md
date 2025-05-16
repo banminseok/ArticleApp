@@ -131,6 +131,8 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - Taghelper 사용 : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
   - 열거형 : BoardWriteFormType
   - configuration : appsettings.json 객체 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+  - @await Html.PartialAsync("_BoardEditorForm") // 부분화면 개념으로 컴포넌트 자주사용
+
 
   https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=8
 

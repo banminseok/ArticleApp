@@ -1,0 +1,27 @@
+{
+  "version": "3.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/lib/toastr",
+      "files": [ "toastr.min.js", "toastr.min.css", "toastr.css", "toastr.js.map" ]
+    },
+    {
+      "library": "bootbox.js@5.5.2",
+      "destination": "wwwroot/lib/bootbox",
+      "files": [ "bootbox.js", "bootbox.min.js" ]
+    },
+    {
+      "library": "moment.js@2.30.1",
+      "destination": "wwwroot/lib/moment",
+      "files": [ "moment.js", "moment.min.js", "locale/*" ]
+    },
+    {
+      "library": "font-awesome@6.7.2",
+      "destination": "wwwroot/lib/font-awesome",
+      "files": [ "css/all.min.css", "css/brands.min.css", "css/fontawesome.min.css", "css/regular.min.css", "css/solid.min.css", "css/svg-with-js.min.css", "css/v4-shims.min.css", "webfonts/*" ]
+     
+    }
+  ]
+}

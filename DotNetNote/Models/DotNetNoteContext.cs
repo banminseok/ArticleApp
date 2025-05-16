@@ -33,12 +33,12 @@ namespace DotNetNote.Models
         /// 아이디어 앱에 대한 참조(Idea 모델 클래스 <=> Ideas 테이블)
         /// </summary>
         public DbSet<Idea> Ideas { get; set; }
-        
+        */
         /// <summary>
         /// 게시판
         /// </summary>
         public DbSet<Note> Notes { get; set; }
-        */
+
         /// <summary>
         /// 도메인 관리자 테이블 참조
         /// </summary>
