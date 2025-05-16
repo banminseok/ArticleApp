@@ -134,7 +134,7 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - @await Html.PartialAsync("_BoardEditorForm") // 부분화면 개념으로 컴포넌트 자주사용
   [!]MVC part 2 듣고 다시올게요.
 
-  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=8
+  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=10
 
 # Part 2 - ASP.NET Core MVC
 - part 5 DotNetNote 소스에 합쳐서 사용한다.
