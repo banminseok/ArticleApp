@@ -1,0 +1,13 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model List<DotNetNote.Controllers.DemoModel>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Id /  @item.Name</li>
+    }
+
+</ul>

@@ -1,4 +1,4 @@
-#    
+ï»¿#    
 
 https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 git :	01 https://github.com/VisualAcademy/articleapp
@@ -11,7 +11,7 @@ git :	01 https://github.com/VisualAcademy/articleapp
         08 https://github.com/VisualAcademy/videoappcore
         09 https://github.com/VisualAcademy/ManufacturerApp
         10 https://github.com/VisualAcademy/MachineApp
-        11 https://github.com/VisualAcademy/MvcAndBlazor (MVC, Web API, Blazor, Razor Pages, ASP.NET Core Identity ÀüºÎÀû¿ë)
+        11 https://github.com/VisualAcademy/MvcAndBlazor (MVC, Web API, Blazor, Razor Pages, ASP.NET Core Identity ì „ë¶€ì ìš©)
         11 https://github.com/VisualAcademy/hawaso
         
 
@@ -20,11 +20,11 @@ git :	01 https://github.com/VisualAcademy/articleapp
         23 https://github.com/VisualAcademy/BlazorApp/blob/master/BlazorApp/Pages/CkEditorComponentTest.razor
 
 @VisualAcademy
-¾È³çÇÏ¼¼¿ä. ¹Ú¿ëÁØ °­»çÀÔ´Ï´Ù.
-2024³â Blazor ÇÐ½À ¼ø¼­´Â ´ÙÀ½ ¼ø¼­´ë·Î ÇÐ½ÀÇÏ½Ã¸é µË´Ï´Ù. 
-ASP.NET Core 8.0¿¡ µé¾î¼­ ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´ÀÌ ´ë´ëÀûÀ¸·Î º¯°æµÇ¾î, ¿ì¼± ASP.NET Core 8.0 Start¸¦ ¸ÕÀú º¸½Ã°í,
-1.1°ú 1.2 °­ÁÂ´Â ÇÔ²² º´ÇàÇØ¼­ º¸½Ã¸é¼­, ÀÌÈÄ·Î ÆÄÆ® 2¿Í ÆÄÆ® 3·Î ÀÌ¾îÁö´Â °­ÁÂ¸¦ º¸½Ã¸é µË´Ï´Ù. 
-ÇöÀç´Â ÀÌ ¼ø¼­´ë·Î º¸½Ã´Â°Ô Á¦ÀÏ ÁÁ½À´Ï´Ù. ÀÌÈÄ·ÎÀÇ °­ÁÂ´Â µû·Î ¹®ÀÇÁÖ¼¼¿ä. °¨»çÇÕ´Ï´Ù. 
+ì•ˆë…•í•˜ì„¸ìš”. ë°•ìš©ì¤€ ê°•ì‚¬ìž…ë‹ˆë‹¤.
+2024ë…„ Blazor í•™ìŠµ ìˆœì„œëŠ” ë‹¤ìŒ ìˆœì„œëŒ€ë¡œ í•™ìŠµí•˜ì‹œë©´ ë©ë‹ˆë‹¤. 
+ASP.NET Core 8.0ì— ë“¤ì–´ì„œ í”„ë¡œì íŠ¸ í…œí”Œë¦¿ì´ ëŒ€ëŒ€ì ìœ¼ë¡œ ë³€ê²½ë˜ì–´, ìš°ì„  ASP.NET Core 8.0 Startë¥¼ ë¨¼ì € ë³´ì‹œê³ ,
+1.1ê³¼ 1.2 ê°•ì¢ŒëŠ” í•¨ê»˜ ë³‘í–‰í•´ì„œ ë³´ì‹œë©´ì„œ, ì´í›„ë¡œ íŒŒíŠ¸ 2ì™€ íŒŒíŠ¸ 3ë¡œ ì´ì–´ì§€ëŠ” ê°•ì¢Œë¥¼ ë³´ì‹œë©´ ë©ë‹ˆë‹¤. 
+í˜„ìž¬ëŠ” ì´ ìˆœì„œëŒ€ë¡œ ë³´ì‹œëŠ”ê²Œ ì œì¼ ì¢‹ìŠµë‹ˆë‹¤. ì´í›„ë¡œì˜ ê°•ì¢ŒëŠ” ë”°ë¡œ ë¬¸ì˜ì£¼ì„¸ìš”. ê°ì‚¬í•©ë‹ˆë‹¤. 
 
 0. ASP.NET Core 8.0 Start
 https://www.youtube.com/playlist?list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg
@@ -33,21 +33,21 @@ https://www.youtube.com/playlist?list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg
 
 https://www.youtube.com/playlist?list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS
 
-1.2. Blazor Part 1 ±âÃÊ
+1.2. Blazor Part 1 ê¸°ì´ˆ
 https://www.youtube.com/playlist?list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v
 
-2. Blazor Part 2_Blazor °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®
+2. Blazor Part 2_Blazor ê²Œì‹œíŒ í”„ë¡œì íŠ¸
 https://www.youtube.com/playlist?list=PLO56HZSjrPTC1c1MbY72vVT0sO33G-9Od
 
-3. Blazor Part 3: È¸»ç È¨ÆäÀÌÁö ¸¸µé±â
+3. Blazor Part 3: íšŒì‚¬ í™ˆíŽ˜ì´ì§€ ë§Œë“¤ê¸°
 https://www.youtube.com/playlist?list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11
 
-Part 0 - ASP.NET Core 8.0 ½ÃÀÛÇÏ±â
-Part 1 - ASP.NET Core Razor Pages (ÇöÀç °­ÁÂ) https://www.youtube.com/playlist?list=PLO56HZSjrPTDtR6uKaE7mThbGAUgzvTJe
+Part 0 - ASP.NET Core 8.0 ì‹œìž‘í•˜ê¸°
+Part 1 - ASP.NET Core Razor Pages (í˜„ìž¬ ê°•ì¢Œ) https://www.youtube.com/playlist?list=PLO56HZSjrPTDtR6uKaE7mThbGAUgzvTJe
 Part 2 - ASP.NET Core MVC https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
 Part 3 - ASP.NET Core DB Programming  https://www.youtube.com/watch?v=1F6X4kUz4po&list=PLO56HZSjrPTA6sKgzv5DBdmsXjB42P2wl
 Part 4 - ASP.NET Core Web APi       https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
-Part 5 - ASP.NET Core MVC °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®  https://www.youtube.com/watch?v=CRYV7EYA4fk&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk
+Part 5 - ASP.NET Core MVC ê²Œì‹œíŒ í”„ë¡œì íŠ¸  https://www.youtube.com/watch?v=CRYV7EYA4fk&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk
 12 https://www.youtube.com/playlist?list=PLO56HZSjrPTBblm3CbalLSf7Zv7IrwU7G
 
 
@@ -55,12 +55,12 @@ Part 5 - ASP.NET Core MVC °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®  https://www.youtube.com/watch?v=CRYV7
 # 0. ASP.NET Core 8.0 Start
 - https://www.dul.me/docs/aspnet/core/start/?tabs=aspnetcore-8%2Cvisualstudio
 - https://learn.microsoft.com/ko-kr/shows/lets-learn-dotnet/lets-learn-dotnet-auth-and-identity?WT.mc_id=DT-MVP-35766
-- ASP.NET Core 8.0 Web API ¸Àº¸±â : https://www.youtube.com/watch?v=_M7rUwutFOc&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=22
+- ASP.NET Core 8.0 Web API ë§›ë³´ê¸° : https://www.youtube.com/watch?v=_M7rUwutFOc&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=22
 - GitHub: https://github.com/VisualAcademy
-- C# 11.0 ¿ø½Ã ¹®ÀÚ¿­ ¸®ÅÍ·² : https://youtu.be/7l8S6Husiso
+- C# 11.0 ì›ì‹œ ë¬¸ìžì—´ ë¦¬í„°ëŸ´ : https://youtu.be/7l8S6Husiso
 - https://www.hawaso.com/
-- appsettings.json°ú secrets.json ¼³¸í==> ¿ìÅ¬¸¯ >»ç¿ëÀÚ ¾ÏÈ£°ü¸® (*°³¹ßÈ¯°æ¿¡¼­ ¸¸ Àû¿ë°¡´É*)
-- ASP.NET Core 6.0 LTS ¹öÀüÀÇ 4°¡Áö ÇÁ·¹ÀÓ¿öÅ©¸¦ ÇÏ³ªÀÇ ÇÁ·ÎÁ§Æ®¿¡ Æ÷ÇÔÇÏ¿© ½ÇÇàÇÏ±â >>> https://www.youtube.com/watch?v=zrLYE5NJd8U&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=27
+- appsettings.jsonê³¼ secrets.json ì„¤ëª…==> ìš°í´ë¦­ >ì‚¬ìš©ìž ì•”í˜¸ê´€ë¦¬ (*ê°œë°œí™˜ê²½ì—ì„œ ë§Œ ì ìš©ê°€ëŠ¥*)
+- ASP.NET Core 6.0 LTS ë²„ì „ì˜ 4ê°€ì§€ í”„ë ˆìž„ì›Œí¬ë¥¼ í•˜ë‚˜ì˜ í”„ë¡œì íŠ¸ì— í¬í•¨í•˜ì—¬ ì‹¤í–‰í•˜ê¸° >>> https://www.youtube.com/watch?v=zrLYE5NJd8U&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=27
 - @rendermode InteractiveServer (https://www.youtube.com/watch?v=ot5pG0P1nII&list=PLO56HZSjrPTCffK881uMGdjT3Tc456pmg&index=28)
 - global using globalusing.cs
 - @inject IJSRuntime js
@@ -68,111 +68,117 @@ Part 5 - ASP.NET Core MVC °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®  https://www.youtube.com/watch?v=CRYV7
 - public AppSettingsDemoController(IConfiguration configuration)
 
 # 1.1. Blazor Server 7.0 Fundamentals
-- ÆÐÅ°Áö°ü¸®ÀÚÄÜ¼Ö > Add-Migration BuffetModelAdd,              update-database
-- ÆÐÅ°Áö°ü¸®ÀÚÄÜ¼Ö > Add-Migration BuffetModelAdd -Context Hawaso.Models.Candidates.CandidateAppDbContext,
+- íŒ¨í‚¤ì§€ê´€ë¦¬ìžì½˜ì†” > Add-Migration BuffetModelAdd,              update-database
+- íŒ¨í‚¤ì§€ê´€ë¦¬ìžì½˜ì†” > Add-Migration BuffetModelAdd -Context Hawaso.Models.Candidates.CandidateAppDbContext,
   update-database -Context Hawaso.Models.Candidates.CandidateAppDbContext,
 - https://github.com/VisualAcademy/VisualAcademy/blob/4ba3026d773a00e143f1216419defea2cd41e59e/src/VisualAcademy/VisualAcademy/Models/Candidates/01_Candidate.cs
-- null!; (null Çã¿ëÇÏÁö ¾ÊÀ½)
-- Blazor Server ¿¡¼­ Á÷Á¢ DBContext »ç¿ë½Ã ÁÖÀÇ»çÇ×....
-  //[a] MVC, RazorPages, Web API¿¡¼­´Â DbContext »ç¿ë °¡´É
+- null!; (null í—ˆìš©í•˜ì§€ ì•ŠìŒ)
+- Blazor Server ì—ì„œ ì§ì ‘ DBContext ì‚¬ìš©ì‹œ ì£¼ì˜ì‚¬í•­....
+  //[a] MVC, RazorPages, Web APIì—ì„œëŠ” DbContext ì‚¬ìš© ê°€ëŠ¥
   //builder.Services.AddDbContext<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
-  //[b] Blazor Server¿¡¼­´Â DbContextFactory »ç¿ë ±ÇÀå
+  //[b] Blazor Serverì—ì„œëŠ” DbContextFactory ì‚¬ìš© ê¶Œìž¥
   builder.Services.AddDbContextFactory<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
-  // mvc ÆäÀÌÁö¿¡ Blazor ÄÄÆ÷³ÍÆ®¸¦ 2°³ ÀÌ»ó »ç¿ëÇÏ±â À§ÇØ¼­´Â DbContextFactory¸¦ »ç¿ëÇØ¾ß ÇÑ´Ù.
-  // ÇÏ³ªÀÇ Blazor ÆäÀÌÁö¿¡ DbContext¸¦ 2°³ ÀÌ»ó »ç¿ëÇÏ¸é, BlazorÄÄÆ÷³ÍÆ®¸¦ 2°³ÀÌ»ó »ç¿ëÇÏ¸é  ¿À·ù°¡ ¹ß»ýÇÑ´Ù.
-- OnInValidSubmit  /// Form À¯È¿¼º °Ë»ç ½ÇÆÐ ½Ã Ã³¸®
-- AsNoTracking (ÀÐ±âÀü¿ëÀ¸·Î ¼º´ÉÇâ»ó ¿É¼Ç) await ctx.Candidates.AsNoTracking().FirstOrDefaultAsync(it => it.Id == Id);
-- 17_01_Script-Migration ¸í·ÉÀ» »ç¿ëÇÏ¿© µ¥ÀÌÅÍº£ÀÌ½º °³Ã¼¸¦ ¼ø¼ö SQL ½ºÅ©¸³Æ®·Î »Ì¾Æ³»±â
-  ÆÐÅ°Áö°ü¸®ÀÚÄÜ¼Ö > Script-Migration -Context Hawaso.Models.Candidates.CandidateAppDbContext
-- 17_03_ÀÚÁÖ »ç¿ëÇÏ´Â °øÅë ³×ÀÓ½ºÆäÀÌ½ºµéÀ» _Imports ÆÄÀÏ¿¡ ¸ð¾Æ¼­ °ü¸®ÇÏ±â
-- 17_04_namespace Áö½Ã¹®À» »ç¿ëÇÏ¿© ÄÄÆ÷³ÍÆ®ÀÇ ³×ÀÓ½ºÆäÀÌ½º¸¦ °íÁ¤°ªÀ¸·Î ¼³Á¤ÇÏ±â
-  namespace ¼³Á¤ÇÏ±â : @namespace AriticleApp.Pages.Candidates
-- compoentÅ×±× »ç¿ëÇØ¼­ mvc³ª razor ÆäÀÌÁö¿¡ »ðÀÔÇÒ¶§, ÁÖÀÇ»çÇ×
-    ÇÏ´Ü ·¹ÀÌ¾Æ¿ô ÆäÀÌÁö blazor.server.js Æ÷ÇÔ È®ÀÎ
-    »ó´Ü<base href="~/" /> Æ÷ÇÔÈ®ÀÎ
-- ASP.NET Core ·¹ÀÌ¾Æ¿ô°ú Blazor Server LayoutÀ» ÇÏ³ª·Î ÅëÇÕÇØ¼­ »ç¿ëÇÏ±â
+  // mvc íŽ˜ì´ì§€ì— Blazor ì»´í¬ë„ŒíŠ¸ë¥¼ 2ê°œ ì´ìƒ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œëŠ” DbContextFactoryë¥¼ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+  // í•˜ë‚˜ì˜ Blazor íŽ˜ì´ì§€ì— DbContextë¥¼ 2ê°œ ì´ìƒ ì‚¬ìš©í•˜ë©´, Blazorì»´í¬ë„ŒíŠ¸ë¥¼ 2ê°œì´ìƒ ì‚¬ìš©í•˜ë©´  ì˜¤ë¥˜ê°€ ë°œìƒí•œë‹¤.
+- OnInValidSubmit  /// Form ìœ íš¨ì„± ê²€ì‚¬ ì‹¤íŒ¨ ì‹œ ì²˜ë¦¬
+- AsNoTracking (ì½ê¸°ì „ìš©ìœ¼ë¡œ ì„±ëŠ¥í–¥ìƒ ì˜µì…˜) await ctx.Candidates.AsNoTracking().FirstOrDefaultAsync(it => it.Id == Id);
+- 17_01_Script-Migration ëª…ë ¹ì„ ì‚¬ìš©í•˜ì—¬ ë°ì´í„°ë² ì´ìŠ¤ ê°œì²´ë¥¼ ìˆœìˆ˜ SQL ìŠ¤í¬ë¦½íŠ¸ë¡œ ë½‘ì•„ë‚´ê¸°
+  íŒ¨í‚¤ì§€ê´€ë¦¬ìžì½˜ì†” > Script-Migration -Context Hawaso.Models.Candidates.CandidateAppDbContext
+- 17_03_ìžì£¼ ì‚¬ìš©í•˜ëŠ” ê³µí†µ ë„¤ìž„ìŠ¤íŽ˜ì´ìŠ¤ë“¤ì„ _Imports íŒŒì¼ì— ëª¨ì•„ì„œ ê´€ë¦¬í•˜ê¸°
+- 17_04_namespace ì§€ì‹œë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ì»´í¬ë„ŒíŠ¸ì˜ ë„¤ìž„ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ê³ ì •ê°’ìœ¼ë¡œ ì„¤ì •í•˜ê¸°
+  namespace ì„¤ì •í•˜ê¸° : @namespace AriticleApp.Pages.Candidates
+- compoentí…Œê·¸ ì‚¬ìš©í•´ì„œ mvcë‚˜ razor íŽ˜ì´ì§€ì— ì‚½ìž…í• ë•Œ, ì£¼ì˜ì‚¬í•­
+    í•˜ë‹¨ ë ˆì´ì•„ì›ƒ íŽ˜ì´ì§€ blazor.server.js í¬í•¨ í™•ì¸
+    ìƒë‹¨<base href="~/" /> í¬í•¨í™•ì¸
+- ASP.NET Core ë ˆì´ì•„ì›ƒê³¼ Blazor Server Layoutì„ í•˜ë‚˜ë¡œ í†µí•©í•´ì„œ ì‚¬ìš©í•˜ê¸°
   https://www.youtube.com/watch?v=CEv0zt_MPbo&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=90
 
-# 1.2. Blazor Part 1 ±âÃÊ
-- Remaining.ToString("c0") : doubleÀÌ³ª decimal °ª¿¡ .ToString("c0")À» »ç¿ëÇÏ¸é, ÇØ´ç °ªÀ» "ÅëÈ­" Çü½Ä(¼Ò¼öÁ¡ ¾øÀÌ)À¸·Î º¯È¯ÇÕ´Ï´Ù. 
-- Input µ¥ÄÚ·¹ÀÌÅÍ¿Í Output µ¥ÄÚ·¹ÀÌÅÍ
- Input Parameter : ºÎ¸ð¿¡¼­ ÀÚ½ÄÀ¸·Î , ÄÄÆ÷³ÍÆ®¿¡°Ô ¼Ó¼ºÀ» »ç¿ëÇÏ¿© µ¥ÀÌÅÍ Àü´Þ
- Output Parameter : ÀÚ½Ä¿¡¼­ ºÎ¸ð·Î, 
-   Action : ÀÚ±ãÀÇ °ªÀ» ºÎ¸ð¿¡¼­ »ç¿ëÇÏµµ·Ï, ÀÚ½Ä¿¡¼­ ºÎ¸ðÀÇ ¸Þ¼­µå¸¦ È£ÃâÇÏ´Â ÇüÅÂ
-   EventCallback<T>: Á¦³×¸¯ Å¸ÀÔÀ» »ç¿ëÇÏ¿©, number, stringÇü Á¤ÇØ¼­ ÀÚ½Ä¿¡¼­ ºÎ¸ð·Î °ªÀ» Àü´ÞÇÏ´Â ÇüÅÂ
-- @ref :ÅÛÇÃ¸´ ÂüÁ¶º¯¼ö, ÀÚ½Ä¿ä¼ÒÀÇ @ref¸¦ »ç¿ëÇÏ¿© ºÎ¸ð¿¡¼­ ÀÚ½ÄÀÇ ¸Þ¼­µå¸¦ È£ÃâÇÏ´Â ÇüÅÂ
+# 1.2. Blazor Part 1 ê¸°ì´ˆ
+- Remaining.ToString("c0") : doubleì´ë‚˜ decimal ê°’ì— .ToString("c0")ì„ ì‚¬ìš©í•˜ë©´, í•´ë‹¹ ê°’ì„ "í†µí™”" í˜•ì‹(ì†Œìˆ˜ì  ì—†ì´)ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. 
+- Input ë°ì½”ë ˆì´í„°ì™€ Output ë°ì½”ë ˆì´í„°
+ Input Parameter : ë¶€ëª¨ì—ì„œ ìžì‹ìœ¼ë¡œ , ì»´í¬ë„ŒíŠ¸ì—ê²Œ ì†ì„±ì„ ì‚¬ìš©í•˜ì—¬ ë°ì´í„° ì „ë‹¬
+ Output Parameter : ìžì‹ì—ì„œ ë¶€ëª¨ë¡œ, 
+   Action : ìžê¸±ì˜ ê°’ì„ ë¶€ëª¨ì—ì„œ ì‚¬ìš©í•˜ë„ë¡, ìžì‹ì—ì„œ ë¶€ëª¨ì˜ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ëŠ” í˜•íƒœ
+   EventCallback<T>: ì œë„¤ë¦­ íƒ€ìž…ì„ ì‚¬ìš©í•˜ì—¬, number, stringí˜• ì •í•´ì„œ ìžì‹ì—ì„œ ë¶€ëª¨ë¡œ ê°’ì„ ì „ë‹¬í•˜ëŠ” í˜•íƒœ
+- @ref :í…œí”Œë¦¿ ì°¸ì¡°ë³€ìˆ˜, ìžì‹ìš”ì†Œì˜ @refë¥¼ ì‚¬ìš©í•˜ì—¬ ë¶€ëª¨ì—ì„œ ìžì‹ì˜ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ëŠ” í˜•íƒœ
 - MatBlazor : https://www.matblazor.com/
-- 03 04 ChartJs Blaozr ÄÄÆ÷³ÍÆ®¸¦ »ç¿ëÇÏ¿© ¿©·¯ Á¾·ùÀÇ Â÷Æ®¸¦ ºü¸£°Ô ±×¸®±â ´Â ´Ù½Ã °øºÎÇÏÀÚ..¹öÀüÀÌ ¸¹ÀÌ ´Ù¸§..
+- 03 04 ChartJs Blaozr ì»´í¬ë„ŒíŠ¸ë¥¼ ì‚¬ìš©í•˜ì—¬ ì—¬ëŸ¬ ì¢…ë¥˜ì˜ ì°¨íŠ¸ë¥¼ ë¹ ë¥´ê²Œ ê·¸ë¦¬ê¸° ëŠ” ë‹¤ì‹œ ê³µë¶€í•˜ìž..ë²„ì „ì´ ë§Žì´ ë‹¤ë¦„..
 - https://blazorise.com/docs
 - https://startbootstrap.com/themes
-- »çÀÌÆ® html ±¸¼º : _Host.cshtml, _Layout.cshtml >> MainLayout.razor >>NavMenu.razor_
-- Morder_Admin : SBAdmin2 ´Ù¿î·Îµå ÇÑ °ü¸®ÀÚ ÆäÀÌÁö (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
-- DB¿¬°á¹®ÀÚ¿­ : ;MultipleActiveResultSets=true Àº ¿î¿µDB¿¡¼­´Â ÇÊ¼ö¿É¼Ç
-- if (int.TryParse(Id, out int id)) {}  : Id°¡ intÇüÀ¸·Î º¯È¯ÀÌ °¡´ÉÇÏ¸é, id¿¡ ³Ö¾î¶ó
-- Model Class ¸¸ ÀÖ¾î¼­ EF°¡ Å×ÀÌºíÀ» ¸¸µé¾î ÁÖÁö¸¸, DB Å×ÀÌºíÀ» ¸ÕÀú ¸¸µé¾î ÁÖ´Â°Ô ÁÁ´Ù. ¾à°£ ÇÑ±¹Çü ½ºÅ¸ÀÏ.
-- <link href="_content/BmsCalendar/bmscalendar.css"  : ÄÄÆ÷³ÍÆ®¿¡ ÀÖ´Â css¸¦ »ç¿ëÇÏ±â À§ÇØ¼­´Â _content/ÆÐÅ°Áö¸í/ÆÐÅ°Áö¸í.css¸¦ »ç¿ëÇØ¾ß ÇÑ´Ù.
-- razor component ¸¦ Balzor component·Î º¯°æÇÏ·Á¸é _Imports.razor ¸¦ Ãß°¡ÇØ ÁØ´Ù. (±âº» using¹®À» Ãß°¡ÇØ ÁØ´Ù.))
-- ASP.NET Core BlazorÀÇ JavaScript ÇÔ¼ö¿¡¼­ .NET ¸Þ¼­µå È£Ãâ(°­ÀÇ¿¡¼­ »ç¿ëµÈ ÀÚ¹Ù½ºÅ©¸³Æ® ÀÎÅÍ·Ó¿¡ ´ëÇÑ Ãß°¡ÀûÀÎ ¼³¸íÀº)
+- ì‚¬ì´íŠ¸ html êµ¬ì„± : _Host.cshtml, _Layout.cshtml >> MainLayout.razor >>NavMenu.razor_
+- Morder_Admin : SBAdmin2 ë‹¤ìš´ë¡œë“œ í•œ ê´€ë¦¬ìž íŽ˜ì´ì§€ (https://www.youtube.com/watch?v=irRHlG1oWxo&list=PLO56HZSjrPTCQbxR12t-67YyNSBP8L-8v&index=28&t=508s)
+- DBì—°ê²°ë¬¸ìžì—´ : ;MultipleActiveResultSets=true ì€ ìš´ì˜DBì—ì„œëŠ” í•„ìˆ˜ì˜µì…˜
+- if (int.TryParse(Id, out int id)) {}  : Idê°€ intí˜•ìœ¼ë¡œ ë³€í™˜ì´ ê°€ëŠ¥í•˜ë©´, idì— ë„£ì–´ë¼
+- Model Class ë§Œ ìžˆì–´ì„œ EFê°€ í…Œì´ë¸”ì„ ë§Œë“¤ì–´ ì£¼ì§€ë§Œ, DB í…Œì´ë¸”ì„ ë¨¼ì € ë§Œë“¤ì–´ ì£¼ëŠ”ê²Œ ì¢‹ë‹¤. ì•½ê°„ í•œêµ­í˜• ìŠ¤íƒ€ì¼.
+- <link href="_content/BmsCalendar/bmscalendar.css"  : ì»´í¬ë„ŒíŠ¸ì— ìžˆëŠ” cssë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œëŠ” _content/íŒ¨í‚¤ì§€ëª…/íŒ¨í‚¤ì§€ëª….cssë¥¼ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+- razor component ë¥¼ Balzor componentë¡œ ë³€ê²½í•˜ë ¤ë©´ _Imports.razor ë¥¼ ì¶”ê°€í•´ ì¤€ë‹¤. (ê¸°ë³¸ usingë¬¸ì„ ì¶”ê°€í•´ ì¤€ë‹¤.))
+- ASP.NET Core Blazorì˜ JavaScript í•¨ìˆ˜ì—ì„œ .NET ë©”ì„œë“œ í˜¸ì¶œ(ê°•ì˜ì—ì„œ ì‚¬ìš©ëœ ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì¸í„°ë¡­ì— ëŒ€í•œ ì¶”ê°€ì ì¸ ì„¤ëª…ì€)
    https://learn.microsoft.com/ko-kr/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript?view=aspnetcore-3.1&WT.mc_id=DT-MVP-35766
    
-- @attribute : ¼Ó¼ºÀ¸·Î »ç¿ëµÇ´Â @attribute´Â Razor ÄÄÆ÷³ÍÆ®¿¡¼­ »ç¿ëµÇ´Â ¼Ó¼ºÀ» Á¤ÀÇÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù. @attribute [Authorize(Roles="Administrators")]
+- @attribute : ì†ì„±ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” @attributeëŠ” Razor ì»´í¬ë„ŒíŠ¸ì—ì„œ ì‚¬ìš©ë˜ëŠ” ì†ì„±ì„ ì •ì˜í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤. @attribute [Authorize(Roles="Administrators")]
 
  
-# 3. Blazor Part 3: È¸»ç È¨ÆäÀÌÁö ¸¸µé±â
-- //·çÆ® ÆäÀÌÁö ·ÎµåÇÏÀÚ¸¶ÀÚ Æ¯Á¤ url·Î ¸®´ÙÀÌ·ºÆ® 
-   app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC ±âº»ÆäÀÌÁö·Î ÀÌµ¿);
-- MVC´Â »ç¿ëÀÚ¸ðµå, Blazor´Â °ü¸®ÀÚ¸ðµå¸¦ ¸¸µé°Å´Ù
+# 3. Blazor Part 3: íšŒì‚¬ í™ˆíŽ˜ì´ì§€ ë§Œë“¤ê¸°
+- //ë£¨íŠ¸ íŽ˜ì´ì§€ ë¡œë“œí•˜ìžë§ˆìž íŠ¹ì • urlë¡œ ë¦¬ë‹¤ì´ë ‰íŠ¸ 
+   app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC ê¸°ë³¸íŽ˜ì´ì§€ë¡œ ì´ë™);
+- MVCëŠ” ì‚¬ìš©ìžëª¨ë“œ, BlazorëŠ” ê´€ë¦¬ìžëª¨ë“œë¥¼ ë§Œë“¤ê±°ë‹¤
 
-[!]MVC °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ® µè°í ´Ù½Ã ¿Ã°Ô¿ä
+[!]MVC ê²Œì‹œíŒ í”„ë¡œì íŠ¸ ë“£ê³  ë‹¤ì‹œ ì˜¬ê²Œìš”
 https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=12
 
-# part 5 MVC °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®
-  - Urls : Post ¹æ½ÄÀ¸·Î jquery , API È£ÃâÇØ¼­ °¡Á®¿À´Â ÇüÅÂ
-  - Taghelper »ç¿ë : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
-  - ¿­°ÅÇü : BoardWriteFormType
-  - configuration : appsettings.json °´Ã¼ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-  - @await Html.PartialAsync("_BoardEditorForm") // ºÎºÐÈ­¸é °³³äÀ¸·Î ÄÄÆ÷³ÍÆ® ÀÚÁÖ»ç¿ë
-
+# part 5 MVC ê²Œì‹œíŒ í”„ë¡œì íŠ¸
+  - Urls : Post ë°©ì‹ìœ¼ë¡œ jquery , API í˜¸ì¶œí•´ì„œ ê°€ì ¸ì˜¤ëŠ” í˜•íƒœ
+  - Taghelper ì‚¬ìš© : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
+  - ì—´ê±°í˜• : BoardWriteFormType
+  - configuration : appsettings.json ê°ì²´ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+  - @await Html.PartialAsync("_BoardEditorForm") // ë¶€ë¶„í™”ë©´ ê°œë…ìœ¼ë¡œ ì»´í¬ë„ŒíŠ¸ ìžì£¼ì‚¬ìš©
+  [!]MVC part 2 ë“£ê³  ë‹¤ì‹œì˜¬ê²Œìš”.
 
   https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=8
 
+# Part 2 - ASP.NET Core MVC
+- part 5 DotNetNote ì†ŒìŠ¤ì— í•©ì³ì„œ ì‚¬ìš©í•œë‹¤.
+- @Html.Raw(ViewBag.AlertMessage) Razor ë·°ì—ì„œ ë¬¸ìžì—´ì„ ì¶œë ¥í•  ë•Œ, ê¸°ë³¸ì ìœ¼ë¡œ HTML ì¸ì½”ë”©ì´ ì ìš©ë˜ì–´ <, >, & ë“± íŠ¹ìˆ˜ë¬¸ìžê°€ ì•ˆì „í•˜ê²Œ í‘œì‹œë©ë‹ˆë‹¤.
+  í•˜ì§€ë§Œ Html.Raw()ë¥¼ ì‚¬ìš©í•˜ë©´ ì¸ì½”ë”© ì—†ì´ ì›ë³¸ ë¬¸ìžì—´ì´ ê·¸ëŒ€ë¡œ ì¶œë ¥ë©ë‹ˆë‹¤.
+- â€¢	ViewBagì€ ë™ì  íƒ€ìž…ì´ë¯€ë¡œ, ë°˜ë“œì‹œ ë·°ì—ì„œ asë¡œ ìºìŠ¤íŒ…í•´ì„œ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤. ì»¨íŠ¸ë¡¤ëŸ¬ì—ì„œ ViewBag.DemoList = list;ë¡œ í• ë‹¹í•˜ê³ ,
+  ë·°ì—ì„œ var demoList = ViewBag.DemoList as List<DemoModel>;ë¡œ ë°›ì•„ì„œ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤.
+- Area-> ì¶”ê°€ (ì˜ì—­) -> [Area("DotNetSale")]
 
-
-
+https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
 
 # DbContextFactory VS DbContext	
-Blazor Server¿¡¼­ Repository¿¡¼­ DbContext »ç¿ëÇÏ´Â °æ¿ì¿¡´Â Å« ¹®Á¦¾øÀÌ »ç¿ëÀÌ °¡´ÉÇÕ´Ï´Ù.
-´ÙÀ½ ¸µÅ©ÀÇ Á¦ °­ÀÇ ¼Ò½ºÀÇ Memos ¸ðµâÀÇ ¼Ò½º°¡ ÀÌ¹Ì Repository¿¡¼­ DbContext¸¦ ±×´ë·Î È£ÃâÇØ¼­ »ç¿ëÇÕ´Ï´Ù.
+Blazor Serverì—ì„œ Repositoryì—ì„œ DbContext ì‚¬ìš©í•˜ëŠ” ê²½ìš°ì—ëŠ” í° ë¬¸ì œì—†ì´ ì‚¬ìš©ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.
+ë‹¤ìŒ ë§í¬ì˜ ì œ ê°•ì˜ ì†ŒìŠ¤ì˜ Memos ëª¨ë“ˆì˜ ì†ŒìŠ¤ê°€ ì´ë¯¸ Repositoryì—ì„œ DbContextë¥¼ ê·¸ëŒ€ë¡œ í˜¸ì¶œí•´ì„œ ì‚¬ìš©í•©ë‹ˆë‹¤.
 https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso.Models/Memos/04_MemoRepository.cs#L21
-´Ü, ÃÖ±Ù¿¡´Â ÀÌ¿ÕÀÌ¸é »õ·Ó°Ô ¸¸µå´Â RepositoryµéÀº DbContextFactory¸¦ »ç¿ëÇÏ·Á°í ³ë·ÂÁßÀÔ´Ï´Ù.
-DbContext¿Í Repository Áß°£¿¡ DbContextFactory¸¦ ÇÏ³ª ´õ µÎ´Â ÇüÅÂÀÔ´Ï´Ù. 
+ë‹¨, ìµœê·¼ì—ëŠ” ì´ì™•ì´ë©´ ìƒˆë¡­ê²Œ ë§Œë“œëŠ” Repositoryë“¤ì€ DbContextFactoryë¥¼ ì‚¬ìš©í•˜ë ¤ê³  ë…¸ë ¥ì¤‘ìž…ë‹ˆë‹¤.
+DbContextì™€ Repository ì¤‘ê°„ì— DbContextFactoryë¥¼ í•˜ë‚˜ ë” ë‘ëŠ” í˜•íƒœìž…ë‹ˆë‹¤. 
 https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso/Components/Pages/VendorPages/Models/07_VendorRepositoryPermanentDelete.cs#L9
 
-# Dapper¿Í DbContext
--Dapper´Â °æ·® ORMÀ¸·Î, DbContext¿Í´Â µ¶¸³ÀûÀ¸·Î ÀÛµ¿ÇÕ´Ï´Ù.
--Dapper´Â µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á(IDbConnection)À» Á÷Á¢ »ç¿ëÇÏ¿© SQL Äõ¸®¸¦ ½ÇÇàÇÕ´Ï´Ù.
--µû¶ó¼­ Dapper¸¦ »ç¿ëÇÒ ¶§´Â DbContext°¡ ¾Æ´Ñ µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á °´Ã¼¸¦ Á÷Á¢ °ü¸®ÇØ¾ß ÇÕ´Ï´Ù.
-2. DbContextFactory¿Í DapperÀÇ »ç¿ë
-DbContextFactory¸¦ »ç¿ëÇÏ¿© DbContext¸¦ »ý¼ºÇÑ ÈÄ, Dapper¿Í ÇÔ²² »ç¿ëÇÏ·Á¸é DbContext¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» ÃßÃâÇØ¾ß ÇÕ´Ï´Ù.
+# Dapperì™€ DbContext
+-DapperëŠ” ê²½ëŸ‰ ORMìœ¼ë¡œ, DbContextì™€ëŠ” ë…ë¦½ì ìœ¼ë¡œ ìž‘ë™í•©ë‹ˆë‹¤.
+-DapperëŠ” ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°(IDbConnection)ì„ ì§ì ‘ ì‚¬ìš©í•˜ì—¬ SQL ì¿¼ë¦¬ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤.
+-ë”°ë¼ì„œ Dapperë¥¼ ì‚¬ìš©í•  ë•ŒëŠ” DbContextê°€ ì•„ë‹Œ ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ê°ì²´ë¥¼ ì§ì ‘ ê´€ë¦¬í•´ì•¼ í•©ë‹ˆë‹¤.
+2. DbContextFactoryì™€ Dapperì˜ ì‚¬ìš©
+DbContextFactoryë¥¼ ì‚¬ìš©í•˜ì—¬ DbContextë¥¼ ìƒì„±í•œ í›„, Dapperì™€ í•¨ê»˜ ì‚¬ìš©í•˜ë ¤ë©´ DbContextì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì„ ì¶”ì¶œí•´ì•¼ í•©ë‹ˆë‹¤.
 using Dapper;
 using Microsoft.EntityFrameworkCore;
 
 public async Task<IEnumerable<Candidate>> GetCandidatesAsync(IDbContextFactory<CandidateAppDbContext> contextFactory)
 {
-    // [1] DbContext »ý¼º
+    // [1] DbContext ìƒì„±
     using var context = contextFactory.CreateDbContext();
 
-    // [2] DbConnection °¡Á®¿À±â
+    // [2] DbConnection ê°€ì ¸ì˜¤ê¸°
     using var connection = context.Database.GetDbConnection();
 
-    // [3] DbConnection ¿­±â
+    // [3] DbConnection ì—´ê¸°
     await connection.OpenAsync();
 
-    // [4] Dapper¸¦ »ç¿ëÇÏ¿© SQL Äõ¸® ½ÇÇà
+    // [4] Dapperë¥¼ ì‚¬ìš©í•˜ì—¬ SQL ì¿¼ë¦¬ ì‹¤í–‰
     var sql = "SELECT * FROM Candidates ORDER BY FirstName";
     var candidates = await connection.QueryAsync<Candidate>(sql);
 
-    // [5] DbContext¿Í DbConnectionÀº using ºí·ÏÀÌ ³¡³ª¸é ÀÚµ¿À¸·Î Dispose() È£Ãâ
+    // [5] DbContextì™€ DbConnectionì€ using ë¸”ë¡ì´ ëë‚˜ë©´ ìžë™ìœ¼ë¡œ Dispose() í˜¸ì¶œ
     return candidates;
 }
 --------------
@@ -187,22 +193,22 @@ await transaction.CommitAsync();
 --------------------
 
 
-# NugetÆÐÅ°Áö ¼³Ä¡
+# NugetíŒ¨í‚¤ì§€ ì„¤ì¹˜
   Microsoft.EntityFrameworkCore
   Microsoft.EntityFrameworkCore.SqlServer
   Microsoft.EntityFrameworkCore.Tools
   System.Configuration.ConfigurationManager
-  System.Data.SqlClient  (ÂüÁ¶ : https://ddochea.tistory.com/189)
+  System.Data.SqlClient  (ì°¸ì¡° : https://ddochea.tistory.com/189)
   Microsoft.EntityFrameworkCore.InMemory is the EF Core
   MatBlazor 
-  Charts.Blazor  ==> ¹öÀü 1.0
-  ChartJs.Blazor.Fork  ==> ¹öÀü 2.0
+  Charts.Blazor  ==> ë²„ì „ 1.0
+  ChartJs.Blazor.Fork  ==> ë²„ì „ 2.0
   BlazorInputFile
-  # EPPlus 8(À¯·á) => EPPlus 7 ¿¢¼¿¾÷·Îµå ´Ù¿î·Îµå 
+  # EPPlus 8(ìœ ë£Œ) => EPPlus 7 ì—‘ì…€ì—…ë¡œë“œ ë‹¤ìš´ë¡œë“œ 
   Blazorise.Bootstrap
   Blazorise.Icons.FontAwesome
 
-  --Blazor ÇÁ·ÎÁ§Æ®¿¡ Fluent UI ¼³Á¤ Ãß°¡  / https://fluentui-blazor.net
+  --Blazor í”„ë¡œì íŠ¸ì— Fluent UI ì„¤ì • ì¶”ê°€  / https://fluentui-blazor.net
   Microsoft.FluentUI.AspNetCore.Components
   Microsoft.FluentUI.AspNetCore.Components.Icons
   Microsoft.FluentUI.AspNetCore.Components.Emoji
@@ -214,31 +220,31 @@ await transaction.CommitAsync();
   Serilog.Sinks.File
   -------------------------
   controller - ctor(ILogger<HomeController> logger)
-  _logger.LogInformation("·Î±×¹®±¸.....");
+  _logger.LogInformation("ë¡œê·¸ë¬¸êµ¬.....");
   -------------------------------------------------------------------------
 
 # UploadApp
-¾÷·Îµå °Ô½ÃÆÇÀÎµ¥, ´ë¿ë·®Ã³¸®¸¦ À§ÇØ mvc¸¦ »ç¿ëÇÏ°í,
-Network Services ¿¡ ´ëÇØ ¾²±â±ÇÇÑ..
-  1. Network Services¿¡ ¾²±â ±ÇÇÑ ºÎ¿©
-  2. IIS¿¡¼­ Application PoolÀÇ Identity¸¦ Network Service·Î º¯°æ
-  3. Network Service¿¡ ¾²±â ±ÇÇÑ ºÎ¿©
+ì—…ë¡œë“œ ê²Œì‹œíŒì¸ë°, ëŒ€ìš©ëŸ‰ì²˜ë¦¬ë¥¼ ìœ„í•´ mvcë¥¼ ì‚¬ìš©í•˜ê³ ,
+Network Services ì— ëŒ€í•´ ì“°ê¸°ê¶Œí•œ..
+  1. Network Servicesì— ì“°ê¸° ê¶Œí•œ ë¶€ì—¬
+  2. IISì—ì„œ Application Poolì˜ Identityë¥¼ Network Serviceë¡œ ë³€ê²½
+  3. Network Serviceì— ì“°ê¸° ê¶Œí•œ ë¶€ì—¬
   4. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.dll
   5. C:\inetpub\wwwroot\UploadApp\bin\Debug\net6.0\UploadApp.pdb
 
-  Razor Å¬·¡½º ¶óÀÌºê·¯¸® »ý¼º
+  Razor í´ëž˜ìŠ¤ ë¼ì´ë¸ŒëŸ¬ë¦¬ ìƒì„±
   Razor Class Library
-  ´Ù¿î·Îµå ½ºÅ©¸³Æ® : function saveAsFile(filename, bytesBase64) { js
+  ë‹¤ìš´ë¡œë“œ ìŠ¤í¬ë¦½íŠ¸ : function saveAsFile(filename, bytesBase64) { js
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
-# ArticleApp ¸®Æ÷ÁöÅä¸®
+# ArticleApp ë¦¬í¬ì§€í† ë¦¬
 
-**°Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®** °³¹ß ¶Ç´Â °­ÀÇ ¶Ç´Â ÁýÇÊ ¼Ò½º ¸ðÀ½
+**ê²Œì‹œíŒ í”„ë¡œì íŠ¸** ê°œë°œ ë˜ëŠ” ê°•ì˜ ë˜ëŠ” ì§‘í•„ ì†ŒìŠ¤ ëª¨ìŒ
 
-ASP.NET Core 6.0 + Bootstrap 5.0 ±â¹Ý ¼Ò½º´Â ArticleApp ¼Ö·ç¼ÇÀÇ VisualAcademy ÇÁ·ÎÁ§Æ®¿¡ ÀÖ½À´Ï´Ù. 
+ASP.NET Core 6.0 + Bootstrap 5.0 ê¸°ë°˜ ì†ŒìŠ¤ëŠ” ArticleApp ì†”ë£¨ì…˜ì˜ VisualAcademy í”„ë¡œì íŠ¸ì— ìžˆìŠµë‹ˆë‹¤. 
 
-   ÀÌÈÄ·Î ¾÷µ¥ÀÌÆ®µÇ´Â ´ÙÀ½ °æ·ÎÀÇ °­ÀÇ ¸ÞÀÎ ¼Ò½º¿¡¼­ ÁøÇàµË´Ï´Ù.
+   ì´í›„ë¡œ ì—…ë°ì´íŠ¸ë˜ëŠ” ë‹¤ìŒ ê²½ë¡œì˜ ê°•ì˜ ë©”ì¸ ì†ŒìŠ¤ì—ì„œ ì§„í–‰ë©ë‹ˆë‹¤.
    
    * https://github.com/VisualAcademy/VisualAcademy
 
@@ -247,32 +253,32 @@ Blazorise supports several CSS frameworks, including Bootstrap (known for respon
 A Blazorise commercial license typically includes access to advanced components, priority support, options for dedicated consultations, frequent updates and bug fixes, a license for unrestricted commercial use, potential access to the source code, and opportunities for training and workshops. This package enhances functionality, offers better support, and provides operational security for commercial projects.
 
 
-# °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®
+# ê²Œì‹œíŒ í”„ë¡œì íŠ¸
 
-## 001. °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ® ½ÃÀÛ
+## 001. ê²Œì‹œíŒ í”„ë¡œì íŠ¸ ì‹œìž‘
 
-¾È³çÇÏ¼¼¿ä. ¹Ú¿ëÁØÀÔ´Ï´Ù. ÀÌ¹ø ½Ã°£ºÎÅÍ´Â °Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®¸¦ ¸¸µé¾îº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù. ±âº»ÀûÀÎ ±â´ÉºÎÅÍ °è¼Ó È®ÀåÇØ ³ª°¡´Â ÇüÅÂ·Î ÁøÇàµË´Ï´Ù. 
+ì•ˆë…•í•˜ì„¸ìš”. ë°•ìš©ì¤€ìž…ë‹ˆë‹¤. ì´ë²ˆ ì‹œê°„ë¶€í„°ëŠ” ê²Œì‹œíŒ í”„ë¡œì íŠ¸ë¥¼ ë§Œë“¤ì–´ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤. ê¸°ë³¸ì ì¸ ê¸°ëŠ¥ë¶€í„° ê³„ì† í™•ìž¥í•´ ë‚˜ê°€ëŠ” í˜•íƒœë¡œ ì§„í–‰ë©ë‹ˆë‹¤. 
 
-__°Ô½ÃÆÇ__, __VisualStudio__, __´å³Ý__
+__ê²Œì‹œíŒ__, __VisualStudio__, __ë‹·ë„·__
 
-- ¹Ú¿ëÁØ °­»ç(https://www.dotnetkorea.com)
-- Article: ¾ÆÆ¼Å¬, ±Û, ±â»ç
-- ArticleApp ¼Ö·ç¼Ç: ArticleApp ÇÁ·ÎÁ§Æ®, ArticleApp.SqlServer ÇÁ·ÎÁ§Æ®, ...
+- ë°•ìš©ì¤€ ê°•ì‚¬(https://www.dotnetkorea.com)
+- Article: ì•„í‹°í´, ê¸€, ê¸°ì‚¬
+- ArticleApp ì†”ë£¨ì…˜: ArticleApp í”„ë¡œì íŠ¸, ArticleApp.SqlServer í”„ë¡œì íŠ¸, ...
 - 3Pro: Professionals(People) -> Projects(Processes) -> Products
-- GitHub °ø°³: https://github.com/VisualAcademy/ArticleApp.git
-- °³¹ß µµ±¸: Visual Studio, Visual Studio Code
-- °³¹ß ±â¼ú: C#, .NET, ASP.NET Core, Blazor, SQL Server, ...
-- °³¹ß Á¦¾à: ¸ðµç API¿¡ ´ëÇØ¼­ ¸ðµÎ ºñµ¿±â, ¸ðµÎ Å×½ºÆ®, ¸ðµÎ SPA(Single Page Application)
+- GitHub ê³µê°œ: https://github.com/VisualAcademy/ArticleApp.git
+- ê°œë°œ ë„êµ¬: Visual Studio, Visual Studio Code
+- ê°œë°œ ê¸°ìˆ : C#, .NET, ASP.NET Core, Blazor, SQL Server, ...
+- ê°œë°œ ì œì•½: ëª¨ë“  APIì— ëŒ€í•´ì„œ ëª¨ë‘ ë¹„ë™ê¸°, ëª¨ë‘ í…ŒìŠ¤íŠ¸, ëª¨ë‘ SPA(Single Page Application)
 
 
-## 002. ¼Ö·ç¼Ç ¹× ÇÁ·ÎÁ§Æ® »ý¼º ±×¸®°í GitHub¿¡ °ø°³
+## 002. ì†”ë£¨ì…˜ ë° í”„ë¡œì íŠ¸ ìƒì„± ê·¸ë¦¬ê³  GitHubì— ê³µê°œ
 
-°Ô½ÃÆÇ ÇÁ·ÎÁ§Æ®¸¦ ÁøÇàÇÏ±â À§ÇØ Visual Studio¿¡¼­ ±âº» ¼Ö·ç¼ÇÀ» »ý¼ºÇÏ°í ÀÌ¸¦ GitHubÀÇ °ø°³ ¸®Æ÷ÁöÅä¸®¿¡ °Ô½ÃÇÏ¿© ±â´ÉÀ» °è¼Ó ¸¸µé¾î ³ª°¡´Â ±â¹ÝÀ» ¸¶·ÃÇÕ´Ï´Ù. 
+ê²Œì‹œíŒ í”„ë¡œì íŠ¸ë¥¼ ì§„í–‰í•˜ê¸° ìœ„í•´ Visual Studioì—ì„œ ê¸°ë³¸ ì†”ë£¨ì…˜ì„ ìƒì„±í•˜ê³  ì´ë¥¼ GitHubì˜ ê³µê°œ ë¦¬í¬ì§€í† ë¦¬ì— ê²Œì‹œí•˜ì—¬ ê¸°ëŠ¥ì„ ê³„ì† ë§Œë“¤ì–´ ë‚˜ê°€ëŠ” ê¸°ë°˜ì„ ë§ˆë ¨í•©ë‹ˆë‹¤. 
 
-__¼Ö·ç¼Ç__, __ÇÁ·ÎÁ§Æ®__, **GitHub** 
+__ì†”ë£¨ì…˜__, __í”„ë¡œì íŠ¸__, **GitHub** 
 
-- Visual Studio 2019 »ç¿ë
-- ArticleApp ¼Ö·ç¼Ç
+- Visual Studio 2019 ì‚¬ìš©
+- ArticleApp ì†”ë£¨ì…˜
   - ArticleApp.Models
   - ArticleApp.Models.Tests
   - ArticleApp.SqlServer 
@@ -281,164 +287,164 @@ __¼Ö·ç¼Ç__, __ÇÁ·ÎÁ§Æ®__, **GitHub**
   - https://github.com/VisualAcademy/ArticleApp.git
 
 
-## 003. ÃÖ¼Ò Å©±âÀÇ ¸ðµ¨°ú Å×ÀÌºí »ý¼º ±×¸®°í ·ÎÄÃ µ¥ÀÌÅÍº£ÀÌ½º °Ô½Ã
+## 003. ìµœì†Œ í¬ê¸°ì˜ ëª¨ë¸ê³¼ í…Œì´ë¸” ìƒì„± ê·¸ë¦¬ê³  ë¡œì»¬ ë°ì´í„°ë² ì´ìŠ¤ ê²Œì‹œ
 
-°Ô½ÃÆÇÀÇ ÀüÃ¼ ±â´ÉÀ» ±¸ÇöÇÏ±â Àü¿¡ ÀüÃ¼ »À´ë¸¦ ÇÐ½ÀÀ» À§ÇÑ °¡Àå ±âÃÊÀûÀÎ ÇüÅÂÀÇ ¸ðµ¨ Å¬·¡½º¿Í Å×ÀÌºíÀ» »ý¼ºÇÏ°í ·ÎÄÃ µ¥ÀÌÅÍº£ÀÌ½º¿¡ °Ô½ÃÇÕ´Ï´Ù. 
+ê²Œì‹œíŒì˜ ì „ì²´ ê¸°ëŠ¥ì„ êµ¬í˜„í•˜ê¸° ì „ì— ì „ì²´ ë¼ˆëŒ€ë¥¼ í•™ìŠµì„ ìœ„í•œ ê°€ìž¥ ê¸°ì´ˆì ì¸ í˜•íƒœì˜ ëª¨ë¸ í´ëž˜ìŠ¤ì™€ í…Œì´ë¸”ì„ ìƒì„±í•˜ê³  ë¡œì»¬ ë°ì´í„°ë² ì´ìŠ¤ì— ê²Œì‹œí•©ë‹ˆë‹¤. 
 
-__¸ðµ¨Å¬·¡½º__, __°Ô½ÃÆÇÅ×ÀÌºí__, __·ÎÄÃµ¥ÀÌÅÍº£ÀÌ½º__
+__ëª¨ë¸í´ëž˜ìŠ¤__, __ê²Œì‹œíŒí…Œì´ë¸”__, __ë¡œì»¬ë°ì´í„°ë² ì´ìŠ¤__
 
-- Article.cs ¸ðµ¨ Å¬·¡½º
-- Articles.sql Å×ÀÌºí
-- ArticleApp µ¥ÀÌÅÍº£ÀÌ½º 
+- Article.cs ëª¨ë¸ í´ëž˜ìŠ¤
+- Articles.sql í…Œì´ë¸”
+- ArticleApp ë°ì´í„°ë² ì´ìŠ¤ 
 
 
-## 004. ¸®Æ÷ÁöÅä¸® ÆÐÅÏ°ú ¸®Æ÷ÁöÅä¸® ÀÎÅÍÆäÀÌ½º
+## 004. ë¦¬í¬ì§€í† ë¦¬ íŒ¨í„´ê³¼ ë¦¬í¬ì§€í† ë¦¬ ì¸í„°íŽ˜ì´ìŠ¤
 
-¸®Æ÷ÁöÅä¸® ÆÐÅÏÀ» »ç¿ëÇÏ¿© °Ô½ÃÆÇ µ¥ÀÌÅÍ¿¡ ´ëÇÑ ÁÖ¿ä API¸¦ ´ã´çÇÏ´Â ¸®Æ÷ÁöÅä¸® ÀÎÅÍÆäÀÌ½º¸¦ ¸¸µé°í ±âº» ¸Þ¼­µå¿¡ ´ëÇÑ ¸Þ¼­µå ½Ã±×´ÏÃ³¸¦ »ý¼ºÇÕ´Ï´Ù. 
+ë¦¬í¬ì§€í† ë¦¬ íŒ¨í„´ì„ ì‚¬ìš©í•˜ì—¬ ê²Œì‹œíŒ ë°ì´í„°ì— ëŒ€í•œ ì£¼ìš” APIë¥¼ ë‹´ë‹¹í•˜ëŠ” ë¦¬í¬ì§€í† ë¦¬ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ë§Œë“¤ê³  ê¸°ë³¸ ë©”ì„œë“œì— ëŒ€í•œ ë©”ì„œë“œ ì‹œê·¸ë‹ˆì²˜ë¥¼ ìƒì„±í•©ë‹ˆë‹¤. 
 
-**Repository**, **¸®Æ÷ÁöÅä¸®**, **¸®Æ÷ÁöÅä¸®ÀÎÅÍÆäÀÌ½º**
+**Repository**, **ë¦¬í¬ì§€í† ë¦¬**, **ë¦¬í¬ì§€í† ë¦¬ì¸í„°íŽ˜ì´ìŠ¤**
 
-- Dul.dll ÆÄÀÏ ÂüÁ¶
+- Dul.dll íŒŒì¼ ì°¸ì¡°
 - IArticleRepository.cs
 - ArticleRepository.cs (ArticleRepositoryAdoNet, ArticleRepositoryDapper, ArticleRepositoryEfCore, ...)
 
 
-## 005. Entity Framework Core ÂüÁ¶ ¹× µ¥ÀÌÅÍº£ÀÌ½º ÄÁÅØ½ºÆ® Å¬·¡½º »ý¼º
+## 005. Entity Framework Core ì°¸ì¡° ë° ë°ì´í„°ë² ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ í´ëž˜ìŠ¤ ìƒì„±
 
-ÀÌ¹ø ½Ã°£¿¡´Â ´å³Ý ½ºÅÄ´Ùµå ÇÁ·ÎÁ§Æ®¿¡ Entity Framework Core °ü·Ã NuGet ÆÐÅ°Áö¸¦ Ãß°¡ÇÏ°í ÀüÃ¼ µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Â ºÎ¸ð Å¬·¡½ºÀÎ DbContext Å¬·¡½º¸¦ »ý¼ºÇÕ´Ï´Ù. 
+ì´ë²ˆ ì‹œê°„ì—ëŠ” ë‹·ë„· ìŠ¤íƒ ë‹¤ë“œ í”„ë¡œì íŠ¸ì— Entity Framework Core ê´€ë ¨ NuGet íŒ¨í‚¤ì§€ë¥¼ ì¶”ê°€í•˜ê³  ì „ì²´ ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ê·¼í•  ìˆ˜ ìžˆëŠ” ë¶€ëª¨ í´ëž˜ìŠ¤ì¸ DbContext í´ëž˜ìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤. 
 
 **NuGet**, **EFCore**, **DbContext**, 
 
 - ArticleDbContext.cs
 
 
-## 006. ¸®Æ÷ÁöÅä¸® Å¬·¡½ºÀÇ ÁÖ¿ä ºñµ¿±â ¸Þ¼­µå ±â´É ±¸Çö
+## 006. ë¦¬í¬ì§€í† ë¦¬ í´ëž˜ìŠ¤ì˜ ì£¼ìš” ë¹„ë™ê¸° ë©”ì„œë“œ ê¸°ëŠ¥ êµ¬í˜„
 
-ÀÌ¹ø ½Ã°£¿¡´Â Entity Framework Core¸¦ »ç¿ëÇÏ¿© ¸®Æ÷ÁöÅä¸® Å¬·¡½ºÀÇ ÁÖ¿ä ºñµ¿±â ¸Þ¼­µåÀÇ ±â´ÉÀ» ±¸ÇöÇÕ´Ï´Ù.
+ì´ë²ˆ ì‹œê°„ì—ëŠ” Entity Framework Coreë¥¼ ì‚¬ìš©í•˜ì—¬ ë¦¬í¬ì§€í† ë¦¬ í´ëž˜ìŠ¤ì˜ ì£¼ìš” ë¹„ë™ê¸° ë©”ì„œë“œì˜ ê¸°ëŠ¥ì„ êµ¬í˜„í•©ë‹ˆë‹¤.
 
-**¸®Æ÷ÁöÅä¸®**, **EF Core**, **CRUD**
+**ë¦¬í¬ì§€í† ë¦¬**, **EF Core**, **CRUD**
 
 - ArticleRepository.cs
 
 
-## 007. Å×½ºÆ® ÇÁ·ÎÁ§Æ®¿¡¼­ ¸®Æ÷ÁöÅä¸® Å¬·¡½ºÀÇ ¸ðµç ºñµ¿±â ¸Þ¼­µå Å×½ºÆ®
+## 007. í…ŒìŠ¤íŠ¸ í”„ë¡œì íŠ¸ì—ì„œ ë¦¬í¬ì§€í† ë¦¬ í´ëž˜ìŠ¤ì˜ ëª¨ë“  ë¹„ë™ê¸° ë©”ì„œë“œ í…ŒìŠ¤íŠ¸
 
-MSTest ÇÁ·ÎÁ§Æ®ÀÎ Å×½ºÆ® ÇÁ·ÎÁ§Æ®¿¡¼­ ¸®Æ÷ÁöÅä¸® Å¬·¡½ºÀÇ ¸ðµç ¸Þ¼­µå¸¦ ÇÏ³ª¾¿ Å×½ºÆ®ÇÕ´Ï´Ù.
+MSTest í”„ë¡œì íŠ¸ì¸ í…ŒìŠ¤íŠ¸ í”„ë¡œì íŠ¸ì—ì„œ ë¦¬í¬ì§€í† ë¦¬ í´ëž˜ìŠ¤ì˜ ëª¨ë“  ë©”ì„œë“œë¥¼ í•˜ë‚˜ì”© í…ŒìŠ¤íŠ¸í•©ë‹ˆë‹¤.
 
-__MSTest__, **Å×½ºÆ®**, **´ÜÀ§Å×½ºÆ®**
+__MSTest__, **í…ŒìŠ¤íŠ¸**, **ë‹¨ìœ„í…ŒìŠ¤íŠ¸**
 
 - ArticleRepositoryTest.cs
 
 
-## 008. Blazor ÇÁ·ÎÁ§Æ® »ý¼º ¹× °Ô½ÃÆÇ °ü·Ã ±âº» ÆäÀÌÁö »ý¼º 
+## 008. Blazor í”„ë¡œì íŠ¸ ìƒì„± ë° ê²Œì‹œíŒ ê´€ë ¨ ê¸°ë³¸ íŽ˜ì´ì§€ ìƒì„± 
 
-ÇöÀç °­ÀÇ ½ÃÁ¡¿¡¼­ °¡Àå ÃÖ½ÅÀÇ À¥ °³¹ß ±â¼úÀÎ ºí·¹ÀÌÀú¸¦ »ç¿ëÇÏ¿© À¥ ÆäÀÌÁö Á¦ÀÛÀ» ½ÃÀÛÇÏ°Ú½À´Ï´Ù.
+í˜„ìž¬ ê°•ì˜ ì‹œì ì—ì„œ ê°€ìž¥ ìµœì‹ ì˜ ì›¹ ê°œë°œ ê¸°ìˆ ì¸ ë¸”ë ˆì´ì €ë¥¼ ì‚¬ìš©í•˜ì—¬ ì›¹ íŽ˜ì´ì§€ ì œìž‘ì„ ì‹œìž‘í•˜ê² ìŠµë‹ˆë‹¤.
 
-__Blazor__, **ºí·¹ÀÌÀú**, __À¥¾Û__
-
-
-## 009. °øÅë Å¬·¡½ºÀÎ DbContext¿Í Repository Å¬·¡½º¿¡ ´ëÇÑ ÀÇÁ¸¼º ÁÖÀÔ °ü·Ã ÄÚµå¸¦ Startup ÆÄÀÏ¿¡ Ãß°¡
-
-Models Å¬·¡½º ¶óÀÌºê·¯¸®ÀÇ DbContext¿Í Repository Å¬·¡½º¸¦ ºí·¹ÀÌÀú ÇÁ·ÎÁ§Æ®¿¡ »ç¿ë °¡´ÉÇÏµµ·Ï ÀÇÁ¸¼º ÁÖÀÔ ÄÚµå¸¦ ÀÛ¼ºÇÕ´Ï´Ù. 
-
-__DI__, **ÀÇÁ¸¼ºÁÖÀÔ**, __Startup__
+__Blazor__, **ë¸”ë ˆì´ì €**, __ì›¹ì•±__
 
 
-## 010. °Ô½ÃÆÇ ¸®½ºÆ® ÆäÀÌÁö ÀÛ¼º 
+## 009. ê³µí†µ í´ëž˜ìŠ¤ì¸ DbContextì™€ Repository í´ëž˜ìŠ¤ì— ëŒ€í•œ ì˜ì¡´ì„± ì£¼ìž… ê´€ë ¨ ì½”ë“œë¥¼ Startup íŒŒì¼ì— ì¶”ê°€
 
-°Ô½ÃÆÇ¿¡¼­ Á¦ÀÏ ¸ÕÀú Á¢±ÙÇÏ´Â ¸ÞÀÎ ÆäÀÌÁöÀÎ ¸®½ºÆ® ÆäÀÌÁö¸¦ ²Ù¸çº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù. 
+Models í´ëž˜ìŠ¤ ë¼ì´ë¸ŒëŸ¬ë¦¬ì˜ DbContextì™€ Repository í´ëž˜ìŠ¤ë¥¼ ë¸”ë ˆì´ì € í”„ë¡œì íŠ¸ì— ì‚¬ìš© ê°€ëŠ¥í•˜ë„ë¡ ì˜ì¡´ì„± ì£¼ìž… ì½”ë“œë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤. 
 
- __¸®½ºÆ®__, **Index**, __¸ÞÀÎÆäÀÌÁö__
+__DI__, **ì˜ì¡´ì„±ì£¼ìž…**, __Startup__
+
+
+## 010. ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ íŽ˜ì´ì§€ ìž‘ì„± 
+
+ê²Œì‹œíŒì—ì„œ ì œì¼ ë¨¼ì € ì ‘ê·¼í•˜ëŠ” ë©”ì¸ íŽ˜ì´ì§€ì¸ ë¦¬ìŠ¤íŠ¸ íŽ˜ì´ì§€ë¥¼ ê¾¸ë©°ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤. 
+
+ __ë¦¬ìŠ¤íŠ¸__, **Index**, __ë©”ì¸íŽ˜ì´ì§€__
  
  
- ## 011. °Ô½ÃÆÇ ±Û¾²±â ÆäÀÌÁö ÀÛ¼º
+ ## 011. ê²Œì‹œíŒ ê¸€ì“°ê¸° íŽ˜ì´ì§€ ìž‘ì„±
  
- °Ô½ÃÆÇ¿¡ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ´Â ±Û¾²±â ÆäÀÌÁö¸¦ ºÎÆ®½ºÆ®·¦À» »ç¿ëÇÏ¿© ÆûÀ» ¸¸µé°í µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇÕ´Ï´Ù.
+ ê²Œì‹œíŒì— ë°ì´í„°ë¥¼ ìž…ë ¥í•˜ëŠ” ê¸€ì“°ê¸° íŽ˜ì´ì§€ë¥¼ ë¶€íŠ¸ìŠ¤íŠ¸ëž©ì„ ì‚¬ìš©í•˜ì—¬ í¼ì„ ë§Œë“¤ê³  ë°ì´í„°ë¥¼ ìž…ë ¥í•˜ëŠ” ì½”ë“œë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤.
  
- **±Û¾²±â**, **ºÎÆ®½ºÆ®·¦**, **Æû**
- 
- 
- ## 012. °Ô½ÃÆÇ »ó¼¼º¸±â ÆäÀÌÁö ÀÛ¼º
- 
- °Ô½ÃÆÇ¿¡ ÀÛ¼ºµÈ µ¥ÀÌÅÍ¿¡ ´ëÇÑ »ó¼¼ ³»¿ëÀ» º¼ ¼ö ÀÖ´Â »ó¼¼º¸±â ÆäÀÌÁö¸¦ ÀÛ¼ºÇÕ´Ï´Ù. 
- 
- **»ó¼¼**, **°Ô½ÃÆÇ**, **Details**
+ **ê¸€ì“°ê¸°**, **ë¶€íŠ¸ìŠ¤íŠ¸ëž©**, **í¼**
  
  
- ## 013. °Ô½ÃÆÇ ¼öÁ¤ ÆäÀÌÁö ÀÛ¼º ¹× Content ¿­ Ãß°¡ ÈÄ °ü·Ã ÄÚµå ¼öÁ¤
+ ## 012. ê²Œì‹œíŒ ìƒì„¸ë³´ê¸° íŽ˜ì´ì§€ ìž‘ì„±
+ 
+ ê²Œì‹œíŒì— ìž‘ì„±ëœ ë°ì´í„°ì— ëŒ€í•œ ìƒì„¸ ë‚´ìš©ì„ ë³¼ ìˆ˜ ìžˆëŠ” ìƒì„¸ë³´ê¸° íŽ˜ì´ì§€ë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤. 
+ 
+ **ìƒì„¸**, **ê²Œì‹œíŒ**, **Details**
+ 
+ 
+ ## 013. ê²Œì‹œíŒ ìˆ˜ì • íŽ˜ì´ì§€ ìž‘ì„± ë° Content ì—´ ì¶”ê°€ í›„ ê´€ë ¨ ì½”ë“œ ìˆ˜ì •
   
- °Ô½ÃÆÇ¿¡ ÀÛ¼ºµÈ µ¥ÀÌÅÍ¸¦ ¼öÁ¤ÇÒ ¼ö ÀÖ´Â ÆäÀÌÁö¸¦ ÀÛ¼ºÇÕ´Ï´Ù. 
+ ê²Œì‹œíŒì— ìž‘ì„±ëœ ë°ì´í„°ë¥¼ ìˆ˜ì •í•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤. 
  
- **¼öÁ¤**, **°Ô½ÃÆÇ**, **Edit**
+ **ìˆ˜ì •**, **ê²Œì‹œíŒ**, **Edit**
 
 
- ## 014. °Ô½ÃÆÇ »èÁ¦ ÆäÀÌÁö ÀÛ¼º ¹× È®ÀÎ °ü·Ã ±â´ÉÀ» IJSRuntimeÀ¸·Î ±¸Çö
+ ## 014. ê²Œì‹œíŒ ì‚­ì œ íŽ˜ì´ì§€ ìž‘ì„± ë° í™•ì¸ ê´€ë ¨ ê¸°ëŠ¥ì„ IJSRuntimeìœ¼ë¡œ êµ¬í˜„
   
-°Ô½ÃÆÇ¿¡ ÀÛ¼ºµÈ µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÒ ¼ö ÀÖ´Â ÆäÀÌÁö¸¦ ÀÛ¼ºÇÕ´Ï´Ù. C#¿¡¼­ JavaScriptÀÇ ÇÔ¼ö¸¦ È£ÃâÇÏ´Â ¹æ¹ýÀ» ´Ù·ì´Ï´Ù.
+ê²Œì‹œíŒì— ìž‘ì„±ëœ ë°ì´í„°ë¥¼ ì‚­ì œí•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤. C#ì—ì„œ JavaScriptì˜ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” ë°©ë²•ì„ ë‹¤ë£¹ë‹ˆë‹¤.
  
- **»èÁ¦**, **°Ô½ÃÆÇ**, **Delete**
+ **ì‚­ì œ**, **ê²Œì‹œíŒ**, **Delete**
  
 
- ## 015. °Ô½ÃÆÇ ¸®½ºÆ®¿¡ ÆäÀÌÀú ÄÄÆ÷³ÍÆ® Àû¿ë ¹× ±âº» ÆäÀÌÂ¡ ±¸Çö
+ ## 015. ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ì— íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ ì ìš© ë° ê¸°ë³¸ íŽ˜ì´ì§• êµ¬í˜„
   
-°Ô½ÃÆÇÀÇ ¸®½ºÆ®¿¡ Àû¿ëµÇ¾î »ç¿ëµÇ´Â ÆäÀÌÀú ÄÄÆ÷³ÍÆ®ÀÇ ±â´ÉÀ» ¸®½ºÆ® ÆäÀÌÁö¿¡ Àû¿ëÇÕ´Ï´Ù.  
+ê²Œì‹œíŒì˜ ë¦¬ìŠ¤íŠ¸ì— ì ìš©ë˜ì–´ ì‚¬ìš©ë˜ëŠ” íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ì˜ ê¸°ëŠ¥ì„ ë¦¬ìŠ¤íŠ¸ íŽ˜ì´ì§€ì— ì ìš©í•©ë‹ˆë‹¤.  
  
- **Pager**, **ÆäÀÌÂ¡**, **ÆäÀÌÀú**
+ **Pager**, **íŽ˜ì´ì§•**, **íŽ˜ì´ì €**
  
 
- ## 016. ÆäÀÌÀú ÄÄÆ÷³ÍÆ® UI ¸¸µé±â 
+ ## 016. íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ UI ë§Œë“¤ê¸° 
   
-°Ô½ÃÆÇÀÇ ¸®½ºÆ®¿¡ Àû¿ëµÇ¾î »ç¿ëµÇ´Â ÆäÀÌÀú ÄÄÆ÷³ÍÆ®ÀÇ UI ±â´ÉÀ» ÀÛ¼ºÇÕ´Ï´Ù.  
+ê²Œì‹œíŒì˜ ë¦¬ìŠ¤íŠ¸ì— ì ìš©ë˜ì–´ ì‚¬ìš©ë˜ëŠ” íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ì˜ UI ê¸°ëŠ¥ì„ ìž‘ì„±í•©ë‹ˆë‹¤.  
  
- **Pager**, **ÆäÀÌÂ¡**, **ÆäÀÌÀú**
+ **Pager**, **íŽ˜ì´ì§•**, **íŽ˜ì´ì €**
 
 
- ## 017. IsPinned ¼Ó¼º Ãß°¡ ¹× °øÁö±Û·Î ¼³Á¤ÇÏ´Â ±â´ÉÀ» ¸ð´Þ ÆûÀ¸·Î ±¸ÇöÇÏ±â
+ ## 017. IsPinned ì†ì„± ì¶”ê°€ ë° ê³µì§€ê¸€ë¡œ ì„¤ì •í•˜ëŠ” ê¸°ëŠ¥ì„ ëª¨ë‹¬ í¼ìœ¼ë¡œ êµ¬í˜„í•˜ê¸°
   
-»õ·Î¿î ¿­°ú ¼Ó¼ºÀ» Ãß°¡ÇÏ°í ¼ø¼ö C# ÄÚµå¸¦ »ç¿ëÇÏ¿© ¸ð´Þ ÆûÀ» ¶ç¿ì°Å³ª ´Ý´Â ±â´ÉÀ» ±¸ÇöÇÕ´Ï´Ù.  
+ìƒˆë¡œìš´ ì—´ê³¼ ì†ì„±ì„ ì¶”ê°€í•˜ê³  ìˆœìˆ˜ C# ì½”ë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¨ë‹¬ í¼ì„ ë„ìš°ê±°ë‚˜ ë‹«ëŠ” ê¸°ëŠ¥ì„ êµ¬í˜„í•©ë‹ˆë‹¤.  
  
- **Modal**, **°øÁö¼³Á¤**, **¸ð´ÞÆû**
+ **Modal**, **ê³µì§€ì„¤ì •**, **ëª¨ë‹¬í¼**
  
  
- ## 018. ºÎÆ®½ºÆ®·¦ ¸ð´Þ ÆûÀ» »ç¿ëÇÏ¿© °ü¸®ÀÚ Àü¿ë µ¥ÀÌÅÍ »èÁ¦ ¸ð´Þ ´ÙÀÌ¾ó·Î±× ±¸Çö 
+ ## 018. ë¶€íŠ¸ìŠ¤íŠ¸ëž© ëª¨ë‹¬ í¼ì„ ì‚¬ìš©í•˜ì—¬ ê´€ë¦¬ìž ì „ìš© ë°ì´í„° ì‚­ì œ ëª¨ë‹¬ ë‹¤ì´ì–¼ë¡œê·¸ êµ¬í˜„ 
   
-ºÎÆ®½ºÆ®·¦ ¸ð´Þ Æû°ú jQuery¸¦ ¿¬µ¿ÇÏ¿© °ü¸®ÀÚ Àü¿ë µ¥ÀÌÅÍ »èÁ¦ ¸ð´Þ ´ÙÀÌ¾ó·Î±×¸¦ ±¸ÇöÇÏ´Â ¹æ¹ýÀ» º¸¿©ÁÝ´Ï´Ù. 
+ë¶€íŠ¸ìŠ¤íŠ¸ëž© ëª¨ë‹¬ í¼ê³¼ jQueryë¥¼ ì—°ë™í•˜ì—¬ ê´€ë¦¬ìž ì „ìš© ë°ì´í„° ì‚­ì œ ëª¨ë‹¬ ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ êµ¬í˜„í•˜ëŠ” ë°©ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤. 
  
- **Modal**, **»èÁ¦Æû**, **¸ð´ÞÆû**
+ **Modal**, **ì‚­ì œí¼**, **ëª¨ë‹¬í¼**
  
- Bootstrap 5 ¸ð´Þ Æû ¼Ò½º´Â VisualAcademy ÇÁ·ÎÁ§Æ®¿¡ Àû¿ëµÇ¾î ÀÖ½À´Ï´Ù. 
+ Bootstrap 5 ëª¨ë‹¬ í¼ ì†ŒìŠ¤ëŠ” VisualAcademy í”„ë¡œì íŠ¸ì— ì ìš©ë˜ì–´ ìžˆìŠµë‹ˆë‹¤. 
  
   
- ## 019. ºÎÆ®½ºÆ®·¦ ¸ð´Þ ÆûÀ» »ç¿ëÇÏ¿© °ü¸®ÀÚ Àü¿ë µ¥ÀÌÅÍ ÀÔ·Â ¹× ¼öÁ¤ ¸ð´Þ Æû ±¸Çö 
+ ## 019. ë¶€íŠ¸ìŠ¤íŠ¸ëž© ëª¨ë‹¬ í¼ì„ ì‚¬ìš©í•˜ì—¬ ê´€ë¦¬ìž ì „ìš© ë°ì´í„° ìž…ë ¥ ë° ìˆ˜ì • ëª¨ë‹¬ í¼ êµ¬í˜„ 
   
-ºÎÆ®½ºÆ®·¦ ¸ð´Þ Æû°ú jQuery¸¦ ¿¬µ¿ÇÏ¿© °ü¸®ÀÚ Àü¿ë µ¥ÀÌÅÍ ÀÔ·Â ¹× ¼öÁ¤ ¸ð´Þ ´ÙÀÌ¾ó·Î±×¸¦ ±¸ÇöÇÏ´Â ¹æ¹ýÀ» º¸¿©ÁÝ´Ï´Ù. 
+ë¶€íŠ¸ìŠ¤íŠ¸ëž© ëª¨ë‹¬ í¼ê³¼ jQueryë¥¼ ì—°ë™í•˜ì—¬ ê´€ë¦¬ìž ì „ìš© ë°ì´í„° ìž…ë ¥ ë° ìˆ˜ì • ëª¨ë‹¬ ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ êµ¬í˜„í•˜ëŠ” ë°©ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤. 
  
- **Modal**, **¼öÁ¤Æû**, **¸ð´ÞÆû**
+ **Modal**, **ìˆ˜ì •í¼**, **ëª¨ë‹¬í¼**
  
  
- ## 020. »ó¼¼º¸±â ³»¿ëÀÇ ÁÙ¹Ù²Þ µîÀ» Ãß°¡ ¹× °Ô½ÃÆÇÀÇ UI¸¦ °³¼±ÇÏ±â
+ ## 020. ìƒì„¸ë³´ê¸° ë‚´ìš©ì˜ ì¤„ë°”ê¿ˆ ë“±ì„ ì¶”ê°€ ë° ê²Œì‹œíŒì˜ UIë¥¼ ê°œì„ í•˜ê¸°
   
-¸¶½ºÅÍ ºê·£Ä¡°¡ ¾Æ´Ñ »õ·Î¿î ºê·£Ä¡¿¡¼­ °Ô½ÃÆÇÀÇ UI¸¦ °³¼±ÇÏ´Â ÀÛ¾÷À» ÁøÇàÇÏ°í Å×½ºÆ®°¡ ¿Ï·áµÇ¸é ¸¶½ºÅÍ ºê·£Ä¡·Î º´ÇÕÇÏ¸é¼­ °³¹ßÀ» ÁøÇàÇÕ´Ï´Ù.
+ë§ˆìŠ¤í„° ë¸Œëžœì¹˜ê°€ ì•„ë‹Œ ìƒˆë¡œìš´ ë¸Œëžœì¹˜ì—ì„œ ê²Œì‹œíŒì˜ UIë¥¼ ê°œì„ í•˜ëŠ” ìž‘ì—…ì„ ì§„í–‰í•˜ê³  í…ŒìŠ¤íŠ¸ê°€ ì™„ë£Œë˜ë©´ ë§ˆìŠ¤í„° ë¸Œëžœì¹˜ë¡œ ë³‘í•©í•˜ë©´ì„œ ê°œë°œì„ ì§„í–‰í•©ë‹ˆë‹¤.
  
- **¸¶½ºÅÍ**, **ºê·£Ä¡**, **º´ÇÕ**
+ **ë§ˆìŠ¤í„°**, **ë¸Œëžœì¹˜**, **ë³‘í•©**
  
  
- ## 021. 21_ÀÎ¶óÀÎ ÄÚµå ¹æ½ÄÀ» ÄÚµå ºñÇÏÀÎµå ¹æ½ÄÀ¸·Î º¯°æ
+ ## 021. 21_ì¸ë¼ì¸ ì½”ë“œ ë°©ì‹ì„ ì½”ë“œ ë¹„í•˜ì¸ë“œ ë°©ì‹ìœ¼ë¡œ ë³€ê²½
   
- °Ô½ÃÆÇ¿¡ ÀÛ¼ºµÈ µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÒ ¼ö ÀÖ´Â ÆäÀÌÁö¸¦ ÀÛ¼ºÇÕ´Ï´Ù. 
+ ê²Œì‹œíŒì— ìž‘ì„±ëœ ë°ì´í„°ë¥¼ ì‚­ì œí•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤. 
  
- **»èÁ¦**, **°Ô½ÃÆÇ**, **Delete**
+ **ì‚­ì œ**, **ê²Œì‹œíŒ**, **Delete**
  
  
- ## 022. ÆäÀÌÀú ÄÄÆ÷³ÍÆ®¸¦ Razor Å¬·¡½º ¶óÀÌºê·¯¸®·Î ¸¸µé¾î NuGet °¶·¯¸®¿¡ °ø°³
+ ## 022. íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ë¥¼ Razor í´ëž˜ìŠ¤ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¡œ ë§Œë“¤ì–´ NuGet ê°¤ëŸ¬ë¦¬ì— ê³µê°œ
   
- °Ô½ÃÆÇ¿¡¼­ »ç¿ëµÇ´Â ÆäÀÌÀú ÄÄÆ÷³ÍÆ®¸¦ NuGet °¶·¯¸®¿¡ °ø°³ÇÕ´Ï´Ù. 
+ ê²Œì‹œíŒì—ì„œ ì‚¬ìš©ë˜ëŠ” íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ë¥¼ NuGet ê°¤ëŸ¬ë¦¬ì— ê³µê°œí•©ë‹ˆë‹¤. 
   
  **NuGet**, **Pager**, **DulPager**
 
 
- ## 023. ÆäÀÌÀú ÄÄÆ÷³ÍÆ®¸¦ NuGet °¶·¯¸®ÀÇ DulPager·Î ´ëÃ¼
+ ## 023. íŽ˜ì´ì € ì»´í¬ë„ŒíŠ¸ë¥¼ NuGet ê°¤ëŸ¬ë¦¬ì˜ DulPagerë¡œ ëŒ€ì²´
   
-NuGet °¶·¯¸®¿¡ °ø°³µÈ DulPager ÄÄÆ÷³ÍÆ®¸¦ »ç¿ëÇÕ´Ï´Ù. 
+NuGet ê°¤ëŸ¬ë¦¬ì— ê³µê°œëœ DulPager ì»´í¬ë„ŒíŠ¸ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. 
   
  **NuGet**, **Pager**, **DulPager**
