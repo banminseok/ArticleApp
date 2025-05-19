@@ -34,6 +34,7 @@
   <ItemGroup>
     <Folder Include="Areas\DotNetSale\Data\" />
     <Folder Include="Controllers\VisualAcademy\" />
+    <Folder Include="Views\FormValidationDemo\" />
   </ItemGroup>
 
 </Project>

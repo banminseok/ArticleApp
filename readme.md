@@ -145,6 +145,11 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 - Area-> 추가 (영역) -> [Area("DotNetSale")]
   MapControllerRoute->pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}
   MapControllerRoute 순서를 변경해서 앞단에 위치해야. 적용된다. program.cs 참조.
+- •	개발 편의 기능(자동 새로고침 등)이 정상 동작하려면 해당 스크립트가 HTML에 포함되어야 합니다.
+  •	레이아웃이 없는 뷰에서는 직접 <script src="/_framework/aspnetcore-browser-refresh.js"></script>를 추가하세요.
+  •	이 경고는 개발 환경에서만 나타나며, 실제 서비스(운영)에는 영향이 없습니다.
+- 헬퍼메서드(구형 알고만 있어라) : @Html.PartialAsync("_BoardEditorForm", new BoardWriteFormModel { FormType = BoardWriteFormType.Write })
+- 27_01_06_IdentityOptions_회원 가입 관련 여러가지 옵션 설정 데모 (47번동영상)
 - 
 
 https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
