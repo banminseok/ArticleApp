@@ -19,7 +19,7 @@ public class HomeController : Controller
 
     public IActionResult About()
     {
-        _logger.LogInformation("HOME - About 페이지가 로드되었습니다.");
+        _logger.LogInformation("HOME - About 페이지가 로드되었습니다. ");
 
         ViewData["Message"] = "Your application description page.";
 
