@@ -27,7 +27,7 @@ public class DotNetSaleController : Controller
     [HttpGet]
     public IActionResult ReviewList(int productId = 0)
     {
-        ViewData["Product"] = productId; 
+        ViewData["Product"] = productId;  
         return View(); 
     }
 
