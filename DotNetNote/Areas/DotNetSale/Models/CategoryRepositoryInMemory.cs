@@ -12,7 +12,8 @@ public class CategoryRepositoryInMemory : ICategoryRepository
             new Category { CategoryId = 1, CategoryName = "책" },
             new Category { CategoryId = 2, CategoryName = "강의" },
             new Category { CategoryId = 3, CategoryName = "컴퓨터" },
-            new Category { CategoryId = 4, CategoryName = "생활용품" }
+            new Category { CategoryId = 4, CategoryName = "생활용품" },
+            new Category { CategoryId = 5, CategoryName = "주방용품" }
         };
 
         return categories;

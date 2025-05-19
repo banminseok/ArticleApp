@@ -143,6 +143,9 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 - •	ViewBag은 동적 타입이므로, 반드시 뷰에서 as로 캐스팅해서 사용해야 합니다. 컨트롤러에서 ViewBag.DemoList = list;로 할당하고,
   뷰에서 var demoList = ViewBag.DemoList as List<DemoModel>;로 받아서 사용하면 됩니다.
 - Area-> 추가 (영역) -> [Area("DotNetSale")]
+  MapControllerRoute->pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}
+  MapControllerRoute 순서를 변경해서 앞단에 위치해야. 적용된다. program.cs 참조.
+- 
 
 https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
 
