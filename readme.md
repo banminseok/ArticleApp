@@ -150,9 +150,11 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   •	이 경고는 개발 환경에서만 나타나며, 실제 서비스(운영)에는 영향이 없습니다.
 - 헬퍼메서드(구형 알고만 있어라) : @Html.PartialAsync("_BoardEditorForm", new BoardWriteFormModel { FormType = BoardWriteFormType.Write })
 - 27_01_06_IdentityOptions_회원 가입 관련 여러가지 옵션 설정 데모 (47번동영상)
+- mvc return View("Completed"); "Completed"라는 이름의 뷰(예: Views/컨트롤러이름/Completed.cshtml)를 렌더링합니다.
+- mvc form validation : TagHelper , jquery validation 을 사용한다.
 - 
 
-https://www.youtube.com/watch?v=izRshLqrZ68&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V
+https://www.youtube.com/watch?v=D9t-1nanrvo&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V&index=59
 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.
