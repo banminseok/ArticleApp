@@ -1,7 +1,5 @@
-﻿﻿@using DotNetNote.Models
+﻿@model PagerBase
 @using Dul.Web
-
-@model PagerBase
 
 @{
     string Url = Model.Url;
@@ -13,12 +11,12 @@
     int PagerButtonCount = Model.PagerButtonCount;
     bool SearchMode = Model.SearchMode;
     string SearchFiled = Model.SearchField;
-    string SearchQuery = Model.SearchQuery;
+    string SearchQuery = Model.SearchQuery; 
 }
-<div class="mePager">
+<div class="page">
     @if (PageNumber == 1)
     {
-        <a href="#" class="first">
+        <a href="#">
             처음
         </a>
     }
@@ -27,13 +25,13 @@
         // 검색 모드이면 추가적으로 SearchField와 SearchQuery를 전송함
         if (SearchMode)
         {
-            <a href="/@Url?Page=1&SearchField=@SearchFiled&SearchQuery=@SearchQuery" class="first">
+            <a href="/@Url?Page=1&SearchField=@SearchFiled&SearchQuery=@SearchQuery">
                 처음
             </a>
         }
         else
         {
-            <a href="/@Url?Page=1" class="first">
+            <a href="/@Url?Page=1">
                 처음
             </a>
         }
@@ -43,20 +41,20 @@
     {
         if (SearchMode)
         {
-            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount)&SearchField=@SearchFiled&SearchQuery=@SearchQuery" class="prev">
+            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount)&SearchField=@SearchFiled&SearchQuery=@SearchQuery">
                 이전
             </a>
         }
         else
         {
-            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount)" class="prev">
+            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount)">
                 이전
             </a>
         }
     }
     else
     {
-        <a href="#" class="prev">
+        <a href="#">
             이전
         </a>
     }
@@ -74,7 +72,7 @@
         // 현재 보고 있는 페이지면 링크 제거
         if (i == PageNumber)
         {
-            <a href="#" class="on">
+            <a href="#">
                 @i
             </a>
         }
@@ -99,20 +97,20 @@
     {
         if (SearchMode)
         {
-            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount + (PagerButtonCount + 1))&SearchField=@SearchFiled&SearchQuery=@SearchQuery" class="next">
+            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount + (PagerButtonCount + 1))&SearchField=@SearchFiled&SearchQuery=@SearchQuery">
                 다음
             </a>
         }
         else
         {
-            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount + (PagerButtonCount + 1))" class="next">
+            <a href="/@Url?Page=@(((PageNumber - 1) / (int)PagerButtonCount) * PagerButtonCount + (PagerButtonCount + 1))">
                 다음
             </a>
         }
     }
     else
     {
-        <a href="#" class="next">
+        <a href="#">
             다음
         </a>
     }
@@ -121,20 +119,20 @@
     {
         if (SearchMode)
         {
-            <a href="/@Url?Page=@PageCount&SearchField=@SearchFiled&SearchQuery=@SearchQuery" class="last">
+            <a href="/@Url?Page=@PageCount&SearchField=@SearchFiled&SearchQuery=@SearchQuery">
                 마지막
             </a>
         }
         else
         {
-            <a href="/@Url?Page=@PageCount" class="last">
+            <a href="/@Url?Page=@PageCount">
                 마지막
             </a>
         }
     }
     else
     {
-        <a href="#" class="last">
+        <a href="#">
             마지막
         </a>
     }

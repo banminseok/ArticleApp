@@ -1,0 +1,23 @@
+﻿@using Dul.Web
+
+<h2>부분 뷰 데모</h2>
+
+페이저를 직접 생성
+<br />
+이전 1 2 3 다음
+<hr />
+
+@{
+
+}
+
+<h3>_AdvancedPaging</h3>
+@await Html.PartialAsync("_AdvancedPaging", ViewBag.PageModel as PagerBase)
+
+<h3>_AdvancedPagingWithCss</h3>
+@await Html.PartialAsync("_AdvancedPagingWithCss", ViewBag.PageModel as PagerBase)
+
+<h3>_AdvancedPagingWithBootstrap</h3>
+<nav aria-label="Page navigation example">
+    @await Html.PartialAsync("_AdvancedPagingWithBootstrap", ViewBag.PageModel as PagerBase)
+</nav>
