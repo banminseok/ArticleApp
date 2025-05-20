@@ -1,5 +1,8 @@
 ﻿using DotNetNote.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace DotNetNote.Controllers
 {
@@ -60,11 +63,15 @@ namespace DotNetNote.Controllers
             // 직접 유효성 검사
             if (string.IsNullOrEmpty(model.Name))
             {
-                ModelState.AddModelError("Name", "이름을 입력하세요.");
+                //ModelState.AddModelError("Name", "이름을 입력하세요2.");
+                var errorMessage = typeof(MaximModel).GetProperty(nameof(MaximModel.Name))
+                    .GetCustomAttribute<RequiredAttribute>()?
+                    .ErrorMessage;
+                ModelState.AddModelError(nameof(MaximModel.Name), errorMessage);
             }
             if (string.IsNullOrEmpty(model.Content))
             {
-                ModelState.AddModelError("Content", "내용을 입력하세요.");
+                ModelState.AddModelError("Content", "내용을 입력하세요.");                
             }
 
             if (!ModelState.IsValid)
