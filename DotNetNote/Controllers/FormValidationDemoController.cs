@@ -10,7 +10,7 @@ namespace DotNetNote.Controllers
         public IActionResult Index() => View();
         #endregion
 
-        //[2] 따라하기 2: 순수 HTML과 JavaScript를 사용한 유효성 검사 
+        //[2] 따라하기 2: 순수 HTML과 JavaScript를 사용한 유효성 검사  
         #region HTML
         public IActionResult Html() => View();
 
