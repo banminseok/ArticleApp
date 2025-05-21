@@ -153,7 +153,10 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 - mvc return View("Completed"); "Completed"라는 이름의 뷰(예: Views/컨트롤러이름/Completed.cshtml)를 렌더링합니다.
 - mvc form validation : TagHelper , jquery validation 을 사용한다.
 - 부분뷰와 헬퍼메서드@Html.PartialAsync("_BoardEditorForm") <=> Taghelper 테그핼퍼 <dnn-paging-helper/>
-
+- 종속성 주입(의존성 주입, Dependency Injection) 중요 !!!!
+- _config.GetSection("AppSettings").Value : appsettings.json의 AppSettings 섹션을 가져옵니다.
+- _config.GetValue<string>("AppSettings::Site").Value : appsettings.json의 AppSettings 섹션을 가져옵니다.
+- _config.GetSection("AppSettings").GetSection("Site").Value; : appsettings.json의 AppSettings 섹션을 AppSettings 객체로 변환합니다.
 
 https://github.com/VisualAcademy/DotNetNote.V6.0/blob/3f270484d4b9bfe5b0a43ac789c1dafb3c536da4/DotNetNote/DotNetNote/Controllers/PartialViewDemoController.cs#L6
 https://www.youtube.com/watch?v=Kj3iX6qGkSM&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V&index=64
