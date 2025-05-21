@@ -157,7 +157,9 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 - _config.GetSection("AppSettings").Value : appsettings.json의 AppSettings 섹션을 가져옵니다.
 - _config.GetValue<string>("AppSettings::Site").Value : appsettings.json의 AppSettings 섹션을 가져옵니다.
 - _config.GetSection("AppSettings").GetSection("Site").Value; : appsettings.json의 AppSettings 섹션을 AppSettings 객체로 변환합니다.
-
+- 뷰컴포넌트 : Copyright+ViewComponent.cs ,  Views/Shared/Components/Copyright/Default.cshtml // 사용 @await Component.InvokeAsync("Copyright")
+- 
+- 
 https://github.com/VisualAcademy/DotNetNote.V6.0/blob/3f270484d4b9bfe5b0a43ac789c1dafb3c536da4/DotNetNote/DotNetNote/Controllers/PartialViewDemoController.cs#L6
 https://www.youtube.com/watch?v=Kj3iX6qGkSM&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V&index=64
 https://github.com/VisualAcademy/DotNetNote.V6.0/blob/3f270484d4b9bfe5b0a43ac789c1dafb3c536da4/DotNetNote/DotNetNote/Views/Shared/_AdvancedPagingWithBootstrap.cshtml
