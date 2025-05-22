@@ -19,7 +19,14 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews();
+
+#region Web 프로젝트별 Services
+builder.Services.AddControllersWithViews();  //MVC+ Web API 사용가능
+builder.Services.AddRazorPages(); // Razor Pages 사용가능
+builder.Services.AddServerSideBlazor() // Blazor Server 사용가능
+    .AddCircuitOptions(options => { options.DetailedErrors = true; }); // 개발자 모드에서 상세 오류 표시
+
+#endregion
 
 builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
 builder.Services.AddMemoryCache();
@@ -75,6 +82,7 @@ app.UseSession();
 
 
 app.MapStaticAssets();
+
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
@@ -84,10 +92,9 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-
-
-
 app.MapRazorPages()
-   .WithStaticAssets();
+   .WithStaticAssets();  //정적 자산 사용 (특정 엔드포인트에서만 정적 파일을 제공할 수 있습니다.)
+//Blazor Server 사용가능
+app.MapBlazorHub();
 
 app.Run();

@@ -1,4 +1,4 @@
-using ArticleApp.Models;
+ï»¿using ArticleApp.Models;
 using ArticleAppBlazorServer.Areas.Identity;
 using ArticleAppBlazorServer.Areas.Identity.Models;
 using ArticleAppBlazorServer.Areas.Identity.Services;
@@ -19,22 +19,22 @@ using System.Text;
 using UploadApp.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
-// [1] Startup.ConfigureServices ¿µ¿ª (±¸ startup.cs ÆÄÀÏ)
-// ¼­ºñ½º Ãß°¡
+// [1] Startup.ConfigureServices ì˜ì—­ (êµ¬ startup.cs íŒŒì¼)
+// ì„œë¹„ìŠ¤ ì¶”ê°€
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
-//»õ·Î¿î DbContext¸¦ Ãß°¡
-#region »õ·Î¿î DbContext Ãß°¡ - CandidateAppDbContext
-// »õ·Î¿î DbContext Ãß°¡ 
+//ìƒˆë¡œìš´ DbContextë¥¼ ì¶”ê°€
+#region ìƒˆë¡œìš´ DbContext ì¶”ê°€ - CandidateAppDbContext
+// ìƒˆë¡œìš´ DbContext ì¶”ê°€ 
 
-//[a] MVC, RazorPages, Web API¿¡¼­´Â DbContext »ç¿ë °¡´É
+//[a] MVC, RazorPages, Web APIì—ì„œëŠ” DbContext ì‚¬ìš© ê°€ëŠ¥
 //builder.Services.AddDbContext<CandidateAppDbContext>(options => options.UseSqlServer(connectionString));
 
-//[b] Blazor Server¿¡¼­´Â DbContextFactory »ç¿ë ±ÇÀå
-// mvc ÆäÀÌÁö¿¡ Blazor ÄÄÆ÷³ÍÆ®¸¦ 2°³ ÀÌ»ó »ç¿ëÇÏ±â À§ÇØ¼­´Â DbContextFactory¸¦ »ç¿ëÇØ¾ß ÇÑ´Ù.
-// ÇÏ³ªÀÇ Blazor ÆäÀÌÁö¿¡ DbContext¸¦ 2°³ ÀÌ»ó »ç¿ëÇÏ¸é, BlazorÄÄÆ÷³ÍÆ®¸¦ 2°³ÀÌ»ó »ç¿ëÇÏ¸é  ¿À·ù°¡ ¹ß»ıÇÑ´Ù.
+//[b] Blazor Serverì—ì„œëŠ” DbContextFactory ì‚¬ìš© ê¶Œì¥
+// mvc í˜ì´ì§€ì— Blazor ì»´í¬ë„ŒíŠ¸ë¥¼ 2ê°œ ì´ìƒ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œëŠ” DbContextFactoryë¥¼ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+// í•˜ë‚˜ì˜ Blazor í˜ì´ì§€ì— DbContextë¥¼ 2ê°œ ì´ìƒ ì‚¬ìš©í•˜ë©´, Blazorì»´í¬ë„ŒíŠ¸ë¥¼ 2ê°œì´ìƒ ì‚¬ìš©í•˜ë©´  ì˜¤ë¥˜ê°€ ë°œìƒí•œë‹¤.
 // // https://docs.microsoft.com/ko-kr/aspnet/core/blazor/data/ef-core?view=aspnetcore-6.0#use-a-dbcontext-factory
 //  https://www.youtube.com/watch?v=HTic5S5Z6iA&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=26
 // https://github.com/VisualAcademy/Hawaso/blob/d5566e578dcfb22ad8f72ff9ef2a68651f35e63a/src/Hawaso/Components/Pages/VendorPages/Models/07_VendorRepositoryPermanentDelete.cs#L9
@@ -46,12 +46,12 @@ builder.Services.AddQuickGridEntityFrameworkAdapter();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(); // ÄíÅ° ÀÎÁõ ½ºÅ°¸¶ Ãß°¡
+    .AddCookie(); // ì¿ í‚¤ ì¸ì¦ ìŠ¤í‚¤ë§ˆ ì¶”ê°€
 
 /*.AddCookie(options =>
 {
-    options.LoginPath = "/Login"; // ·Î±×ÀÎ ÆäÀÌÁö °æ·Î
-    options.AccessDeniedPath = "/AccessDenied"; // Á¢±Ù °ÅºÎ ÆäÀÌÁö °æ·Î
+    options.LoginPath = "/Login"; // ë¡œê·¸ì¸ í˜ì´ì§€ ê²½ë¡œ
+    options.AccessDeniedPath = "/AccessDenied"; // ì ‘ê·¼ ê±°ë¶€ í˜ì´ì§€ ê²½ë¡œ
 });*/
 
 
@@ -59,12 +59,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 //builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
-// ÀÌ°Ô ÀÖÀ¸¸é  ÄíÅ° ÀÎÁõ °ú ÃæµÑÀÌ »ı°Ü¼­ ÀÏ´Ü ÁÖ¼®Ã³¸® ÇØµĞ´Ù.
+// ì´ê²Œ ìˆìœ¼ë©´  ì¿ í‚¤ ì¸ì¦ ê³¼ ì¶©ë‘˜ì´ ìƒê²¨ì„œ ì¼ë‹¨ ì£¼ì„ì²˜ë¦¬ í•´ë‘”ë‹¤.
 //builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddEntityFrameworkStores<ApplicationDbContext>()
 //    .AddDefaultTokenProviders();
 
-builder.Services.AddControllersWithViews();  // MVC ÄÁÆ®·Ñ·¯ »ç¿ë
+builder.Services.AddControllersWithViews();  // MVC ì»¨íŠ¸ë¡¤ëŸ¬ ì‚¬ìš©
 builder.Services.AddRazorPages();
 
 builder.Services.AddFluentUIComponents();
@@ -72,19 +72,19 @@ builder.Services.AddHttpClient();
 
 
 builder.Services.AddServerSideBlazor()
-    .AddCircuitOptions(options => { options.DetailedErrors = true; }); // °³¹ßÀÚ ¸ğµå¿¡¼­ »ó¼¼ ¿À·ù Ç¥½Ã
+    .AddCircuitOptions(options => { options.DetailedErrors = true; }); // ê°œë°œì ëª¨ë“œì—ì„œ ìƒì„¸ ì˜¤ë¥˜ í‘œì‹œ
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ApplicationUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
-#region °øÁö»çÇ×(NoticeApp) °ü·Ã ÀÇÁ¸¼º(Á¾¼Ó¼º) ÁÖÀÔ °ü·Ã ÄÚµå¸¸ µû·Î ¸ğ¾Æ¼­ °ü¸® 
+#region ê³µì§€ì‚¬í•­(NoticeApp) ê´€ë ¨ ì˜ì¡´ì„±(ì¢…ì†ì„±) ì£¼ì… ê´€ë ¨ ì½”ë“œë§Œ ë”°ë¡œ ëª¨ì•„ì„œ ê´€ë¦¬ 
 // ArticleAppDbContext.cs Inject: New DbContext Add
 //builder.Services.AddEntityFrameworkSqlServer().AddDbContext<ArticleAppDbContext>(options =>
 builder.Services.AddDbContext<ArticleAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-}, ServiceLifetime.Transient); // ¼­ºñ½º ¼ö¸íÁÖ±â: Transient·Î Áßº¹ È£Ãâ½Ã »ç¿ë..
+}, ServiceLifetime.Transient); // ì„œë¹„ìŠ¤ ìˆ˜ëª…ì£¼ê¸°: Transientë¡œ ì¤‘ë³µ í˜¸ì¶œì‹œ ì‚¬ìš©..
 //builder.Services.AddDbContextFactory<ArticleAppDbContext>(options => options.UseSqlServer(connectionString),
-//    ServiceLifetime.Scoped  // ¸í½ÃÀû ½ºÄÚÇÁ ÁöÁ¤
+//    ServiceLifetime.Scoped  // ëª…ì‹œì  ìŠ¤ì½”í”„ ì§€ì •
 //builder.Services.AddDbContextFactory<IdeaAppDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContextFactory<IdeaAppDbContext>(options => options.UseSqlServer(connectionString));
 //builder.Services.AddScoped<IdeaAppDbContext>(provider =>
@@ -95,7 +95,7 @@ builder.Services.AddDbContextFactory<IdeaAppDbContext>(options => options.UseSql
 //);
 
 
-// IArticleRepository.cs Inject: DI Container¿¡ ¼­ºñ½º(¸®Æ÷ÁöÅä¸®) µî·Ï
+// IArticleRepository.cs Inject: DI Containerì— ì„œë¹„ìŠ¤(ë¦¬í¬ì§€í† ë¦¬) ë“±ë¡
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<INoticeRepositoryAsync, NoticeRepositoryAsync>();
 builder.Services.AddTransient<IUploadRepository, UploadRepository>();
@@ -109,7 +109,7 @@ builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>()
 builder.Services.AddSingleton<IInfoService, InfoService>();
 builder.Services.AddTransient<IIdeaRepository, IdeaRepository>();
 
-// DI Container¿¡ ¼­ºñ½º µî·Ï
+// DI Containerì— ì„œë¹„ìŠ¤ ë“±ë¡
 builder.Services.AddTransient<IVideoRepository, VideoRepositoryEfCoreAsync>();
 //builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryAdoNetAsync(connectionString));
 //builder.Services.AddSingleton<IVideoRepositoryAsync>(new VideoRepositoryDapperAsync(connectionString));
@@ -117,9 +117,9 @@ builder.Services.AddTransient<IVideoRepository, VideoRepositoryEfCoreAsync>();
 builder.Services.AddTransient<IMediaRepository, MediaRepository>();
 builder.Services.AddTransient<IMachineRepository, MachineRepository>();
 
-//Á¾¼Ó¼ºÁÖÀÔ Ãß°¡
+//ì¢…ì†ì„±ì£¼ì… ì¶”ê°€
 builder.Services.AddTransient<IEmailSender, EmailSender>(); // EmailSender.cs
-builder.Services.AddScoped<HttpClient>(); // MatBlazor ÇÊ¼ö ¹®¹ı
+builder.Services.AddScoped<HttpClient>(); // MatBlazor í•„ìˆ˜ ë¬¸ë²•
 
 builder.Services
     .AddBlazorise(options =>
@@ -130,7 +130,7 @@ builder.Services
     .AddFontAwesomeIcons();
 
 #region Serilog
-//// 31.8.4. Serilog¸¦ »ç¿ëÇÏ¿© ·Î±× ÆÄÀÏ ±â·ÏÇÏ±â 
+//// 31.8.4. Serilogë¥¼ ì‚¬ìš©í•˜ì—¬ ë¡œê·¸ íŒŒì¼ ê¸°ë¡í•˜ê¸° 
 //// ILoggerFactory loggerFactory
 Log.Logger = new LoggerConfiguration()
     //.MinimumLevel.Debug()
@@ -139,23 +139,23 @@ Log.Logger = new LoggerConfiguration()
     //.ReadFrom.Configuration(builder.Configuration)
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
-Log.Information("¡Ø¡Ø¡Ø[!] Blazor Server Application started.");
-// Serilog¸¦ DI ÄÁÅ×ÀÌ³Ê¿¡ Ãß°¡
+Log.Information("â€»â€»â€»[!] Blazor Server Application started.");
+// Serilogë¥¼ DI ì»¨í…Œì´ë„ˆì— ì¶”ê°€
 //builder.Host.UseSerilog();
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
 #endregion
 
 var app = builder.Build();
 
-// [2] Startup.Configure ¿µ¿ª 
-// °³¹ß È¯°æ ¼³Á¤
+// [2] Startup.Configure ì˜ì—­ 
+// ê°œë°œ í™˜ê²½ ì„¤ì •
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
 
-    //°³¹ßÈ¯°æ¿¡¼­ µ¥ÀÌÅÍ°¡ ¾ø´Ù¸é µ¥ÀÌÅÍ¸¦ ³Ö¾î¶ó
-    //04_06_CandidatesSeedData_Candidates Å×ÀÌºí¿¡ ±âº» µ¥ÀÌÅÍ ÀÔ·Â
+    //ê°œë°œí™˜ê²½ì—ì„œ ë°ì´í„°ê°€ ì—†ë‹¤ë©´ ë°ì´í„°ë¥¼ ë„£ì–´ë¼
+    //04_06_CandidatesSeedData_Candidates í…Œì´ë¸”ì— ê¸°ë³¸ ë°ì´í„° ì…ë ¥
     //https://www.youtube.com/watch?v=b7Ft2qRaEHU&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=17
     CandidateSeedData(app);
 
@@ -167,7 +167,7 @@ else
     app.UseHsts();
 }
 
-//¹Ìµé¿ş¾î ¼³Á¤
+//ë¯¸ë“¤ì›¨ì–´ ì„¤ì •
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
@@ -179,106 +179,108 @@ app.UseAuthorization();
 
 
 #region 0. Menu
-// ¿£µåÆ÷ÀÎÆ® ¹× ¶ó¿ìÆ® ¼³Á¤
+// ì—”ë“œí¬ì¸íŠ¸ ë° ë¼ìš°íŠ¸ ì„¤ì •
 //app.MapGet("/", () => "Hello World!");
 app.MapGet("/ban", async context =>
 {
-    // ¸Ş´º HTML ¹®ÀÚ¿­À» »ı¼ºÇÏ¿© ÀÀ´ä
-    string content = "<h1>ASP.NET Core ÀÎÁõ°ú ±ÇÇÑ ÃÊ°£´Ü ÄÚµå</h1>";
-    content += "<a href=\"/banLogin\">·Î±×ÀÎ</a><br />";
-    content += "<a href=\"/Login/User\">·Î±×ÀÎ(User)</a><br />";
-    content += "<a href=\"/Login/Administrator\">·Î±×ÀÎ(Administrator)</a><br />";
-    content += "<a href=\"/banInfo\">Á¤º¸</a><br />";
-    content += "<a href=\"/InfoDetails\">Á¤º¸(Details)</a><br />";
-    content += "<a href=\"/InfoJson\">Á¤º¸(JSON)</a><br />";
-    content += "<a href=\"/Logout\">·Î±×¾Æ¿ô</a><br />";
-    content += "<hr /><a href=\"/Landing\">·£µùÆäÀÌÁö</a><br />";
-    content += "<a href=\"/Greeting\">È¯¿µÆäÀÌÁö</a><br />";
-    content += "<a href=\"/Dashboard\">°ü¸®ÆäÀÌÁö</a><br />";
-    content += "<a href=\"/api/AuthService\">·Î±×ÀÎ Á¤º¸(JSON)</a><br />";
+    // ë©”ë‰´ HTML ë¬¸ìì—´ì„ ìƒì„±í•˜ì—¬ ì‘ë‹µ
+    string content = "<h1>ASP.NET Core ì¸ì¦ê³¼ ê¶Œí•œ ì´ˆê°„ë‹¨ ì½”ë“œ</h1>";
+    content += "<a href=\"/banLogin\">ë¡œê·¸ì¸</a><br />";
+    content += "<a href=\"/Login/User\">ë¡œê·¸ì¸(User)</a><br />";
+    content += "<a href=\"/Login/Administrator\">ë¡œê·¸ì¸(Administrator)</a><br />";
+    content += "<a href=\"/banInfo\">ì •ë³´</a><br />";
+    content += "<a href=\"/InfoDetails\">ì •ë³´(Details)</a><br />";
+    content += "<a href=\"/InfoJson\">ì •ë³´(JSON)</a><br />";
+    content += "<a href=\"/Logout\">ë¡œê·¸ì•„ì›ƒ</a><br />";
+    content += "<hr /><a href=\"/Landing\">ëœë”©í˜ì´ì§€</a><br />";
+    content += "<a href=\"/Greeting\">í™˜ì˜í˜ì´ì§€</a><br />";
+    content += "<a href=\"/Dashboard\">ê´€ë¦¬í˜ì´ì§€</a><br />";
+    content += "<a href=\"/api/AuthService\">ë¡œê·¸ì¸ ì •ë³´(JSON)</a><br />";
 
 
-    // ÀÀ´ä Çì´õ ¼³Á¤
+    // ì‘ë‹µ í—¤ë” ì„¤ì •
     context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
     await context.Response.WriteAsync(content);
 });
 #endregion
 
 #region 1. Login
-// "/Login" °æ·Î·Î GET ¿äÃ»À» Ã³¸®ÇÕ´Ï´Ù.
+// "/Login" ê²½ë¡œë¡œ GET ìš”ì²­ì„ ì²˜ë¦¬í•©ë‹ˆë‹¤.
 app.MapGet("/banLogin", async context =>
 {
-    // Å¬·¹ÀÓ(Claim) ¸®½ºÆ®¸¦ »ı¼ºÇÏ°í »ç¿ëÀÚ ¾ÆÀÌµğ Å¬·¹ÀÓÀ» Ãß°¡ÇÕ´Ï´Ù.
+    // í´ë ˆì„(Claim) ë¦¬ìŠ¤íŠ¸ë¥¼ ìƒì„±í•˜ê³  ì‚¬ìš©ì ì•„ì´ë”” í´ë ˆì„ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
     var claims = new List<Claim>
     {
-        new Claim(ClaimTypes.Name, "userID") // »ç¿ëÀÚ ÀÌ¸§(¾ÆÀÌµğ) Å¬·¹ÀÓ
+        new Claim(ClaimTypes.Name, "userID") // ì‚¬ìš©ì ì´ë¦„(ì•„ì´ë””) í´ë ˆì„
     };
 
-    // ÄíÅ° ÀÎÁõ ½ºÅ°¸¶¸¦ »ç¿ëÇÏ¿© Å¬·¹ÀÓ ¾ÆÀÌµ§Æ¼Æ¼¸¦ »ı¼ºÇÕ´Ï´Ù.
+    // ì¿ í‚¤ ì¸ì¦ ìŠ¤í‚¤ë§ˆë¥¼ ì‚¬ìš©í•˜ì—¬ í´ë ˆì„ ì•„ì´ë´í‹°í‹°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme); //.AspNetCore.Cookies
 
-    // Å¬·¹ÀÓ ¾ÆÀÌµ§Æ¼Æ¼¸¦ »ç¿ëÇÏ¿© Å¬·¹ÀÓ ÇÁ¸°½ÃÆŞÀ» »ı¼ºÇÕ´Ï´Ù.
+    // í´ë ˆì„ ì•„ì´ë´í‹°í‹°ë¥¼ ì‚¬ìš©í•˜ì—¬ í´ë ˆì„ í”„ë¦°ì‹œí„ì„ ìƒì„±í•©ë‹ˆë‹¤.
     var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-    // »ç¿ëÀÚ¸¦ ·Î±×ÀÎ Ã³¸®ÇÏ°í ÄíÅ° ÀÎÁõ ½ºÅ°¸¶¸¦ ÅëÇØ ÀÎÁõÇÕ´Ï´Ù.
+    // ì‚¬ìš©ìë¥¼ ë¡œê·¸ì¸ ì²˜ë¦¬í•˜ê³  ì¿ í‚¤ ì¸ì¦ ìŠ¤í‚¤ë§ˆë¥¼ í†µí•´ ì¸ì¦í•©ë‹ˆë‹¤.
     await context.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
-    // ÀÀ´ä Çì´õÀÇ "Content-Type"À» ¼³Á¤ÇÏ¿© ÇÑ±Û ¹®ÀÚ°¡ ¿Ã¹Ù¸£°Ô Ç¥½ÃµÇµµ·Ï ÇÕ´Ï´Ù.
+    // ì‘ë‹µ í—¤ë”ì˜ "Content-Type"ì„ ì„¤ì •í•˜ì—¬ í•œê¸€ ë¬¸ìê°€ ì˜¬ë°”ë¥´ê²Œ í‘œì‹œë˜ë„ë¡ í•©ë‹ˆë‹¤.
     context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
-    // Å¬¶óÀÌ¾ğÆ®¿¡ "·Î±×ÀÎ ¿Ï·á" ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
-    await context.Response.WriteAsync("<h3>·Î±×ÀÎ ¿Ï·á</h3>");
+    // í´ë¼ì´ì–¸íŠ¸ì— "ë¡œê·¸ì¸ ì™„ë£Œ" ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+    await context.Response.WriteAsync("<h3>ë¡œê·¸ì¸ ì™„ë£Œ</h3>");
 });
 #endregion
 
 #region 2. Info
-// "/Info" °æ·Î·Î GET ¿äÃ»À» Ã³¸®ÇÕ´Ï´Ù.
+// "/Info" ê²½ë¡œë¡œ GET ìš”ì²­ì„ ì²˜ë¦¬í•©ë‹ˆë‹¤.
 app.MapGet("/banInfo", async context =>
 {
     string result = "";
-    // »ç¿ëÀÚ°¡ ÀÎÁõµÇ¾ú´ÂÁö È®ÀÎ
+    // ì‚¬ìš©ìê°€ ì¸ì¦ë˜ì—ˆëŠ”ì§€ í™•ì¸
     if (context.User.Identity is not null && context.User.Identity.IsAuthenticated)
     {
-        // »ç¿ëÀÚ Á¤º¸¸¦ Ãâ·ÂÇÕ´Ï´Ù.
-        result = "<h1>»ç¿ëÀÚ Á¤º¸</h1>";
+        // ì‚¬ìš©ì ì •ë³´ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+        result = "<h1>ì‚¬ìš©ì ì •ë³´</h1>";
         result += $"<p>IsAuthenticated: {context.User.Identity.IsAuthenticated}</p>";
         result += $"<p>Name: {context.User.Identity.Name}</p>";
     }
     else
     {
-        result += "<h3>·Î±×ÀÎÇÏÁö ¾Ê¾Ò½À´Ï´Ù.</h3>";
+        result += "<h3>ë¡œê·¸ì¸í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.</h3>";
     }
 
-    // ÀÀ´ä Çì´õÀÇ "Content-Type"À» ¼³Á¤ÇÏ¿© ÇÑ±Û ¹®ÀÚ°¡ ¿Ã¹Ù¸£°Ô Ç¥½ÃµÇµµ·Ï ÇÕ´Ï´Ù.
+    // ì‘ë‹µ í—¤ë”ì˜ "Content-Type"ì„ ì„¤ì •í•˜ì—¬ í•œê¸€ ë¬¸ìê°€ ì˜¬ë°”ë¥´ê²Œ í‘œì‹œë˜ë„ë¡ í•©ë‹ˆë‹¤.
     context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
 
-    // »ç¿ëÀÚ Á¤º¸¸¦ Ãâ·ÂÇÕ´Ï´Ù.
+    // ì‚¬ìš©ì ì •ë³´ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
     await context.Response.WriteAsync(result, Encoding.Default);   //System.Text.Encoding.Default
 });
 #endregion
 
 
 //app.MapControllers();
-app.MapDefaultControllerRoute();  //MVC ÄÁÆ®·Ñ·¯ ¶ó¿ìÆÃ
+app.MapDefaultControllerRoute();  //MVC ì»¨íŠ¸ë¡¤ëŸ¬ ë¼ìš°íŒ…
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages(); // Razor Pages ¶ó¿ìÆÃ
+app.MapRazorPages(); // Razor Pages ë¼ìš°íŒ…
 app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.MapFallbackToPage("/_Host");	
+//ì‚¬ìš©ìê°€ ì…ë ¥í•œ URLì´ ê¸°ì¡´ì˜ MVC, Razor Pages, API, ì •ì  íŒŒì¼ ë“± ì–´ë–¤ ë¼ìš°íŠ¸ì™€ë„ ì¼ì¹˜í•˜ì§€ ì•Šì„ ë•Œ,
+//â€¢	Blazor ì•±ì˜ ì—”íŠ¸ë¦¬ í¬ì¸íŠ¸ì¸ /_Host.cshtml í˜ì´ì§€ë¡œ ìš”ì²­ì„ ì „ë‹¬í•©ë‹ˆë‹¤.
 
 /*
-//·çÆ® ÆäÀÌÁö ·ÎµåÇÏÀÚ¸¶ÀÚ Æ¯Á¤ url·Î ¸®´ÙÀÌ·ºÆ® 
+//ë£¨íŠ¸ í˜ì´ì§€ ë¡œë“œí•˜ìë§ˆì íŠ¹ì • urlë¡œ ë¦¬ë‹¤ì´ë ‰íŠ¸ 
 app.MapGet("/", context =>
 {
-    context.Response.Redirect("/ban");  //MVC ±âº»ÆäÀÌÁö·Î ÀÌµ¿
+    context.Response.Redirect("/ban");  //MVC ê¸°ë³¸í˜ì´ì§€ë¡œ ì´ë™
     return Task.CompletedTask;
 });
 */
 app.Run();
 
 
-#region CandidateSeedData: Candidates Å×ÀÌºí¿¡ ±âº» µ¥ÀÌÅÍ ÀÔ·Â
-// Candidates Å×ÀÌºí¿¡ ±âº» µ¥ÀÌÅÍ ÀÔ·Â
+#region CandidateSeedData: Candidates í…Œì´ë¸”ì— ê¸°ë³¸ ë°ì´í„° ì…ë ¥
+// Candidates í…Œì´ë¸”ì— ê¸°ë³¸ ë°ì´í„° ì…ë ¥
 static void CandidateSeedData(WebApplication app)
 {
     // https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/dependency-injection
@@ -289,13 +291,13 @@ static void CandidateSeedData(WebApplication app)
 
         var candidateDbContext = services.GetRequiredService<CandidateAppDbContext>();
 
-        // Candidates Å×ÀÌºí¿¡ µ¥ÀÌÅÍ°¡ ¾øÀ» ¶§¿¡¸¸ µ¥ÀÌÅÍ ÀÔ·Â
+        // Candidates í…Œì´ë¸”ì— ë°ì´í„°ê°€ ì—†ì„ ë•Œì—ë§Œ ë°ì´í„° ì…ë ¥
         if (!candidateDbContext.Candidates.Any())
         {
             candidateDbContext.Candidates.Add(
-                new Candidate { FirstName = "±æµ¿", LastName = "È«", IsEnrollment = false });
+                new Candidate { FirstName = "ê¸¸ë™", LastName = "í™", IsEnrollment = false });
             candidateDbContext.Candidates.Add(
-                new Candidate { FirstName = "µÎ»ê", LastName = "¹é", IsEnrollment = false });
+                new Candidate { FirstName = "ë‘ì‚°", LastName = "ë°±", IsEnrollment = false });
 
             candidateDbContext.SaveChanges();
         }
