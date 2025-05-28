@@ -1,0 +1,36 @@
+﻿
+<h1>블로그 글쓰기</h1>
+
+<form method="post" class="form-horizontal" action="/CKEditor/PostWrite">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="title">제목: </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" placeholder="제목">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="title">내용: </label>
+        <div class="col-sm-10">
+            <textarea id="editor" name="editor" cols="80" rows="10"></textarea>
+            <script src="~/scripts/ckeditor4/ckeditor.js"></script>
+
+            <script>
+                CKEDITOR.replace("editor", {
+                    height: '300px',
+                    filebrowserImageUploadUrl: '/CKEditor/UploadImage/',
+                    filebrowserUploadMethod: 'form'    // POST 방식으로 업로드 아주중요
+                });
+            </script>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">글쓰기</button>
+        </div>
+    </div>
+</form>
+
+
+<hr />
+
+@Html.Raw(ViewBag.EditorText)

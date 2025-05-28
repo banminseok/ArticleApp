@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "CKEditor";
+}
+
+<h1>CKEditor 적용</h1>
+<form enctype="multipart/form-data" action="/CKEditor/Index">
+    <div class="form-group">
+        <label for="editor1">내용</label>
+        <textarea id="editor1" name="editor1">
+            CKEditor를 적용해 보세요.
+        </textarea>
+    </div>
+    <button type="submit" name="btnSubmit" id="btnSubmit" class="btn btn-primary">저장</button>
+</form>
+<div>
+    <a href="/CKEditor/PostWrite">PostWrite</a>
+</div>
+
+<hr/>
+
+=>: @Html.Raw(ViewBag.EditorText)
+
+<script src="~/scripts/ckeditor4/ckeditor.js"></script>
+<script>
+    // CKEditor를 적용합니다.
+    CKEDITOR.replace('editor1', {
+        height: 300,
+        filebrowserUploadUrl: '/CKEditor/UploadImage',
+        filebrowserUploadMethod: 'form'
+    });
+    
+</script>
