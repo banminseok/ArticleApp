@@ -129,12 +129,12 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
 # part 5 MVC 게시판 프로젝트
   - Urls : Post 방식으로 jquery , API 호출해서 가져오는 형태
   - Taghelper 사용 : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
-  - 열거형 : BoardWriteFormType
+  - 열거형 !  : BoardWriteFormType
   - configuration : appsettings.json 객체 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
   - @await Html.PartialAsync("_BoardEditorForm") // 부분화면 개념으로 컴포넌트 자주사용
-  [!]MVC part 2 듣고 다시올게요.
+  - 컴포넌트 : [!]TagHelper(_viewimports에 @addTagHelper 필요_), 부분뷰와 헬퍼메서드, 뷰컴포넌트
 
-  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=10
+  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=11
 
 # Part 2 - ASP.NET Core MVC
 - part 5 DotNetNote 소스에 합쳐서 사용한다.
