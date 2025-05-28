@@ -1,5 +1,6 @@
 using DotNetNote.Data;
 using DotNetNote.Models;
+using DotNetNote.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
@@ -41,6 +42,9 @@ builder.Services.AddSingleton<INoteCommentRepository>(sp =>
         sp.GetRequiredService<IMemoryCache>() // DI로 주입
     )
 );
+//DI(의존성 주입) 컨테이너에 서비스 등록
+builder.Services.AddTransient<CopyrightService>();
+builder.Services.AddTransient<ICopyrightService, CopyrightService>();
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
