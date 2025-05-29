@@ -82,7 +82,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseSession();
+app.UseSession(); // 세션 미들웨어 사용
 
 
 app.MapStaticAssets();
