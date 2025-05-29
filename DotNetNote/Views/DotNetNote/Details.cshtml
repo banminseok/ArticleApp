@@ -104,7 +104,10 @@
 </table>
 
 <div style="text-align:center;">
-
+    <div>
+        <h4>Test option.Value.SiteAdmin : </h4> 
+        <span>@option.Value.SiteAdmin</span>
+    </div>
     @if (Model?.Category != "Notice" && User.IsInRole("Users")
     && User?.FindFirst("UserId")?.Value == option.Value.SiteAdmin)
     {

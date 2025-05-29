@@ -458,7 +458,7 @@ namespace DotNetNote.Controllers
         /// </summary>
         /// <param name="id">부모글 Id</param>
         [HttpGet]
-        [Authorize] // 스팸 글 때문에 추가
+     //   [Authorize] // 스팸 글 때문에 추가
         public IActionResult Reply(int id)
         {
             ViewBag.FormType = BoardWriteFormType.Reply;
@@ -484,7 +484,7 @@ namespace DotNetNote.Controllers
         /// 답변 글쓰기 처리 + 파일 업로드
         /// </summary>
         [HttpPost]
-        [Authorize] // 스팸 글 때문에 추가
+       // [Authorize] // 스팸 글 때문에 추가
         public async Task<IActionResult> Reply(
             Note model, ICollection<IFormFile> files, int id)
         {

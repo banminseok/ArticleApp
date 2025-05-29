@@ -1,12 +1,23 @@
 using DotNetNote.Data;
 using DotNetNote.Models;
 using DotNetNote.Services;
+using DotNetNote.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.Configuration;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// 사용자 정의한 DotNetNoteSettings.json 추가  DotNetNoteSettings.cs 과 쌍으로 이루어짐
+builder.Configuration.AddJsonFile($"Settings\\DotNetNoteSettings.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables(); // 환경 변수 추가
+// 이후 builder.Configuration["키"] 또는 GetSection("섹션")으로 접근 가능
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -29,9 +40,48 @@ builder.Services.AddServerSideBlazor() // Blazor Server 사용가능
 
 #endregion
 
+builder.Services.Configure<DotNetNoteSettings>(builder.Configuration.GetSection("DotNetNoteSettings"));
 builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
+builder.Services.AddAuthentication("Cookies")
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/User/Login/";
+        options.AccessDeniedPath = "/User/Forbidden/";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // 쿠키 만료 시간 설정        
+    })
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+     {
+         options.RequireHttpsMetadata = false;
+         options.SaveToken = true;
+         options.TokenValidationParameters = new TokenValidationParameters
+         {
+             ValidateAudience = false,
+             ValidateIssuer = false,
+             ValidateIssuerSigningKey = true,
+             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["SymmetricSecurityKey"])),
+             ValidateLifetime = true,
+             ClockSkew = TimeSpan.FromMinutes(5)
+         };
+     });
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+//[User][9] Policy 설정
+builder.Services.AddAuthorization(options =>
+{
+    //Users Role 이 있으면 Users Policy 부여
+    options.AddPolicy("Users", policy =>
+    {
+        policy.RequireRole("Users");
+    });
+    //Users Role 이 있고 UserId가 "Admin"인 경우에만 Administrators Policy 부여
+    options.AddPolicy("Administrators", policy =>
+    {
+        policy.RequireRole("Users")
+                .RequireClaim("UserId",//대소문자구분
+                    builder.Configuration.GetSection("DotNetNoteSettings")
+                    .GetSection("SiteAdmin").Value);
+    });
+});
 
 builder.Services.AddTransient<IUrlRepository, UrlRepository>();
 builder.Services.AddTransient<INoteRepository, NoteRepository>();

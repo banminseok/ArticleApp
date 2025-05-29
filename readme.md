@@ -133,8 +133,9 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - configuration : appsettings.json 객체 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
   - @await Html.PartialAsync("_BoardEditorForm") // 부분화면 개념으로 컴포넌트 자주사용
   - 컴포넌트 : [!]TagHelper(_viewimports에 @addTagHelper 필요_), 부분뷰와 헬퍼메서드, 뷰컴포넌트
-
-  https://www.youtube.com/watch?v=YhVR6x-hFUg&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=11
+  - 문법 : @Html.DisplayFor(modelItem => item.Id) =  @item.Id
+  - 
+  https://www.youtube.com/watch?v=7KovlIDLtXI&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=15
 
 # Part 2 - ASP.NET Core MVC
 - part 5 DotNetNote 소스에 합쳐서 사용한다.
@@ -230,6 +231,8 @@ await transaction.CommitAsync();
   # EPPlus 8(유료) => EPPlus 7 엑셀업로드 다운로드 
   Blazorise.Bootstrap
   Blazorise.Icons.FontAwesome
+  Microsoft.AspNetCore.Authentication.JwtBearer
+
 
   --Blazor 프로젝트에 Fluent UI 설정 추가  / https://fluentui-blazor.net
   Microsoft.FluentUI.AspNetCore.Components
