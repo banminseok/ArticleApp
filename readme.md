@@ -139,7 +139,7 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
     •	세션 기반•	내부적으로 세션(Session)에 저장됩니다.
   - asp-for HTML 태그에 붙여서모델(Model)의 특정 속성과 자동으로 바인딩해주는 역할을 합니다.	
     예: <input asp-for="Name" />→ <input id="Name" name="Name" value="모델의 Name 값" ... />로 렌더링
-  - 
+  - [!]Configuration 개체주입 : builder.Services.AddSingleton<IConfiguration>(builder.Configuration); 
 
   https://www.youtube.com/watch?v=7KovlIDLtXI&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=17
 
