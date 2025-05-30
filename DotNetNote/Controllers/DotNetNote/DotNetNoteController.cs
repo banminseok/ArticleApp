@@ -651,7 +651,7 @@ namespace DotNetNote.Controllers
             ViewBag.Id = id;
             ViewBag.ErrorMessage = "암호가 틀립니다. 다시 입력해주세요.";
 
-            return View();
+            return View(); 
         }
 
         /// <summary>
