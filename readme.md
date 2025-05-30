@@ -133,9 +133,9 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - configuration : appsettings.json 객체 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
   - @await Html.PartialAsync("_BoardEditorForm") // 부분화면 개념으로 컴포넌트 자주사용
   - 컴포넌트 : [!]TagHelper(_viewimports에 @addTagHelper 필요_), 부분뷰와 헬퍼메서드, 뷰컴포넌트
-  - 문법 : @Html.DisplayFor(modelItem => item.Id) =  @item.Id
+  - 문법 : @Html.DisplayFor(modelItem => item.Id) =  @item.Id / @Html.Raw 유용하다. 
   - 
-  https://www.youtube.com/watch?v=7KovlIDLtXI&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=15
+  https://www.youtube.com/watch?v=7KovlIDLtXI&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=17
 
 # Part 2 - ASP.NET Core MVC
 - part 5 DotNetNote 소스에 합쳐서 사용한다.
@@ -273,6 +273,12 @@ ASP.NET Core 6.0 + Bootstrap 5.0 기반 소스는 ArticleApp 솔루션의 Visual
    이후로 업데이트되는 다음 경로의 강의 메인 소스에서 진행됩니다.
    
    * https://github.com/VisualAcademy/VisualAcademy
+
+#JWT Token 인증 및 권한 부여
+https://github.com/VisualAcademy/DotNetNote.V6.0/blob/main/DotNetNote/DotNetNote/Controllers/Sign/SignServicesController.cs
+https://github.com/VisualAcademy/DotNetNote.V6.0/blob/main/DotNetNote/DotNetNote/Models/Sign/SignRepositoryInMemory.cs
+https://github.com/VisualAcademy/DotNetNote.V6.0/blob/main/DotNetNote/DotNetNote/Startup.cs
+
 
 # Sample Text
 Blazorise supports several CSS frameworks, including Bootstrap (known for responsive design elements), Bulma (valued for simplicity and Flexbox base), Material (inspired by Google's Material Design), Ant Design (geared towards enterprise-level products and adapting React components' design principles), and Tailwind CSS (famous for its utility-first approach and versatility). These frameworks provide distinct styles and philosophies, offering developers a range of options to best suit their project's requirements.
