@@ -60,6 +60,8 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Tables\Notes" />
     <Folder Include="dbo\Tables\Notes\Stored Procedures" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Views\BoardManager" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Articles.sql" />
@@ -88,6 +90,8 @@
     <Build Include="dbo\Tables\Notes\Stored Procedures\NotesList.sql" />
     <Build Include="dbo\Tables\Notes\Stored Procedures\NotesSearchList.sql" />
     <Build Include="dbo\Tables\Notes\Urls.sql" />
+    <Build Include="dbo\Tables\Notes\Boards.sql" />
+    <Build Include="dbo\Views\BoardManager\BoardViews.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
