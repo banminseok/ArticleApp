@@ -670,7 +670,7 @@ namespace DotNetNote.Controllers
         /// <summary>
         /// (참고) 최근 글 리스트 Web API 테스트 페이지
         /// </summary>
-        [Authorize("Administrators")]
+       //[Authorize("Administrators")]
         public IActionResult NoteServiceDemo() => View();
 
         /// <summary>
