@@ -266,7 +266,7 @@ namespace DotNetNote.Controllers
                     encodedContent = note.Content; // 변환없음
                     break;
             }
-            ViewBag.Content = encodedContent; //[!]
+            ViewBag.Content = encodedContent; //[!] 
 
             // 첨부된 파일 확인
             if (note.FileName.Length > 1)
