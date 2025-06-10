@@ -62,6 +62,7 @@
     <Folder Include="dbo\Tables\Notes\Stored Procedures" />
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\Views\BoardManager" />
+    <Folder Include="dbo\Tables\RecruitManager" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Articles.sql" />
@@ -92,6 +93,8 @@
     <Build Include="dbo\Tables\Notes\Urls.sql" />
     <Build Include="dbo\Tables\Notes\Boards.sql" />
     <Build Include="dbo\Views\BoardManager\BoardViews.sql" />
+    <Build Include="dbo\Tables\RecruitManager\RecruitSettings.sql" />
+    <Build Include="dbo\Tables\RecruitManager\RecruitRegistrations.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
