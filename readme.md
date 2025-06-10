@@ -148,7 +148,7 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - 
 
  https://github.com/VisualAcademy/DotNetNote/blob/main/DotNetNote/DotNetNote/Views/Shared/Components/MainSummaryList/Default.cshtml
- https://www.youtube.com/watch?v=BOoZHURVd-o&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=36
+ https://www.youtube.com/watch?v=u4nJrwltQWU&list=PLO56HZSjrPTC7t9D5AaLtKAj7pQMIeRlk&index=50
 
 # Part 2 - ASP.NET Core MVC
 - part 5 DotNetNote 소스에 합쳐서 사용한다.
