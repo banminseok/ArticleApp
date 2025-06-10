@@ -39,6 +39,10 @@
             <h5>프로젝트에 Blazor Server 사용 가능</h5>
             <component type="typeof(PortfolioList)" render-mode="ServerPrerendered" />
         </div>
+        <div class="col-md-4 border border-2">
+            <h5>MainSummaryBlogPostList 뷰 컴포넌트 사용예제</h5>
+            @await Component.InvokeAsync("MainSummaryBlogPostList")
+        </div>
     </div>
 </div>
 <div class="container" style="height:700px;">
@@ -49,7 +53,7 @@
             
         </div>
         <div class="col-md-2 border border-2">
-
+            
         </div>
     </div>
 </div>
