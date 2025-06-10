@@ -1,5 +1,6 @@
 using DotNetNote.Data;
 using DotNetNote.Models;
+using DotNetNote.Models.RecruitManager;
 using DotNetNote.Services;
 using DotNetNote.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -92,6 +93,8 @@ builder.Services.AddSingleton<INoteCommentRepository>(sp =>
         sp.GetRequiredService<IMemoryCache>() // DI로 주입
     )
 );
+builder.Services.AddTransient<IRecruitSettingRepository, RecruitSettingRepository>();
+
 //DI(의존성 주입) 컨테이너에 서비스 등록
 builder.Services.AddTransient<CopyrightService>();
 builder.Services.AddTransient<ICopyrightService, CopyrightService>();
