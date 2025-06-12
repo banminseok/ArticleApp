@@ -100,10 +100,24 @@ namespace DotNetNote.Models.RecruitManager
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 모집 신청 등록 해제 
+        /// </summary>
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            var sqlDelete = @"
+                Delete RecruitRegistrations 
+                Where 
+                    Id = @Id 
+            ";
+            var count = db.Execute(
+                sqlDelete,
+                new
+                {
+                    Id = id
+                });
         }
+
 
         /// <summary>
         /// 모집 신청 등록 해제 
