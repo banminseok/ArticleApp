@@ -94,6 +94,7 @@ builder.Services.AddSingleton<INoteCommentRepository>(sp =>
     )
 );
 builder.Services.AddTransient<IRecruitSettingRepository, RecruitSettingRepository>();
+builder.Services.AddTransient<IRecruitRegistrationRepository, RecruitRegistrationRepository>();
 
 //DI(의존성 주입) 컨테이너에 서비스 등록
 builder.Services.AddTransient<CopyrightService>();
