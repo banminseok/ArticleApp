@@ -135,8 +135,8 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
   - 컴포넌트 : [!]TagHelper(_viewimports에 @addTagHelper 필요_), 부분뷰와 헬퍼메서드, 뷰컴포넌트
   - 문법 : @Html.DisplayFor(modelItem => item.Id) =  @item.Id / @Html.Raw 유용하다. 
   - TempData는 ASP.NET Core MVC와 Razor Pages에서 컨트롤러와 뷰 사이, 또는 리다이렉트된 다음 요청까지 데이터를 임시로 저장할 수 있는 딕셔너리(사전) 형태의 객체입니다.
-    •	한 번 읽으면 자동으로 삭제(1회성).•	주로 리다이렉트 후 메시지(예: "저장되었습니다", "삭제되었습니다") 전달에 사용.
-    •	세션 기반•	내부적으로 세션(Session)에 저장됩니다.
+    •한 번 읽으면 자동으로 삭제(1회성).   •주로 리다이렉트 후 메시지(예: "저장되었습니다", "삭제되었습니다") 전달에 사용.
+    •세션 기반   •내부적으로 세션(Session)에 저장됩니다.
   - asp-for HTML 태그에 붙여서모델(Model)의 특정 속성과 자동으로 바인딩해주는 역할을 합니다.	
     예: <input asp-for="Name" />→ <input id="Name" name="Name" value="모델의 Name 값" ... />로 렌더링
   - [!]Configuration 개체주입 : builder.Services.AddSingleton<IConfiguration>(builder.Configuration); 

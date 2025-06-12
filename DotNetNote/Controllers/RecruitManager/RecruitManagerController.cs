@@ -67,5 +67,37 @@ namespace DotNetNote.Controllers.RecruitManager
             return View(recruit);
             //return View("~/Views/_MiniProjects/RecruitManager/RecruitSettingDetail.cshtml", recruit);
         }
+
+        /// <summary>
+        /// 상세 데이터 수정 또는 삭제
+        /// </summary>
+        [HttpPost]
+        public IActionResult RecruitSettingEditOrDelete(RecruitSetting model, string action)
+        {
+            if (action == "update")
+            {
+                // 데이터 수정
+                if (ModelState.IsValid)
+                {
+                    repository.Update(model);
+                }
+
+                // 수정 후 상세 보기 페이지로 이동 
+                return RedirectToAction(
+                    nameof(RecruitSettingDetails), new { Id = model.Id });
+            }
+            else
+            {
+                // 데이터 삭제
+                if (ModelState.IsValid)
+                {
+                    // 히든 필드에 들어있는 Id 값에 해당하는 레코드 삭제
+                    repository.Remove(model.Id);
+                }
+
+                // 삭제 후 리스트 페이지로 이동 
+                return RedirectToAction(nameof(RecruitSettingList));
+            }
+        }
     }
 }
