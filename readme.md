@@ -145,6 +145,7 @@ https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDE
     D:\Repos\stmnet.Core\exSource\Portals\Blazor\BlazorSolution\DotNetNote\Views\DotNetNote\Details.cshtml
   - C# 12 이상에서 지원하는 "Primary Constructor" 문법입니다.
     public class NoteServiceController(INoteRepository repository) : Controller
+  - 팁 : button id="btnUpdate" name="action" value="update" 으로 값을 전달 하자...
   - 
 
  https://github.com/VisualAcademy/DotNetNote/blob/main/DotNetNote/DotNetNote/Views/Shared/Components/MainSummaryList/Default.cshtml

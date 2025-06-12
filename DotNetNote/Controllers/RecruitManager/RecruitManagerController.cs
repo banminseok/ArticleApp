@@ -68,6 +68,34 @@ namespace DotNetNote.Controllers.RecruitManager
             //return View("~/Views/_MiniProjects/RecruitManager/RecruitSettingDetail.cshtml", recruit);
         }
 
+        // [FromQuery] 특성으로,
+        // BoardView?BoardName=Recruit&BoardNum=11 형태의 쿼리스트링 받기 
+        [HttpGet]
+        public IActionResult BoardView([FromQuery] string boardName, [FromQuery] int boardNum)
+        {
+            // [FromQuery] 특성 사용
+            ViewData["BoardName"] = boardName;
+            // HttpContext.Request.Query[], HttpContext.Request.Form[] 사용
+            ViewData["BoardNum"] = HttpContext.Request.Query["BoardNum"];
+
+            // 현재 게시판 관련된 모집 정보가 설정이 되어 있는지 확인
+            ViewBag.IsRecruitSettings =
+                repository.IsRecruitSettings(boardName, boardNum);
+
+            // 종료된 모집인지 확인
+            //ViewBag.IsClosedRecruit = false;
+            ViewBag.IsClosedRecruit =
+                repository.IsClosedRecruit(boardName, boardNum);
+
+            // 마감된 모집인지 확인
+            ViewBag.IsFinishedRecruit =
+                repository.IsFinishedRecruit(boardName, boardNum);
+
+
+            return View();
+            //return View("~/Views/_MiniProjects/RecruitManager/BoardView.cshtml");
+        }
+
         /// <summary>
         /// 상세 데이터 수정 또는 삭제
         /// </summary>
