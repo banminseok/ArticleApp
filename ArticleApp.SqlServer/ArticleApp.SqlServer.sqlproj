@@ -95,6 +95,7 @@
     <Build Include="dbo\Views\BoardManager\BoardViews.sql" />
     <Build Include="dbo\Tables\RecruitManager\RecruitSettings.sql" />
     <Build Include="dbo\Tables\RecruitManager\RecruitRegistrations.sql" />
+    <Build Include="dbo\Tables\00_CommonValues.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
