@@ -133,10 +133,17 @@ https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValu
 - [Consumes]를 지정하지 않으면, 기본적으로 JSON만 허용하지만, 프로젝트 설정에 따라 XML 등 다른 타입도 허용될 수 있습니다. [Consumes("application/json")]
   [Produces]를 지정하지 않으면, 기본적으로 JSON으로 반환하지만, 클라이언트의 Accept 헤더에 따라 달라질 수 있습니다. [Produces("application/json", Type = typeof(Value))]
 - // CORS 사용 허용  app.UseCors("AllowAnyOrigin");
-- //public string Get([FromRoute]int id, [FromQuery]string query)
+- 폼 데이터, 라우트값 , 쿼리스트링 매개변수를 기본으로 연결/[FromRoute/Query/Form/Header]특성들을 사용하여 특정 원본데이터에 대한 모델 바인딩 제약조건 부여
+- 응답 결과 상태표시
+ IActionResult/ Task<IActionResult> 반환
+ Ok(Object) : HTTP 200 OK 응답 반환 / BadRequest(ModelState) : HTTP 400 Bad Request 응답 반환
+ CreatedAtAction("GetValue", new { id = value.Id }, value) : HTTP 201 Created 응답 반환, 새로 생성된 리소스의 URI를 Location 헤더에 포함
+ Content("Hello World", "text/plain") : HTTP 200 OK 응답 반환, 문자열 콘텐츠와 MIME 타입을 지정")
+ Json(object) : HTTP 200 OK 응답 반환, JSON 콘텐츠를 반환)
 -
+
 https://github.com/VisualAcademy/RestApi
-https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
+https://www.youtube.com/watch?v=k_uP3Wv5Yco&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO&index=6
 
 
 - 

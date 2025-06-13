@@ -19,6 +19,8 @@ namespace DotNetNote.Controllers
         // api/ApiHelloWorld/id
         //[!] 라우트 매개변수
         //[HttpGet("{id}")]
+        //[HttpGet("{id?}")] // 생략 가능
+        //[HttpGet("{id=1000}")] // 기본 값
         //[!] 모델 바인딩 + 인라인 제약 조건(:)
         [HttpGet("{id:int}")]
         public string Get(int id)
