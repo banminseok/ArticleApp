@@ -122,10 +122,20 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 - //루트 페이지 로드하자마자 특정 url로 리다이렉트 
    app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
 - MVC는 사용자모드, Blazor는 관리자모드를 만들거다
+[!]MVC 게시판 프로젝트 듣고 다시 올게요 - 복귀 (api 도 듣고, 로그인처리 적립후 개발해야겠다. 일단 part3 완강부터...)
+- [!] API 듣고 오자 (Part 4)
+- 
+https://www.youtube.com/watch?v=U9GIGSPRt_U&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=18
+https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValues/04_CommonValueDbContext.cs
 
-[!]MVC 게시판 프로젝트 듣고 다시 올게요
-https://www.youtube.com/watch?v=pHg9r6ycKqc&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=12
 
+# Part 4 - ASP.NET Core Web APi  
+
+https://github.com/VisualAcademy/RestApi
+https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
+
+
+- 
 # part 5 MVC 게시판 프로젝트
   - Urls : Post 방식으로 jquery , API 호출해서 가져오는 형태
   - Taghelper 사용 : @addTagHelper *, DotNetNote , DnnPagingHelperTagHelper
