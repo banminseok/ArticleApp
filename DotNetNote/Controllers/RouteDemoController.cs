@@ -6,6 +6,7 @@ namespace DotNetNote.Controllers
     [Route("api/RouteDemo")]
     public class RouteDemoController : Controller
     {
+        [HttpGet]
         [Route(""), Route("Index"), Route("Index2")]
         public string Index()
         {

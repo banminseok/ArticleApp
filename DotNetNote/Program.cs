@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Configuration;
 using System.Text;
@@ -100,6 +101,11 @@ builder.Services.AddTransient<IRecruitRegistrationRepository, RecruitRegistratio
 builder.Services.AddTransient<CopyrightService>();
 builder.Services.AddTransient<ICopyrightService, CopyrightService>();
 
+builder.Services.AddSwaggerGen(c => 
+{ 
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+});
+
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 
 //// ILoggerFactory loggerFactory
@@ -130,6 +136,21 @@ else
     app.UseHsts();
 }
 
+// CORS 사용 허용
+app.UseCors("AllowAnyOrigin");
+app.UseCors(options => options.WithOrigins("https://example.com"));//특정 출처 허용 (예: example.com)
+    //.AllowAnyOrigin() // 모든 출처 허용
+    //.AllowAnyMethod() // 모든 HTTP 메서드 허용 (GET, POST, PUT, DELETE 등)
+    //.AllowAnyHeader()); // 모든 헤더 허용
+
+// Enable middleware to serve generated Swagger as a JSON endpoint.
+app.UseSwagger();
+// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+// specifying the Swagger JSON endpoint.
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
@@ -137,6 +158,8 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession(); // 세션 미들웨어 사용
+                  
+
 
 
 app.MapStaticAssets();

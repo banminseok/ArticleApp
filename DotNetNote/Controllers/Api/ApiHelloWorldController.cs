@@ -28,6 +28,7 @@ namespace DotNetNote.Controllers
 
         // POST api/<ApiHelloWorldController>
         [HttpPost]
+        ////public string Get([FromRoute]int id, [FromQuery]string query)
         public void Post([FromBody] string value)
         {
         }

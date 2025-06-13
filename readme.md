@@ -130,7 +130,11 @@ https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValu
 
 
 # Part 4 - ASP.NET Core Web APi  
-
+- [Consumes]를 지정하지 않으면, 기본적으로 JSON만 허용하지만, 프로젝트 설정에 따라 XML 등 다른 타입도 허용될 수 있습니다. [Consumes("application/json")]
+  [Produces]를 지정하지 않으면, 기본적으로 JSON으로 반환하지만, 클라이언트의 Accept 헤더에 따라 달라질 수 있습니다. [Produces("application/json", Type = typeof(Value))]
+- // CORS 사용 허용  app.UseCors("AllowAnyOrigin");
+- //public string Get([FromRoute]int id, [FromQuery]string query)
+-
 https://github.com/VisualAcademy/RestApi
 https://www.youtube.com/watch?v=F7IMX9rEB_E&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO
 
@@ -263,6 +267,8 @@ await transaction.CommitAsync();
   Microsoft.FluentUI.AspNetCore.Components.Icons
   Microsoft.FluentUI.AspNetCore.Components.Emoji
   Microsoft.FluentUI.AspNetCore.Components.DataGrid.EntityFrameworkAdapter
+
+  Swashbuckle.AspNetCore
 
   Dapper
   Serilog

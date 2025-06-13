@@ -13,6 +13,7 @@ namespace DotNetNote.Controllers.DotNetNote
     [ApiController]
     public class NoteCommentServiceController(INoteCommentRepository repository) : ControllerBase
     {
+        [HttpGet]
         public IEnumerable<NoteComment> Get()
         {
             // 최근 댓글 리스트 반환
