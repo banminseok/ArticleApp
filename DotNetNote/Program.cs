@@ -104,6 +104,8 @@ builder.Services.AddTransient<IPointLogRepository, PointLogRepository>();
 //Five 컴포넌트
 builder.Services.AddTransient<IFiveRepository, FiveRepository>();
 
+builder.Services.AddTransient<IReplyRepository, ReplyRepository>();
+
 //DI(의존성 주입) 컨테이너에 서비스 등록
 builder.Services.AddTransient<CopyrightService>();
 builder.Services.AddTransient<ICopyrightService, CopyrightService>();

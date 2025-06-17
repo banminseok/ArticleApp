@@ -50,5 +50,7 @@ namespace DotNetNote.Models
         /// </summary>
         public DbSet<Tech> Teches { get; set; }
         */
+
+        public DbSet<Reply> Replys { get; set; }
     }
 }
