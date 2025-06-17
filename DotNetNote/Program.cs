@@ -101,6 +101,8 @@ builder.Services.AddTransient<IRecruitRegistrationRepository, RecruitRegistratio
 //builder.Services.AddTransient<IPointRepository, PointRepository>(); // DB 사용
 builder.Services.AddTransient<IPointRepository, PointRepositoryInMemory>(); // 인-메모리 사용
 builder.Services.AddTransient<IPointLogRepository, PointLogRepository>();
+//Five 컴포넌트
+builder.Services.AddTransient<IFiveRepository, FiveRepository>();
 
 //DI(의존성 주입) 컨테이너에 서비스 등록
 builder.Services.AddTransient<CopyrightService>();

@@ -140,10 +140,19 @@ https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValu
  CreatedAtAction("GetValue", new { id = value.Id }, value) : HTTP 201 Created 응답 반환, 새로 생성된 리소스의 URI를 Location 헤더에 포함
  Content("Hello World", "text/plain") : HTTP 200 OK 응답 반환, 문자열 콘텐츠와 MIME 타입을 지정")
  Json(object) : HTTP 200 OK 응답 반환, JSON 콘텐츠를 반환)
+-   [HttpGet("{id:int}", Name = "GetFiveById")] // 이름 추가 
+  나중에 코드에서 Url.Link("GetFiveById", new { id = 7 })처럼 이 이름으로 URL을 생성할 수 있습니다.
+  호출 return CreatedAtRoute("GetFiveById", new { id = m.Id }, m); // Status: 201 Created
+- //[Route("api/fives")] // 직접 API 이름을 지정할 때
+- // 응답 헤더에 총 레코드 수를 담아서 출력  Response.Headers.Add("X-TotalRecordCount", _repository.GetRecordCount().ToString());
+  •	response.Headers.TryGetValues("X-TotalRecordCount", out var values)로 헤더 값을 읽습니다.
+  •	JS : const totalCount = response.headers.get('X-TotalRecordCount');
+- 
 -
 
+- 
 https://github.com/VisualAcademy/RestApi
-https://www.youtube.com/watch?v=k_uP3Wv5Yco&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO&index=6
+https://www.youtube.com/watch?v=k_uP3Wv5Yco&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-TyQoO&index=10
 
 
 - 
