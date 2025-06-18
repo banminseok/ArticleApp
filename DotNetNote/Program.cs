@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DotNetNote.Controllers;
 using DotNetNote.Data;
 using DotNetNote.Models;
@@ -113,6 +114,15 @@ builder.Services.AddTransient<ICopyrightService, CopyrightService>();
 builder.Services.AddSwaggerGen(c => 
 { 
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+});
+
+//API 버전 관리 설정
+builder.Services.AddApiVersioning(option=>
+{
+    option.DefaultApiVersion = new ApiVersion(1,0); // 기본 API 버전 설정
+    option.ReportApiVersions = true; // API 버전 정보 보고
+    option.AssumeDefaultVersionWhenUnspecified = true; // 버전이 지정되지 않은 경우 기본 버전 사용
+    //option.ApiVersionReader = new HeaderApiVersionReader("X-API-Version"); // 헤더에서 버전 읽기
 });
 
 #region Serilog

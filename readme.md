@@ -287,6 +287,8 @@ await transaction.CommitAsync();
   Microsoft.FluentUI.AspNetCore.Components.DataGrid.EntityFrameworkAdapter
 
   Swashbuckle.AspNetCore
+  Asp.Versioning.Mvc
+  Asp.Versioning.Mvc.Explorer
 
   Dapper
   Serilog
