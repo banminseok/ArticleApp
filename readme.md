@@ -147,6 +147,7 @@ https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValu
 - // 응답 헤더에 총 레코드 수를 담아서 출력  Response.Headers.Add("X-TotalRecordCount", _repository.GetRecordCount().ToString());
   •	response.Headers.TryGetValues("X-TotalRecordCount", out var values) 로 헤더 값을 읽습니다.
   •	JS : const totalCount = response.headers.get('X-TotalRecordCount')  로 헤더 값을 읽습니다.
+- post add : return CreatedAtRoute ,Ok, Created, CreatedAtAction
 - 
 
 
