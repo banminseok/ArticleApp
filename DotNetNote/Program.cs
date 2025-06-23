@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
 using DotNetNote.Controllers;
 using DotNetNote.Data;
 using DotNetNote.Models;
@@ -122,8 +123,14 @@ builder.Services.AddApiVersioning(option=>
     option.DefaultApiVersion = new ApiVersion(1,0); // 기본 API 버전 설정
     option.ReportApiVersions = true; // API 버전 정보 보고
     option.AssumeDefaultVersionWhenUnspecified = true; // 버전이 지정되지 않은 경우 기본 버전 사용
-    //option.ApiVersionReader = new HeaderApiVersionReader("X-API-Version"); // 헤더에서 버전 읽기
+    //option.ApiVersionReader = new HeaderApiVersionReader("X-Api-Version"); // 헤더에서 버전 읽기
 });
+//builder.Services.AddVersionedApiExplorer(
+//    options =>
+//    {
+//        options.GroupNameFormat = "'v'VVV"; // 버전 그룹 이름 형식
+//        options.SubstituteApiVersionInUrl = true; // URL에서 API 버전 대체
+//    });
 
 #region Serilog
 //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 

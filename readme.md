@@ -123,7 +123,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
    app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
 - MVC는 사용자모드, Blazor는 관리자모드를 만들거다
 [!]MVC 게시판 프로젝트 듣고 다시 올게요 - 복귀 (api 도 듣고, 로그인처리 적립후 개발해야겠다. 일단 part3 완강부터...)
-- [!] API 듣고 오자 (Part 4)
+- [!] API 듣고 오자 (Part 4) - 복귀 토큰, 로그인쿠키인증 하려다가 이강의 리스트에 로그인이 있어서 더들어 보려고함. (참고:D:\Repos\stmnet.Core\exSource\AngularJWT)
 - 
 https://www.youtube.com/watch?v=U9GIGSPRt_U&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=18
 https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.Models/CommonValues/04_CommonValueDbContext.cs
@@ -215,6 +215,15 @@ https://www.youtube.com/watch?v=k_uP3Wv5Yco&list=PLO56HZSjrPTC4e3nfihJGLHy9CR-Ty
 https://github.com/VisualAcademy/DotNetNote.V6.0/blob/3f270484d4b9bfe5b0a43ac789c1dafb3c536da4/DotNetNote/DotNetNote/Controllers/PartialViewDemoController.cs#L6
 https://github.com/VisualAcademy/DotNetNote.V6.0/blob/3f270484d4b9bfe5b0a43ac789c1dafb3c536da4/DotNetNote/DotNetNote/Views/Shared/_AdvancedPagingWithBootstrap.cshtml
 https://www.youtube.com/watch?v=JHmDAri6ADM&list=PLO56HZSjrPTCUfmhgVnGertM_53BNQ_5V&index=83
+
+# Authorize
+https://www.youtube.com/watch?v=DH99apQMKpE&list=PLO56HZSjrPTAS3bC6UUNWBH9ih5yujpvS&index=91&t=13s
+https://www.youtube.com/watch?v=0l5VqpHo6qE&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=61&t=17s
+https://www.youtube.com/watch?v=_vhfTbmPxF4&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=62&t=9s
+https://www.youtube.com/watch?v=_vhfTbmPxF4&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=62&t=9s
+-token 인증 (D:\Repos\stmnet.Core\exSource\AngularJWT)
+https://www.youtube.com/watch?v=L7fqq7F_AiY
+https://www.youtube.com/watch?v=S8rN-4Z7O6g
 
 # DbContextFactory VS DbContext	
 Blazor Server에서 Repository에서 DbContext 사용하는 경우에는 큰 문제없이 사용이 가능합니다.

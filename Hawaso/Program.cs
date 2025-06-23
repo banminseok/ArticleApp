@@ -20,6 +20,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddDbContext<DotNetNoteContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<CommonValueDbContext>(options => options.UseSqlServer(connectionString));
+// Add HawasoDbContext ¡÷¿‘
+builder.Services
+    .AddEntityFrameworkSqlServer()
+    .AddDbContext<HawasoDbContext>(options => 
+        options.UseSqlServer(connectionString),ServiceLifetime.Transient);
 
 
 builder.Services.AddControllersWithViews();  //MVC
@@ -31,6 +37,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddTransient<INoteRepository, NoteRepository>();
 builder.Services.AddTransient<INoteCommentRepository, NoteCommentRepository>();
+builder.Services.AddTransient<ICommonValueRepository, CommonValueRepository>(); //CommonValue
 
 var app = builder.Build();
 

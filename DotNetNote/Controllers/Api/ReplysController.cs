@@ -7,9 +7,9 @@ namespace DotNetNote.Controllers
 {
     [ApiVersion("1.0")]
     //[Route("api/[controller]")]
+    [ApiController]
     [Route("api/Replys")]
     //[Route("api/v{v:apiVersion}/[controller]")]
-    [ApiController]
     [Produces("application/json")]
     public class ReplysController : ControllerBase
     {
@@ -235,9 +235,10 @@ namespace DotNetNote.Controllers
 
     [ApiVersion("2.0")]
     //[Route("api/[controller]")]
-    [Route("api/Replys")]
-    //[Route("api/v{v:apiVersion}/[controller]")]
     [ApiController]
+    [Route("api/v{v:apiVersion}/Replys")]
+    //[Route("api/Replys")]
+    //[Route("api/v{v:apiVersion}/[controller]")]
     [Produces("application/json")]
     public class ReplysV2_0Controller : ControllerBase
     {
