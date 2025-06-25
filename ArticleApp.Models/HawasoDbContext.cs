@@ -54,6 +54,7 @@ namespace ArticleApp.Models
 
         //[!] Hawaso 솔루션 관련 모든 테이블에 대한 참조 
         public DbSet<CommonValue> CommonValues { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
     }
 }
