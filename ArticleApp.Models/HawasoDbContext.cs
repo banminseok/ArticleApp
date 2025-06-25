@@ -50,6 +50,8 @@ namespace ArticleApp.Models
         {
             // CommonValues 테이블의 Created 열은 자동으로 GetDate() 제약 조건을 부여하기 
             modelBuilder.Entity<CommonValue>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Customer>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Customer>().Property(m => m.Modified).HasDefaultValueSql("GetDate()");
         }
 
         //[!] Hawaso 솔루션 관련 모든 테이블에 대한 참조 

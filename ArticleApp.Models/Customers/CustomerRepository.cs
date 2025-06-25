@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArticleApp.Models.Customers
+namespace ArticleApp.Models
 {
     /// <summary>
     /// Repository Class: ADO.NET 또는 Dapper 또는 Entity Framework Core 

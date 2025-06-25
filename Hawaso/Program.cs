@@ -31,6 +31,14 @@ builder.Services
 builder.Services.AddControllersWithViews();  //MVC
 builder.Services.AddRazorPages();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
@@ -38,6 +46,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddTransient<INoteRepository, NoteRepository>();
 builder.Services.AddTransient<INoteCommentRepository, NoteCommentRepository>();
 builder.Services.AddTransient<ICommonValueRepository, CommonValueRepository>(); //CommonValue
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>(); //Customer
 
 var app = builder.Build();
 

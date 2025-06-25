@@ -27,27 +27,27 @@ namespace ArticleApp.Models
         //[Required(ErrorMessage = "이메일을 입력하세요.")]
         public string EmailAddress { get; set; }
 
-        public string Address { get; set; }
-        public string AddressDetail { get; set; }
-        public string Phone1 { get; set; }
-        public string Phone2 { get; set; }
-        public string Phone3 { get; set; }
-        public string Mobile1 { get; set; }
-        public string Mobile2 { get; set; }
-        public string Mobile3 { get; set; }
-        public string Zip { get; set; }
-        public string Ssn1 { get; set; }
-        public string Ssn2 { get; set; }
-        public int? MemberDivision { get; set; }
+        public string? Address { get; set; }= string.Empty;
+        public string? AddressDetail { get; set; } = string.Empty;
+        public string? Phone1 { get; set; } = string.Empty;
+        public string? Phone2 { get; set; } = string.Empty;
+        public string? Phone3 { get; set; } = string.Empty;
+        public string? Mobile1 { get; set; } = string.Empty;
+        public string? Mobile2 { get; set; } = string.Empty;
+        public string? Mobile3 { get; set; } = string.Empty;
+        public string? Zip { get; set; } = string.Empty;
+        public string? Ssn1 { get; set; } = string.Empty;
+        public string? Ssn2 { get; set; } = string.Empty;
+        public int? MemberDivision { get; set; } = 0;
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Gender { get; set; }
-        public string City { get; set; }
+        public string? FirstName { get; set; } = string.Empty;
+        public string? LastName { get; set; } = string.Empty;
+        public string? Gender { get; set; } = string.Empty;
+        public string? City { get; set; } = string.Empty;
 
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; } = string.Empty;
         public DateTime? Created { get; set; }
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; } = string.Empty;
         public DateTime? Modified { get; set; }
     }
 
