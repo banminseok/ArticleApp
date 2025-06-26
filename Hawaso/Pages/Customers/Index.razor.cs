@@ -59,7 +59,7 @@ namespace Hawaso.Pages.Customers
 
         private void btnCustomerName_Click(int customerId)
         {
-            NavigationManagerReference.NavigateTo($"/Customers/Details/{customerId}");
+            NavigationManagerReference.NavigateTo($"/Customers/Details/{customerId}");  //stringinterpolation
         }
 
         protected void NameClick(int id)

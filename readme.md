@@ -126,7 +126,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 - [!] API 듣고 오자 (Part 4) - 복귀 토큰, 로그인쿠키인증 하려다가 이강의 리스트에 로그인이 있어서 더들어 보려고함. (참고:D:\Repos\stmnet.Core\exSource\AngularJWT)
 - Administration Role 은 스킵
 - 
-https://www.youtube.com/watch?v=U9GIGSPRt_U&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=27
+https://www.youtube.com/watch?v=U9GIGSPRt_U&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=34
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers
 
 

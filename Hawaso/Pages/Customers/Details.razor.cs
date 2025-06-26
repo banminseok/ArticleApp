@@ -7,32 +7,33 @@ namespace Hawaso.Pages.Customers
 {
     public partial class Details
     {
+        #region Parameters
         [Parameter]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
+        #endregion
+
+        #region Injectors
+        [Inject]
+        public ICustomerRepository CustomerRepositoryReference { get; set; }
 
         [Inject]
         private ILogger<Details> Logger { get; set; }
-
-        [Inject]
-        public IReplyRepository ReplyRepositoryReference { get; set; }
-
         [Inject]
         public NavigationManager NavigationManagerReference { get; set; }
 
-        [Inject]
-        public IFileStorageManager UploadAppFileStorageManager { get; set; }
+        #endregion
 
-        protected string content = "";
-        protected string folderPath = "";
+        #region Fields
+        private Customer customer = new();
+        #endregion
 
-        protected Reply model = new Reply();
-
+        #region Lifecycle Methods   
         protected override async Task OnInitializedAsync()
         {
-            folderPath = UploadAppFileStorageManager.GetFolderPath("", Id.ToString(), "");
-            model = await ReplyRepositoryReference.GetByIdAsync(Id);
-            Logger.LogInformation($"※※※ id: ${Id}, model 불러오기 , {JsonSerializer.Serialize(model)}");
-            content = Dul.HtmlUtility.EncodeWithTabAndSpace(model.Content);
+            customer = await CustomerRepositoryReference.GetByIdAsync(CustomerId);
+            Logger.LogInformation($"※※※ id: ${CustomerId}, model 불러오기 , {JsonSerializer.Serialize(customer)}");
+            //content = Dul.HtmlUtility.EncodeWithTabAndSpace(model.Content);
         }
+        #endregion
     }
 }

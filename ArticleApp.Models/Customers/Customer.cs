@@ -24,7 +24,7 @@ namespace ArticleApp.Models
         [Column(TypeName = "NVarChar(50)")]
         public string CustomerName { get; set; }
 
-        //[Required(ErrorMessage = "이메일을 입력하세요.")]
+        [Required(ErrorMessage = "이메일을 입력하세요.")]
         public string EmailAddress { get; set; }
 
         public string? Address { get; set; }= string.Empty;
