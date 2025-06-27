@@ -26,4 +26,8 @@
     <ProjectReference Include="..\UploadApp.Shared\UploadApp.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Categories\CategoryBases\" />
+  </ItemGroup>
+
 </Project>

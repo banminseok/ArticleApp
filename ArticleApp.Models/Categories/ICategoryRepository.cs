@@ -1,5 +1,5 @@
 ﻿
-namespace ArticleApp.Models
+namespace ArticleApp.Models.Category
 {
     public interface ICategoryRepository
     {

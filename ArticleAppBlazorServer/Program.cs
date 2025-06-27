@@ -4,6 +4,7 @@ using ArticleAppBlazorServer.Areas.Identity.Models;
 using ArticleAppBlazorServer.Areas.Identity.Services;
 using ArticleAppBlazorServer.Data;
 using ArticleAppBlazorServer.Managers;
+using ArticleAppBlazorServer.Models;
 using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;

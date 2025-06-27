@@ -1,4 +1,5 @@
 ﻿using ArticleApp.Models;
+using ArticleAppBlazorServer.Models;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol.Core.Types;
 

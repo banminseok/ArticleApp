@@ -128,6 +128,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 - 
 https://www.youtube.com/watch?v=0_beyvApZnE&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=40
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers
+https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.SqlServer/dbo/Tables/01_Categories/01_Categories.sql
 
 
 # Part 4 - ASP.NET Core Web APi  
