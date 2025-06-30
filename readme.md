@@ -276,7 +276,7 @@ await transaction.CommitAsync();
 
 # Nuget패키지 설치
   Microsoft.EntityFrameworkCore
-  Microsoft.EntityFrameworkCore.SqlServer
+  Microsoft.EntityFrameworkCore.SqlServer   (useing Microsoft.Data.SqlClient)
   Microsoft.EntityFrameworkCore.Tools
   System.Configuration.ConfigurationManager
   System.Data.SqlClient  (참조 : https://ddochea.tistory.com/189)

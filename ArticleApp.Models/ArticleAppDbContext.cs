@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ArticleApp.Models.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +59,8 @@ namespace ArticleApp.Models
             modelBuilder.Entity<Video>().Property(v => v.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<Machine>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<MachineMedia>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
-
+            modelBuilder.Entity<ArticleApp.Models.Categories.Category>()
+                .HasMany(c => c.Products).WithOne(a => a.Category).HasForeignKey(a => a.CategoryId);
         }
 
         //[!] ArticleApp 솔루션 관련 모든 테이블에 대한 참조 
@@ -78,5 +80,8 @@ namespace ArticleApp.Models
         public DbSet<Machine> Machines { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<MachineMedia> MachinesMedias { get; set; }
+
+        public DbSet<ArticleApp.Models.Categories.Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

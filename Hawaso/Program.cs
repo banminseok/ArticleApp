@@ -1,4 +1,6 @@
 using ArticleApp.Models;
+using ArticleApp.Models.Categories;
+using ArticleApp.Models.Products;
 using Hawaso.Areas.Identity;
 using Hawaso.Data;
 using Microsoft.AspNetCore.Components;
@@ -21,6 +23,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddDbContext<DotNetNoteContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<CommonValueDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<ArticleAppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+}, ServiceLifetime.Transient); // 서비스 수명주기: Transient로 중복 호출시 사용..
 // Add HawasoDbContext 주입
 builder.Services
     .AddEntityFrameworkSqlServer()
@@ -47,6 +53,8 @@ builder.Services.AddTransient<INoteRepository, NoteRepository>();
 builder.Services.AddTransient<INoteCommentRepository, NoteCommentRepository>();
 builder.Services.AddTransient<ICommonValueRepository, CommonValueRepository>(); //CommonValue
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>(); //Customer
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>(); //Category
+builder.Services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>(); //
 
 var app = builder.Build();
 
