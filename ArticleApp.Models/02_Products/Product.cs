@@ -46,47 +46,47 @@ namespace ArticleApp.Models.Products
         /// <summary>
         /// 회사명
         /// </summary>
-        public string Company { get; set; }
+        public string? Company { get; set; }
 
         /// <summary>
         /// 원가
         /// </summary>
-        public int OriginPrice { get; set; } = 0;
+        public int? OriginPrice { get; set; } = 0;
 
         /// <summary>
         /// 판매가
         /// </summary>
-        public int SellPrice { get; set; } = 0;
+        public int? SellPrice { get; set; } = 0;
 
         /// <summary>
         /// 이벤트 종류
         /// </summary>
-        public string EventName { get; set; }
+        public string? EventName { get; set; }
 
         /// <summary>
         /// 이미지 이름
         /// </summary>
-        public string ProductImage { get; set; }
+        public string? ProductImage { get; set; }
 
         /// <summary>
         /// 짧은 설명
         /// </summary>
-        public string Explain { get; set; }
+        public string? Explain { get; set; }
 
         /// <summary>
         /// 긴 설명
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 본문 내용 표시 형식
         /// </summary>
-        public string Encoding { get; set; }
+        public string? Encoding { get; set; }
 
         /// <summary>
         /// 재고 수량: Inventory, Stock
         /// </summary>
-        public int ProductCount { get; set; }
+        public int? ProductCount { get; set; }
 
         /// <summary>
         /// 상품 등록일
