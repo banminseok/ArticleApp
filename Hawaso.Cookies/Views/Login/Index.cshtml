@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = null; 
+}
+<h2>Login</h2>
+<h4>
+    09_01_참고. Blazor Server에서 쿠키 인증을 사용하여 로그인 처리하기
+</h4>
+<form method="post" action="/Login">
+    <div class="row">
+        <div class="col-8">
+            <label for="email">아이디:</label>
+            <input type="text" id="email" name="email" required />
+        </div>
+        <div class="col-8">
+            <label for="password">암호:</label>
+            <input type="text" id="password" name="password" required />
+        </div>
+        <div>
+            <button type="submit">로그인</button>
+        </div>
+    </div>    
+</form>
