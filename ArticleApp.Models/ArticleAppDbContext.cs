@@ -61,6 +61,7 @@ namespace ArticleApp.Models
             modelBuilder.Entity<MachineMedia>().Property(m => m.Created).HasDefaultValueSql("GetDate()");
             modelBuilder.Entity<ArticleApp.Models.Categories.Category>()
                 .HasMany(c => c.Products).WithOne(a => a.Category).HasForeignKey(a => a.CategoryId);
+            modelBuilder.Entity<Login>().Property(m => m.LoginDate).HasDefaultValueSql("GetDate()");
         }
 
         //[!] ArticleApp 솔루션 관련 모든 테이블에 대한 참조 
@@ -72,6 +73,10 @@ namespace ArticleApp.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Idea> Ideas { get; set; }
 
+        /// <summary>
+        /// Logins 속성: Logins 테이블과 일대일 
+        /// </summary>
+        public DbSet<Login> Logins { get; set; }
         /// <summary>
         /// 비디오 앱
         /// </summary>
