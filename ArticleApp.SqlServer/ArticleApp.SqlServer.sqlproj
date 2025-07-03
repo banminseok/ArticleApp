@@ -67,6 +67,8 @@
     <Folder Include="dbo\Tables\Categories" />
     <Folder Include="dbo\Tables\Products" />
     <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\Tables\Logins" />
+    <Folder Include="dbo\StoredProcedures\Logins" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Articles.sql" />
@@ -106,6 +108,14 @@
     <Build Include="dbo\Tables\Categories\CategoriesBases.sql" />
     <Build Include="dbo\Tables\Products\Products.sql" />
     <Build Include="dbo\StoredProcedures\01_GetSubCategories.sql" />
+    <Build Include="dbo\Tables\Logins\Logins.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsCount.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsList.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsListAdmin.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsSearchCount.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsSearchCountAdmin.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsSearchList.sql" />
+    <Build Include="dbo\StoredProcedures\Logins\LoginsSearchListAdmin.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />
