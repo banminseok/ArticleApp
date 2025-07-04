@@ -132,7 +132,7 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
    App.razor.cs에 builder.Services.AddAuthorizationCore(); 추가
 
 
-https://www.youtube.com/watch?v=Yzy5qsalKEk&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=63
+https://www.youtube.com/watch?v=7Yze6qoS5I4&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=65
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers
 https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.SqlServer/dbo/Tables/01_Categories/01_Categories.sql
 
