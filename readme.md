@@ -128,7 +128,8 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 - https://github.com/VisualAcademy/loginapp (LoginApp Add 메서드 추가 및 로그인 폼에서 로그인했을 때 로그인 히스토리 기록 코드 구현)
 - Hawaso.Cookies : Blazor Server에서 쿠키를 사용하여 로그인 상태를 유지하는 방법 프로젝트 시작, MVC로 구현
   * 쿠키인증이 기본 인증부분과 연동이 된다....*
-- 
+- 인증된사용자만 : Balzor- @attribute [Authorize], MVC- [Authorize]
+   App.razor.cs에 builder.Services.AddAuthorizationCore(); 추가
 
 
 https://www.youtube.com/watch?v=Yzy5qsalKEk&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=63

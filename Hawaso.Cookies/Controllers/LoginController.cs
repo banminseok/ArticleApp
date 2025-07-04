@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -24,7 +25,7 @@ namespace Hawaso.Cookies.Controllers
                         //new Claim("Email",email),
                     new Claim(ClaimTypes.Email, email),
                         //new Claim(ClaimTypes.NameIdentifier, email),
-                    new Claim(ClaimTypes.Name, "Administrator"),
+                    new Claim(ClaimTypes.Name, "반민석"),
                     // 기본 역할 지정 "Role" 기능에 "Users" 역할 지정
                     new Claim(ClaimTypes.Role, "Users") //추가 정보기록
                 };
@@ -45,6 +46,12 @@ namespace Hawaso.Cookies.Controllers
 
                 return LocalRedirect(Url.Content("~/"));
             }
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult UserInfo() 
+        {
             return View();
         }
     }
