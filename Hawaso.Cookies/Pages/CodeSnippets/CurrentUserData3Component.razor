@@ -46,7 +46,7 @@
 
         if (user.Identity.IsAuthenticated)
         {
-            var currentUser = await UserManagerRef.GetUserAsync(user);
+            var currentUser = await UserManagerRef.GetUserAsync(user); //DB서 현재 사용자 정보 가져오기
             UserId = currentUser.Id;
             UserName = user.Identity.Name;
         }
