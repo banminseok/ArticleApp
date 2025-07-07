@@ -122,15 +122,21 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 - //루트 페이지 로드하자마자 특정 url로 리다이렉트 
    app.MapGet("/", context => context.Response.Redirect("/ban");  //MVC 기본페이지로 이동);
 - MVC는 사용자모드, Blazor는 관리자모드를 만들거다
+
 [!]MVC 게시판 프로젝트 듣고 다시 올게요 - 복귀 (api 도 듣고, 로그인처리 적립후 개발해야겠다. 일단 part3 완강부터...)
+
 - [!] API 듣고 오자 (Part 4) - 복귀 토큰, 로그인쿠키인증 하려다가 이강의 리스트에 로그인이 있어서 더들어 보려고함. (참고:D:\Repos\stmnet.Core\exSource\AngularJWT)
 - Administration Role 은 스킵
 - https://github.com/VisualAcademy/loginapp (LoginApp Add 메서드 추가 및 로그인 폼에서 로그인했을 때 로그인 히스토리 기록 코드 구현)
-- Hawaso.Cookies : Blazor Server에서 쿠키를 사용하여 로그인 상태를 유지하는 방법 프로젝트 시작, MVC로 구현
+- Hawaso.Cookies 프로젝트 : Blazor Server에서 쿠키를 사용하여 로그인 상태를 유지하는 방법 프로젝트 시작, MVC로 구현
   * 쿠키인증이 기본 인증부분과 연동이 된다....*
 - 인증된사용자만 : Balzor- @attribute [Authorize], MVC- [Authorize]
    App.razor.cs에 builder.Services.AddAuthorizationCore(); 추가
-
+- if (User.Identity.IsAuthenticated)
+   @User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value
+   // Claim을 사용하여 사용자 정보 가져오기
+- •	이 코드는 **부모(예: App.razor, MainLayout.razor 등)**에서<CascadingAuthenticationState>로 인증 상태를 제공하면,
+•	하위 컴포넌트인 FetchData.razor에서[CascadingParameter]로 인증 상태(AuthenticationState)를 받을 수 있게 해줍니다.
 
 https://www.youtube.com/watch?v=7Yze6qoS5I4&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=65
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers

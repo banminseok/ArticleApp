@@ -27,7 +27,11 @@ namespace Hawaso.Cookies.Controllers
                         //new Claim(ClaimTypes.NameIdentifier, email),
                     new Claim(ClaimTypes.Name, "반민석"),
                     // 기본 역할 지정 "Role" 기능에 "Users" 역할 지정
-                    new Claim(ClaimTypes.Role, "Users") //추가 정보기록
+                    new Claim(ClaimTypes.Role, "Users"), //추가 정보기록
+
+                    //[!] 새로운 ClaimTypes를 사용하여 추가 정보를 기록할 수 있습니다.
+                    //https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimtypes
+                    new Claim("Job", "Programmer")
                 };
 
                 var ci = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
