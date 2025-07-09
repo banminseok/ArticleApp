@@ -137,11 +137,13 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
       // Claim을 사용하여 사용자 정보 가져오기
    - •	이 코드는 **부모(예: App.razor, MainLayout.razor 등)**에서<CascadingAuthenticationState>로 인증 상태를 제공하면,
      •	하위 컴포넌트인 FetchData.razor에서[CascadingParameter]로 인증 상태(AuthenticationState)를 받을 수 있게 해줍니다.
-   - CurrentUserData3Component 1,2,3은 사용자 정보 읽어오는 예시
+   - CurrentUserData3Component 1,2,3은 Blazor Server 프로젝트에서 , 사용자 정보 읽어오는 예시
 
+- 공지사항 관련 Notice는 ArticleAppBalzorServer 프로젝트에서 구현
+  Pages/Notices/Controller/NoticeController.cs , (CORS 적용 필요.)
 - 
 
-https://www.youtube.com/watch?v=7Yze6qoS5I4&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=65
+https://www.youtube.com/watch?v=z7IaZnw5azQ&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=67
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers
 https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.SqlServer/dbo/Tables/01_Categories/01_Categories.sql
 
@@ -320,6 +322,7 @@ await transaction.CommitAsync();
   Serilog
   Serilog.Extensions.Logging
   Serilog.Sinks.File
+  Serilog.Sinks.MSSqlServer
   -------------------------
   controller - ctor(ILogger<HomeController> logger)
   _logger.LogInformation("로그문구.....");
