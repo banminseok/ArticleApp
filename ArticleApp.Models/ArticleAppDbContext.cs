@@ -88,5 +88,8 @@ namespace ArticleApp.Models
 
         public DbSet<ArticleApp.Models.Categories.Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<MachineType> MachineTypes { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }

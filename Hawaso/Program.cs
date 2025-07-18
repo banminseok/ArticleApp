@@ -1,6 +1,7 @@
 using ArticleApp.Models;
 using ArticleApp.Models.Categories;
 using ArticleApp.Models.Products;
+using Blazored.Toast;
 using Hawaso.Areas.Identity;
 using Hawaso.Data;
 using Microsoft.AspNetCore.Components;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,7 +36,7 @@ builder.Services
         options.UseSqlServer(connectionString),ServiceLifetime.Transient);
 
 
-builder.Services.AddControllersWithViews();  //MVC
+builder.Services.AddControllersWithViews();  //MVC+ Web API 사용가능 //MVC
 builder.Services.AddRazorPages();
 
 builder.Services.AddCors(options =>
@@ -43,6 +45,12 @@ builder.Services.AddCors(options =>
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader());
+});
+
+//install-Package Swashbuckle.AspNetCore
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 });
 
 builder.Services.AddServerSideBlazor();
@@ -55,6 +63,11 @@ builder.Services.AddTransient<ICommonValueRepository, CommonValueRepository>(); 
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>(); //Customer
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>(); //Category
 builder.Services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>(); //
+builder.Services.AddTransient<IMachineTypeRepository, MachineTypeRepository>(); //MachineType
+
+builder.Services.AddDependencyInjectionContainerForManufacturer(connectionString);
+// Blazored.Toast
+builder.Services.AddBlazoredToast();
 
 var app = builder.Build();
 
@@ -62,6 +75,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    // Enable middleware to serve generated Swagger as a JSON endpoint.
+    app.UseSwagger();
+    // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+    // specifying the Swagger JSON endpoint.
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    });
 }
 else
 {
@@ -75,6 +96,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
+#region CORS
+// CORS 정책 적용 Anglular, React, Vue.js 등 클라이언트 앱에서 호출 가능
+app.UseCors(); // CORS 정책 적용// 반드시 UseRouting() 다음에 호출해야 함 
+#endregion
+
+
 
 app.UseAuthentication();
 app.UseAuthorization();

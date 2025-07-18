@@ -69,6 +69,7 @@
     <Folder Include="dbo\StoredProcedures" />
     <Folder Include="dbo\Tables\Logins" />
     <Folder Include="dbo\StoredProcedures\Logins" />
+    <Folder Include="dbo\Tables\Projects" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Articles.sql" />
@@ -116,6 +117,10 @@
     <Build Include="dbo\StoredProcedures\Logins\LoginsSearchCountAdmin.sql" />
     <Build Include="dbo\StoredProcedures\Logins\LoginsSearchList.sql" />
     <Build Include="dbo\StoredProcedures\Logins\LoginsSearchListAdmin.sql" />
+    <Build Include="dbo\Tables\MachineTypes.sql" />
+    <Build Include="dbo\Tables\Manufacturers.sql" />
+    <Build Include="dbo\Tables\Memos.sql" />
+    <Build Include="dbo\Tables\Projects\Projects.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArticleApp.SqlServer.publish.xml" />

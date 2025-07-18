@@ -1,3 +1,4 @@
+using Blazored.Toast;
 using Hawaso.Cookies.Areas.Identity;
 using Hawaso.Cookies.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using ArticleApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddDbContext<ArticleAppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+}, ServiceLifetime.Transient); // 서비스 수명주기: Transient로 중복 호출시 사용..
+
+
+// Blazored.Toast
+builder.Services.AddBlazoredToast();
+
 //쿠키인증사용
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme) //Cookie  
     .AddCookie();
@@ -26,6 +38,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddControllersWithViews(); //MVC support
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddDependencyInjectionContainerForManufacturer(connectionString);
+
 
 var app = builder.Build();
 

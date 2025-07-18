@@ -141,11 +141,17 @@ Part 5 - ASP.NET Core MVC 게시판 프로젝트  https://www.youtube.com/watch?
 
 - 공지사항 관련 Notice는 ArticleAppBalzorServer 프로젝트에서 구현
   Pages/Notices/Controller/NoticeController.cs , (CORS 적용 필요.)
+- CKEditor 컴포넌트 사용 4버전 적용.  (https://www.youtube.com/watch?v=oci_rNiUOPo&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=73)
+- 파일명 중복 처리 : Dul.FileUtility.GetFileNameWithNumbering(fileName, uploadPath);)
+- Hawaso 프로젝트 : 회사 홈페이지 만들기
+- MemoApp은 VIP등급이랑 패스
 - 
+  
 
-https://www.youtube.com/watch?v=z7IaZnw5azQ&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=67
+https://www.youtube.com/watch?v=JXR54Hnlilw&list=PLO56HZSjrPTA-EJxyqiN8HzItM7nDEb11&index=112
 https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/Customers
 https://github.com/VisualAcademy/Hawaso/blob/master/src/Hawaso.SqlServer/dbo/Tables/01_Categories/01_Categories.sql
+https://github.com/VisualAcademy/Hawaso/tree/master/src/Hawaso/Pages/MachineTypes
 
 
 # Part 4 - ASP.NET Core Web APi  

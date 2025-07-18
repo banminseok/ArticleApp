@@ -10,10 +10,25 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 @code {
-    //
+    //Microsoft.AspNetCore.Components.NavigationException 예외는 
+    // Blazor의 컴포넌트 초기화 단계(OnInitialized)에서 페이지 이동(NavigateTo)을 시도할 때 발생합니다. 
+    // 이는 Blazor가 컴포넌트 렌더링 중에 네비게이션이 일어나는 것을 허용하지 않기 때문입니다.
+    //이 시점은 컴포넌트가 아직 완전히 렌더링되지 않은 상태이므로, Blazor 내부적으로 예외를 발생시켜 렌더링 프로세스의 혼란을 방지합니다.
+    // 따라서 페이지 이동은 컴포넌트가 완전히 렌더링된 후에 수행해야 합니다.
+    //네비게이션을 컴포넌트가 렌더링된 이후로 미루어야 합니다.즉, OnAfterRenderAsync를 사용하여 첫 렌더링 이후에 이동하도록 변경하세요.
     protected override void OnInitialized()
     {
         // Index 페이지를 로드할 때 Home 페이지로 리다이렉트
-        NavigationManagerInjector.NavigateTo("/Home", true);        
+        /// Index 페이지를 로드할 때 Razor Page(Home.cshtml)로 리다이렉트
+        //NavigationManagerInjector.NavigateTo("/Home", true);        
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(1); // Optional: Add a slight delay
+            NavigationManagerInjector.NavigateTo("/Home", true);
+        }
     }
 }
